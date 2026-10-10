@@ -13,7 +13,7 @@ Future<void> main() async {
   } catch (error, stackTrace) {
     log(
       'Startup failed',
-      name: 'gcc_app',
+      name: 'gcc-app',
       error: error,
       stackTrace: stackTrace,
     );
