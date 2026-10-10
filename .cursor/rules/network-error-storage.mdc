@@ -1,0 +1,16 @@
+---
+description: Dio, failures, Hive, and secure storage rules
+globs: lib/core/network/**/*.dart,lib/core/error/**/*.dart,lib/core/storage/**/*.dart,lib/features/**/data/**/*.dart
+alwaysApply: false
+---
+
+# Networking, errors, and storage
+
+- Use the shared Dio client from `createDioClient`. Do not create another client unless a feature has a separate backend.
+- Read `API_BASE_URL` and `APP_ENV` from `AppConfig`. Do not hardcode an API host in a feature.
+- Map `DioException` through `mapToAppException`, then `toFailure`, before it reaches a Cubit.
+- Keep validation field messages from the API. Do not show stack traces in the UI.
+- There is no token-refresh flow. Do not add one that retries forever on 401.
+- Development logging goes through `RedactingLogInterceptor` and must omit credentials and sensitive query parameters.
+- Use Hive for non-sensitive local data. Use `SecureCredentialStore` for access and refresh tokens.
+- Domain and presentation must not import Hive.

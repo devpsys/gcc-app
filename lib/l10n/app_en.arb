@@ -1,0 +1,97 @@
+{
+  "@@locale": "en",
+  "appTitle": "GCC",
+  "@appTitle": {
+    "description": "Application title shown in the shell and window."
+  },
+  "homeTitle": "Home",
+  "@homeTitle": {
+    "description": "Navigation label for the home destination."
+  },
+  "homeHeadline": "Ready for the next feature",
+  "@homeHeadline": {
+    "description": "Heading on the home page."
+  },
+  "homeBody": "Shared navigation, appearance, and local preferences are in place. Marketplace features will be added on this foundation.",
+  "@homeBody": {
+    "description": "Explanation that the application foundation is ready."
+  },
+  "themeModeLabel": "Appearance",
+  "@themeModeLabel": {
+    "description": "Label for the theme mode control."
+  },
+  "themeModeSystem": "System",
+  "@themeModeSystem": {
+    "description": "Theme option that follows the device setting."
+  },
+  "themeModeLight": "Light",
+  "@themeModeLight": {
+    "description": "Light theme option."
+  },
+  "themeModeDark": "Dark",
+  "@themeModeDark": {
+    "description": "Dark theme option."
+  },
+  "environmentLabel": "Environment: {environment}",
+  "@environmentLabel": {
+    "description": "Shows the active application environment.",
+    "placeholders": {
+      "environment": {
+        "type": "String",
+        "example": "Development"
+      }
+    }
+  },
+  "environmentDevelopment": "Development",
+  "@environmentDevelopment": {
+    "description": "Name of the development environment."
+  },
+  "environmentStaging": "Staging",
+  "@environmentStaging": {
+    "description": "Name of the staging environment."
+  },
+  "environmentProduction": "Production",
+  "@environmentProduction": {
+    "description": "Name of the production environment."
+  },
+  "apiNotConfigured": "No API base URL is configured.",
+  "@apiNotConfigured": {
+    "description": "Shown when API_BASE_URL was not provided."
+  },
+  "apiConfigured": "API base URL is configured.",
+  "@apiConfigured": {
+    "description": "Shown when an API base URL is present. The URL itself is not displayed."
+  },
+  "homeLoadFailed": "Preferences could not be loaded.",
+  "@homeLoadFailed": {
+    "description": "Shown when saved preferences cannot be read."
+  },
+  "themeSaveFailed": "Appearance could not be saved.",
+  "@themeSaveFailed": {
+    "description": "Shown when the selected theme could not be stored."
+  },
+  "retry": "Try again",
+  "@retry": {
+    "description": "Retries the failed action."
+  },
+  "loading": "Loading",
+  "@loading": {
+    "description": "Accessibility label for a progress indicator."
+  },
+  "openNavigationMenu": "Open navigation menu",
+  "@openNavigationMenu": {
+    "description": "Tooltip for the button that opens the navigation drawer."
+  },
+  "routeNotFound": "This page does not exist.",
+  "@routeNotFound": {
+    "description": "Shown for an unknown route."
+  },
+  "goHome": "Go to home",
+  "@goHome": {
+    "description": "Returns to the home page from an unknown route."
+  },
+  "startupFailed": "GCC could not start.",
+  "@startupFailed": {
+    "description": "Shown when application startup fails."
+  }
+}

@@ -1,0 +1,15 @@
+---
+description: BLoC, Cubit, and GetIt registration rules
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# BLoC and dependency injection
+
+- Use Cubit for straightforward state. Use Bloc when events make the flow clearer.
+- Keep Cubit/Bloc classes in `presentation/bloc/`, not in page files.
+- State is immutable. Prefer a sealed state over a pile of boolean flags. Use Equatable where value equality matters.
+- Represent loading, ready, empty, and failure explicitly. Widgets do not catch `DioException`.
+- Register Dio, storage, repositories, and use cases in `lib/core/di/`. Provide Cubits with `BlocProvider` from GetIt or the router.
+- Do not construct repositories, Dio, or Hive inside a widget.
+- Do not add a second dependency-injection package.

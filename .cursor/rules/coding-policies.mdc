@@ -1,0 +1,15 @@
+---
+description: Widget, copy, color, and layout token policies
+alwaysApply: true
+---
+
+# Coding policies
+
+- Do not declare a widget class whose name starts with `_` (`_Header`, `_LoginForm`, `_ProfileCard`). `State` classes stay private.
+- Every custom widget is a public class in its own file. Do not put a second widget class in a page file.
+- Feature widgets go in `lib/features/<feature>/presentation/widgets/`. Widgets used by more than one feature go in `lib/core/widgets/`.
+- Do not wrap a single framework widget in a custom class when it has no extra behavior.
+- Do not hardcode user-facing copy. Add it to `lib/l10n/app_en.arb` and read it with `context.l10n`. Leave server-provided text as data.
+- Do not use `Colors.*` or `Color(0x...)` outside `lib/core/theme/`. UI uses `Theme.of(context)` or `context.semanticColors`.
+- Do not repeat reusable spacing, padding, radii, widths, or heights. Use `AppSpacing`, `AppRadii`, and `AppDimensions`.
+- Do not log access tokens, refresh tokens, passwords, or `Authorization` headers.

@@ -1,0 +1,14 @@
+---
+description: Feature-based Clean Architecture and dependency direction
+alwaysApply: true
+---
+
+# Clean Architecture
+
+- Put feature code in `lib/features/<feature>/{data,domain,presentation}`.
+- Put shared infrastructure in `lib/core/`. Do not add global `screens/`, `models/`, `repositories/`, or `services/` folders.
+- Dependency direction is presentation → domain and data → domain.
+- Domain must not import Flutter UI, Dio, Hive, BLoC, GetIt, or another feature's data or presentation code.
+- Pages compose widgets and send intents to a Cubit or Bloc. Pages do not call Dio, Hive, repositories, or use cases directly.
+- Add a use case only when it contains a business rule. Do not add a class that only forwards a call.
+- Keep one primary type per file.

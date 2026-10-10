@@ -1,0 +1,14 @@
+---
+description: Analyzer, formatting, and test layout
+globs: test/**/*.dart
+alwaysApply: false
+---
+
+# Testing and quality
+
+- Run `dart format .`, `flutter analyze`, and `flutter test` for changes that affect behavior.
+- Mirror `lib/` under `test/`: `test/core/` and `test/features/<feature>/{data,domain,presentation}`.
+- Test use cases, repositories, data sources, Cubits, and widgets that own branching UI. Use fakes or mocks at the boundary.
+- Do not treat a widget test as proof of a business rule. Keep that rule in domain or data code and test it there.
+- Do not ignore an analyzer error to make a change compile.
+- Do not assert on raw exception text that a user should never see.

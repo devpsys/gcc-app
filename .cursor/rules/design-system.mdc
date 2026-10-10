@@ -1,0 +1,15 @@
+---
+description: Theme tokens, breakpoints, and responsive shell
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# Design system
+
+- Extend `lib/core/theme/` instead of inventing a feature-specific palette or text scale.
+- Light colors follow the GCC spec. Dark containers live in `AppColors` and are applied only by `AppTheme`.
+- Held-funds amber is `context.semanticColors.heldFunds`. Do not reuse it for generic warnings.
+- Breakpoints are 768, 1024, and 1440 via `AppBreakpoints`. Layouts must work on phones, tablets, and desktop web.
+- Use `AppShell` for primary navigation. `NavigationBar` is only shown when there are at least two destinations.
+- Prefer flexible widths. Fixed sizes belong in `AppDimensions` when they are shared.
+- User-facing text must survive wrapping. Do not lock labels to one line.
