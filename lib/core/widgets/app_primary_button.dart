@@ -10,6 +10,7 @@ class AppPrimaryButton extends StatelessWidget {
     this.icon,
     this.disabledReason,
     this.expand = true,
+    this.busy = false,
     super.key,
   });
 
@@ -18,19 +19,32 @@ class AppPrimaryButton extends StatelessWidget {
   final IconData? icon;
   final String? disabledReason;
   final bool expand;
+  final bool busy;
 
   @override
   Widget build(BuildContext context) {
     final style = AppButtonStyles.primary(Theme.of(context).colorScheme);
     final glyph = icon;
-    final child = Text(label);
+    final pressed = busy ? null : onPressed;
+    final child = busy
+        ? Semantics(
+            label: label,
+            child: const SizedBox(
+              width: AppDimensions.iconMd,
+              height: AppDimensions.iconMd,
+              child: CircularProgressIndicator(
+                strokeWidth: AppDimensions.emphasisBorderWidth,
+              ),
+            ),
+          )
+        : Text(label);
     return AppButtonFrame(
       expand: expand,
-      disabledReason: onPressed == null ? disabledReason : null,
+      disabledReason: pressed == null && !busy ? disabledReason : null,
       button: glyph == null
-          ? FilledButton(onPressed: onPressed, style: style, child: child)
+          ? FilledButton(onPressed: pressed, style: style, child: child)
           : FilledButton.icon(
-              onPressed: onPressed,
+              onPressed: pressed,
               style: style,
               icon: Icon(glyph, size: AppDimensions.iconMd),
               label: child,

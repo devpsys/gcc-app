@@ -87,5 +87,359 @@
   "startupFailed": "GCC could not start.",
   "@startupFailed": {
     "description": "Shown when application startup fails."
+  },
+  "authAgentSignInTitle": "Field agent sign in",
+  "@authAgentSignInTitle": {
+    "description": "Title on the agent identifier screen."
+  },
+  "authAgentSignInSubtitle": "Enter the agent ID given to you by your coordinator.",
+  "@authAgentSignInSubtitle": {
+    "description": "Instructions on the agent identifier screen."
+  },
+  "authAgentIdLabel": "Agent ID",
+  "@authAgentIdLabel": {
+    "description": "Label for the agent identifier field."
+  },
+  "authAgentIdHint": "AG-0142",
+  "@authAgentIdHint": {
+    "description": "Example agent identifier shown as placeholder text."
+  },
+  "authScannerDivider": "OR USE SCANNER",
+  "@authScannerDivider": {
+    "description": "Divider label between typed sign-in and the QR scanner."
+  },
+  "authScanQr": "Scan QR",
+  "@authScanQr": {
+    "description": "Button that starts an agent ID card scan."
+  },
+  "authScanQrHelp": "Scan the QR code on your ID card.",
+  "@authScanQrHelp": {
+    "description": "Helper text under the QR scan button."
+  },
+  "authContinue": "Continue",
+  "@authContinue": {
+    "description": "Advances from the agent identifier screen."
+  },
+  "authContinueNeedsIdentifier": "Enter your agent ID to continue.",
+  "@authContinueNeedsIdentifier": {
+    "description": "Shown when Continue is disabled because the agent ID is empty."
+  },
+  "authContinueNeedsValidIdentifier": "Enter an ID like AG-0142 to continue.",
+  "@authContinueNeedsValidIdentifier": {
+    "description": "Shown when Continue is disabled because the agent ID is not in the expected form."
+  },
+  "authIdentifierInvalid": "Enter an ID like AG-0142.",
+  "@authIdentifierInvalid": {
+    "description": "Inline error when an agent ID does not match AG- and four digits."
+  },
+  "authUnknownIdentifier": "We couldn't find {identifier}. Check the ID, or contact your coordinator.",
+  "@authUnknownIdentifier": {
+    "description": "Inline error when an agent ID is well formed but not recognized.",
+    "placeholders": {
+      "identifier": {
+        "type": "String",
+        "example": "AG-9999"
+      }
+    }
+  },
+  "authUnassignedTitle": "No markets assigned",
+  "@authUnassignedTitle": {
+    "description": "Title when an agent account has no markets."
+  },
+  "authUnassignedMessage": "Your account is active but no markets are assigned yet. Contact Grace Uche to get your first market.",
+  "@authUnassignedMessage": {
+    "description": "Explanation shown when an agent account has no markets."
+  },
+  "authLanguage": "Language",
+  "@authLanguage": {
+    "description": "Label for the language row and the language sheet."
+  },
+  "authNotifications": "Notifications",
+  "@authNotifications": {
+    "description": "Label for the notifications preference row."
+  },
+  "authNotificationsValue": "On · SMS only",
+  "@authNotificationsValue": {
+    "description": "Current notifications value on the agent sign-in screen."
+  },
+  "authOfflineSession": "Offline? Use your last signed-in session.",
+  "@authOfflineSession": {
+    "description": "Hint that a previous session can be used offline."
+  },
+  "authSupport": "Support",
+  "@authSupport": {
+    "description": "Label for the support contact."
+  },
+  "authSupportPhone": "+234 803 441 2290",
+  "@authSupportPhone": {
+    "description": "Support phone number shown on agent sign-in."
+  },
+  "authEnterCodeTitle": "Enter your code",
+  "@authEnterCodeTitle": {
+    "description": "Title on the agent verification screen."
+  },
+  "authCodeSentTo": "Sent to {phone}",
+  "@authCodeSentTo": {
+    "description": "Shows the masked phone number that received the code.",
+    "placeholders": {
+      "phone": {
+        "type": "String",
+        "example": "+234 •••• 2290"
+      }
+    }
+  },
+  "authSecurityNote": "Encrypted Two-Factor Verification",
+  "@authSecurityNote": {
+    "description": "Trust line on the verification screen."
+  },
+  "authVerify": "Verify",
+  "@authVerify": {
+    "description": "Submits the verification code."
+  },
+  "authOtpIncompleteReason": "Enter all 6 digits to continue.",
+  "@authOtpIncompleteReason": {
+    "description": "Shown when Verify is disabled because the code is incomplete."
+  },
+  "authOtpFieldLabel": "Verification code",
+  "@authOtpFieldLabel": {
+    "description": "Accessibility label for the one-time code field."
+  },
+  "authOtpIncorrect": "That code is not correct. Request a new one.",
+  "@authOtpIncorrect": {
+    "description": "Shown when a verification code is rejected."
+  },
+  "authDidntGetCode": "Didn't get it?",
+  "@authDidntGetCode": {
+    "description": "Prompt beside the resend action."
+  },
+  "authResendCode": "Resend code",
+  "@authResendCode": {
+    "description": "Requests another verification code."
+  },
+  "authUseDifferentNumber": "Use a different number",
+  "@authUseDifferentNumber": {
+    "description": "Leaves verification to change the phone number or agent ID."
+  },
+  "authGenericFailure": "Something went wrong. Try again.",
+  "@authGenericFailure": {
+    "description": "Shown when sign-in fails without a field-specific message."
+  },
+  "authClose": "Close",
+  "@authClose": {
+    "description": "Closes the language sheet."
+  },
+  "authLanguageCurrent": "Current",
+  "@authLanguageCurrent": {
+    "description": "Marks the language currently in use."
+  },
+  "authSave": "Save",
+  "@authSave": {
+    "description": "Saves the language chosen in the sheet."
+  },
+  "authSearchLanguages": "Search languages",
+  "@authSearchLanguages": {
+    "description": "Label for the language sheet search field."
+  },
+  "authSearchLanguagesHint": "Search",
+  "@authSearchLanguagesHint": {
+    "description": "Placeholder for the language sheet search field."
+  },
+  "authLanguageUnavailable": "This language isn't available in the app yet.",
+  "@authLanguageUnavailable": {
+    "description": "Shown on languages that do not have a translation yet."
+  },
+  "authBack": "Back",
+  "@authBack": {
+    "description": "Returns from verification to the identifier screen."
+  },
+  "languageEnglishName": "English",
+  "@languageEnglishName": {
+    "description": "English name of the English language."
+  },
+  "languageEnglishNative": "English",
+  "@languageEnglishNative": {
+    "description": "Native name of the English language."
+  },
+  "languageEnglishSample": "Report equipment damage or return condition",
+  "@languageEnglishSample": {
+    "description": "Sample sentence shown for English."
+  },
+  "languagePidginName": "Pidgin",
+  "@languagePidginName": {
+    "description": "English name of Nigerian Pidgin."
+  },
+  "languagePidginNative": "Naijá Pidgin",
+  "@languagePidginNative": {
+    "description": "Native name of Nigerian Pidgin."
+  },
+  "languagePidginSample": "Gbe report if machine spoil or condition don change",
+  "@languagePidginSample": {
+    "description": "Sample sentence shown for Nigerian Pidgin."
+  },
+  "languageHausaName": "Hausa",
+  "@languageHausaName": {
+    "description": "English name of Hausa."
+  },
+  "languageHausaNative": "Harshen Hausa",
+  "@languageHausaNative": {
+    "description": "Native name of Hausa."
+  },
+  "languageHausaSample": "Sanya lamarin ciki",
+  "@languageHausaSample": {
+    "description": "Sample sentence shown for Hausa."
+  },
+  "languageYorubaName": "Yoruba",
+  "@languageYorubaName": {
+    "description": "English name of Yoruba."
+  },
+  "languageYorubaTitle": "Yorùbá",
+  "@languageYorubaTitle": {
+    "description": "Yoruba name shown as the title of the first-run language row."
+  },
+  "languageYorubaNative": "Èdè Yorùbá",
+  "@languageYorubaNative": {
+    "description": "Native name of Yoruba, including diacritics."
+  },
+  "languageYorubaSample": "Ṣàlàà nínú rere",
+  "@languageYorubaSample": {
+    "description": "Sample sentence shown for Yoruba."
+  },
+  "languageIgboName": "Igbo",
+  "@languageIgboName": {
+    "description": "English name of Igbo."
+  },
+  "languageIgboNative": "Asụsụ Igbo",
+  "@languageIgboNative": {
+    "description": "Native name of Igbo, including diacritics."
+  },
+  "languageIgboSample": "Nzọọ ncha ahụ",
+  "@languageIgboSample": {
+    "description": "Sample sentence shown for Igbo."
+  },
+  "onboardingChooseLanguage": "Choose your language",
+  "@onboardingChooseLanguage": {
+    "description": "Title on the first-run language screen."
+  },
+  "onboardingChangeAnytime": "You can change this any time.",
+  "@onboardingChangeAnytime": {
+    "description": "Subtitle on the first-run language screen."
+  },
+  "onboardingContinue": "Continue",
+  "@onboardingContinue": {
+    "description": "Advances the first-run flow."
+  },
+  "onboardingContinueNeedsLanguage": "Choose a language to continue.",
+  "@onboardingContinueNeedsLanguage": {
+    "description": "Shown when Continue is disabled before a language is chosen."
+  },
+  "onboardingTranslationsReviewed": "Translations are reviewed by our language team.",
+  "@onboardingTranslationsReviewed": {
+    "description": "Note under the language list."
+  },
+  "onboardingStep": "Step {current} of {total}",
+  "@onboardingStep": {
+    "description": "Announces the current first-run step.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "onboardingRoleTitle": "How will you use GCC?",
+  "@onboardingRoleTitle": {
+    "description": "Title on the first-run role screen."
+  },
+  "onboardingRoleSubtitle": "You can switch later from your profile.",
+  "@onboardingRoleSubtitle": {
+    "description": "Subtitle on the first-run role screen."
+  },
+  "onboardingRoleRentTitle": "Rent or buy equipment",
+  "@onboardingRoleRentTitle": {
+    "description": "Title of the lessee role card."
+  },
+  "onboardingRoleRentBody": "Browse generators, sound systems, pumps and building materials from verified vendors in your market.",
+  "@onboardingRoleRentBody": {
+    "description": "Description of the lessee role."
+  },
+  "onboardingRoleListTitle": "List my equipment or goods",
+  "@onboardingRoleListTitle": {
+    "description": "Title of the vendor role card."
+  },
+  "onboardingRoleListBody": "Publish rental listings or bulk trade products, respond to booking requests, and get paid into your GCC wallet.",
+  "@onboardingRoleListBody": {
+    "description": "Description of the vendor role."
+  },
+  "onboardingRoleBoth": "Most people use both. Switch any time from Profile → Switch role.",
+  "@onboardingRoleBoth": {
+    "description": "Note that role can be changed later."
+  },
+  "onboardingRolePath": "Profile → Switch role",
+  "@onboardingRolePath": {
+    "description": "Profile path emphasized inside the role note."
+  },
+  "onboardingJustLooking": "I just want to look",
+  "@onboardingJustLooking": {
+    "description": "Skips a firm role choice and continues."
+  },
+  "onboardingContinueNeedsRole": "Choose how you will use GCC to continue.",
+  "@onboardingContinueNeedsRole": {
+    "description": "Shown when Continue is disabled before a role is chosen."
+  },
+  "onboardingSignInTitle": "Sign in",
+  "@onboardingSignInTitle": {
+    "description": "Title on the first-run phone screen."
+  },
+  "onboardingSignInSubtitle": "Use the number the yard or business uses.",
+  "@onboardingSignInSubtitle": {
+    "description": "Subtitle on the first-run phone screen."
+  },
+  "onboardingMobileLabel": "Mobile Number",
+  "@onboardingMobileLabel": {
+    "description": "Label for the mobile number field."
+  },
+  "onboardingPhonePrefix": "+234",
+  "@onboardingPhonePrefix": {
+    "description": "Locked country calling code for the mobile number field."
+  },
+  "onboardingCodeHelp": "Enter the 6-digit code we send you",
+  "@onboardingCodeHelp": {
+    "description": "Helper text for the first-run verification code."
+  },
+  "onboardingCodePlaceholder": "• • • • • •",
+  "@onboardingCodePlaceholder": {
+    "description": "Placeholder shown in the verification-code field before a code is sent."
+  },
+  "onboardingNewAccount": "New here? We'll create your account when you verify.",
+  "@onboardingNewAccount": {
+    "description": "Explains that verification creates an account."
+  },
+  "onboardingSendCode": "Send code",
+  "@onboardingSendCode": {
+    "description": "Requests a sign-in code for the entered mobile number."
+  },
+  "onboardingSendCodeNeedsPhone": "Enter your mobile number to continue.",
+  "@onboardingSendCodeNeedsPhone": {
+    "description": "Shown when Send code is disabled because the number is empty."
+  },
+  "onboardingSendCodeNeedsFullPhone": "Enter all 11 digits to continue.",
+  "@onboardingSendCodeNeedsFullPhone": {
+    "description": "Shown when Send code is disabled because the number is incomplete."
+  },
+  "onboardingAlreadyAccount": "Already have a GCC account?",
+  "@onboardingAlreadyAccount": {
+    "description": "Lead-in to the email sign-in copy."
+  },
+  "onboardingEmailInstead": "Sign in with your email instead.",
+  "@onboardingEmailInstead": {
+    "description": "Copy pointing at email sign-in. No email flow is available yet."
+  },
+  "onboardingGenericFailure": "Something went wrong. Try again.",
+  "@onboardingGenericFailure": {
+    "description": "Shown when a first-run sign-in request fails."
   }
 }

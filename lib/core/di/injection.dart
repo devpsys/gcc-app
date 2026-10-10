@@ -1,5 +1,7 @@
 import 'package:gcc_app/core/config/app_config.dart';
+import 'package:gcc_app/core/di/auth_module.dart';
 import 'package:gcc_app/core/di/home_module.dart';
+import 'package:gcc_app/core/di/onboarding_module.dart';
 import 'package:gcc_app/core/di/network_module.dart';
 import 'package:gcc_app/core/di/storage_module.dart';
 import 'package:gcc_app/core/router/app_router.dart';
@@ -20,5 +22,7 @@ Future<void> configureDependencies({
   await registerStorageModule(storageDirectory: storageDirectory);
   registerNetworkModule();
   registerHomeModule();
+  registerOnboardingModule();
+  registerAuthModule();
   getIt.registerLazySingleton<GoRouter>(createAppRouter);
 }

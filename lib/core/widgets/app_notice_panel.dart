@@ -9,7 +9,7 @@ class AppNoticePanel extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.message,
-    required this.actionLabel,
+    this.actionLabel,
     this.onAction,
     this.secondaryLabel,
     this.onSecondary,
@@ -19,7 +19,7 @@ class AppNoticePanel extends StatelessWidget {
   final IconData icon;
   final String title;
   final String message;
-  final String actionLabel;
+  final String? actionLabel;
   final VoidCallback? onAction;
   final String? secondaryLabel;
   final VoidCallback? onSecondary;
@@ -28,6 +28,7 @@ class AppNoticePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final secondary = secondaryLabel;
+    final action = actionLabel;
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -52,8 +53,10 @@ class AppNoticePanel extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            const SizedBox(height: AppSpacing.xl),
-            AppPrimaryButton(label: actionLabel, onPressed: onAction),
+            if (action != null) ...[
+              const SizedBox(height: AppSpacing.xl),
+              AppPrimaryButton(label: action, onPressed: onAction),
+            ],
             if (secondary != null)
               TextButton(onPressed: onSecondary, child: Text(secondary)),
           ],

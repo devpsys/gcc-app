@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 /// Mobile type scale from the field design system.
 ///
-/// Inter and JetBrains Mono are the specified faces. They are not bundled, so
-/// UI text uses the platform font and identifiers use the platform monospace.
+/// Interface copy uses Inter. Identifiers, phone numbers, and codes use
+/// JetBrains Mono. Both faces are bundled under `assets/fonts/`.
 abstract final class AppTextStyles {
+  static const String sansFamily = 'Inter';
+  static const String monoFamily = 'JetBrains Mono';
   static const double displaySize = 28;
   static const double displayLineHeight = 34;
   static const double headlineSize = 22;
@@ -101,7 +103,7 @@ abstract final class AppTextStyles {
         letterSpacing: eyebrowLetterSpacing,
         color: muted,
       ),
-    );
+    ).apply(fontFamily: sansFamily);
   }
 
   static TextStyle tabular(TextStyle style) {
@@ -110,7 +112,8 @@ abstract final class AppTextStyles {
 
   static TextStyle mono(TextStyle style) {
     return style.copyWith(
-      fontFamily: 'monospace',
+      fontFamily: monoFamily,
+      fontFamilyFallback: const ['monospace'],
       fontFeatures: const [FontFeature.tabularFigures()],
     );
   }

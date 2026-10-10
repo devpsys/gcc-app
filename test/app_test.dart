@@ -25,7 +25,7 @@ void main() {
     await directory.delete(recursive: true);
   });
 
-  testWidgets('starts on the home page', (tester) async {
+  testWidgets('starts on language selection', (tester) async {
     tester.view.physicalSize = const Size(390, 844);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
@@ -34,8 +34,7 @@ void main() {
     await tester.pumpWidget(const GccApp());
     await tester.pumpAndSettle();
 
-    expect(find.text('Ready for the next feature'), findsOneWidget);
-    expect(find.text('Environment'), findsOneWidget);
-    expect(find.text('Development'), findsOneWidget);
+    expect(find.text('Choose your language'), findsOneWidget);
+    expect(find.text('Yorùbá'), findsOneWidget);
   });
 }

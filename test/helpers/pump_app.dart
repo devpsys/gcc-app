@@ -7,6 +7,7 @@ Future<void> pumpLocalized(
   WidgetTester tester, {
   required Widget child,
   Size size = const Size(800, 600),
+  TextScaler textScaler = TextScaler.noScaling,
 }) async {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
@@ -19,6 +20,12 @@ Future<void> pumpLocalized(
       darkTheme: AppTheme.dark(),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      builder: (context, appChild) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaler: textScaler),
+          child: appChild ?? const SizedBox.shrink(),
+        );
+      },
       home: child,
     ),
   );

@@ -103,7 +103,7 @@ Material's `NavigationBar` requires at least two destinations, so a single-item 
 
 Held-funds amber and warning are different roles. Amber means money that cannot be moved.
 
-Inter and JetBrains Mono are the specified typefaces. They are not bundled yet, so text uses the platform font at the spec's sizes. Add the font files under the Flutter `fonts:` section before setting `fontFamily`.
+Interface text uses bundled Inter. Identifiers use bundled JetBrains Mono. Both are registered in `pubspec.yaml` and applied from `AppTextStyles`.
 
 ## Localization
 
