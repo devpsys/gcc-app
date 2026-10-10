@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/responsive_content.dart';
 
 class StartupFailurePage extends StatelessWidget {
@@ -9,9 +10,9 @@ class StartupFailurePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ResponsiveContent(
-        child: Text(
-          context.l10n.startupFailed,
-          style: Theme.of(context).textTheme.headlineMedium,
+        child: AppEmptyState(
+          icon: Icons.error_outline,
+          title: context.l10n.startupFailed,
         ),
       ),
     );

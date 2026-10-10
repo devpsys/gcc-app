@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gcc_app/core/config/app_environment.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
+import 'package:gcc_app/core/widgets/key_value_line.dart';
 import 'package:gcc_app/core/widgets/responsive_content.dart';
+import 'package:gcc_app/core/widgets/status_chip.dart';
 import 'package:gcc_app/features/home/domain/entities/theme_preference.dart';
 import 'package:gcc_app/features/home/presentation/widgets/theme_mode_selector.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
@@ -30,7 +32,7 @@ class HomeReadyContent extends StatelessWidget {
     return ResponsiveContent(
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.lg),
+          padding: const EdgeInsets.all(AppSpacing.md),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -44,19 +46,19 @@ class HomeReadyContent extends StatelessWidget {
               ThemeModeSelector(themeMode: themeMode),
               if (message != null) ...[
                 const SizedBox(height: AppSpacing.md),
-                Text(
-                  message,
-                  style: textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.error,
-                  ),
-                ),
+                StatusChip(label: message, tone: StatusTone.danger),
               ],
               const SizedBox(height: AppSpacing.xl),
-              Text(_environmentLabel(l10n), style: textTheme.bodySmall),
-              const SizedBox(height: AppSpacing.xs),
-              Text(
-                apiConfigured ? l10n.apiConfigured : l10n.apiNotConfigured,
-                style: textTheme.bodySmall,
+              KeyValueLine(
+                label: l10n.environmentTitle,
+                value: _environmentName(l10n),
+              ),
+              const SizedBox(height: AppSpacing.md),
+              StatusChip(
+                label: apiConfigured
+                    ? l10n.apiConfigured
+                    : l10n.apiNotConfigured,
+                tone: apiConfigured ? StatusTone.success : StatusTone.muted,
               ),
             ],
           ),
@@ -65,12 +67,11 @@ class HomeReadyContent extends StatelessWidget {
     );
   }
 
-  String _environmentLabel(AppLocalizations l10n) {
-    final name = switch (environment) {
+  String _environmentName(AppLocalizations l10n) {
+    return switch (environment) {
       AppEnvironment.development => l10n.environmentDevelopment,
       AppEnvironment.staging => l10n.environmentStaging,
       AppEnvironment.production => l10n.environmentProduction,
     };
-    return l10n.environmentLabel(name);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
@@ -43,17 +44,24 @@ class AppShell extends StatelessWidget {
       body: child,
       bottomNavigationBar: destinations.length < 2
           ? null
-          : NavigationBar(
-              selectedIndex: selectedIndex,
-              onDestinationSelected: (index) => _go(context, index),
-              destinations: [
-                for (final destination in destinations)
-                  NavigationDestination(
-                    icon: Icon(destination.icon),
-                    selectedIcon: Icon(destination.selectedIcon),
-                    label: destination.label,
-                  ),
-              ],
+          : DecoratedBox(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: context.semanticColors.border),
+                ),
+              ),
+              child: NavigationBar(
+                selectedIndex: selectedIndex,
+                onDestinationSelected: (index) => _go(context, index),
+                destinations: [
+                  for (final destination in destinations)
+                    NavigationDestination(
+                      icon: Icon(destination.icon),
+                      selectedIcon: Icon(destination.selectedIcon),
+                      label: destination.label,
+                    ),
+                ],
+              ),
             ),
     );
   }
@@ -78,7 +86,7 @@ class AppShell extends StatelessWidget {
           child: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.all(AppSpacing.lg),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 child: Text(
                   title,
                   style: Theme.of(context).textTheme.headlineSmall,
@@ -121,7 +129,7 @@ class AppShell extends StatelessWidget {
             onDestinationSelected: (index) => _go(context, index),
             labelType: NavigationRailLabelType.none,
             leading: Padding(
-              padding: const EdgeInsets.all(AppSpacing.lg),
+              padding: const EdgeInsets.all(AppSpacing.md),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(

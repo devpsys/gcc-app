@@ -8,7 +8,8 @@ alwaysApply: false
 
 - Extend `lib/core/theme/` instead of inventing a feature-specific palette or text scale.
 - Light colors follow the GCC spec. Dark containers live in `AppColors` and are applied only by `AppTheme`.
-- Held-funds amber is `context.semanticColors.heldFunds`. Do not reuse it for generic warnings.
+- Held-funds amber is `context.semanticColors.heldFunds`. Do not reuse it for generic warnings. Locked money uses `HeldFundsIndicator` (lock icon and hatch).
+- Mobile body text is `textTheme.bodyMedium` at 15/22. Primary actions are 52px (`AppDimensions.buttonHeight`). Resting cards stay elevation 0 with a 1px border.
 - Breakpoints are 768, 1024, and 1440 via `AppBreakpoints`. Layouts must work on phones, tablets, and desktop web.
 - Use `AppShell` for primary navigation. `NavigationBar` is only shown when there are at least two destinations.
 - Prefer flexible widths. Fixed sizes belong in `AppDimensions` when they are shared.

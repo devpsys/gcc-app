@@ -142,11 +142,11 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get themeModeDark;
 
-  /// Shows the active application environment.
+  /// Label above the active application environment name.
   ///
   /// In en, this message translates to:
-  /// **'Environment: {environment}'**
-  String environmentLabel(String environment);
+  /// **'Environment'**
+  String get environmentTitle;
 
   /// Name of the development environment.
   ///

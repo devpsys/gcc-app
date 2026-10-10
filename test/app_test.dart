@@ -35,6 +35,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Ready for the next feature'), findsOneWidget);
-    expect(find.text('Environment: Development'), findsOneWidget);
+    expect(find.text('Environment'), findsOneWidget);
+    expect(find.text('Development'), findsOneWidget);
   });
 }

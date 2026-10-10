@@ -35,9 +35,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get themeModeDark => 'Dark';
 
   @override
-  String environmentLabel(String environment) {
-    return 'Environment: $environment';
-  }
+  String get environmentTitle => 'Environment';
 
   @override
   String get environmentDevelopment => 'Development';

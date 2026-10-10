@@ -13,6 +13,7 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
     required this.heldFunds,
     required this.heldFundsContainer,
     required this.border,
+    required this.dangerBorder,
     required this.muted,
   });
 
@@ -27,6 +28,7 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
   final Color heldFunds;
   final Color heldFundsContainer;
   final Color border;
+  final Color dangerBorder;
   final Color muted;
 
   @override
@@ -42,6 +44,7 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
     Color? heldFunds,
     Color? heldFundsContainer,
     Color? border,
+    Color? dangerBorder,
     Color? muted,
   }) {
     return AppSemanticColors(
@@ -56,6 +59,7 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
       heldFunds: heldFunds ?? this.heldFunds,
       heldFundsContainer: heldFundsContainer ?? this.heldFundsContainer,
       border: border ?? this.border,
+      dangerBorder: dangerBorder ?? this.dangerBorder,
       muted: muted ?? this.muted,
     );
   }
@@ -86,6 +90,8 @@ class AppSemanticColors extends ThemeExtension<AppSemanticColors> {
           Color.lerp(heldFundsContainer, other.heldFundsContainer, t) ??
           heldFundsContainer,
       border: Color.lerp(border, other.border, t) ?? border,
+      dangerBorder:
+          Color.lerp(dangerBorder, other.dangerBorder, t) ?? dangerBorder,
       muted: Color.lerp(muted, other.muted, t) ?? muted,
     );
   }

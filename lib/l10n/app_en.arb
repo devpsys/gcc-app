@@ -32,15 +32,9 @@
   "@themeModeDark": {
     "description": "Dark theme option."
   },
-  "environmentLabel": "Environment: {environment}",
-  "@environmentLabel": {
-    "description": "Shows the active application environment.",
-    "placeholders": {
-      "environment": {
-        "type": "String",
-        "example": "Development"
-      }
-    }
+  "environmentTitle": "Environment",
+  "@environmentTitle": {
+    "description": "Label above the active application environment name."
   },
   "environmentDevelopment": "Development",
   "@environmentDevelopment": {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Mobile type scale from the field design system.
+///
+/// Inter and JetBrains Mono are the specified faces. They are not bundled, so
+/// UI text uses the platform font and identifiers use the platform monospace.
 abstract final class AppTextStyles {
   static const double displaySize = 28;
   static const double displayLineHeight = 34;
@@ -7,14 +11,18 @@ abstract final class AppTextStyles {
   static const double headlineLineHeight = 28;
   static const double titleSize = 18;
   static const double titleLineHeight = 24;
-  static const double sectionSize = 15;
-  static const double sectionLineHeight = 22;
-  static const double bodySize = 14;
-  static const double bodyLineHeight = 20;
+  static const double sheetTitleSize = 17;
+  static const double sheetTitleLineHeight = 24;
+  static const double bodyLargeSize = 16;
+  static const double bodyLargeLineHeight = 24;
+  static const double bodySize = 15;
+  static const double bodyLineHeight = 22;
   static const double bodySmallSize = 13;
   static const double bodySmallLineHeight = 18;
   static const double labelSize = 12;
   static const double labelLineHeight = 16;
+  static const double buttonSize = 15;
+  static const double buttonLineHeight = 20;
   static const double eyebrowSize = 11;
   static const double eyebrowLineHeight = 14;
   static const double eyebrowLetterSpacing = 0.88;
@@ -26,13 +34,15 @@ abstract final class AppTextStyles {
       displaySmall: TextStyle(
         fontSize: displaySize,
         height: displayLineHeight / displaySize,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w700,
+        letterSpacing: displaySize * -0.02,
         color: color,
       ),
       headlineMedium: TextStyle(
         fontSize: headlineSize,
         height: headlineLineHeight / headlineSize,
         fontWeight: FontWeight.w600,
+        letterSpacing: headlineSize * -0.015,
         color: color,
       ),
       headlineSmall: TextStyle(
@@ -41,10 +51,22 @@ abstract final class AppTextStyles {
         fontWeight: FontWeight.w600,
         color: color,
       ),
-      titleMedium: TextStyle(
-        fontSize: sectionSize,
-        height: sectionLineHeight / sectionSize,
+      titleLarge: TextStyle(
+        fontSize: sheetTitleSize,
+        height: sheetTitleLineHeight / sheetTitleSize,
         fontWeight: FontWeight.w600,
+        color: color,
+      ),
+      titleMedium: TextStyle(
+        fontSize: bodyLargeSize,
+        height: bodyLargeLineHeight / bodyLargeSize,
+        fontWeight: FontWeight.w500,
+        color: color,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: bodyLargeSize,
+        height: bodyLargeLineHeight / bodyLargeSize,
+        fontWeight: FontWeight.w500,
         color: color,
       ),
       bodyMedium: TextStyle(
@@ -58,6 +80,13 @@ abstract final class AppTextStyles {
         height: bodySmallLineHeight / bodySmallSize,
         fontWeight: FontWeight.w400,
         color: muted,
+      ),
+      labelLarge: TextStyle(
+        fontSize: buttonSize,
+        height: buttonLineHeight / buttonSize,
+        fontWeight: FontWeight.w600,
+        letterSpacing: buttonSize * 0.01,
+        color: color,
       ),
       labelMedium: TextStyle(
         fontSize: labelSize,
@@ -75,7 +104,14 @@ abstract final class AppTextStyles {
     );
   }
 
-  static const TextStyle money = TextStyle(
-    fontFeatures: [FontFeature.tabularFigures()],
-  );
+  static TextStyle tabular(TextStyle style) {
+    return style.copyWith(fontFeatures: const [FontFeature.tabularFigures()]);
+  }
+
+  static TextStyle mono(TextStyle style) {
+    return style.copyWith(
+      fontFamily: 'monospace',
+      fontFeatures: const [FontFeature.tabularFigures()],
+    );
+  }
 }

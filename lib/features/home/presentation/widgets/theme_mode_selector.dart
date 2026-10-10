@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
+import 'package:gcc_app/core/widgets/app_neutral_button.dart';
+import 'package:gcc_app/core/widgets/app_primary_button.dart';
 import 'package:gcc_app/features/home/domain/entities/theme_preference.dart';
 import 'package:gcc_app/features/home/presentation/bloc/home_cubit.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
@@ -25,42 +27,47 @@ class ThemeModeSelector extends StatelessWidget {
         const SizedBox(height: AppSpacing.xs),
         LayoutBuilder(
           builder: (context, constraints) {
-            if (constraints.maxWidth < AppBreakpoints.medium) {
+            final stacked = constraints.maxWidth < AppBreakpoints.medium;
+            final buttons = [
+              for (final mode in AppThemeMode.values)
+                _modeButton(context, l10n, mode),
+            ];
+            if (stacked) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  for (final mode in AppThemeMode.values) ...[
-                    mode == themeMode
-                        ? FilledButton(
-                            onPressed: () => _select(context, mode),
-                            child: Text(_label(l10n, mode)),
-                          )
-                        : OutlinedButton(
-                            onPressed: () => _select(context, mode),
-                            child: Text(_label(l10n, mode)),
-                          ),
-                    if (mode != AppThemeMode.values.last)
-                      const SizedBox(height: AppSpacing.xs),
+                  for (var index = 0; index < buttons.length; index++) ...[
+                    if (index > 0) const SizedBox(height: AppSpacing.xs),
+                    buttons[index],
                   ],
                 ],
               );
             }
-            return SegmentedButton<AppThemeMode>(
-              segments: [
-                for (final mode in AppThemeMode.values)
-                  ButtonSegment<AppThemeMode>(
-                    value: mode,
-                    label: Text(_label(l10n, mode)),
-                  ),
+            return Row(
+              children: [
+                for (var index = 0; index < buttons.length; index++) ...[
+                  if (index > 0) const SizedBox(width: AppSpacing.xs),
+                  Expanded(child: buttons[index]),
+                ],
               ],
-              selected: {themeMode},
-              onSelectionChanged: (selection) =>
-                  _select(context, selection.first),
             );
           },
         ),
       ],
     );
+  }
+
+  Widget _modeButton(
+    BuildContext context,
+    AppLocalizations l10n,
+    AppThemeMode mode,
+  ) {
+    final label = _label(l10n, mode);
+    void onPressed() => _select(context, mode);
+    if (mode == themeMode) {
+      return AppPrimaryButton(label: label, onPressed: onPressed);
+    }
+    return AppNeutralButton(label: label, onPressed: onPressed);
   }
 
   void _select(BuildContext context, AppThemeMode mode) {
