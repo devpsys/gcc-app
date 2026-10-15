@@ -3,9 +3,9 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_primary_button.dart';
 import 'package:gcc_app/core/widgets/app_sheet.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_catalog.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_option.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_option_row.dart';
+import 'package:gcc_app/core/widgets/language_catalog.dart';
+import 'package:gcc_app/core/widgets/language_option.dart';
+import 'package:gcc_app/core/widgets/language_option_row.dart';
 
 class LanguagePickerSheet extends StatefulWidget {
   const LanguagePickerSheet({required this.selectedId, super.key});

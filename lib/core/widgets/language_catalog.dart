@@ -1,4 +1,4 @@
-import 'package:gcc_app/features/auth/presentation/widgets/language_option.dart';
+import 'package:gcc_app/core/widgets/language_option.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
 
 List<LanguageOption> gccLanguageOptions(AppLocalizations l10n) {

@@ -14,6 +14,13 @@ abstract final class AppElevation {
     ),
   ];
 
+  /// The switch thumb lift from the designs' `.switch-thumb`
+  /// (`0 1px 3px rgba(0,0,0,.25)`). Kept because it reads as a physical
+  /// affordance on a moving control, not as card decoration.
+  static const List<BoxShadow> thumb = [
+    BoxShadow(color: Color(0x40000000), offset: Offset(0, 1), blurRadius: 3),
+  ];
+
   static const List<BoxShadow> overlay = [
     BoxShadow(
       color: AppColors.shadow,

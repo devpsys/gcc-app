@@ -6,7 +6,7 @@ import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_primary_button.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_catalog.dart';
+import 'package:gcc_app/core/widgets/language_catalog.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:gcc_app/features/onboarding/presentation/onboarding_language.dart';

@@ -441,5 +441,1147 @@
   "onboardingGenericFailure": "Something went wrong. Try again.",
   "@onboardingGenericFailure": {
     "description": "Shown when a first-run sign-in request fails."
-  }
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Navigation label for appearance and environment settings."
+  },
+  "dashboardActionUnavailable": "This isn't available in the app yet.",
+  "@dashboardActionUnavailable": {
+    "description": "Shown when a dashboard action points at a feature that has not been built."
+  },
+  "dashboardLoadFailed": "The dashboard could not be loaded.",
+  "@dashboardLoadFailed": {
+    "description": "Shown when the whole dashboard fails to load."
+  },
+  "dashboardSectionFailed": "This section could not be loaded.",
+  "@dashboardSectionFailed": {
+    "description": "Shown inside a dashboard section that failed while the rest stayed visible."
+  },
+  "dashboardRetry": "Try again",
+  "@dashboardRetry": {
+    "description": "Retries a failed dashboard load."
+  },
+  "dashboardLanguageShort": "EN",
+  "@dashboardLanguageShort": {
+    "description": "Short label on the dashboard language control. English is the only available language."
+  },
+  "dashboardNoLocation": "Location not set",
+  "@dashboardNoLocation": {
+    "description": "Lessee app bar when no location has been loaded."
+  },
+  "dashboardNoMarket": "No market selected",
+  "@dashboardNoMarket": {
+    "description": "Vendor app bar when no market has been loaded."
+  },
+  "dashboardHome": "Home",
+  "@dashboardHome": {
+    "description": "Bottom navigation label for the dashboard."
+  },
+  "dashboardBrowse": "Browse",
+  "@dashboardBrowse": {
+    "description": "Lessee bottom navigation label for browsing equipment."
+  },
+  "dashboardBookings": "Bookings",
+  "@dashboardBookings": {
+    "description": "Lessee bottom navigation label for bookings."
+  },
+  "dashboardWallet": "Wallet",
+  "@dashboardWallet": {
+    "description": "Bottom navigation label for the wallet."
+  },
+  "dashboardProfile": "Profile",
+  "@dashboardProfile": {
+    "description": "Bottom navigation label for the profile."
+  },
+  "dashboardCatalog": "Catalog",
+  "@dashboardCatalog": {
+    "description": "Vendor bottom navigation label for the equipment catalog."
+  },
+  "dashboardRequests": "Requests",
+  "@dashboardRequests": {
+    "description": "Vendor bottom navigation label for booking requests."
+  },
+  "dashboardToday": "Today",
+  "@dashboardToday": {
+    "description": "Agent bottom navigation label for today's route."
+  },
+  "dashboardMap": "Map",
+  "@dashboardMap": {
+    "description": "Agent bottom navigation label for the route map."
+  },
+  "dashboardCapture": "Capture",
+  "@dashboardCapture": {
+    "description": "Agent centre action for starting a shop capture."
+  },
+  "dashboardQueue": "Queue",
+  "@dashboardQueue": {
+    "description": "Agent bottom navigation label for the sync queue."
+  },
+  "dashboardSearchHint": "Search equipment or materials",
+  "@dashboardSearchHint": {
+    "description": "Hint in the lessee dashboard search field."
+  },
+  "dashboardFilters": "Filters",
+  "@dashboardFilters": {
+    "description": "Opens search filters. The filter sheet is not available yet."
+  },
+  "dashboardActiveRental": "Active rental · {reference}",
+  "@dashboardActiveRental": {
+    "description": "Eyebrow on the lessee rental card while a booking is in use.",
+    "placeholders": {
+      "reference": {
+        "type": "String",
+        "example": "BK-8842"
+      }
+    }
+  },
+  "dashboardCompletedRental": "Completed · {reference}",
+  "@dashboardCompletedRental": {
+    "description": "Eyebrow on the lessee rental card after the deposit is released.",
+    "placeholders": {
+      "reference": {
+        "type": "String",
+        "example": "BK-8842"
+      }
+    }
+  },
+  "dashboardNoActiveBookings": "No active bookings",
+  "@dashboardNoActiveBookings": {
+    "description": "Title when the lessee has no rental in progress."
+  },
+  "dashboardNoActiveBookingsBody": "Rent equipment available around you, or check on a bulk order.",
+  "@dashboardNoActiveBookingsBody": {
+    "description": "Explanation under the empty active-rental card."
+  },
+  "dashboardNoActiveBookingsPlace": "Rent equipment available around {place}, or check on a bulk order.",
+  "@dashboardNoActiveBookingsPlace": {
+    "description": "Empty rental explanation when a place is known.",
+    "placeholders": {
+      "place": {
+        "type": "String",
+        "example": "Wuse II"
+      }
+    }
+  },
+  "dashboardLastRental": "Last rental: {detail}",
+  "@dashboardLastRental": {
+    "description": "Caption under the empty rental card.",
+    "placeholders": {
+      "detail": {
+        "type": "String",
+        "example": "3 months ago · 5kW PA System"
+      }
+    }
+  },
+  "dashboardBooked": "Booked",
+  "@dashboardBooked": {
+    "description": "First step on the rental progress bar."
+  },
+  "dashboardReturned": "Returned",
+  "@dashboardReturned": {
+    "description": "Last step on the rental progress bar."
+  },
+  "dashboardRefundableDeposit": "{amount} refundable deposit",
+  "@dashboardRefundableDeposit": {
+    "description": "Struck-through deposit line after the deposit is released.",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "₦50,000"
+      }
+    }
+  },
+  "dashboardLastRequest": "Last request answered {when}",
+  "@dashboardLastRequest": {
+    "description": "Caption under the empty requests card.",
+    "placeholders": {
+      "when": {
+        "type": "String",
+        "example": "2 hours ago"
+      }
+    }
+  },
+  "dashboardBrowseEquipment": "Browse equipment",
+  "@dashboardBrowseEquipment": {
+    "description": "Action on the empty rental card. Browsing is not available yet."
+  },
+  "dashboardReturnBy": "Return by {when}",
+  "@dashboardReturnBy": {
+    "description": "Deadline for returning an active rental.",
+    "placeholders": {
+      "when": {
+        "type": "String",
+        "example": "17 Oct, 16:40"
+      }
+    }
+  },
+  "dashboardDepositLabel": "Refundable deposit held",
+  "@dashboardDepositLabel": {
+    "description": "Label on the held refundable deposit."
+  },
+  "dashboardEscrow": "Escrow",
+  "@dashboardEscrow": {
+    "description": "Caption under the held deposit amount."
+  },
+  "dashboardReviewReturn": "Review return condition",
+  "@dashboardReviewReturn": {
+    "description": "Action on an active rental. The return flow is not available yet."
+  },
+  "dashboardMessageVendor": "Message vendor",
+  "@dashboardMessageVendor": {
+    "description": "Action on an active rental. Messaging is not available yet."
+  },
+  "dashboardDepositReleased": "Deposit released",
+  "@dashboardDepositReleased": {
+    "description": "Status after a refundable deposit has been returned."
+  },
+  "dashboardDepositReleasedBody": "{amount} is back in your wallet.",
+  "@dashboardDepositReleasedBody": {
+    "description": "Tells the lessee a released deposit is in the wallet.",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "₦50,000"
+      }
+    }
+  },
+  "dashboardViewWallet": "View wallet",
+  "@dashboardViewWallet": {
+    "description": "Action after a deposit is released. The wallet is not available yet."
+  },
+  "dashboardRateRental": "Rate this rental",
+  "@dashboardRateRental": {
+    "description": "Action after a rental is completed. Ratings are not available yet."
+  },
+  "dashboardBrowseByCategory": "Browse by category",
+  "@dashboardBrowseByCategory": {
+    "description": "Heading above the lessee category chips."
+  },
+  "dashboardCategoryGenerators": "Generators",
+  "@dashboardCategoryGenerators": {
+    "description": "Equipment category chip."
+  },
+  "dashboardCategorySound": "Sound & PA",
+  "@dashboardCategorySound": {
+    "description": "Equipment category chip."
+  },
+  "dashboardCategoryLighting": "Lighting",
+  "@dashboardCategoryLighting": {
+    "description": "Equipment category chip."
+  },
+  "dashboardCategoryPumps": "Pumps",
+  "@dashboardCategoryPumps": {
+    "description": "Equipment category chip."
+  },
+  "dashboardCategoryWelding": "Welding",
+  "@dashboardCategoryWelding": {
+    "description": "Equipment category chip."
+  },
+  "dashboardCategoryMaterials": "Materials",
+  "@dashboardCategoryMaterials": {
+    "description": "Equipment category chip."
+  },
+  "dashboardAvailableNearYou": "Available near you",
+  "@dashboardAvailableNearYou": {
+    "description": "Heading above nearby equipment."
+  },
+  "dashboardSeeAll": "See all",
+  "@dashboardSeeAll": {
+    "description": "Opens the full list for a dashboard section. Those lists are not available yet."
+  },
+  "dashboardAvailable": "Available",
+  "@dashboardAvailable": {
+    "description": "Status when a listing can be booked."
+  },
+  "dashboardPerDay": "/day",
+  "@dashboardPerDay": {
+    "description": "Unit shown after a daily rental price."
+  },
+  "dashboardNoResults": "Nothing is listed near you yet.",
+  "@dashboardNoResults": {
+    "description": "Shown when the nearby equipment list is empty."
+  },
+  "dashboardRecentOrders": "Recent orders",
+  "@dashboardRecentOrders": {
+    "description": "Heading above the lessee's recent bulk orders."
+  },
+  "dashboardNoOrders": "No recent orders.",
+  "@dashboardNoOrders": {
+    "description": "Shown when the lessee has no recent orders."
+  },
+  "dashboardRequestsWaiting": "{count} booking requests waiting",
+  "@dashboardRequestsWaiting": {
+    "description": "Vendor heading when booking requests need a response.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "dashboardRespondWithin": "Respond within",
+  "@dashboardRespondWithin": {
+    "description": "Label beside the request countdown."
+  },
+  "dashboardRequestExpiry": "Unanswered requests expire in 6 hours and go to the next vendor.",
+  "@dashboardRequestExpiry": {
+    "description": "Explains the vendor response window."
+  },
+  "dashboardRespondToRequests": "Respond to requests",
+  "@dashboardRespondToRequests": {
+    "description": "Primary action on waiting requests. The requests screen is not available yet."
+  },
+  "dashboardAllRequests": "All {count} requests",
+  "@dashboardAllRequests": {
+    "description": "Secondary action for the full request list.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "dashboardNoRequests": "No requests waiting",
+  "@dashboardNoRequests": {
+    "description": "Title when the vendor has no booking requests."
+  },
+  "dashboardNoRequestsBody": "New booking requests arrive by SMS and appear here.",
+  "@dashboardNoRequestsBody": {
+    "description": "Explanation under the empty requests card."
+  },
+  "dashboardYourEquipment": "Your equipment",
+  "@dashboardYourEquipment": {
+    "description": "Heading above the vendor fleet summary."
+  },
+  "dashboardManage": "Manage",
+  "@dashboardManage": {
+    "description": "Action for the equipment catalog. The catalog is not available yet."
+  },
+  "dashboardReadyForWork": "Ready for work",
+  "@dashboardReadyForWork": {
+    "description": "Fleet count for equipment that can be booked."
+  },
+  "dashboardRentedOut": "Rented out",
+  "@dashboardRentedOut": {
+    "description": "Fleet count for equipment that is currently rented."
+  },
+  "dashboardInMaintenance": "In maintenance",
+  "@dashboardInMaintenance": {
+    "description": "Fleet count for equipment that is being repaired."
+  },
+  "dashboardAssetsSummary": "{listed} assets listed · {pending} pending verification",
+  "@dashboardAssetsSummary": {
+    "description": "Summary under the fleet counts.",
+    "placeholders": {
+      "listed": {
+        "type": "int",
+        "example": "24"
+      },
+      "pending": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "dashboardFleetSegment": "{label}: {count}",
+  "@dashboardFleetSegment": {
+    "description": "Accessible name for one segment of the fleet bar.",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Ready for work"
+      },
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "dashboardNoFleet": "No equipment is listed yet.",
+  "@dashboardNoFleet": {
+    "description": "Shown when the vendor fleet summary is empty."
+  },
+  "dashboardEarnings": "Earnings",
+  "@dashboardEarnings": {
+    "description": "Heading above the vendor earnings figures."
+  },
+  "dashboardAvailableToWithdraw": "Available to withdraw",
+  "@dashboardAvailableToWithdraw": {
+    "description": "Spendable vendor balance. This figure is not held money."
+  },
+  "dashboardAwaitingCheck": "Awaiting condition check",
+  "@dashboardAwaitingCheck": {
+    "description": "Vendor earnings held until a condition check finishes."
+  },
+  "dashboardCautionDeposits": "Held as caution deposits",
+  "@dashboardCautionDeposits": {
+    "description": "Vendor earnings held as refundable caution deposits."
+  },
+  "dashboardWithdraw": "Withdraw to bank",
+  "@dashboardWithdraw": {
+    "description": "Primary earnings action. The wallet is not available yet."
+  },
+  "dashboardOpenWallet": "Open wallet",
+  "@dashboardOpenWallet": {
+    "description": "Secondary earnings action. The wallet is not available yet."
+  },
+  "dashboardNoEarnings": "No earnings to show yet.",
+  "@dashboardNoEarnings": {
+    "description": "Shown when the vendor earnings summary is empty."
+  },
+  "dashboardRecentBookings": "Recent bookings",
+  "@dashboardRecentBookings": {
+    "description": "Heading above the vendor's recent bookings."
+  },
+  "dashboardNoBookings": "No recent bookings.",
+  "@dashboardNoBookings": {
+    "description": "Shown when the vendor has no recent bookings."
+  },
+  "dashboardStatusInUse": "In use",
+  "@dashboardStatusInUse": {
+    "description": "Booking status while equipment is with the customer."
+  },
+  "dashboardStatusDue": "Check-in due",
+  "@dashboardStatusDue": {
+    "description": "Booking status when check-in is still due."
+  },
+  "dashboardStatusCompleted": "Completed",
+  "@dashboardStatusCompleted": {
+    "description": "Booking status after return."
+  },
+  "dashboardStatusDisputed": "Disputed",
+  "@dashboardStatusDisputed": {
+    "description": "Booking status while a dispute is open."
+  },
+  "dashboardDisputeTitle": "Dispute {reference} is open",
+  "@dashboardDisputeTitle": {
+    "description": "Title of the vendor dispute banner.",
+    "placeholders": {
+      "reference": {
+        "type": "String",
+        "example": "DSP-0092"
+      }
+    }
+  },
+  "dashboardDisputeMessage": "Dispute {dispute} is open on {booking}. {detail}",
+  "@dashboardDisputeMessage": {
+    "description": "Body of the vendor dispute banner.",
+    "placeholders": {
+      "dispute": {
+        "type": "String",
+        "example": "DSP-0092"
+      },
+      "booking": {
+        "type": "String",
+        "example": "BK-24817"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardViewDispute": "View dispute",
+  "@dashboardViewDispute": {
+    "description": "Action on the dispute banner. Dispute details are not available yet."
+  },
+  "dashboardAddToHome": "Add to home screen",
+  "@dashboardAddToHome": {
+    "description": "Agent prompt to install the app. Installation is not available yet."
+  },
+  "dashboardGoodMorning": "Good morning",
+  "@dashboardGoodMorning": {
+    "description": "Agent greeting when no name has been loaded."
+  },
+  "dashboardGoodMorningNamed": "Good morning, {name}",
+  "@dashboardGoodMorningNamed": {
+    "description": "Agent greeting that includes the loaded name.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Ibrahim"
+      }
+    }
+  },
+  "dashboardSyncChecking": "Checking saved work",
+  "@dashboardSyncChecking": {
+    "description": "Sync strip message while the agent dashboard is loading."
+  },
+  "dashboardSyncEmpty": "Nothing is waiting to sync.",
+  "@dashboardSyncEmpty": {
+    "description": "Sync strip message when there is no sync status to report."
+  },
+  "dashboardSyncOffline": "Offline",
+  "@dashboardSyncOffline": {
+    "description": "Sync strip message when the agent is offline."
+  },
+  "dashboardSyncSyncing": "Syncing",
+  "@dashboardSyncSyncing": {
+    "description": "Sync strip message while saved work is uploading."
+  },
+  "dashboardSyncFailed": "Sync failed",
+  "@dashboardSyncFailed": {
+    "description": "Sync strip message when saved work could not upload."
+  },
+  "dashboardSyncSynced": "Synced",
+  "@dashboardSyncSynced": {
+    "description": "Sync strip message when saved work has uploaded."
+  },
+  "dashboardOpenQueue": "Open queue",
+  "@dashboardOpenQueue": {
+    "description": "Action on the sync strip. The queue is not available yet."
+  },
+  "dashboardTodayAtAGlance": "Today at a glance",
+  "@dashboardTodayAtAGlance": {
+    "description": "Heading above the agent's daily progress."
+  },
+  "dashboardShopsAssigned": "Shops assigned",
+  "@dashboardShopsAssigned": {
+    "description": "Label for the number of shops on today's route."
+  },
+  "dashboardCapturedToday": "Captured today",
+  "@dashboardCapturedToday": {
+    "description": "Label for shops captured today."
+  },
+  "dashboardPendingBounty": "Pending bounty",
+  "@dashboardPendingBounty": {
+    "description": "Label for bounty that is not yet paid."
+  },
+  "dashboardProgressLabel": "{captured} of {target} shops captured today",
+  "@dashboardProgressLabel": {
+    "description": "Accessible name for the daily progress ring.",
+    "placeholders": {
+      "captured": {
+        "type": "int",
+        "example": "3"
+      },
+      "target": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "dashboardDailyTarget": "Daily target: {count}",
+  "@dashboardDailyTarget": {
+    "description": "Caption beside the agent's daily progress heading.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "dashboardNoProgress": "No shops are assigned today.",
+  "@dashboardNoProgress": {
+    "description": "Shown when the agent has no daily target."
+  },
+  "dashboardNextStop": "Next stop",
+  "@dashboardNextStop": {
+    "description": "Heading above the agent's next shop."
+  },
+  "dashboardAway": "{distance} away",
+  "@dashboardAway": {
+    "description": "Distance from the agent to the next shop.",
+    "placeholders": {
+      "distance": {
+        "type": "String",
+        "example": "120 m"
+      }
+    }
+  },
+  "dashboardStartCapture": "Start capture",
+  "@dashboardStartCapture": {
+    "description": "Primary action on the next shop. Capture is not available yet."
+  },
+  "dashboardGetDirections": "Get directions",
+  "@dashboardGetDirections": {
+    "description": "Secondary action on the next shop. Maps are not available yet."
+  },
+  "dashboardAllDone": "All assigned shops are done.",
+  "@dashboardAllDone": {
+    "description": "Shown when the agent has no remaining stop."
+  },
+  "dashboardSeeAllCount": "See all {count}",
+  "@dashboardSeeAllCount": {
+    "description": "Link above the assigned shop list.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "dashboardViewAll": "View all",
+  "@dashboardViewAll": {
+    "description": "Link above the recent submissions list."
+  },
+  "dashboardAssignedShops": "Assigned shops",
+  "@dashboardAssignedShops": {
+    "description": "Heading above the agent's route."
+  },
+  "dashboardNoShops": "No shops are on this route.",
+  "@dashboardNoShops": {
+    "description": "Shown when the assigned-shop list is empty."
+  },
+  "dashboardShopQueued": "Captured · queued",
+  "@dashboardShopQueued": {
+    "description": "Shop status when a capture is waiting to sync."
+  },
+  "dashboardShopSynced": "Captured · synced",
+  "@dashboardShopSynced": {
+    "description": "Shop status when a capture has synced."
+  },
+  "dashboardShopNotStarted": "Not started",
+  "@dashboardShopNotStarted": {
+    "description": "Shop status when capture has not started."
+  },
+  "dashboardRecentSubmissions": "Recent submissions",
+  "@dashboardRecentSubmissions": {
+    "description": "Heading above the agent's recent captures."
+  },
+  "dashboardNoSubmissions": "No submissions yet.",
+  "@dashboardNoSubmissions": {
+    "description": "Shown when the agent has no recent submissions."
+  },
+  "dashboardSubmissionQueued": "Queued",
+  "@dashboardSubmissionQueued": {
+    "description": "Submission status while a capture waits to upload."
+  },
+  "dashboardSubmissionSynced": "Synced",
+  "@dashboardSubmissionSynced": {
+    "description": "Submission status after a capture uploads."
+  },
+  "dashboardSubmissionApproved": "Approved",
+  "@dashboardSubmissionApprovedAmount": {
+    "description": "Approved submission chip that includes the bounty.",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "₦5,000"
+      }
+    }
+  },
+  "dashboardSubmissionApprovedAmount": "Approved · {amount}",
+  "@dashboardSubmissionApproved": {
+    "description": "Submission status after a capture is approved."
+  },
+  "dashboardBountySnapshot": "This week",
+  "@dashboardBountySnapshot": {
+    "description": "Heading above the agent bounty summary."
+  },
+  "dashboardPayoutPending": "Payout pending",
+  "@dashboardPayoutPending": {
+    "description": "Label for bounty that is waiting for the next payout."
+  },
+  "dashboardNoBounty": "No bounty to show yet.",
+  "@dashboardNoBounty": {
+    "description": "Shown when the agent bounty summary is empty."
+  },
+  "captureShopTitle": "Capture shop",
+  "@captureShopTitle": {
+    "description": "Title of the first capture step."
+  },
+  "captureLocationTitle": "Capture location",
+  "@captureLocationTitle": {
+    "description": "Title of the second capture step."
+  },
+  "captureAutosaved": "Autosaved {time}",
+  "@captureAutosaved": {
+    "description": "Shown after the capture draft changes on this device.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "10:41"
+      }
+    }
+  },
+  "captureActionNeeded": "ACTION NEEDED",
+  "@captureActionNeeded": {
+    "description": "Autosave status when the shop form still has errors."
+  },
+  "captureAutosavedIncomplete": "{count, plural, =1{Autosaved {time} · 1 field incomplete} other{Autosaved {time} · {count} fields incomplete}}",
+  "@captureAutosavedIncomplete": {
+    "description": "Autosave line when the shop form was submitted incomplete.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "10:41"
+      },
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "captureIncomplete": "Incomplete",
+  "@captureIncomplete": {
+    "description": "Shop details status while required fields are still missing."
+  },
+  "captureRequired": "Required",
+  "@captureRequired": {
+    "description": "Hint beside shop type before a type is chosen."
+  },
+  "captureOfflineReady": "OFFLINE READY",
+  "@captureOfflineReady": {
+    "description": "Status on the capture autosave strip."
+  },
+  "captureWizardSummary": "Step {current} of {total}, {label}",
+  "@captureWizardSummary": {
+    "description": "Accessible name for the capture progress bar.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      },
+      "label": {
+        "type": "String",
+        "example": "Shop"
+      }
+    }
+  },
+  "captureStepEyebrow": "Step {current} of {total} · {detail}",
+  "@captureStepEyebrow": {
+    "description": "Eyebrow on the capture shop step card.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      },
+      "detail": {
+        "type": "String",
+        "example": "Shop details"
+      }
+    }
+  },
+  "captureStepStart": "START",
+  "@captureStepStart": {
+    "description": "Step chip before the shop form has been filled."
+  },
+  "captureStepAttention": "ATTENTION",
+  "@captureStepAttention": {
+    "description": "Step chip when the shop form still has errors."
+  },
+  "captureStepActive": "{current} / {total} ACTIVE",
+  "@captureStepActive": {
+    "description": "Position chip on the capture progress bar.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "captureStepShop": "Shop",
+  "@captureStepShop": {
+    "description": "First capture step."
+  },
+  "captureStepLocation": "Location",
+  "@captureStepLocation": {
+    "description": "Second capture step."
+  },
+  "captureStepAssets": "Assets",
+  "@captureStepAssets": {
+    "description": "Third capture step."
+  },
+  "captureStepMedia": "Media",
+  "@captureStepMedia": {
+    "description": "Fourth capture step."
+  },
+  "captureShopDetails": "Shop details",
+  "@captureShopDetails": {
+    "description": "Heading for the shop identity section."
+  },
+  "captureRequiredMark": "* Required",
+  "@captureRequiredMark": {
+    "description": "Marks the shop identity section as required."
+  },
+  "captureShopName": "Shop name *",
+  "@captureShopName": {
+    "description": "Label for the shop name field."
+  },
+  "captureShopNameRequired": "Shop name is required",
+  "@captureShopNameRequired": {
+    "description": "Error when the shop name is blank."
+  },
+  "captureShopNameHint": "e.g. Bola Hardware",
+  "@captureShopNameHint": {
+    "description": "Placeholder shown in an empty shop name field."
+  },
+  "captureShopType": "Shop type *",
+  "@captureShopType": {
+    "description": "Label for the shop type selector."
+  },
+  "captureShopTypeEquipment": "Equipment yard",
+  "@captureShopTypeEquipment": {
+    "description": "Shop type for an equipment yard."
+  },
+  "captureShopTypeBulk": "Bulk supplier",
+  "@captureShopTypeBulk": {
+    "description": "Shop type for a bulk supplier."
+  },
+  "captureShopTypeBoth": "Both",
+  "@captureShopTypeBoth": {
+    "description": "Shop type for a yard that is also a bulk supplier."
+  },
+  "captureShopTypeRequired": "Choose a shop type",
+  "@captureShopTypeRequired": {
+    "description": "Error when no shop type is selected."
+  },
+  "captureOwnerName": "Owner name *",
+  "@captureOwnerName": {
+    "description": "Label for the shop owner field."
+  },
+  "captureOwnerNameRequired": "Enter the owner's full name",
+  "@captureOwnerNameRequired": {
+    "description": "Error when the owner name is blank."
+  },
+  "captureOwnerNameHint": "e.g. Alhaji Musa Ibrahim",
+  "@captureOwnerNameHint": {
+    "description": "Placeholder shown in an empty owner name field."
+  },
+  "captureContactHeading": "Contact & Messaging",
+  "@captureContactHeading": {
+    "description": "Heading for the shop phone section."
+  },
+  "captureNigeriaPrefix": "NIGERIA (+234)",
+  "@captureNigeriaPrefix": {
+    "description": "Country note beside the shop contact heading."
+  },
+  "capturePhonePrefix": "+234",
+  "@capturePhonePrefix": {
+    "description": "Country code shown beside a shop phone number."
+  },
+  "capturePhoneNumber": "Phone number *",
+  "@capturePhoneNumber": {
+    "description": "Label for the shop phone field."
+  },
+  "capturePhoneRequired": "Enter a phone number",
+  "@capturePhoneRequired": {
+    "description": "Error when the shop phone is incomplete."
+  },
+  "captureWhatsApp": "WhatsApp",
+  "@captureWhatsApp": {
+    "description": "Label for the shop WhatsApp field."
+  },
+  "captureSameAsPhone": "Same as phone",
+  "@captureSameAsPhone": {
+    "description": "Switch that copies the shop phone into WhatsApp."
+  },
+  "captureUsingPhoneAbove": "Using phone above",
+  "@captureUsingPhoneAbove": {
+    "description": "Note inside the WhatsApp field when it copies the phone."
+  },
+  "captureUsingPhoneAboveBody": "Using the phone number above",
+  "@captureUsingPhoneAboveBody": {
+    "description": "Caption under the WhatsApp field when it copies the phone."
+  },
+  "captureWhatTheySell": "What they sell",
+  "@captureWhatTheySell": {
+    "description": "Heading for the shop category chips."
+  },
+  "captureCategoriesHint": "Select all that apply. This decides where the shop appears.",
+  "@captureCategoriesHint": {
+    "description": "Help under the shop category heading."
+  },
+  "captureCategoriesSelected": "{count} SELECTED",
+  "@captureCategoriesSelected": {
+    "description": "Count of selected shop categories.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "captureCategoryRequired": "Select at least one category",
+  "@captureCategoryRequired": {
+    "description": "Error when no shop category is selected."
+  },
+  "captureCategoryGenerators": "Generators",
+  "@captureCategoryGenerators": {
+    "description": "Shop category."
+  },
+  "captureCategoryWelding": "Welding",
+  "@captureCategoryWelding": {
+    "description": "Shop category."
+  },
+  "captureCategoryWaterPumps": "Water pumps",
+  "@captureCategoryWaterPumps": {
+    "description": "Shop category."
+  },
+  "captureCategoryBuilding": "Building materials",
+  "@captureCategoryBuilding": {
+    "description": "Shop category."
+  },
+  "captureCategoryElectrical": "Electrical",
+  "@captureCategoryElectrical": {
+    "description": "Shop category."
+  },
+  "captureCategoryCatering": "Catering",
+  "@captureCategoryCatering": {
+    "description": "Shop category."
+  },
+  "captureCategorySound": "Sound & PA",
+  "@captureCategorySound": {
+    "description": "Shop category."
+  },
+  "captureCategoryParts": "Generators (parts)",
+  "@captureCategoryParts": {
+    "description": "Shop category."
+  },
+  "captureCategoryBeverages": "Beverages",
+  "@captureCategoryBeverages": {
+    "description": "Shop category."
+  },
+  "captureCategoryLighting": "Lighting",
+  "@captureCategoryLighting": {
+    "description": "Shop category."
+  },
+  "captureCategoryCompression": "Compression",
+  "@captureCategoryCompression": {
+    "description": "Shop category."
+  },
+  "captureCategoryFertilizer": "Fertilizer",
+  "@captureCategoryFertilizer": {
+    "description": "Shop category."
+  },
+  "captureSaveDraft": "Save draft",
+  "@captureSaveDraft": {
+    "description": "Secondary action on the capture wizard bar."
+  },
+  "captureContinue": "Continue",
+  "@captureContinue": {
+    "description": "Primary action on the first capture step."
+  },
+  "captureContinueNeedsIdentity": "Fill in the shop name and owner to continue",
+  "@captureContinueNeedsIdentity": {
+    "description": "Shown under the wizard bar until the shop name and owner are filled."
+  },
+  "captureValidationBanner": "{count} fields need attention",
+  "@captureValidationBanner": {
+    "description": "Banner shown when the shop step is submitted incomplete.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "captureLandmark": "Landmark",
+  "@captureLandmark": {
+    "description": "Label for the shop landmark field."
+  },
+  "captureLandmarkHint": "e.g. beside Bola Hardware, near the main gate",
+  "@captureLandmarkHint": {
+    "description": "Placeholder for the shop landmark field."
+  },
+  "captureSpatialTagging": "Spatial tagging",
+  "@captureSpatialTagging": {
+    "description": "Detail in the location step eyebrow."
+  },
+  "captureHierarchyTitle": "Verified spatial hierarchy",
+  "@captureHierarchyTitle": {
+    "description": "Heading on the market, zone, and line path."
+  },
+  "captureSelectorsHeading": "Hierarchical selectors",
+  "@captureSelectorsHeading": {
+    "description": "Heading above the market, zone, and line selectors."
+  },
+  "captureHierarchyAssigned": "ALL ASSIGNED",
+  "@captureHierarchyAssigned": {
+    "description": "Shown when market, zone, and line are all chosen."
+  },
+  "captureHierarchyPending": "NOT ASSIGNED",
+  "@captureHierarchyPending": {
+    "description": "Shown until market, zone, and line are all chosen."
+  },
+  "captureNotSet": "Not set",
+  "@captureNotSet": {
+    "description": "Path value before a market, zone, or line is chosen."
+  },
+  "captureMarket": "Market",
+  "@captureMarket": {
+    "description": "Label for the market selector."
+  },
+  "captureZone": "Zone",
+  "@captureZone": {
+    "description": "Label for the zone selector."
+  },
+  "captureLine": "Line",
+  "@captureLine": {
+    "description": "Label for the line selector."
+  },
+  "captureLineCurrent": "Line (current)",
+  "@captureLineCurrent": {
+    "description": "Path label while the line is the active level."
+  },
+  "captureChooseMarket": "Choose a market",
+  "@captureChooseMarket": {
+    "description": "Empty market selector."
+  },
+  "captureChooseZone": "Choose a zone",
+  "@captureChooseZone": {
+    "description": "Empty zone selector."
+  },
+  "captureChooseLine": "Choose a line",
+  "@captureChooseLine": {
+    "description": "Empty line selector."
+  },
+  "captureHierarchyHint": "Zones and lines come from the market map. If a line isn't listed, describe it in the landmark box.",
+  "@captureHierarchyHint": {
+    "description": "Help under the market, zone, and line selectors."
+  },
+  "captureClusterChip": "{name} cluster",
+  "@captureClusterChip": {
+    "description": "Chip naming the market cluster on the location path.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Kugbo"
+      }
+    }
+  },
+  "captureNoSignalBanner": "We can't pin this shop. You can still capture it — an admin will verify the location from your landmark description.",
+  "@captureNoSignalBanner": {
+    "description": "Banner shown when the location step has no GPS fix."
+  },
+  "captureNoSignalTitle": "No location signal",
+  "@captureNoSignalTitle": {
+    "description": "Title of the GPS status row when there is no fix."
+  },
+  "captureNoSignalBody": "Your device can't see a GPS fix",
+  "@captureNoSignalBody": {
+    "description": "Caption under the no-signal GPS title."
+  },
+  "captureMapDisabledTitle": "Map pin disabled",
+  "@captureMapDisabledTitle": {
+    "description": "Title of the map preview when GPS is unavailable."
+  },
+  "captureMapDisabledBody": "GPS satellite signal unavailable indoors or under zinc roofs",
+  "@captureMapDisabledBody": {
+    "description": "Caption under the disabled map pin."
+  },
+  "captureEnterCoordinates": "Enter coordinates manually",
+  "@captureEnterCoordinates": {
+    "description": "Link under the map preview. Manual entry is not built yet."
+  },
+  "capturePinNote": "The pin is a backup. The landmark description is how vendors find each other.",
+  "@capturePinNote": {
+    "description": "Line under the map preview."
+  },
+  "captureLandmarkContext": "Landmarks are informal in the markets. Use what vendors and agents call the place — the map pin helps us verify the shop, but it isn't how people navigate.",
+  "@captureLandmarkContext": {
+    "description": "Note explaining why the landmark description matters."
+  },
+  "capturePickerSearch": "Search",
+  "@capturePickerSearch": {
+    "description": "Placeholder in the market, zone, or line search field."
+  },
+  "capturePickerUnlisted": "Unlisted?",
+  "@capturePickerUnlisted": {
+    "description": "Prompt above a custom market, zone, or line name."
+  },
+  "capturePickerCustom": "Use \"{query}\" as custom text",
+  "@capturePickerCustom": {
+    "description": "Action that saves a typed market, zone, or line.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "Line 4"
+      }
+    }
+  },
+  "capturePickerEmpty": "Nothing is assigned for this capture yet. Type a name and select it.",
+  "@capturePickerEmpty": {
+    "description": "Empty state in the market, zone, or line picker."
+  },
+  "capturePickerDone": "Done",
+  "@capturePickerDone": {
+    "description": "Closes the market, zone, or line picker."
+  },
+  "capturePickerSelect": "Select {value}",
+  "@capturePickerSelect": {
+    "description": "Confirms the typed market, zone, or line.",
+    "placeholders": {
+      "value": {
+        "type": "String",
+        "example": "Line 4"
+      }
+    }
+  },
+  "captureLandmarkRequired": "Add a landmark to continue",
+  "@captureLandmarkRequired": {
+    "description": "Shown under the location step until a landmark is entered."
+  },
+  "captureContinueWithoutPin": "Submitting without a pin — an admin will verify this location",
+  "captureAssetsTitle": "Capture assets",
+  "captureAssetCatalogHeading": "Equipment Catalog",
+  "captureAssetSectionA": "Section A · Equipment type",
+  "captureAssetSectionB": "Section B · Details",
+  "captureAssetSectionC": "Section C · Availability",
+  "captureAssetSectionCEyebrow": "Routes this asset to a catalog mode",
+  "captureAssetCategoryLabel": "Category *",
+  "captureAssetMakeLabel": "Make",
+  "captureAssetCapacityLabel": "Capacity / size *",
+  "captureAssetModelLabel": "Model",
+  "captureAssetYearLabel": "Year",
+  "captureAssetSerialLabel": "Serial number",
+  "captureAssetScan": "Scan",
+  "captureAssetChooseCategory": "Choose a category",
+  "captureAssetChooseMake": "Choose a make",
+  "captureAssetCategoryRequired": "Choose an equipment category",
+  "captureAssetCapacityRequired": "Enter the capacity or size",
+  "captureAssetCategoryMissing": "Add a category",
+  "captureAssetCapacityMissing": "Add the capacity or size",
+  "captureAssetCapacityHint": "e.g. 100 kVA",
+  "captureAssetModelHint": "e.g. MG-100",
+  "captureAssetYearHint": "e.g. 2021",
+  "captureAssetSerialHint": "e.g. MG100-2291",
+  "captureAssetQuantityLabel": "Quantity",
+  "captureAssetConditionLabel": "Condition grade *",
+  "captureAssetConditionNew": "New",
+  "captureAssetConditionGood": "Good",
+  "captureAssetConditionFair": "Fair",
+  "captureAssetConditionService": "Needs svc",
+  "captureAssetConditionNewHelp": "New — pristine condition, never deployed on-site.",
+  "captureAssetConditionGoodHelp": "Good — works as intended, normal wear.",
+  "captureAssetConditionFairHelp": "Fair — works, but shows visible wear.",
+  "captureAssetConditionServiceHelp": "Needs service — has faults the vendor should fix.",
+  "captureAssetAvailabilityRental": "Rental only",
+  "captureAssetAvailabilityBulk": "Bulk only",
+  "captureAssetAvailabilityBoth": "Both",
+  "captureAssetRentalHelperTitle": "Rental catalog flow",
+  "captureAssetRentalHelperBody": "Rental assets appear in the rentals catalog. They need a daily rate, a refundable caution deposit and micro-insurance — the vendor sets these after verification.",
+  "captureAssetBulkHelperTitle": "Bulk catalog flow",
+  "captureAssetBulkHelperBody": "Bulk assets appear in the wholesale catalog, where buyers request quantities rather than book dates. No daily rate or caution deposit is needed.",
+  "captureAssetBothHelperTitle": "Both catalogs",
+  "captureAssetBothHelperBody": "This asset is listed in the rentals catalog and the wholesale catalog, so it can be booked or bought.",
+  "captureAssetChangeLater": "You can change this later from the app.",
+  "captureAssetAddAnother": "+ Add another asset",
+  "captureAssetAddFirst": "+ Add first asset",
+  "captureAssetEmptyTitle": "No assets added yet",
+  "captureAssetEmptyBody": "Add the shop's main equipment, or submit the shop on its own.",
+  "captureAssetRemove": "Remove",
+  "captureAssetInProgress": "{reference} (in progress)",
+  "captureAssetQuantityValue": "Quantity {value}",
+  "captureAssetDecrease": "Decrease quantity",
+  "captureAssetIncrease": "Increase quantity",
+  "captureAssetReference": "AST-{id}",
+  "captureAssetSubmitWithoutAssets": "Continue without assets",
+  "captureAssetPrimaryLabel": "Continue to media",
+  "captureAssetConditionRequired": "Choose a condition grade",
+  "captureAssetCountLabel": "{count, plural, =1{1 asset captured.} other{{count} assets captured.}}",
+  "captureAssetBountyAmount": "The bounty is ₦5,000 per shop, not per asset."
 }

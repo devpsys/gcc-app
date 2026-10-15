@@ -28,6 +28,7 @@ abstract final class AppTextStyles {
   static const double eyebrowSize = 11;
   static const double eyebrowLineHeight = 14;
   static const double eyebrowLetterSpacing = 0.88;
+  static const double wideTracking = 0.025;
 
   static TextTheme textTheme(ColorScheme scheme) {
     final color = scheme.onSurface;

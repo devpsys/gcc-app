@@ -13,8 +13,8 @@ import 'package:gcc_app/features/auth/presentation/widgets/auth_danger_notice.da
 import 'package:gcc_app/features/auth/presentation/widgets/auth_preference_bar.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/auth_screen_scaffold.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/auth_session_footer.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_catalog.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_picker_sheet.dart';
+import 'package:gcc_app/core/widgets/language_catalog.dart';
+import 'package:gcc_app/core/widgets/language_picker_sheet.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/scanner_action_row.dart';
 import 'package:go_router/go_router.dart';
 

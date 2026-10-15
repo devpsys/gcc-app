@@ -5,6 +5,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_state.dart';
+import 'package:gcc_app/features/onboarding/presentation/onboarding_role.dart';
 import 'package:gcc_app/features/onboarding/presentation/widgets/first_run_scaffold.dart';
 import 'package:gcc_app/features/onboarding/presentation/widgets/onboarding_account_note.dart';
 import 'package:gcc_app/features/onboarding/presentation/widgets/onboarding_code_field.dart';
@@ -22,7 +23,8 @@ class OnboardingSignInPage extends StatelessWidget {
       listenWhen: (previous, current) =>
           current is OnboardingCompleted && previous is! OnboardingCompleted,
       listener: (context, state) {
-        GoRouter.maybeOf(context)?.go(RoutePaths.home);
+        final role = state.role == OnboardingRole.list ? 'vendor' : 'lessee';
+        GoRouter.maybeOf(context)?.go('${RoutePaths.home}?role=$role');
       },
       child: BlocBuilder<OnboardingCubit, OnboardingState>(
         builder: (context, state) {

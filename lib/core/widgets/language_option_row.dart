@@ -3,7 +3,7 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_option.dart';
+import 'package:gcc_app/core/widgets/language_option.dart';
 
 class LanguageOptionRow extends StatelessWidget {
   const LanguageOptionRow({

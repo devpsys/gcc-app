@@ -19,13 +19,19 @@ class HomePage extends StatelessWidget {
     return AppShell(
       title: l10n.appTitle,
       menuLabel: l10n.openNavigationMenu,
-      selectedLocation: RoutePaths.home,
+      selectedLocation: RoutePaths.settings,
       destinations: [
         ShellDestination(
           label: l10n.homeTitle,
           icon: Icons.home_outlined,
           selectedIcon: Icons.home,
           location: RoutePaths.home,
+        ),
+        ShellDestination(
+          label: l10n.settingsTitle,
+          icon: Icons.settings_outlined,
+          selectedIcon: Icons.settings,
+          location: RoutePaths.settings,
         ),
       ],
       child: BlocBuilder<HomeCubit, HomeState>(

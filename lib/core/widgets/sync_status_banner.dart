@@ -3,6 +3,7 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
+import 'package:gcc_app/core/theme/app_text_styles.dart';
 
 enum SyncBannerKind { offline, syncing, failed, synced }
 
@@ -14,6 +15,7 @@ class SyncStatusBanner extends StatelessWidget {
     this.progress,
     this.actionLabel,
     this.onAction,
+    this.inline = false,
     super.key,
   });
 
@@ -23,6 +25,7 @@ class SyncStatusBanner extends StatelessWidget {
   final double? progress;
   final String? actionLabel;
   final VoidCallback? onAction;
+  final bool inline;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +51,60 @@ class SyncStatusBanner extends StatelessWidget {
     final detailText = detail;
     final action = actionLabel;
     final value = progress;
+    if (inline) {
+      return DecoratedBox(
+        decoration: BoxDecoration(
+          color: treatment.$2,
+          border: Border(bottom: BorderSide(color: treatment.$1)),
+        ),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: AppDimensions.minTouchTarget,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+            child: Row(
+              children: [
+                Icon(
+                  treatment.$3,
+                  size: AppDimensions.iconSm,
+                  color: treatment.$1,
+                ),
+                const SizedBox(width: AppSpacing.xs),
+                Expanded(
+                  child: Text(
+                    message,
+                    style: Theme.of(context).textTheme.bodySmall
+                        ?.copyWith(fontWeight: FontWeight.w500),
+                  ),
+                ),
+                if (detailText != null) ...[
+                  const SizedBox(width: AppSpacing.xs),
+                  Flexible(
+                    child: Text(
+                      detailText,
+                      textAlign: TextAlign.end,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.mono(
+                        Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+                Icon(
+                  Icons.chevron_right,
+                  size: AppDimensions.iconSm,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
 
     return DecoratedBox(
       decoration: BoxDecoration(

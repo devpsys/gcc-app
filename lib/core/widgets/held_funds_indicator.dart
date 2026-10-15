@@ -10,16 +10,60 @@ class HeldFundsIndicator extends StatelessWidget {
     required this.label,
     required this.amount,
     this.caption,
+    this.compact = false,
     super.key,
   });
 
   final String label;
   final String amount;
   final String? caption;
+  final bool compact;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.semanticColors;
+    if (compact) {
+      return Semantics(
+        label: '$label $amount',
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: colors.heldFundsContainer,
+            borderRadius: BorderRadius.circular(AppRadii.card),
+            border: Border.all(color: colors.heldFunds),
+          ),
+          child: CustomPaint(
+            painter: _EscrowHatchPainter(colors.heldFunds),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.sm,
+                vertical: AppSpacing.xs,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.lock,
+                    size: AppDimensions.iconSm,
+                    color: colors.heldFunds,
+                  ),
+                  const SizedBox(width: AppSpacing.xxs),
+                  Flexible(
+                    child: Text(
+                      amount,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.tabular(
+                        Theme.of(context).textTheme.labelLarge!
+                            .copyWith(color: colors.heldFunds),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
     final captionText = caption;
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -53,11 +97,14 @@ class HeldFundsIndicator extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: AppSpacing.xs),
-              Text(
-                amount,
-                style: AppTextStyles.tabular(
-                  Theme.of(context).textTheme.labelLarge!
-                      .copyWith(color: colors.heldFunds),
+              Flexible(
+                child: Text(
+                  amount,
+                  textAlign: TextAlign.end,
+                  style: AppTextStyles.tabular(
+                    Theme.of(context).textTheme.labelLarge!
+                        .copyWith(color: colors.heldFunds),
+                  ),
                 ),
               ),
             ],

@@ -1,4 +1,7 @@
 abstract final class AppSpacing {
+  /// 6 px. The design sources use Tailwind's `1.5` step for tight gaps,
+  /// chip gutters and label offsets, which sits between [xxs] and [xs].
+  static const double tight = 6;
   static const double xxs = 4;
   static const double xs = 8;
   static const double sm = 12;

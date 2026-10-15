@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
-import 'package:gcc_app/features/auth/presentation/widgets/language_option.dart';
+import 'package:gcc_app/core/widgets/language_option.dart';
 import 'package:gcc_app/features/onboarding/presentation/widgets/onboarding_selection_mark.dart';
 
 class OnboardingLanguageRow extends StatelessWidget {

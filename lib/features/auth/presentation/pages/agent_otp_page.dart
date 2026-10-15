@@ -25,7 +25,7 @@ class AgentOtpPage extends StatelessWidget {
       listenWhen: (previous, current) =>
           current is AgentAuthVerified && previous is! AgentAuthVerified,
       listener: (context, state) {
-        GoRouter.maybeOf(context)?.go(RoutePaths.home);
+        GoRouter.maybeOf(context)?.go(RoutePaths.agentToday);
       },
       child: BlocBuilder<AgentAuthCubit, AgentAuthState>(
         builder: (context, state) {

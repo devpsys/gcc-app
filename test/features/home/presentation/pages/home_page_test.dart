@@ -27,7 +27,8 @@ void main() {
 
     expect(find.text('Ready for the next feature'), findsOneWidget);
     expect(find.text('No API base URL is configured.'), findsOneWidget);
-    expect(find.byType(NavigationBar), findsNothing);
+    expect(find.byType(NavigationBar), findsOneWidget);
+    expect(find.text('Settings'), findsOneWidget);
 
     await tester.tap(find.text('Light'));
     await tester.pumpAndSettle();

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
+import 'package:gcc_app/core/widgets/app_bottom_navigation_bar.dart';
+import 'package:gcc_app/core/widgets/shell_center_action.dart';
 import 'package:gcc_app/core/widgets/shell_destination.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,6 +14,10 @@ class AppShell extends StatelessWidget {
     required this.destinations,
     required this.selectedLocation,
     required this.child,
+    this.actions,
+    this.leading,
+    this.showAppBar = true,
+    this.centerAction,
     super.key,
   });
 
@@ -21,6 +26,10 @@ class AppShell extends StatelessWidget {
   final List<ShellDestination> destinations;
   final String selectedLocation;
   final Widget child;
+  final List<Widget>? actions;
+  final Widget? leading;
+  final bool showAppBar;
+  final ShellCenterAction? centerAction;
 
   @override
   Widget build(BuildContext context) {
@@ -40,46 +49,48 @@ class AppShell extends StatelessWidget {
 
   Widget _compact(BuildContext context, int selectedIndex) {
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false, title: Text(title)),
+      appBar: _appBar(),
       body: child,
       bottomNavigationBar: destinations.length < 2
           ? null
-          : DecoratedBox(
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(color: context.semanticColors.border),
-                ),
-              ),
-              child: NavigationBar(
-                selectedIndex: selectedIndex,
-                onDestinationSelected: (index) => _go(context, index),
-                destinations: [
-                  for (final destination in destinations)
-                    NavigationDestination(
-                      icon: Icon(destination.icon),
-                      selectedIcon: Icon(destination.selectedIcon),
-                      label: destination.label,
-                    ),
-                ],
-              ),
+          : AppBottomNavigationBar(
+              destinations: destinations,
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (index) => _go(context, index),
+              centerAction: centerAction,
             ),
+    );
+  }
+
+  PreferredSizeWidget? _appBar() {
+    if (!showAppBar) {
+      return null;
+    }
+    return AppBar(
+      automaticallyImplyLeading: leading == null,
+      leading: leading,
+      title: Text(title),
+      actions: actions,
     );
   }
 
   Widget _medium(BuildContext context, int selectedIndex) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              tooltip: menuLabel,
-              icon: const Icon(Icons.menu),
-              onPressed: () => Scaffold.of(context).openDrawer(),
-            );
-          },
-        ),
-      ),
+      appBar: showAppBar
+          ? AppBar(
+              title: Text(title),
+              actions: actions,
+              leading: Builder(
+                builder: (context) {
+                  return IconButton(
+                    tooltip: menuLabel,
+                    icon: const Icon(Icons.menu),
+                    onPressed: () => Scaffold.of(context).openDrawer(),
+                  );
+                },
+              ),
+            )
+          : null,
       drawer: Drawer(
         width: AppDimensions.navigationRailWidth,
         child: SafeArea(
@@ -94,6 +105,7 @@ class AppShell extends StatelessWidget {
               ),
               for (var index = 0; index < destinations.length; index++)
                 ListTile(
+                  enabled: destinations[index].available,
                   selected: index == selectedIndex,
                   leading: Icon(
                     index == selectedIndex
@@ -101,13 +113,20 @@ class AppShell extends StatelessWidget {
                         : destinations[index].icon,
                   ),
                   title: Text(destinations[index].label),
-                  onTap: () {
-                    final navigator = Navigator.of(context);
-                    if (navigator.canPop()) {
-                      navigator.pop();
-                    }
-                    _go(context, index);
-                  },
+                  subtitle:
+                      destinations[index].available ||
+                          destinations[index].unavailableReason == null
+                      ? null
+                      : Text(destinations[index].unavailableReason!),
+                  onTap: destinations[index].available
+                      ? () {
+                          final navigator = Navigator.of(context);
+                          if (navigator.canPop()) {
+                            navigator.pop();
+                          }
+                          _go(context, index);
+                        }
+                      : null,
                 ),
             ],
           ),
@@ -144,6 +163,7 @@ class AppShell extends StatelessWidget {
                   icon: Icon(destination.icon),
                   selectedIcon: Icon(destination.selectedIcon),
                   label: Text(destination.label),
+                  disabled: !destination.available,
                 ),
             ],
           ),
@@ -151,7 +171,7 @@ class AppShell extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                AppBar(automaticallyImplyLeading: false, title: Text(title)),
+                _appBar() ?? const SizedBox.shrink(),
                 Expanded(child: child),
               ],
             ),
@@ -169,10 +189,10 @@ class AppShell extends StatelessWidget {
   }
 
   void _go(BuildContext context, int index) {
-    final location = destinations[index].location;
-    if (location == selectedLocation) {
+    final destination = destinations[index];
+    if (!destination.available || destination.location == selectedLocation) {
       return;
     }
-    context.go(location);
+    context.go(destination.location);
   }
 }
