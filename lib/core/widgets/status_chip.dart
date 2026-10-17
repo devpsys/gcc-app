@@ -11,12 +11,16 @@ class StatusChip extends StatelessWidget {
     required this.label,
     required this.tone,
     this.icon,
+    this.shrinkWrap = false,
     super.key,
   });
 
   final String label;
   final StatusTone tone;
   final IconData? icon;
+
+  /// Sizes the chip to its label.
+  final bool shrinkWrap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,50 +35,46 @@ class StatusChip extends StatelessWidget {
       StatusTone.muted => (scheme.onSurface.withValues(alpha: 0.6), null),
     };
     final glyph = tone == StatusTone.held ? Icons.lock : icon;
-
-    return Align(
-      alignment: AlignmentDirectional.centerStart,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: treatment.$2,
-          borderRadius: BorderRadius.circular(AppRadii.input),
-          border: Border.all(
-            color: tone == StatusTone.muted
-                ? scheme.onSurfaceVariant
-                : treatment.$1.withValues(
-                    alpha: tone == StatusTone.held || tone == StatusTone.warning
-                        ? 0.4
-                        : 0.3,
-                  ),
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.xs,
-            vertical: AppSpacing.xxs,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (glyph != null) ...[
-                Icon(glyph, size: AppDimensions.iconSm, color: treatment.$1),
-                const SizedBox(width: AppSpacing.xxs),
-              ],
-              Flexible(
-                child: Text(
-                  label,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: treatment.$1,
-                    fontWeight: FontWeight.w500,
-                  ),
+    final text = Text(
+      label,
+      maxLines: 1,
+      softWrap: !shrinkWrap,
+      overflow: shrinkWrap ? TextOverflow.visible : TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.labelMedium
+          ?.copyWith(color: treatment.$1, fontWeight: FontWeight.w500),
+    );
+    final chip = DecoratedBox(
+      decoration: BoxDecoration(
+        color: treatment.$2,
+        borderRadius: BorderRadius.circular(AppRadii.input),
+        border: Border.all(
+          color: tone == StatusTone.muted
+              ? scheme.onSurfaceVariant
+              : treatment.$1.withValues(
+                  alpha: tone == StatusTone.held || tone == StatusTone.warning
+                      ? 0.4
+                      : 0.3,
                 ),
-              ),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.xs,
+          vertical: AppSpacing.xxs,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (glyph != null) ...[
+              Icon(glyph, size: AppDimensions.iconSm, color: treatment.$1),
+              const SizedBox(width: AppSpacing.xxs),
             ],
-          ),
+            if (shrinkWrap) text else Flexible(child: text),
+          ],
         ),
       ),
     );
+    if (shrinkWrap) return chip;
+    return Align(alignment: AlignmentDirectional.centerStart, child: chip);
   }
 }

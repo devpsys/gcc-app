@@ -2861,6 +2861,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileRowSmsOnly => 'SMS only';
 
   @override
+  String get profileNotificationsSmsAndPush => 'SMS and push';
+
+  @override
+  String get profileNotificationsOff => 'Off';
+
+  @override
   String get profileRowSupportPhone => '+234 803 441 2290';
 
   @override

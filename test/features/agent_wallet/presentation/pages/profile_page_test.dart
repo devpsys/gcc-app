@@ -32,6 +32,23 @@ void main() {
     StorageCategory(label: 'Shop photos', size: '180 MB', clearable: false),
   ];
 
+  const channels = [
+    NotificationChannel(
+      id: 'sms',
+      detail: 'Booking requests and verdicts',
+      enabled: true,
+      lastSentAt: '13 Oct, 11:08',
+      delivered: true,
+    ),
+    NotificationChannel(
+      id: 'push',
+      detail: 'Queue and payout updates',
+      enabled: true,
+      lastSentAt: '13 Oct, 10:44',
+      delivered: true,
+    ),
+  ];
+
   /// Scrolls until [text] is built and fully on screen.
   Future<void> reveal(WidgetTester tester, String text) async {
     final target = find.text(text);
@@ -52,6 +69,7 @@ void main() {
     child: ProfilePage(
       profile: profile,
       storageCategories: storage,
+      channels: channels,
       onClearStorage: onClear,
     ),
   );
@@ -91,6 +109,7 @@ void main() {
       child: ProfilePage(
         profile: profile,
         storageCategories: storage,
+        channels: channels,
         onOpenLanguage: () => languageOpened = true,
         onOpenNotifications: () => notificationsOpened = true,
       ),
@@ -106,6 +125,7 @@ void main() {
 
     expect(languageOpened, isTrue);
     expect(notificationsOpened, isTrue);
+    expect(find.text('SMS and push'), findsOneWidget);
   });
 
   testWidgets('AGT-17 withholds clear when no storage backend exists', (
@@ -158,6 +178,7 @@ void main() {
       child: ProfilePage(
         profile: profile,
         storageCategories: storage,
+        channels: channels,
         onInstall: () => installed = true,
         onSignOut: () => signedOut = true,
       ),

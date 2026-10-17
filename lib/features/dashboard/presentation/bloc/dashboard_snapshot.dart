@@ -22,6 +22,7 @@ typedef DashboardSubmission = ({
   String detail,
   String status,
   String? amount,
+  String? reference,
 });
 
 typedef DashboardRental = ({

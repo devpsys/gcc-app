@@ -22,7 +22,12 @@ class WalletCubit extends Cubit<WalletState> {
   Future<void> loadProfile() => _load(() async {
     final profile = await _gateway.loadProfile();
     final storage = await _gateway.loadStorageCategories();
-    return WalletProfileReady(profile: profile, storage: storage);
+    final channels = await _gateway.loadNotificationChannels();
+    return WalletProfileReady(
+      profile: profile,
+      storage: storage,
+      channels: channels,
+    );
   });
 
   Future<void> loadChannels() => _load(() async {

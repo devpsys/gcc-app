@@ -12,12 +12,14 @@ class NextStopCard extends StatelessWidget {
     required this.stop,
     required this.disabledReason,
     this.onStartCapture,
+    this.onGetDirections,
     super.key,
   });
 
   final DashboardStop? stop;
   final String disabledReason;
   final VoidCallback? onStartCapture;
+  final VoidCallback? onGetDirections;
 
   @override
   Widget build(BuildContext context) {
@@ -102,24 +104,27 @@ class NextStopCard extends StatelessWidget {
           onPressed: onStartCapture,
           disabledReason: onStartCapture == null ? disabledReason : null,
         ),
-        Tooltip(
-          message: disabledReason,
-          child: TextButton.icon(
-            onPressed: null,
-            style: TextButton.styleFrom(
-              foregroundColor: scheme.primary,
-              disabledForegroundColor: scheme.primary,
-              minimumSize: const Size(
-                double.infinity,
-                AppDimensions.buttonHeightCompact,
-              ),
-            ),
-            icon: const Icon(Icons.map_outlined, size: AppDimensions.iconSm),
-            label: Text(l10n.dashboardGetDirections),
-          ),
-        ),
+        _directions(context, scheme.primary),
       ],
     );
+  }
+
+  Widget _directions(BuildContext context, Color foreground) {
+    final button = TextButton.icon(
+      onPressed: onGetDirections,
+      style: TextButton.styleFrom(
+        foregroundColor: foreground,
+        disabledForegroundColor: foreground,
+        minimumSize: const Size(
+          double.infinity,
+          AppDimensions.buttonHeightCompact,
+        ),
+      ),
+      icon: const Icon(Icons.map_outlined, size: AppDimensions.iconSm),
+      label: Text(context.l10n.dashboardGetDirections),
+    );
+    if (onGetDirections != null) return button;
+    return Tooltip(message: disabledReason, child: button);
   }
 
   Widget _frame(BuildContext context, {required Widget child}) {

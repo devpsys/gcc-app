@@ -995,7 +995,7 @@
   },
   "dashboardGetDirections": "Get directions",
   "@dashboardGetDirections": {
-    "description": "Secondary action on the next shop. Maps are not available yet."
+    "description": "Secondary action on the next shop. Opens the field map."
   },
   "dashboardAllDone": "All assigned shops are done.",
   "@dashboardAllDone": {
@@ -2027,6 +2027,14 @@
   "profileRowLanguage": "Language",
   "profileRowNotifications": "Notifications",
   "profileRowSmsOnly": "SMS only",
+  "profileNotificationsSmsAndPush": "SMS and push",
+  "@profileNotificationsSmsAndPush": {
+    "description": "Profile notifications value when SMS and push are both on."
+  },
+  "profileNotificationsOff": "Off",
+  "@profileNotificationsOff": {
+    "description": "Profile notifications value when no channel is on."
+  },
   "profileRowSupportPhone": "+234 803 441 2290",
   "profileRowStorage": "Storage",
   "profileStorageFree": "2.1 GB free",

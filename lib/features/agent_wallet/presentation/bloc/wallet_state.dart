@@ -39,13 +39,18 @@ final class WalletOverviewReady extends WalletState {
 }
 
 final class WalletProfileReady extends WalletState {
-  const WalletProfileReady({required this.profile, required this.storage});
+  const WalletProfileReady({
+    required this.profile,
+    required this.storage,
+    this.channels = const [],
+  });
 
   final AgentProfile? profile;
   final List<StorageCategory> storage;
+  final List<NotificationChannel> channels;
 
   @override
-  List<Object?> get props => [profile, storage];
+  List<Object?> get props => [profile, storage, channels];
 }
 
 final class WalletChannelsReady extends WalletState {

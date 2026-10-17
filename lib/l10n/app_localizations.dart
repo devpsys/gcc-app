@@ -1360,7 +1360,7 @@ abstract class AppLocalizations {
   /// **'Start capture'**
   String get dashboardStartCapture;
 
-  /// Secondary action on the next shop. Maps are not available yet.
+  /// Secondary action on the next shop. Opens the field map.
   ///
   /// In en, this message translates to:
   /// **'Get directions'**
@@ -4981,6 +4981,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'SMS only'**
   String get profileRowSmsOnly;
+
+  /// Profile notifications value when SMS and push are both on.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS and push'**
+  String get profileNotificationsSmsAndPush;
+
+  /// Profile notifications value when no channel is on.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get profileNotificationsOff;
 
   /// No description provided for @profileRowSupportPhone.
   ///

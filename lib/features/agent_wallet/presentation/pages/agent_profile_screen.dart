@@ -37,17 +37,23 @@ class AgentProfileScreen extends StatelessWidget {
                       GoRouter.maybeOf(context)
                           ?.push(RoutePaths.agentNotifications),
                 ),
-              WalletProfileReady(:final profile, :final storage) => ProfilePage(
-                profile: profile!,
-                storageCategories: storage,
-                onOpenLanguage: () => showAppLanguagePicker(
-                  context: context,
-                  selectedId: 'english',
+              WalletProfileReady(
+                :final profile,
+                :final storage,
+                :final channels,
+              ) =>
+                ProfilePage(
+                  profile: profile!,
+                  storageCategories: storage,
+                  channels: channels,
+                  onOpenLanguage: () => showAppLanguagePicker(
+                    context: context,
+                    selectedId: 'english',
+                  ),
+                  onOpenNotifications: () =>
+                      GoRouter.maybeOf(context)
+                          ?.push(RoutePaths.agentNotifications),
                 ),
-                onOpenNotifications: () =>
-                    GoRouter.maybeOf(context)
-                        ?.push(RoutePaths.agentNotifications),
-              ),
               WalletFailed() => AppEmptyState(
                 icon: Icons.cloud_off,
                 title: l10n.walletLoadFailed,

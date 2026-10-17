@@ -9,12 +9,14 @@ import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_snapshot.
 class SubmissionStatusRow extends StatelessWidget {
   const SubmissionStatusRow({
     required this.submission,
-    required this.disabledReason,
+    this.onPressed,
+    this.disabledReason,
     super.key,
   });
 
   final DashboardSubmission submission;
-  final String disabledReason;
+  final VoidCallback? onPressed;
+  final String? disabledReason;
 
   @override
   Widget build(BuildContext context) {
@@ -33,49 +35,55 @@ class SubmissionStatusRow extends StatelessWidget {
       'synced' || 'approved' => StatusTone.success,
       _ => StatusTone.info,
     };
-    return Tooltip(
-      message: disabledReason,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          minHeight: AppDimensions.navigationBarHeight,
+    final row = ConstrainedBox(
+      constraints: const BoxConstraints(
+        minHeight: AppDimensions.navigationBarHeight,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.sm,
+          vertical: AppSpacing.xs,
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.sm,
-            vertical: AppSpacing.xs,
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      submission.name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyMedium,
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    submission.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  Text(
+                    submission.detail,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.mono(
+                      Theme.of(context).textTheme.bodySmall!
+                          .copyWith(color: scheme.onSurfaceVariant),
                     ),
-                    Text(
-                      submission.detail,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.mono(
-                        Theme.of(context).textTheme.bodySmall!
-                            .copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              const SizedBox(width: AppSpacing.sm),
-              Flexible(
-                child: StatusChip(label: status, tone: tone),
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(width: AppSpacing.sm),
+            Flexible(
+              child: StatusChip(label: status, tone: tone),
+            ),
+          ],
         ),
       ),
     );
+    final reason = disabledReason;
+    if (onPressed != null) {
+      return Material(
+        type: MaterialType.transparency,
+        child: InkWell(onTap: onPressed, child: row),
+      );
+    }
+    if (reason == null || reason.isEmpty) return row;
+    return Tooltip(message: reason, child: row);
   }
 }

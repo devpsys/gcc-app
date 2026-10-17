@@ -5,7 +5,9 @@ import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_switch_track.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/agent_profile.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/bloc/notification_channel.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/storage_category.dart';
+import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/widgets/install_prompt_card.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/widgets/profile_header.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/widgets/settings_row.dart';
@@ -21,6 +23,7 @@ class ProfilePage extends StatelessWidget {
   const ProfilePage({
     required this.profile,
     required this.storageCategories,
+    this.channels = const [],
     this.onOpenLanguage,
     this.onOpenNotifications,
     this.onInstall,
@@ -33,6 +36,7 @@ class ProfilePage extends StatelessWidget {
 
   final AgentProfile profile;
   final List<StorageCategory> storageCategories;
+  final List<NotificationChannel> channels;
   final VoidCallback? onOpenLanguage;
   final VoidCallback? onOpenNotifications;
   final VoidCallback? onInstall;
@@ -84,7 +88,7 @@ class ProfilePage extends StatelessWidget {
                 SettingsRow(
                   icon: Icons.notifications_none,
                   label: l10n.profileRowNotifications,
-                  value: l10n.profileRowSmsOnly,
+                  value: _notificationSummary(l10n, channels),
                   onTap: onOpenNotifications,
                 ),
               ],
@@ -218,4 +222,28 @@ class ProfilePage extends StatelessWidget {
       ),
     );
   }
+}
+
+String _notificationSummary(
+  AppLocalizations l10n,
+  List<NotificationChannel> channels,
+) {
+  final enabled = {
+    for (final channel in channels)
+      if (channel.enabled) channel.id,
+  };
+  if (enabled.contains('sms') &&
+      enabled.contains('push') &&
+      enabled.length == 2) {
+    return l10n.profileNotificationsSmsAndPush;
+  }
+  if (enabled.length == 1) {
+    return switch (enabled.single) {
+      'sms' => l10n.profileRowSmsOnly,
+      'push' => l10n.notificationsChannelPush,
+      'email' => l10n.notificationsChannelEmail,
+      _ => l10n.profileNotificationsOff,
+    };
+  }
+  return l10n.profileNotificationsOff;
 }

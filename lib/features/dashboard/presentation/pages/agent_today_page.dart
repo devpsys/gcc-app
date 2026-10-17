@@ -182,6 +182,9 @@ class AgentTodayPage extends StatelessWidget {
             disabledReason: unavailable,
             onStartCapture: () =>
                 GoRouter.maybeOf(context)?.push(RoutePaths.captureShop),
+            onGetDirections: snapshot.nextStop == null
+                ? null
+                : () => GoRouter.maybeOf(context)?.push(RoutePaths.agentMap),
           ),
         ),
         const SizedBox(height: AppSpacing.xl),
@@ -214,7 +217,12 @@ class AgentTodayPage extends StatelessWidget {
               : Column(
                   children: [
                     for (final shop in snapshot.shops)
-                      AssignedShopRow(shop: shop, disabledReason: unavailable),
+                      AssignedShopRow(
+                        shop: shop,
+                        onPressed: () =>
+                            GoRouter.maybeOf(context)
+                                ?.push(RoutePaths.agentShops),
+                      ),
                   ],
                 ),
         ),
@@ -250,7 +258,13 @@ class AgentTodayPage extends StatelessWidget {
                     for (final submission in snapshot.submissions)
                       SubmissionStatusRow(
                         submission: submission,
-                        disabledReason: unavailable,
+                        onPressed: _openSubmission(
+                          context,
+                          submission.reference,
+                        ),
+                        disabledReason: submission.reference == null
+                            ? unavailable
+                            : null,
                       ),
                   ],
                 ),
@@ -292,5 +306,11 @@ class AgentTodayPage extends StatelessWidget {
       SyncBannerKind.failed => l10n.dashboardSyncFailed,
       SyncBannerKind.synced => l10n.dashboardSyncSynced,
     };
+  }
+
+  VoidCallback? _openSubmission(BuildContext context, String? reference) {
+    if (reference == null || reference.isEmpty) return null;
+    return () =>
+        GoRouter.maybeOf(context)?.push('${RoutePaths.agentQueue}/$reference');
   }
 }
