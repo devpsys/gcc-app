@@ -5,18 +5,21 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/route_error_page.dart';
 import 'package:gcc_app/features/agent_capture/presentation/bloc/capture_cubit.dart';
 import 'package:gcc_app/features/agent_capture/presentation/pages/capture_assets_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_camera_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_location_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_review_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_shop_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/compression_route_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/submission_queued_page.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shops_cubit.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shops_screen.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/field_map_screen.dart';
 import 'package:gcc_app/features/agent_sync/presentation/bloc/sync_queue_cubit.dart';
 import 'package:gcc_app/features/agent_sync/presentation/pages/queue_item_route_page.dart';
 import 'package:gcc_app/features/agent_sync/presentation/pages/sync_queue_screen.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/capture_camera_page.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/capture_review_page.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/compression_route_page.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/submission_queued_page.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/capture_location_page.dart';
-import 'package:gcc_app/features/agent_capture/presentation/pages/capture_shop_page.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_profile_screen.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_screen.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/pages/notification_channels_page.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart';
@@ -103,6 +106,22 @@ GoRouter createAppRouter() {
             builder: (context, state) => const SubmissionQueuedPage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.agentWallet,
+        name: RouteNames.agentWallet,
+        builder: (context, state) => const AgentWalletScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.agentProfile,
+        name: RouteNames.agentProfile,
+        builder: (context, state) => const AgentProfileScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.agentNotifications,
+        name: RouteNames.agentNotifications,
+        builder: (context, state) =>
+            const NotificationChannelsPage(channels: []),
       ),
       GoRoute(
         path: RoutePaths.agentMap,

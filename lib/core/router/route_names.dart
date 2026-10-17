@@ -15,8 +15,9 @@ abstract final class RouteNames {
   static const String agentShops = 'agentShops';
   static const String agentMap = 'agentMap';
   static const String agentWallet = 'agentWallet';
-  static const String bountyStatus = 'bountyStatus';
   static const String agentProfile = 'agentProfile';
+  static const String agentNotifications = 'agentNotifications';
+  static const String agentBountyStatus = 'agentBountyStatus';
   static const String onboardingLanguage = 'onboardingLanguage';
   static const String onboardingRole = 'onboardingRole';
   static const String onboardingSignIn = 'onboardingSignIn';

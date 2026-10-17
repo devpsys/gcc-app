@@ -2588,4 +2588,330 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get syncDiscardFailedAction => 'Discard them';
+
+  @override
+  String get bountyLabel => 'BOUNTY';
+
+  @override
+  String get bountyStatePending => 'Pending';
+
+  @override
+  String get bountyStateVerified => 'Verified';
+
+  @override
+  String get bountyStateRejected => 'Rejected';
+
+  @override
+  String get bountyAwaitingHeadline => 'Pending verification';
+
+  @override
+  String get bountyVerifiedHeadline => 'Verified';
+
+  @override
+  String get bountyRejectedHeadline => 'Rejected';
+
+  @override
+  String get bountyNotePending => 'Pending';
+
+  @override
+  String bountyNoteApproved(Object date) {
+    return 'Approved $date';
+  }
+
+  @override
+  String get bountyNoteNotPayable => 'Not payable';
+
+  @override
+  String bountyVerifiedNote(Object run) {
+    return 'Verified and included in the $run payout run';
+  }
+
+  @override
+  String bountySmsNote(Object amount, Object bank) {
+    return 'You\'ll get an SMS when $amount is sent to $bank.';
+  }
+
+  @override
+  String get bountyReviewerFeedback => 'REVIEWER FEEDBACK';
+
+  @override
+  String bountyReviewerLine(Object date, Object reviewer) {
+    return 'Rejected by $reviewer · $date';
+  }
+
+  @override
+  String get bountyReshootCta => 'Reshoot to claim your bounty';
+
+  @override
+  String get bountyAuditTimeline => 'Audit timeline';
+
+  @override
+  String get bountyLabelAssets => 'Assets';
+
+  @override
+  String get bountyLabelMedia => 'Media';
+
+  @override
+  String get bountyLabelSubmittedBy => 'Submitted by';
+
+  @override
+  String get bountyViewSubmission => 'View submission';
+
+  @override
+  String get bountyViewInQueue => 'View in queue';
+
+  @override
+  String bountyResubmitNote(Object reference) {
+    return 'Resubmitting creates a new submission ($reference). Your original stays on record.';
+  }
+
+  @override
+  String get bountyReshootResubmit => 'Reshoot & resubmit';
+
+  @override
+  String get bountyDiscardSubmission => 'Discard submission';
+
+  @override
+  String get bountyTimelineSubmitted => 'Submitted';
+
+  @override
+  String get bountyTimelineQueued => 'Queued and uploaded';
+
+  @override
+  String get bountyTimelineReview => 'Under review';
+
+  @override
+  String get bountyTimelineVerified => 'Verified';
+
+  @override
+  String get bountyTimelinePaid => 'Paid';
+
+  @override
+  String get bountyTimelineRejected => 'Rejected';
+
+  @override
+  String get bountyTimelineNotApplicable => 'Not applicable';
+
+  @override
+  String get bountyTimelineForfeited => 'Bounty forfeited';
+
+  @override
+  String get bountyTimelineWaiting => 'Waiting on a decision';
+
+  @override
+  String get walletTitle => 'Bounty wallet';
+
+  @override
+  String get walletAvailableLabel => 'Available to withdraw';
+
+  @override
+  String get walletPendingLabel => 'Pending verification';
+
+  @override
+  String get walletPaidThisYear => 'Paid this year';
+
+  @override
+  String get walletWithdrawToBank => 'Withdraw to bank';
+
+  @override
+  String get walletLastSixWeeks => 'Last 6 weeks';
+
+  @override
+  String get walletPreviousPeriod => 'Last 6 weeks';
+
+  @override
+  String walletEarnedOver(Object period, Object total) {
+    return '$total earned over $period';
+  }
+
+  @override
+  String walletAverage(Object amount) {
+    return 'Avg $amount';
+  }
+
+  @override
+  String get walletActivePace => 'Active pace';
+
+  @override
+  String get walletPayoutHistory => 'Payout history';
+
+  @override
+  String get walletPayoutSchedule => 'Mondays @ 09:00';
+
+  @override
+  String walletNextRun(Object run) {
+    return 'Next payout schedule: $run';
+  }
+
+  @override
+  String get walletRunOpen => 'Open';
+
+  @override
+  String get walletRunPaid => 'Paid';
+
+  @override
+  String walletExpected(Object amount, Object count) {
+    return '$amount expected if all $count are verified.';
+  }
+
+  @override
+  String get walletZeroTitle => 'No verified bounties to withdraw yet';
+
+  @override
+  String get walletZeroSubtitle => 'No bounties yet';
+
+  @override
+  String walletZeroBody(Object amount) {
+    return 'Earn $amount each time a shop you map is verified.';
+  }
+
+  @override
+  String get walletZeroCta => 'Start capturing';
+
+  @override
+  String walletZeroBenchmark(Object amount) {
+    return 'Average agent earns $amount in their first 6 weeks.';
+  }
+
+  @override
+  String get walletNoRunsYet => 'No payout runs yet';
+
+  @override
+  String walletMinimumWarning(Object amount) {
+    return 'Minimum withdrawal is $amount. Enter an amount to continue.';
+  }
+
+  @override
+  String get walletAmountLabel => 'WITHDRAWAL AMOUNT';
+
+  @override
+  String walletMaxAmount(Object amount) {
+    return 'MAX $amount';
+  }
+
+  @override
+  String get walletVerificationTakesADay =>
+      'Verification usually takes 24 hours. Pending bounties can\'t be withdrawn early.';
+
+  @override
+  String get walletMinimumAmount => '₦10,000';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String profileAgentRole(Object id) {
+    return 'Field Agent · $id';
+  }
+
+  @override
+  String profileTenure(Object submissions, Object tenure, Object verified) {
+    return '$tenure · $submissions submissions · $verified verified';
+  }
+
+  @override
+  String get profileTenureYears => 'Agent since Mar 2026';
+
+  @override
+  String get profileSubmissions => '61 submissions';
+
+  @override
+  String get profileVerified => '54 verified';
+
+  @override
+  String get profileSectionPreferences => 'Preferences';
+
+  @override
+  String get profileSectionWork => 'Work';
+
+  @override
+  String get profileSectionSupport => 'Support';
+
+  @override
+  String get profileSectionThisDevice => 'This device';
+
+  @override
+  String get profileSectionOffline => 'Offline';
+
+  @override
+  String get profileAssignedMarkets => 'Assigned markets';
+
+  @override
+  String get profileRowLanguage => 'Language';
+
+  @override
+  String get profileRowNotifications => 'Notifications';
+
+  @override
+  String get profileRowSmsOnly => 'SMS only';
+
+  @override
+  String get profileRowSupportPhone => '+234 803 441 2290';
+
+  @override
+  String get profileRowStorage => 'Storage';
+
+  @override
+  String get profileStorageFree => '2.1 GB free';
+
+  @override
+  String get profileRowModel => 'Model';
+
+  @override
+  String get profileRowAndroidVersion => 'Android version';
+
+  @override
+  String get profileRowAppVersion => 'App version';
+
+  @override
+  String get profileAppVersion => '2.4.1 (build 118)';
+
+  @override
+  String get profileRowOfflineCapture => 'Offline capture';
+
+  @override
+  String get profileRowAllowAlways => 'Always allow';
+
+  @override
+  String get profileInstallTitle => 'Add GCC to your home screen';
+
+  @override
+  String get profileInstallBody =>
+      'So it opens without data and keeps working in the market.';
+
+  @override
+  String get profileInstallCta => 'Add to home screen';
+
+  @override
+  String get profileSignOut => 'Sign out';
+
+  @override
+  String get profileClearAction => 'Clear';
+
+  @override
+  String get profileDeviceModelValue => 'Samsung Galaxy A12';
+
+  @override
+  String get profileAndroidVersionValue => 'Android 12';
+
+  @override
+  String get notificationsTitle => 'Notifications';
+
+  @override
+  String get notificationsChannelSms => 'SMS';
+
+  @override
+  String get notificationsChannelPush => 'Push';
+
+  @override
+  String get notificationsChannelEmail => 'Email';
+
+  @override
+  String get notificationsLastSent => 'Last SMS sent';
+
+  @override
+  String get notificationsDelivered => 'delivered';
+
+  @override
+  String get notificationsNotDelivered => 'not delivered';
 }

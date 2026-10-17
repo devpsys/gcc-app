@@ -51,6 +51,16 @@ abstract final class AppColors {
   static const Color stickyShadow = Color(0x0F101828);
   static const Color scrim = Color(0x73000000);
 
+  /// Hatch stroke over an escrowed amount, at the design's 6% opacity.
+  ///
+  /// Escrow is the one place a hatch is allowed, and it is amber rather than
+  /// the neutral grey used for uncached map ground: amber is the designs' word
+  /// for money actually held at GCC.
+  static const Color escrowHatch = Color(0x1AB4690E);
+
+  /// Lock glyph on a dark escrow card, where amber would not be legible.
+  static const Color escrowLockOnDark = Color(0xFFFFFFFF);
+
   /// Hatch stroke for an area with no cached map tiles.
   ///
   /// The field map marks uncached ground with a 45° hatch. The stroke needs to

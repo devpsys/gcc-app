@@ -4501,6 +4501,594 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discard them'**
   String get syncDiscardFailedAction;
+
+  /// No description provided for @bountyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'BOUNTY'**
+  String get bountyLabel;
+
+  /// No description provided for @bountyStatePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get bountyStatePending;
+
+  /// No description provided for @bountyStateVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get bountyStateVerified;
+
+  /// No description provided for @bountyStateRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get bountyStateRejected;
+
+  /// No description provided for @bountyAwaitingHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending verification'**
+  String get bountyAwaitingHeadline;
+
+  /// No description provided for @bountyVerifiedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get bountyVerifiedHeadline;
+
+  /// No description provided for @bountyRejectedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get bountyRejectedHeadline;
+
+  /// No description provided for @bountyNotePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get bountyNotePending;
+
+  /// No description provided for @bountyNoteApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Approved {date}'**
+  String bountyNoteApproved(Object date);
+
+  /// No description provided for @bountyNoteNotPayable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not payable'**
+  String get bountyNoteNotPayable;
+
+  /// No description provided for @bountyVerifiedNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified and included in the {run} payout run'**
+  String bountyVerifiedNote(Object run);
+
+  /// No description provided for @bountySmsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll get an SMS when {amount} is sent to {bank}.'**
+  String bountySmsNote(Object amount, Object bank);
+
+  /// No description provided for @bountyReviewerFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'REVIEWER FEEDBACK'**
+  String get bountyReviewerFeedback;
+
+  /// No description provided for @bountyReviewerLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected by {reviewer} · {date}'**
+  String bountyReviewerLine(Object date, Object reviewer);
+
+  /// No description provided for @bountyReshootCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Reshoot to claim your bounty'**
+  String get bountyReshootCta;
+
+  /// No description provided for @bountyAuditTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit timeline'**
+  String get bountyAuditTimeline;
+
+  /// No description provided for @bountyLabelAssets.
+  ///
+  /// In en, this message translates to:
+  /// **'Assets'**
+  String get bountyLabelAssets;
+
+  /// No description provided for @bountyLabelMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Media'**
+  String get bountyLabelMedia;
+
+  /// No description provided for @bountyLabelSubmittedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted by'**
+  String get bountyLabelSubmittedBy;
+
+  /// No description provided for @bountyViewSubmission.
+  ///
+  /// In en, this message translates to:
+  /// **'View submission'**
+  String get bountyViewSubmission;
+
+  /// No description provided for @bountyViewInQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View in queue'**
+  String get bountyViewInQueue;
+
+  /// No description provided for @bountyResubmitNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Resubmitting creates a new submission ({reference}). Your original stays on record.'**
+  String bountyResubmitNote(Object reference);
+
+  /// No description provided for @bountyReshootResubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Reshoot & resubmit'**
+  String get bountyReshootResubmit;
+
+  /// No description provided for @bountyDiscardSubmission.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard submission'**
+  String get bountyDiscardSubmission;
+
+  /// No description provided for @bountyTimelineSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Submitted'**
+  String get bountyTimelineSubmitted;
+
+  /// No description provided for @bountyTimelineQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued and uploaded'**
+  String get bountyTimelineQueued;
+
+  /// No description provided for @bountyTimelineReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review'**
+  String get bountyTimelineReview;
+
+  /// No description provided for @bountyTimelineVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get bountyTimelineVerified;
+
+  /// No description provided for @bountyTimelinePaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get bountyTimelinePaid;
+
+  /// No description provided for @bountyTimelineRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get bountyTimelineRejected;
+
+  /// No description provided for @bountyTimelineNotApplicable.
+  ///
+  /// In en, this message translates to:
+  /// **'Not applicable'**
+  String get bountyTimelineNotApplicable;
+
+  /// No description provided for @bountyTimelineForfeited.
+  ///
+  /// In en, this message translates to:
+  /// **'Bounty forfeited'**
+  String get bountyTimelineForfeited;
+
+  /// No description provided for @bountyTimelineWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting on a decision'**
+  String get bountyTimelineWaiting;
+
+  /// No description provided for @walletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bounty wallet'**
+  String get walletTitle;
+
+  /// No description provided for @walletAvailableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Available to withdraw'**
+  String get walletAvailableLabel;
+
+  /// No description provided for @walletPendingLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending verification'**
+  String get walletPendingLabel;
+
+  /// No description provided for @walletPaidThisYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid this year'**
+  String get walletPaidThisYear;
+
+  /// No description provided for @walletWithdrawToBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw to bank'**
+  String get walletWithdrawToBank;
+
+  /// No description provided for @walletLastSixWeeks.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 6 weeks'**
+  String get walletLastSixWeeks;
+
+  /// No description provided for @walletPreviousPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 6 weeks'**
+  String get walletPreviousPeriod;
+
+  /// No description provided for @walletEarnedOver.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} earned over {period}'**
+  String walletEarnedOver(Object period, Object total);
+
+  /// No description provided for @walletAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg {amount}'**
+  String walletAverage(Object amount);
+
+  /// No description provided for @walletActivePace.
+  ///
+  /// In en, this message translates to:
+  /// **'Active pace'**
+  String get walletActivePace;
+
+  /// No description provided for @walletPayoutHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout history'**
+  String get walletPayoutHistory;
+
+  /// No description provided for @walletPayoutSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Mondays @ 09:00'**
+  String get walletPayoutSchedule;
+
+  /// No description provided for @walletNextRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Next payout schedule: {run}'**
+  String walletNextRun(Object run);
+
+  /// No description provided for @walletRunOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get walletRunOpen;
+
+  /// No description provided for @walletRunPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get walletRunPaid;
+
+  /// No description provided for @walletExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} expected if all {count} are verified.'**
+  String walletExpected(Object amount, Object count);
+
+  /// No description provided for @walletZeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No verified bounties to withdraw yet'**
+  String get walletZeroTitle;
+
+  /// No description provided for @walletZeroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No bounties yet'**
+  String get walletZeroSubtitle;
+
+  /// No description provided for @walletZeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn {amount} each time a shop you map is verified.'**
+  String walletZeroBody(Object amount);
+
+  /// No description provided for @walletZeroCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Start capturing'**
+  String get walletZeroCta;
+
+  /// No description provided for @walletZeroBenchmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Average agent earns {amount} in their first 6 weeks.'**
+  String walletZeroBenchmark(Object amount);
+
+  /// No description provided for @walletNoRunsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No payout runs yet'**
+  String get walletNoRunsYet;
+
+  /// No description provided for @walletMinimumWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum withdrawal is {amount}. Enter an amount to continue.'**
+  String walletMinimumWarning(Object amount);
+
+  /// No description provided for @walletAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'WITHDRAWAL AMOUNT'**
+  String get walletAmountLabel;
+
+  /// No description provided for @walletMaxAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'MAX {amount}'**
+  String walletMaxAmount(Object amount);
+
+  /// No description provided for @walletVerificationTakesADay.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification usually takes 24 hours. Pending bounties can\'t be withdrawn early.'**
+  String get walletVerificationTakesADay;
+
+  /// No description provided for @walletMinimumAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'₦10,000'**
+  String get walletMinimumAmount;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profileTitle;
+
+  /// No description provided for @profileAgentRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Field Agent · {id}'**
+  String profileAgentRole(Object id);
+
+  /// No description provided for @profileTenure.
+  ///
+  /// In en, this message translates to:
+  /// **'{tenure} · {submissions} submissions · {verified} verified'**
+  String profileTenure(Object submissions, Object tenure, Object verified);
+
+  /// No description provided for @profileTenureYears.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent since Mar 2026'**
+  String get profileTenureYears;
+
+  /// No description provided for @profileSubmissions.
+  ///
+  /// In en, this message translates to:
+  /// **'61 submissions'**
+  String get profileSubmissions;
+
+  /// No description provided for @profileVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'54 verified'**
+  String get profileVerified;
+
+  /// No description provided for @profileSectionPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get profileSectionPreferences;
+
+  /// No description provided for @profileSectionWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Work'**
+  String get profileSectionWork;
+
+  /// No description provided for @profileSectionSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get profileSectionSupport;
+
+  /// No description provided for @profileSectionThisDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'This device'**
+  String get profileSectionThisDevice;
+
+  /// No description provided for @profileSectionOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get profileSectionOffline;
+
+  /// No description provided for @profileAssignedMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned markets'**
+  String get profileAssignedMarkets;
+
+  /// No description provided for @profileRowLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get profileRowLanguage;
+
+  /// No description provided for @profileRowNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get profileRowNotifications;
+
+  /// No description provided for @profileRowSmsOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS only'**
+  String get profileRowSmsOnly;
+
+  /// No description provided for @profileRowSupportPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'+234 803 441 2290'**
+  String get profileRowSupportPhone;
+
+  /// No description provided for @profileRowStorage.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get profileRowStorage;
+
+  /// No description provided for @profileStorageFree.
+  ///
+  /// In en, this message translates to:
+  /// **'2.1 GB free'**
+  String get profileStorageFree;
+
+  /// No description provided for @profileRowModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Model'**
+  String get profileRowModel;
+
+  /// No description provided for @profileRowAndroidVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Android version'**
+  String get profileRowAndroidVersion;
+
+  /// No description provided for @profileRowAppVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'App version'**
+  String get profileRowAppVersion;
+
+  /// No description provided for @profileAppVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'2.4.1 (build 118)'**
+  String get profileAppVersion;
+
+  /// No description provided for @profileRowOfflineCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline capture'**
+  String get profileRowOfflineCapture;
+
+  /// No description provided for @profileRowAllowAlways.
+  ///
+  /// In en, this message translates to:
+  /// **'Always allow'**
+  String get profileRowAllowAlways;
+
+  /// No description provided for @profileInstallTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add GCC to your home screen'**
+  String get profileInstallTitle;
+
+  /// No description provided for @profileInstallBody.
+  ///
+  /// In en, this message translates to:
+  /// **'So it opens without data and keeps working in the market.'**
+  String get profileInstallBody;
+
+  /// No description provided for @profileInstallCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to home screen'**
+  String get profileInstallCta;
+
+  /// No description provided for @profileSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get profileSignOut;
+
+  /// No description provided for @profileClearAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get profileClearAction;
+
+  /// No description provided for @profileDeviceModelValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Samsung Galaxy A12'**
+  String get profileDeviceModelValue;
+
+  /// No description provided for @profileAndroidVersionValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Android 12'**
+  String get profileAndroidVersionValue;
+
+  /// No description provided for @notificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationsTitle;
+
+  /// No description provided for @notificationsChannelSms.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS'**
+  String get notificationsChannelSms;
+
+  /// No description provided for @notificationsChannelPush.
+  ///
+  /// In en, this message translates to:
+  /// **'Push'**
+  String get notificationsChannelPush;
+
+  /// No description provided for @notificationsChannelEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get notificationsChannelEmail;
+
+  /// No description provided for @notificationsLastSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Last SMS sent'**
+  String get notificationsLastSent;
+
+  /// No description provided for @notificationsDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'delivered'**
+  String get notificationsDelivered;
+
+  /// No description provided for @notificationsNotDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'not delivered'**
+  String get notificationsNotDelivered;
 }
 
 class _AppLocalizationsDelegate

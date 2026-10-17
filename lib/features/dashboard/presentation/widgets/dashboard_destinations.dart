@@ -64,16 +64,45 @@ abstract final class DashboardDestinations {
         selectedIcon: Icons.today,
         location: RoutePaths.agentToday,
       ),
-      _item(l10n.dashboardMap, Icons.map_outlined, Icons.map, '/map', l10n),
-      _item(
+      // These three were switched off through _item() while the features did
+      // not exist. Map, queue and wallet are all built now, so they point at
+      // real routes and are available again.
+      _built(
+        l10n.dashboardMap,
+        Icons.map_outlined,
+        Icons.map,
+        RoutePaths.agentMap,
+      ),
+      _built(
         l10n.dashboardQueue,
         Icons.cloud_upload_outlined,
         Icons.cloud_upload,
-        '/queue',
-        l10n,
+        RoutePaths.agentQueue,
       ),
-      _wallet(l10n),
+      _built(
+        l10n.dashboardWallet,
+        Icons.account_balance_wallet_outlined,
+        Icons.account_balance_wallet,
+        RoutePaths.agentWallet,
+      ),
     ];
+  }
+
+  /// A destination whose feature exists, so it navigates for real.
+  static ShellDestination _built(
+    String label,
+    IconData icon,
+    IconData selectedIcon,
+    String location, {
+    int badgeCount = 0,
+  }) {
+    return ShellDestination(
+      label: label,
+      icon: icon,
+      selectedIcon: selectedIcon,
+      location: location,
+      badgeCount: badgeCount,
+    );
   }
 
   static ShellDestination _home(AppLocalizations l10n) {

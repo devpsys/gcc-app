@@ -16,6 +16,8 @@ abstract final class RoutePaths {
   static const String agentMap = '/agent/map';
   static const String agentWallet = '/agent/wallet';
   static const String agentProfile = '/agent/profile';
+  static const String agentNotifications = '/agent/profile/notifications';
+  static const String agentBountyStatus = '/agent/bounty/:reference';
   static const String onboardingLanguage = '/onboarding/language';
   static const String onboardingRole = '/onboarding/role';
   static const String onboardingSignIn = '/onboarding/sign-in';
