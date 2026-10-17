@@ -343,7 +343,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingAlreadyAccount => 'Already have a GCC account?';
 
   @override
-  String get onboardingEmailInstead => 'Sign in with your email instead.';
+  String get onboardingEmailInstead => 'Sign in with your agent ID instead.';
 
   @override
   String get onboardingGenericFailure => 'Something went wrong. Try again.';
@@ -1936,6 +1936,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get compressQueueReference => 'SUB-2204';
 
   @override
+  String get syncItemMissing => 'This submission is not in the queue.';
+
+  @override
   String get syncQueueTitle => 'Sync queue';
 
   @override
@@ -2700,6 +2703,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get walletTitle => 'Bounty wallet';
+
+  @override
+  String get walletLoadFailed => 'This could not be loaded.';
 
   @override
   String get walletAvailableLabel => 'Available to withdraw';

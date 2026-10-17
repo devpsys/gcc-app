@@ -30,8 +30,8 @@ Future<void> configureDependencies({
   registerOnboardingModule();
   registerAuthModule();
   registerDashboardModule();
-  registerCaptureModule();
   registerSyncModule();
+  registerCaptureModule();
   registerFieldOpsModule();
   registerWalletModule();
   getIt.registerLazySingleton<GoRouter>(createAppRouter);

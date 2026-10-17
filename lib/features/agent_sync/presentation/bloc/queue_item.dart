@@ -14,6 +14,8 @@ class QueueItem extends Equatable {
     this.totalBytes,
     this.failureReason,
     this.syncedAt,
+    this.owner = '',
+    this.location = '',
   });
 
   /// Stable submission id, e.g. `SUB-2214`.
@@ -39,6 +41,13 @@ class QueueItem extends Equatable {
 
   /// When it reached the server, once synced.
   final String? syncedAt;
+
+  /// Owner name from the capture, when the draft had one.
+  final String owner;
+
+  /// Market, zone and line from the capture, when the draft had them.
+  final String location;
+
   @override
   List<Object?> get props => [
     reference,
@@ -51,5 +60,7 @@ class QueueItem extends Equatable {
     totalBytes,
     failureReason,
     syncedAt,
+    owner,
+    location,
   ];
 }

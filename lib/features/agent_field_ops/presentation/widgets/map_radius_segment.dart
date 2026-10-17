@@ -26,7 +26,7 @@ class MapRadiusSegment extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadii.input),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: selected ? scheme.primary : Colors.transparent,
+            color: selected ? scheme.primary : null,
             borderRadius: BorderRadius.circular(AppRadii.input),
           ),
           child: Center(

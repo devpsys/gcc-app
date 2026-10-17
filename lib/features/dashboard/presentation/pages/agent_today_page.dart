@@ -1,12 +1,15 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
+import 'package:gcc_app/core/theme/app_breakpoints.dart';
+import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
-import 'package:gcc_app/core/widgets/responsive_content.dart';
 import 'package:gcc_app/core/widgets/shell_center_action.dart';
 import 'package:gcc_app/core/widgets/skeleton_list_card.dart';
 import 'package:gcc_app/core/widgets/sync_status_banner.dart';
@@ -22,6 +25,7 @@ import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destin
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_section.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_text_link.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_sync_strip.dart';
+import 'package:gcc_app/features/dashboard/presentation/widgets/fixed_header_layout.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/next_stop_card.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/submission_status_row.dart';
 import 'package:go_router/go_router.dart';
@@ -34,14 +38,6 @@ class AgentTodayPage extends StatelessWidget {
     return BlocBuilder<DashboardCubit, DashboardState>(
       builder: (context, state) {
         final l10n = context.l10n;
-        final snapshot = state.content;
-        final unavailable = l10n.dashboardActionUnavailable;
-        final kind = state is DashboardLoading
-            ? SyncBannerKind.synced
-            : snapshot?.syncKind ?? SyncBannerKind.synced;
-        final message = state is DashboardLoading
-            ? l10n.dashboardSyncChecking
-            : _syncMessage(context, kind, snapshot?.syncKind == null);
         return AppShell(
           title: l10n.dashboardToday,
           menuLabel: l10n.openNavigationMenu,
@@ -54,42 +50,92 @@ class AgentTodayPage extends StatelessWidget {
             onPressed: () =>
                 GoRouter.maybeOf(context)?.push(RoutePaths.captureShop),
           ),
-          child: Column(
-            children: [
-              AgentTodayHeader(
-                dateLabel: DateFormat(
-                  'EEEE, d MMM',
-                  Localizations.localeOf(context).toString(),
-                ).format(DateTime.now()),
-                greeting: snapshot?.agentName == null
-                    ? l10n.dashboardGoodMorning
-                    : l10n.dashboardGoodMorningNamed(snapshot!.agentName!),
-                assignment: snapshot?.assignment,
-                agentId: snapshot?.agentId,
-                installLabel: l10n.dashboardAddToHome,
-                disabledReason: unavailable,
-              ),
-              DashboardSyncStrip(
-                kind: kind,
-                message: message,
-                detail: snapshot?.syncDetail,
-                disabledReason: unavailable,
-              ),
-              Expanded(
-                child: RefreshIndicator(
-                  onRefresh: () => context.read<DashboardCubit>().refresh(),
-                  child: ResponsiveContent(child: _body(context, state)),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final gutter = constraints.maxWidth >= AppBreakpoints.medium
+                  ? AppSpacing.pageGutterExpanded
+                  : AppSpacing.pageGutterCompact;
+              final width = math.min(
+                constraints.maxWidth,
+                AppDimensions.maxContentWidth,
+              );
+              return FixedHeaderLayout(
+                header: Align(
+                  alignment: Alignment.topCenter,
+                  child: SizedBox(width: width, child: _header(context, state)),
                 ),
-              ),
-            ],
+                body: RefreshIndicator(
+                  onRefresh: () => context.read<DashboardCubit>().refresh(),
+                  child: SingleChildScrollView(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SizedBox(
+                        width: width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            _syncStrip(context, state),
+                            Padding(
+                              padding: EdgeInsets.all(gutter),
+                              child: _sections(context, state),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
           ),
         );
       },
     );
   }
 
-  Widget _body(BuildContext context, DashboardState state) {
+  Widget _header(BuildContext context, DashboardState state) {
     final l10n = context.l10n;
+    final snapshot = state.content ?? const DashboardSnapshot();
+    return AgentTodayHeader(
+      dateLabel: DateFormat(
+        'EEEE, d MMM',
+        Localizations.localeOf(context).toString(),
+      ).format(DateTime.now()),
+      greeting: snapshot.agentName == null
+          ? l10n.dashboardGoodMorning
+          : l10n.dashboardGoodMorningNamed(snapshot.agentName!),
+      assignment: snapshot.assignment,
+      agentId: snapshot.agentId,
+      installLabel: l10n.dashboardAddToHome,
+      disabledReason: l10n.dashboardActionUnavailable,
+      onOpenProfile: () =>
+          GoRouter.maybeOf(context)?.push(RoutePaths.agentProfile),
+    );
+  }
+
+  Widget _syncStrip(BuildContext context, DashboardState state) {
+    final l10n = context.l10n;
+    final snapshot = state.content ?? const DashboardSnapshot();
+    final kind = state is DashboardLoading
+        ? SyncBannerKind.synced
+        : snapshot.syncKind ?? SyncBannerKind.synced;
+    final message = state is DashboardLoading
+        ? l10n.dashboardSyncChecking
+        : _syncMessage(context, kind, snapshot.syncKind == null);
+    return DashboardSyncStrip(
+      kind: kind,
+      message: message,
+      detail: snapshot.syncDetail,
+      onPressed: state is DashboardLoading
+          ? null
+          : () => GoRouter.maybeOf(context)?.push(RoutePaths.agentQueue),
+    );
+  }
+
+  Widget _sections(BuildContext context, DashboardState state) {
+    final l10n = context.l10n;
+    final snapshot = state.content ?? const DashboardSnapshot();
+    final unavailable = l10n.dashboardActionUnavailable;
     if (state is DashboardFailure) {
       return AppEmptyState(
         icon: Icons.cloud_off,
@@ -100,6 +146,7 @@ class AgentTodayPage extends StatelessWidget {
     }
     if (state is DashboardLoading) {
       return const Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SkeletonListCard(),
           SizedBox(height: AppSpacing.sm),
@@ -107,8 +154,6 @@ class AgentTodayPage extends StatelessWidget {
         ],
       );
     }
-    final snapshot = state.content ?? const DashboardSnapshot();
-    final unavailable = l10n.dashboardActionUnavailable;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -149,7 +194,8 @@ class AgentTodayPage extends StatelessWidget {
               ? null
               : DashboardTextLink(
                   label: l10n.dashboardSeeAllCount(snapshot.shops.length),
-                  disabledReason: unavailable,
+                  onPressed: () =>
+                      GoRouter.maybeOf(context)?.push(RoutePaths.agentShops),
                   alignment: Alignment.centerRight,
                 ),
           errorMessage:
@@ -182,7 +228,8 @@ class AgentTodayPage extends StatelessWidget {
               ? null
               : DashboardTextLink(
                   label: l10n.dashboardViewAll,
-                  disabledReason: unavailable,
+                  onPressed: () =>
+                      GoRouter.maybeOf(context)?.push(RoutePaths.agentQueue),
                   alignment: Alignment.centerRight,
                 ),
           errorMessage:
@@ -224,6 +271,10 @@ class AgentTodayPage extends StatelessWidget {
             pendingCaption: snapshot.bountyPendingCaption,
             earned: snapshot.bountyEarned,
             earnedCaption: snapshot.bountyEarnedCaption,
+            onOpen:
+                snapshot.bountyPending == null && snapshot.bountyEarned == null
+                ? null
+                : () => GoRouter.maybeOf(context)?.push(RoutePaths.agentWallet),
           ),
         ),
       ],

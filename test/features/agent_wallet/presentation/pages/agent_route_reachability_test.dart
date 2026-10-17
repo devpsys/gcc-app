@@ -6,7 +6,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_status_page.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/profile_page.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/agent_profile.dart';
-import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_profile_screen.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/widgets/profile_unavailable.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/gateway/unwired_wallet_gateway.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/widgets/bounty_not_found_panel.dart';
 

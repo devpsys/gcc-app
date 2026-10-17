@@ -35,11 +35,13 @@ class FleetStatusPanel extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
-              DashboardTextLink(
-                label: l10n.dashboardManage,
-                disabledReason: disabledReason,
-                chevron: true,
-                alignment: Alignment.centerRight,
+              Flexible(
+                child: DashboardTextLink(
+                  label: l10n.dashboardManage,
+                  disabledReason: disabledReason,
+                  chevron: true,
+                  alignment: Alignment.centerRight,
+                ),
               ),
             ],
           ),

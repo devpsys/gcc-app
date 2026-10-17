@@ -75,10 +75,10 @@ class _SpatialHierarchyCardState extends State<SpatialHierarchyCard> {
         : zone.isEmpty
         ? 1
         : 2;
-    final steps = [
-      _PathStep(label: l10n.captureMarket, value: market),
-      _PathStep(label: l10n.captureZone, value: zone),
-      _PathStep(
+    final steps = <({String label, String value, bool emphasize})>[
+      (label: l10n.captureMarket, value: market, emphasize: false),
+      (label: l10n.captureZone, value: zone, emphasize: false),
+      (
         label: current == 2 ? l10n.captureLineCurrent : l10n.captureLine,
         value: line,
         emphasize: current == 2,
@@ -130,7 +130,7 @@ class _SpatialHierarchyCardState extends State<SpatialHierarchyCard> {
               ),
             _row(
               context,
-              step: _PathStep(label: l10n.captureLandmark, value: ''),
+              step: (label: l10n.captureLandmark, value: '', emphasize: false),
               mark: _PathMark.upcoming,
               connect: false,
               child: CaptureFieldShell(
@@ -203,7 +203,7 @@ class _SpatialHierarchyCardState extends State<SpatialHierarchyCard> {
 
   Widget _row(
     BuildContext context, {
-    required _PathStep step,
+    required ({String label, String value, bool emphasize}) step,
     required _PathMark mark,
     required bool connect,
     Widget? child,
@@ -305,18 +305,6 @@ class _SpatialHierarchyCardState extends State<SpatialHierarchyCard> {
       ),
     );
   }
-}
-
-class _PathStep {
-  const _PathStep({
-    required this.label,
-    required this.value,
-    this.emphasize = false,
-  });
-
-  final String label;
-  final String value;
-  final bool emphasize;
 }
 
 enum _PathMark { complete, current, upcoming }

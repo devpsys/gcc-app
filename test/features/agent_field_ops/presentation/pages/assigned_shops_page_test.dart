@@ -7,8 +7,8 @@ import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shop
 import 'package:gcc_app/features/agent_field_ops/presentation/bloc/route_summary.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shop_scope.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shops_page.dart';
-import 'package:gcc_app/features/agent_field_ops/presentation/pages/empty_assignment_frame.dart';
-import 'package:gcc_app/features/agent_field_ops/presentation/pages/route_complete_frame.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/widgets/empty_assignment_frame.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/widgets/route_complete_frame.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/widgets/assigned_shop_row.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/widgets/assigned_shop_status_chip.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/widgets/next_stop_bar.dart';

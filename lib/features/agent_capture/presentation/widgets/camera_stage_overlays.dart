@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
@@ -22,11 +23,13 @@ class CameraGeofencePill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final colors = context.semanticColors;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: const Color(0xCC0B1220),
+        color: scheme.inverseSurface.withValues(alpha: 0.8),
         borderRadius: BorderRadius.circular(AppRadii.pill),
-        border: Border.all(color: const Color(0x4D127A4B)),
+        border: Border.all(color: colors.success.withValues(alpha: 0.3)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -36,22 +39,22 @@ class CameraGeofencePill extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
+            Icon(
               Icons.check,
               size: AppDimensions.iconSm,
-              color: Color(0xFF34D399),
+              color: colors.success,
             ),
             const SizedBox(width: AppSpacing.tight),
             Text(
               '$place · ',
               style: Theme.of(context).textTheme.bodySmall
-                  ?.copyWith(color: const Color(0xFF6EE7B7)),
+                  ?.copyWith(color: scheme.surface),
             ),
             Text(
               accuracyLabel,
               style: AppTextStyles.mono(
                 Theme.of(context).textTheme.labelSmall!
-                    .copyWith(color: const Color(0xFFA7F3D0)),
+                    .copyWith(color: scheme.surface),
               ),
             ),
           ],

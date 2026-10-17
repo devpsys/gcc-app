@@ -69,7 +69,9 @@ class SubmissionStatusRow extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: AppSpacing.sm),
-              StatusChip(label: status, tone: tone),
+              Flexible(
+                child: StatusChip(label: status, tone: tone),
+              ),
             ],
           ),
         ),

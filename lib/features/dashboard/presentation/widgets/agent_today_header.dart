@@ -49,24 +49,8 @@ class AgentTodayHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      dateLabel.toUpperCase(),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.labelSmall
-                          ?.copyWith(color: onHeader.withValues(alpha: 0.7)),
-                    ),
-                  ),
-                  const SizedBox(width: AppSpacing.xs),
-                  Flexible(child: _installChip(context, onHeader)),
-                  const SizedBox(width: AppSpacing.xs),
-                  _avatarButton(context, onHeader),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.xs),
+              _identityRow(context, onHeader),
+              const SizedBox(height: AppSpacing.sm),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -136,7 +120,57 @@ class AgentTodayHeader extends StatelessWidget {
     );
   }
 
-  Widget _installChip(BuildContext context, Color onHeader) {
+  /// Date on the left, the install prompt and profile on the right.
+  ///
+  /// The prompt keeps its full label. Only the date gives up space. At a
+  /// larger text scale the row wraps instead of overflowing.
+  Widget _identityRow(BuildContext context, Color onHeader) {
+    final date = Text(
+      dateLabel.toUpperCase(),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.labelSmall
+          ?.copyWith(color: onHeader.withValues(alpha: 0.7)),
+    );
+    final crowded = MediaQuery.textScalerOf(context).scale(1) > 1;
+    if (crowded) {
+      return OverflowBar(
+        spacing: AppSpacing.xs,
+        overflowSpacing: AppSpacing.xs,
+        alignment: MainAxisAlignment.spaceBetween,
+        children: [
+          date,
+          _installChip(context, onHeader, shrink: true),
+          _avatarButton(context, onHeader),
+        ],
+      );
+    }
+    return Row(
+      children: [
+        Expanded(child: date),
+        _installChip(context, onHeader, shrink: false),
+        const SizedBox(width: AppSpacing.xs),
+        _avatarButton(context, onHeader),
+      ],
+    );
+  }
+
+  Widget _installChip(
+    BuildContext context,
+    Color onHeader, {
+    required bool shrink,
+  }) {
+    final label = Text(
+      installLabel,
+      maxLines: 1,
+      softWrap: false,
+      overflow: shrink ? TextOverflow.ellipsis : TextOverflow.clip,
+      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+        color: onHeader.withValues(alpha: 0.95),
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0,
+      ),
+    );
     return Tooltip(
       message: disabledReason,
       child: DecoratedBox(
@@ -145,26 +179,28 @@ class AgentTodayHeader extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppRadii.pill),
           border: Border.all(color: onHeader.withValues(alpha: 0.1)),
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.xs,
-            vertical: AppSpacing.xxs,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.add, size: AppDimensions.iconSm, color: onHeader),
-              const SizedBox(width: AppSpacing.xxs),
-              Flexible(
-                child: Text(
-                  installLabel,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.labelSmall
-                      ?.copyWith(color: onHeader, letterSpacing: 0),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: AppSpacing.xxl),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.add,
+                  size: AppDimensions.iconSm,
+                  color: onHeader.withValues(alpha: 0.9),
                 ),
-              ),
-            ],
+                const SizedBox(width: AppSpacing.xxs),
+                if (shrink) Flexible(child: label) else label,
+                const SizedBox(width: AppSpacing.xxs),
+                Icon(
+                  Icons.close,
+                  size: AppSpacing.sm,
+                  color: onHeader.withValues(alpha: 0.6),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -176,7 +212,7 @@ class AgentTodayHeader extends StatelessWidget {
       button: onOpenProfile != null,
       label: context.l10n.profileTitle,
       child: Material(
-        color: Colors.transparent,
+        type: MaterialType.transparency,
         shape: const CircleBorder(),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
@@ -187,7 +223,7 @@ class AgentTodayHeader extends StatelessWidget {
               border: Border.all(color: onHeader.withValues(alpha: 0.5)),
             ),
             child: SizedBox.square(
-              dimension: AppDimensions.minTouchTarget - AppSpacing.sm,
+              dimension: AppSpacing.xxl,
               child: Icon(
                 Icons.person_outline,
                 size: AppSpacing.xl,

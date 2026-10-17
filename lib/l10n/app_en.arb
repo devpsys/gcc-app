@@ -432,11 +432,11 @@
   },
   "onboardingAlreadyAccount": "Already have a GCC account?",
   "@onboardingAlreadyAccount": {
-    "description": "Lead-in to the email sign-in copy."
+    "description": "Lead-in to the agent sign-in copy."
   },
-  "onboardingEmailInstead": "Sign in with your email instead.",
+  "onboardingEmailInstead": "Sign in with your agent ID instead.",
   "@onboardingEmailInstead": {
-    "description": "Copy pointing at email sign-in. No email flow is available yet."
+    "description": "Link on the phone step that opens agent sign-in. There is no email sign-in."
   },
   "onboardingGenericFailure": "Something went wrong. Try again.",
   "@onboardingGenericFailure": {
@@ -1771,6 +1771,10 @@
   "compressSizePair": "{before} → {after}",
   "compressNetworkName": "Kugbo_Fast_WiFi",
   "compressQueueReference": "SUB-2204",
+  "syncItemMissing": "This submission is not in the queue.",
+  "@syncItemMissing": {
+    "description": "Shown when a queue item route has no matching submission."
+  },
   "syncQueueTitle": "Sync queue",
   "syncStripOffline": "Offline",
   "syncStripDataLimit": "DATA LIMIT",
@@ -1972,6 +1976,13 @@
   "bountyTimelineForfeited": "Bounty forfeited",
   "bountyTimelineWaiting": "Waiting on a decision",
   "walletTitle": "Bounty wallet",
+  "@walletTitle": {
+    "description": "Title of the agent bounty wallet."
+  },
+  "walletLoadFailed": "This could not be loaded.",
+  "@walletLoadFailed": {
+    "description": "Shown when the wallet, profile, or bounty request fails."
+  },
   "walletAvailableLabel": "Available to withdraw",
   "walletPendingLabel": "Pending verification",
   "walletPaidThisYear": "Paid this year",

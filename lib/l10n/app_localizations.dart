@@ -706,16 +706,16 @@ abstract class AppLocalizations {
   /// **'Enter all 11 digits to continue.'**
   String get onboardingSendCodeNeedsFullPhone;
 
-  /// Lead-in to the email sign-in copy.
+  /// Lead-in to the agent sign-in copy.
   ///
   /// In en, this message translates to:
   /// **'Already have a GCC account?'**
   String get onboardingAlreadyAccount;
 
-  /// Copy pointing at email sign-in. No email flow is available yet.
+  /// Link on the phone step that opens agent sign-in. There is no email sign-in.
   ///
   /// In en, this message translates to:
-  /// **'Sign in with your email instead.'**
+  /// **'Sign in with your agent ID instead.'**
   String get onboardingEmailInstead;
 
   /// Shown when a first-run sign-in request fails.
@@ -3490,6 +3490,12 @@ abstract class AppLocalizations {
   /// **'SUB-2204'**
   String get compressQueueReference;
 
+  /// Shown when a queue item route has no matching submission.
+  ///
+  /// In en, this message translates to:
+  /// **'This submission is not in the queue.'**
+  String get syncItemMissing;
+
   /// No description provided for @syncQueueTitle.
   ///
   /// In en, this message translates to:
@@ -4700,11 +4706,17 @@ abstract class AppLocalizations {
   /// **'Waiting on a decision'**
   String get bountyTimelineWaiting;
 
-  /// No description provided for @walletTitle.
+  /// Title of the agent bounty wallet.
   ///
   /// In en, this message translates to:
   /// **'Bounty wallet'**
   String get walletTitle;
+
+  /// Shown when the wallet, profile, or bounty request fails.
+  ///
+  /// In en, this message translates to:
+  /// **'This could not be loaded.'**
+  String get walletLoadFailed;
 
   /// No description provided for @walletAvailableLabel.
   ///

@@ -16,6 +16,12 @@ abstract interface class SyncQueueGateway {
   /// Returns the queued submissions. Unwired returns empty.
   Future<List<QueueItem>> loadItems();
 
+  /// Records a submission the agent just captured.
+  ///
+  /// The item must carry only what the draft already has. An unwired
+  /// implementation ignores it.
+  Future<void> enqueue(QueueItem item);
+
   /// Asks the platform to retry one failed submission.
   Future<void> retrySubmission(String reference);
 

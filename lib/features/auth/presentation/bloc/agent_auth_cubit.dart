@@ -70,8 +70,6 @@ class AgentAuthCubit extends Cubit<AgentAuthState> {
     }
   }
 
-  void requestScan() {}
-
   Future<void> submitIdentifier() async {
     if (_busy) {
       return;

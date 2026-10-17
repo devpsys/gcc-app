@@ -40,18 +40,20 @@ class DashboardSection extends StatelessWidget {
       children: [
         if (heading != null)
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Text(
                   heading,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: titleStyle ?? Theme.of(context).textTheme.titleMedium,
                 ),
               ),
-              if (action != null) ...[
-                const SizedBox(width: AppSpacing.sm),
-                action,
-              ],
+              if (action != null)
+                Flexible(
+                  child: Align(alignment: Alignment.centerRight, child: action),
+                ),
             ],
           ),
         if (heading != null) const SizedBox(height: AppSpacing.sm),

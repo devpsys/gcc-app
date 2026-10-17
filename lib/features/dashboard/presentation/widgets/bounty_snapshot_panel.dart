@@ -10,6 +10,7 @@ class BountySnapshotPanel extends StatelessWidget {
     required this.pendingCaption,
     required this.earned,
     required this.earnedCaption,
+    this.onOpen,
     super.key,
   });
 
@@ -17,6 +18,7 @@ class BountySnapshotPanel extends StatelessWidget {
   final String? pendingCaption;
   final String? earned;
   final String? earnedCaption;
+  final VoidCallback? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class BountySnapshotPanel extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final figure = Theme.of(context).textTheme.headlineSmall
         ?.copyWith(fontWeight: FontWeight.w600);
-    return DecoratedBox(
+    final card = DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.surface,
         borderRadius: BorderRadius.circular(AppRadii.card),
@@ -49,20 +51,24 @@ class BountySnapshotPanel extends StatelessWidget {
                         ?.copyWith(fontWeight: FontWeight.w600),
                   ),
                 ),
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: scheme.secondaryContainer,
-                    borderRadius: BorderRadius.circular(AppRadii.input),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.xs,
-                      vertical: AppSpacing.xxs,
+                Flexible(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: scheme.secondaryContainer,
+                      borderRadius: BorderRadius.circular(AppRadii.input),
                     ),
-                    child: Text(
-                      l10n.dashboardPayoutPending,
-                      style: Theme.of(context).textTheme.labelMedium
-                          ?.copyWith(color: scheme.primary),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.xs,
+                        vertical: AppSpacing.xxs,
+                      ),
+                      child: Text(
+                        l10n.dashboardPayoutPending,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.labelMedium
+                            ?.copyWith(color: scheme.primary),
+                      ),
                     ),
                   ),
                 ),
@@ -117,6 +123,14 @@ class BountySnapshotPanel extends StatelessWidget {
           ],
         ),
       ),
+    );
+    final open = onOpen;
+    if (open == null) {
+      return card;
+    }
+    return Material(
+      type: MaterialType.transparency,
+      child: InkWell(onTap: open, child: card),
     );
   }
 }

@@ -28,6 +28,7 @@ class CameraStageActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,9 +37,9 @@ class CameraStageActions extends StatelessWidget {
         Flexible(
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: const Color(0x80000000),
+              color: scheme.scrim,
               borderRadius: BorderRadius.circular(AppRadii.pill),
-              border: Border.all(color: const Color(0x1AFFFFFF)),
+              border: Border.all(color: scheme.surface.withValues(alpha: 0.1)),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
@@ -75,6 +76,7 @@ class GalleryThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final scheme = Theme.of(context).colorScheme;
     return Semantics(
       button: true,
       label: l10n.captureGalleryThumbnail(count),
@@ -86,14 +88,16 @@ class GalleryThumbnail extends StatelessWidget {
             Positioned.fill(
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1F2937),
+                  color: scheme.inverseSurface,
                   borderRadius: BorderRadius.circular(AppRadii.dialog),
-                  border: Border.all(color: const Color(0x66FFFFFF)),
+                  border: Border.all(
+                    color: scheme.surface.withValues(alpha: 0.4),
+                  ),
                 ),
                 child: Icon(
                   Icons.image_outlined,
                   size: AppDimensions.iconLg,
-                  color: const Color(0x99FFFFFF),
+                  color: scheme.surface.withValues(alpha: 0.6),
                 ),
               ),
             ),

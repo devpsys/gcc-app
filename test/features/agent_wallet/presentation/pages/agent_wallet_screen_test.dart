@@ -8,6 +8,8 @@ import 'package:gcc_app/core/di/injection.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_theme.dart';
 import 'package:gcc_app/core/widgets/app_bottom_navigation_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/bloc/wallet_cubit.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_wallet_page.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
@@ -77,28 +79,20 @@ void main() {
     expect(find.text('Wallet'), findsWidgets);
   });
 
-  testWidgets('the zero state shows no hero figure', (tester) async {
+  testWidgets('the sample balance is shown', (tester) async {
     await pumpWallet(tester);
 
-    // The designs' zero frame prints no amount at all — a big zero reads as a
-    // balance the agent lost rather than one they never had.
-    expect(find.text('₦0'), findsNothing);
-    expect(find.text('No verified bounties to withdraw yet'), findsOneWidget);
-    expect(find.text('No bounties yet'), findsOneWidget);
+    expect(find.text('₦48,000'), findsWidgets);
+    expect(find.text('No verified bounties to withdraw yet'), findsNothing);
   });
 
-  testWidgets('the withdrawal action is inert with a zero balance', (
-    tester,
-  ) async {
+  testWidgets('the sample balance can start a withdrawal', (tester) async {
     await pumpWallet(tester);
 
-    final button = tester.widget<Widget>(
-      find.ancestor(
-        of: find.text('Withdraw to bank'),
-        matching: find.byType(ElevatedButton),
-      ),
+    final button = tester.widget<ElevatedButton>(
+      find.widgetWithText(ElevatedButton, 'Withdraw to bank'),
     );
-    expect(button, isNotNull);
+    expect(button.onPressed, isNotNull);
   });
 
   testWidgets('navigating to Today leaves the wallet', (tester) async {
@@ -121,7 +115,10 @@ GoRouter _probe() => GoRouter(
     ),
     GoRoute(
       path: RoutePaths.agentWallet,
-      builder: (context, state) => const AgentWalletScreen(),
+      builder: (context, state) => BlocProvider(
+        create: (_) => getIt<WalletCubit>()..loadOverview(),
+        child: const AgentWalletScreen(),
+      ),
     ),
   ],
 );

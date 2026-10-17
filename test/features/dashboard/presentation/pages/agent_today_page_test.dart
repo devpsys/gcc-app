@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
@@ -66,6 +67,19 @@ void main() {
         isNotNull,
       );
       expect(tester.takeException(), isNull);
+      final before = tester.getTopLeft(find.text('Good morning, Ibrahim'));
+      await tester.drag(find.byType(Scrollable), const Offset(0, -300));
+      await tester.pump();
+      expect(
+        tester.getTopLeft(find.text('Good morning, Ibrahim')).dy,
+        before.dy,
+      );
+      expect(
+        tester
+            .renderObject<RenderParagraph>(find.text('Add to home screen'))
+            .didExceedMaxLines,
+        isFalse,
+      );
     },
   );
 }

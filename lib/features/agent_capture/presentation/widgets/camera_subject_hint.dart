@@ -10,9 +10,10 @@ class CameraSubjectHint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: const Color(0x66000000),
+        color: scheme.scrim,
         borderRadius: BorderRadius.circular(AppRadii.pill),
       ),
       child: Padding(
@@ -24,7 +25,7 @@ class CameraSubjectHint extends StatelessWidget {
           text,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.labelSmall
-              ?.copyWith(color: const Color(0xCCFFFFFF)),
+              ?.copyWith(color: scheme.surface),
         ),
       ),
     );

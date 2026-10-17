@@ -5,7 +5,8 @@ import 'package:gcc_app/core/theme/app_spacing.dart';
 class DashboardTextLink extends StatelessWidget {
   const DashboardTextLink({
     required this.label,
-    required this.disabledReason,
+    this.disabledReason,
+    this.onPressed,
     this.chevron = false,
     this.color,
     this.underline = false,
@@ -14,7 +15,8 @@ class DashboardTextLink extends StatelessWidget {
   });
 
   final String label;
-  final String disabledReason;
+  final String? disabledReason;
+  final VoidCallback? onPressed;
   final bool chevron;
   final Color? color;
   final bool underline;
@@ -25,7 +27,7 @@ class DashboardTextLink extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final foreground = color ?? scheme.primary;
     final button = TextButton(
-      onPressed: null,
+      onPressed: onPressed,
       style: TextButton.styleFrom(
         foregroundColor: foreground,
         disabledForegroundColor: foreground,
@@ -34,24 +36,41 @@ class DashboardTextLink extends StatelessWidget {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         alignment: alignment,
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Flexible(
-            child: Text(
-              label,
-              style: underline
-                  ? const TextStyle(decoration: TextDecoration.underline)
-                  : null,
-            ),
-          ),
-          if (chevron)
-            const Icon(Icons.chevron_right, size: AppDimensions.iconSm),
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final text = Text(
+            label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: underline
+                ? const TextStyle(decoration: TextDecoration.underline)
+                : null,
+          );
+          return Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (constraints.maxWidth.isFinite)
+                Flexible(child: text)
+              else
+                text,
+              if (chevron)
+                const Icon(Icons.chevron_right, size: AppDimensions.iconSm),
+            ],
+          );
+        },
       ),
     );
+    final reason = onPressed == null ? disabledReason : null;
+    if (reason == null) {
+      return Align(
+        alignment: alignment,
+        widthFactor: 1,
+        heightFactor: 1,
+        child: button,
+      );
+    }
     return Tooltip(
-      message: disabledReason,
+      message: reason,
       child: Align(
         alignment: alignment,
         widthFactor: 1,

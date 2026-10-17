@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gcc_app/core/theme/app_colors.dart';
+import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/theme/app_text_styles.dart';
@@ -44,7 +44,7 @@ class PendingEscrowCard extends StatelessWidget {
                   Icon(
                     Icons.lock,
                     size: AppSpacing.lg,
-                    color: AppColors.accent600,
+                    color: context.semanticColors.heldFunds,
                   ),
                   const SizedBox(width: AppSpacing.xs),
                   Expanded(

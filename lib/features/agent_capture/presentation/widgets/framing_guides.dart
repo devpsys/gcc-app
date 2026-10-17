@@ -17,7 +17,9 @@ class FramingGuides extends StatelessWidget {
   Widget build(BuildContext context) {
     return IgnorePointer(
       child: CustomPaint(
-        painter: const _FramingGuidePainter(),
+        painter: _FramingGuidePainter(
+          color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.9),
+        ),
         size: Size.infinite,
       ),
     );
@@ -25,7 +27,9 @@ class FramingGuides extends StatelessWidget {
 }
 
 class _FramingGuidePainter extends CustomPainter {
-  const _FramingGuidePainter();
+  const _FramingGuidePainter({required this.color});
+
+  final Color color;
 
   /// Length of each bracket arm.
   static const double _arm = AppDimensions.iconLg;
@@ -39,7 +43,7 @@ class _FramingGuidePainter extends CustomPainter {
     final top = size.height * FramingGuides.insetFraction;
     final bottom = size.height * (1 - FramingGuides.insetFraction);
     final paint = Paint()
-      ..color = const Color(0xE6FFFFFF)
+      ..color = color
       ..strokeWidth = _thickness
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.square;
@@ -68,5 +72,6 @@ class _FramingGuidePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_FramingGuidePainter oldDelegate) => false;
+  bool shouldRepaint(_FramingGuidePainter oldDelegate) =>
+      color != oldDelegate.color;
 }

@@ -30,7 +30,7 @@ class LocationMapFallback extends StatelessWidget {
         child: SizedBox(
           height: AppDimensions.locationMapHeight,
           child: CustomPaint(
-            painter: const _UncachedAreaPainter(),
+            painter: _UncachedAreaPainter(color: scheme.outlineVariant),
             child: Column(
               children: [
                 // The message scrolls inside its slot so a large text scale
@@ -97,7 +97,9 @@ class LocationMapFallback extends StatelessWidget {
 
 /// Paints the 45° hatch that marks an area with no cached map data.
 class _UncachedAreaPainter extends CustomPainter {
-  const _UncachedAreaPainter();
+  const _UncachedAreaPainter({required this.color});
+
+  final Color color;
 
   /// Spacing between hatch lines, matching the escrow hatch's density.
   static const double _gap = 12;
@@ -105,7 +107,7 @@ class _UncachedAreaPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFE5E7EB)
+      ..color = color
       ..strokeWidth = 2;
     canvas.save();
     canvas.clipRect(Offset.zero & size);
@@ -121,5 +123,6 @@ class _UncachedAreaPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_UncachedAreaPainter oldDelegate) => false;
+  bool shouldRepaint(_UncachedAreaPainter oldDelegate) =>
+      color != oldDelegate.color;
 }

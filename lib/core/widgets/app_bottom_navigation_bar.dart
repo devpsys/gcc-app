@@ -23,6 +23,11 @@ class AppBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final center = centerAction;
+    final barHeight = MediaQuery.textScalerOf(context)
+        .scale(AppDimensions.navigationBarHeight);
+    final height = barHeight < AppDimensions.navigationBarHeight
+        ? AppDimensions.navigationBarHeight
+        : barHeight;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
@@ -32,7 +37,7 @@ class AppBottomNavigationBar extends StatelessWidget {
         top: false,
         child: center == null
             ? NavigationBar(
-                height: AppDimensions.navigationBarHeight,
+                height: height,
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (index) {
                   if (!destinations[index].available) {
@@ -57,16 +62,20 @@ class AppBottomNavigationBar extends StatelessWidget {
                     ),
                 ],
               )
-            : _splitBar(context, center),
+            : _splitBar(context, center, height),
       ),
     );
   }
 
-  Widget _splitBar(BuildContext context, ShellCenterAction center) {
+  Widget _splitBar(
+    BuildContext context,
+    ShellCenterAction center,
+    double height,
+  ) {
     final midpoint = destinations.length ~/ 2;
     final scheme = Theme.of(context).colorScheme;
     return SizedBox(
-      height: AppDimensions.navigationBarHeight,
+      height: height,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -152,6 +161,8 @@ class AppBottomNavigationBar extends StatelessWidget {
               ),
               Text(
                 destination.label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: color,

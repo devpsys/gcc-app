@@ -26,12 +26,16 @@ class FakeSyncQueueGateway implements SyncQueueGateway {
 
   final List<String> retried = [];
   final List<String> discarded = [];
+  final List<QueueItem> enqueued = [];
 
   @override
   Future<SyncSummary> loadSummary() async => summary;
 
   @override
   Future<List<QueueItem>> loadItems() async => items;
+
+  @override
+  Future<void> enqueue(QueueItem item) async => enqueued.add(item);
 
   @override
   Future<void> retrySubmission(String reference) async =>

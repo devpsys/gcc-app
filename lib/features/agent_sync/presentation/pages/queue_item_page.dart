@@ -103,19 +103,20 @@ class QueueItemPage extends StatelessWidget {
               ConflictClaimCard(claim: claim!),
               const SizedBox(height: AppSpacing.md),
             ],
-            QueueDetailCard(
-              title: l10n.itemFiles,
-              children: [
-                for (final file in files) QueueFileRow(file: file),
-                Text(
-                  l10n.reviewMediaCompressed('30.4 MB'),
-                  style: AppTextStyles.mono(
-                    Theme.of(context).textTheme.labelSmall!
-                        .copyWith(color: scheme.onSurfaceVariant),
+            if (files.isNotEmpty)
+              QueueDetailCard(
+                title: l10n.itemFiles,
+                children: [
+                  for (final file in files) QueueFileRow(file: file),
+                  Text(
+                    l10n.reviewMediaCompressed('30.4 MB'),
+                    style: AppTextStyles.mono(
+                      Theme.of(context).textTheme.labelSmall!
+                          .copyWith(color: scheme.onSurfaceVariant),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
             if (state == QueueItemDetailState.failed) ...[
               const SizedBox(height: AppSpacing.sm),
               FailureExplanation(reason: failureReason ?? '', onExpand: () {}),

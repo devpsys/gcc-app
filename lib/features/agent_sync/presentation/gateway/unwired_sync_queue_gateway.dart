@@ -27,6 +27,9 @@ final class UnwiredSyncQueueGateway implements SyncQueueGateway {
   Future<List<QueueItem>> loadItems() async => const [];
 
   @override
+  Future<void> enqueue(QueueItem item) async {}
+
+  @override
   Future<void> retrySubmission(String reference) async {}
 
   @override

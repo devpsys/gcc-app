@@ -10,7 +10,7 @@ import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shop
 import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shops_state.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/bloc/route_summary.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shops_page.dart';
-import 'package:gcc_app/features/agent_field_ops/presentation/pages/empty_assignment_frame.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/widgets/empty_assignment_frame.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/agent_shell.dart';
 
 /// Loads the assignment and hands it to [AssignedShopsPage].

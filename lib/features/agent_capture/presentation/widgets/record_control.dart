@@ -43,6 +43,8 @@ class RecordControl extends StatelessWidget {
     final l10n = context.l10n;
     final scheme = Theme.of(context).colorScheme;
     final colors = context.semanticColors;
+    final onStage = scheme.surface.withValues(alpha: 0.7);
+    final idleDisc = scheme.surface.withValues(alpha: 0.5);
     final progress = (elapsed / maxSeconds).clamp(0.0, 1.0);
     final almostDone = recording && elapsed >= maxSeconds - almostDoneAt;
 
@@ -59,7 +61,7 @@ class RecordControl extends StatelessWidget {
                     _elapsedLabel(elapsed),
                     style: AppTextStyles.tabular(
                       Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: almostDone ? colors.warning : _onStageForeground,
+                        color: almostDone ? colors.warning : onStage,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -67,10 +69,8 @@ class RecordControl extends StatelessWidget {
                 : Text(
                     l10n.captureClipLengthLabel,
                     style: AppTextStyles.mono(
-                      Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: _onStageForeground,
-                        letterSpacing: 1,
-                      ),
+                      Theme.of(context).textTheme.bodyMedium!
+                          .copyWith(color: onStage, letterSpacing: 1),
                     ),
                   ),
           ),
@@ -92,7 +92,7 @@ class RecordControl extends StatelessWidget {
                     decoration: BoxDecoration(
                       // Idle is a translucent disc; recording squares off into
                       // a solid stop button.
-                      color: recording ? scheme.error : _idleDisc,
+                      color: recording ? scheme.error : idleDisc,
                       borderRadius: BorderRadius.circular(
                         recording ? AppRadii.button : AppRadii.pill,
                       ),
@@ -108,7 +108,7 @@ class RecordControl extends StatelessWidget {
               l10n.captureRecordingElapsed(elapsed),
               style: AppTextStyles.mono(
                 Theme.of(context).textTheme.labelSmall!
-                    .copyWith(color: _onStageForeground),
+                    .copyWith(color: onStage),
               ),
             ),
             const SizedBox(height: AppSpacing.xxs),
@@ -116,7 +116,7 @@ class RecordControl extends StatelessWidget {
               almostDone ? l10n.captureAlmostDone : l10n.captureRecordingHint,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: almostDone ? colors.warning : _onStageForeground,
+                color: almostDone ? colors.warning : onStage,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -125,12 +125,6 @@ class RecordControl extends StatelessWidget {
       ),
     );
   }
-
-  /// Muted white the design draws for anything read over the dark stage.
-  static const Color _onStageForeground = Color(0xB3FFFFFF);
-
-  /// The idle disc at roughly half opacity.
-  static const Color _idleDisc = Color(0x80FFFFFF);
 
   /// `00:07` — zero-padded to the design's clock format.
   String _elapsedLabel(int seconds) {

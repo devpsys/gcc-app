@@ -26,7 +26,7 @@ class CameraActionButton extends StatelessWidget {
         child: Text(
           label,
           style: Theme.of(context).textTheme.bodyMedium
-              ?.copyWith(color: const Color(0xE6FFFFFF)),
+              ?.copyWith(color: Theme.of(context).colorScheme.surface),
         ),
       ),
     );

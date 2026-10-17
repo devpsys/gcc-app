@@ -107,7 +107,7 @@ class AgentSignInPage extends StatelessWidget {
                           dividerLabel: l10n.authScannerDivider,
                           actionLabel: l10n.authScanQr,
                           helpText: l10n.authScanQrHelp,
-                          onScan: cubit.requestScan,
+                          disabledReason: l10n.dashboardActionUnavailable,
                         ),
                       ],
                     ),

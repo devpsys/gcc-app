@@ -83,10 +83,12 @@ class AssignedShopRow extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: AppSpacing.xs),
-              StatusChip(
-                label: status,
-                tone: tone,
-                icon: shop.status == 'synced' ? Icons.check : null,
+              Flexible(
+                child: StatusChip(
+                  label: status,
+                  tone: tone,
+                  icon: shop.status == 'synced' ? Icons.check : null,
+                ),
               ),
               Icon(
                 Icons.chevron_right,

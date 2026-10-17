@@ -18,7 +18,7 @@ class CompressionRadio extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: selected ? scheme.surface : Colors.transparent,
+          color: selected ? scheme.surface : null,
           border: Border.all(
             color: selected ? scheme.primary : scheme.outline,
             width: selected

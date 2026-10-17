@@ -20,6 +20,14 @@ void main() {
     );
 
     expect(find.text('OR USE SCANNER'), findsOneWidget);
+    expect(
+      tester
+          .widget<OutlinedButton>(
+            find.widgetWithText(OutlinedButton, 'Scan QR'),
+          )
+          .onPressed,
+      isNull,
+    );
     expect(find.text('Enter your agent ID to continue.'), findsOneWidget);
 
     await tester.enterText(find.byType(TextField), 'AG-12');

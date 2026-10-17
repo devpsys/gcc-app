@@ -19,6 +19,20 @@ class SyncQueueCubit extends Cubit<SyncQueueState> {
   /// status panel can never disagree with the cards below them.
   Future<void> load() async {
     emit(const SyncQueueLoading());
+    await _read();
+  }
+
+  Future<void> retry(String reference) async {
+    await _gateway.retrySubmission(reference);
+    await _read();
+  }
+
+  Future<void> discard(String reference) async {
+    await _gateway.discardSubmission(reference);
+    await _read();
+  }
+
+  Future<void> _read() async {
     try {
       final results = await Future.wait([
         _gateway.loadSummary(),
@@ -34,8 +48,4 @@ class SyncQueueCubit extends Cubit<SyncQueueState> {
       emit(SyncQueueFailed(failure));
     }
   }
-
-  Future<void> retry(String reference) => _gateway.retrySubmission(reference);
-  Future<void> discard(String reference) =>
-      _gateway.discardSubmission(reference);
 }

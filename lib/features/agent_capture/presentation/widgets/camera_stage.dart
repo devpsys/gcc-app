@@ -16,24 +16,35 @@ class CameraStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Sized by the wizard scaffold's stage slot, which owns the remaining
-    // space under the chrome.
+    final scheme = Theme.of(context).colorScheme;
     return ExcludeSemantics(
-      child: CustomPaint(painter: const _StagePainter(), child: child),
+      child: CustomPaint(
+        painter: _StagePainter(
+          background: scheme.inverseSurface,
+          grid: scheme.surface.withValues(alpha: 0.2),
+          outline: scheme.surface.withValues(alpha: 0.25),
+        ),
+        child: child,
+      ),
     );
   }
 }
 
 /// Paints the stage background, its dot grid and the dashed subject outline.
 class _StagePainter extends CustomPainter {
-  const _StagePainter();
+  const _StagePainter({
+    required this.background,
+    required this.grid,
+    required this.outline,
+  });
+
+  final Color background;
+  final Color grid;
+  final Color outline;
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawRect(
-      Offset.zero & size,
-      Paint()..color = const Color(0xFF0B1220),
-    );
+    canvas.drawRect(Offset.zero & size, Paint()..color = background);
     _paintDotGrid(canvas, size);
     _paintSubjectOutline(canvas, size);
   }
@@ -41,7 +52,7 @@ class _StagePainter extends CustomPainter {
   /// A faint 24 px dot grid, which is what gives the stage its depth cue.
   void _paintDotGrid(Canvas canvas, Size size) {
     const step = 24.0;
-    final paint = Paint()..color = const Color(0x33FFFFFF);
+    final paint = Paint()..color = grid;
     for (var x = step / 2; x < size.width; x += step) {
       for (var y = step / 2; y < size.height; y += step) {
         canvas.drawCircle(Offset(x, y), 1, paint);
@@ -58,7 +69,7 @@ class _StagePainter extends CustomPainter {
       height: box * 0.7,
     );
     final paint = Paint()
-      ..color = const Color(0x40FFFFFF)
+      ..color = outline
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1;
     _dashedRect(canvas, rect, paint);
@@ -105,5 +116,8 @@ class _StagePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_StagePainter oldDelegate) => false;
+  bool shouldRepaint(_StagePainter oldDelegate) =>
+      background != oldDelegate.background ||
+      grid != oldDelegate.grid ||
+      outline != oldDelegate.outline;
 }

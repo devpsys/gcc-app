@@ -58,7 +58,7 @@ void main() {
       isNull,
     );
 
-    await tester.tap(find.text('Sign in with your email instead.'));
+    await tester.tap(find.text('Sign in with your agent ID instead.'));
     await tester.pump();
     expect(tester.takeException(), isNull);
   });

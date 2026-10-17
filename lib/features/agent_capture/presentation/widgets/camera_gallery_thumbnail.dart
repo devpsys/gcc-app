@@ -20,6 +20,7 @@ class CameraGalleryThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final scheme = Theme.of(context).colorScheme;
     return Semantics(
       button: true,
       label: l10n.captureGalleryThumbnail(count),
@@ -30,19 +31,21 @@ class CameraGalleryThumbnail extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Material(
-                color: const Color(0xFF1F2937),
+                color: scheme.inverseSurface,
                 borderRadius: BorderRadius.circular(AppRadii.dialog),
                 child: InkWell(
                   onTap: onPressed,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(AppRadii.dialog),
-                      border: Border.all(color: const Color(0x66FFFFFF)),
+                      border: Border.all(
+                        color: scheme.surface.withValues(alpha: 0.4),
+                      ),
                     ),
                     child: Icon(
                       Icons.image_outlined,
                       size: AppDimensions.iconLg,
-                      color: const Color(0x99FFFFFF),
+                      color: scheme.surface.withValues(alpha: 0.6),
                     ),
                   ),
                 ),

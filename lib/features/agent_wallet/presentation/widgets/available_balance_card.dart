@@ -38,6 +38,7 @@ class AvailableBalanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return DecoratedBox(
       decoration: BoxDecoration(
         gradient: AppGradients.availableBalance,
@@ -64,7 +65,7 @@ class AvailableBalanceCard extends StatelessWidget {
                 style: AppTextStyles.tabular(
                   Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontWeight: FontWeight.w700,
-                    color: Colors.white,
+                    color: scheme.surface,
                   ),
                 ),
               ),
@@ -84,9 +85,11 @@ class AvailableBalanceCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: isZero ? null : onWithdraw,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
+                  backgroundColor: scheme.surface,
                   foregroundColor: AppColors.brand700,
-                  disabledBackgroundColor: Colors.white.withValues(alpha: 0.4),
+                  disabledBackgroundColor: scheme.surface.withValues(
+                    alpha: 0.4,
+                  ),
                   disabledForegroundColor: AppColors.brand700.withValues(
                     alpha: 0.6,
                   ),

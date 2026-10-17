@@ -117,11 +117,18 @@ class PendingRequestsCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: AppSpacing.xs),
-            Semantics(
-              liveRegion: false,
-              child: Text(
-                current.countdown,
-                style: countdown == null ? null : AppTextStyles.mono(countdown),
+            Flexible(
+              child: Semantics(
+                liveRegion: false,
+                child: Text(
+                  current.countdown,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.end,
+                  style: countdown == null
+                      ? null
+                      : AppTextStyles.mono(countdown),
+                ),
               ),
             ),
           ],

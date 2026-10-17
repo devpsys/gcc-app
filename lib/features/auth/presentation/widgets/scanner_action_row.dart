@@ -8,14 +8,16 @@ class ScannerActionRow extends StatelessWidget {
     required this.dividerLabel,
     required this.actionLabel,
     required this.helpText,
-    required this.onScan,
+    this.onScan,
+    this.disabledReason,
     super.key,
   });
 
   final String dividerLabel;
   final String actionLabel;
   final String helpText;
-  final VoidCallback onScan;
+  final VoidCallback? onScan;
+  final String? disabledReason;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +57,7 @@ class ScannerActionRow extends StatelessWidget {
               label: actionLabel,
               icon: Icons.qr_code_2_outlined,
               onPressed: onScan,
+              disabledReason: disabledReason,
             ),
             const SizedBox(height: AppSpacing.xs),
             Text(

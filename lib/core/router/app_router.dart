@@ -13,10 +13,12 @@ import 'package:gcc_app/features/agent_capture/presentation/pages/compression_ro
 import 'package:gcc_app/features/agent_capture/presentation/pages/submission_queued_page.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shops_cubit.dart';
 import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shops_screen.dart';
-import 'package:gcc_app/features/agent_field_ops/presentation/pages/field_map_screen.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/bloc/map_cubit.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/pages/field_map_loader.dart';
 import 'package:gcc_app/features/agent_sync/presentation/bloc/sync_queue_cubit.dart';
 import 'package:gcc_app/features/agent_sync/presentation/pages/queue_item_route_page.dart';
 import 'package:gcc_app/features/agent_sync/presentation/pages/sync_queue_screen.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/bloc/wallet_cubit.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_profile_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_status_screen.dart';
@@ -111,29 +113,45 @@ GoRouter createAppRouter() {
       GoRoute(
         path: RoutePaths.agentWallet,
         name: RouteNames.agentWallet,
-        builder: (context, state) => const AgentWalletScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<WalletCubit>()..loadOverview(),
+          child: const AgentWalletScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.agentProfile,
         name: RouteNames.agentProfile,
-        builder: (context, state) => const AgentProfileScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<WalletCubit>()..loadProfile(),
+          child: const AgentProfileScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.agentBountyStatus,
         name: RouteNames.agentBountyStatus,
-        builder: (context, state) => BountyStatusScreen(
-          reference: state.pathParameters['reference'] ?? '',
-        ),
+        builder: (context, state) {
+          final reference = state.pathParameters['reference'] ?? '';
+          return BlocProvider(
+            create: (_) => getIt<WalletCubit>()..loadBounty(reference),
+            child: BountyStatusScreen(reference: reference),
+          );
+        },
       ),
       GoRoute(
         path: RoutePaths.agentNotifications,
         name: RouteNames.agentNotifications,
-        builder: (context, state) => const NotificationChannelsScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<WalletCubit>()..loadChannels(),
+          child: const NotificationChannelsScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.agentMap,
         name: RouteNames.agentMap,
-        builder: (context, state) => const FieldMapScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<MapCubit>()..load(),
+          child: const FieldMapLoader(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.agentShops,
@@ -154,8 +172,11 @@ GoRouter createAppRouter() {
       GoRoute(
         path: RoutePaths.agentQueueItem,
         name: RouteNames.agentQueueItem,
-        builder: (context, state) => QueueItemRoutePage(
-          reference: state.pathParameters['reference'] ?? '',
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<SyncQueueCubit>()..load(),
+          child: QueueItemRoutePage(
+            reference: state.pathParameters['reference'] ?? '',
+          ),
         ),
       ),
       GoRoute(

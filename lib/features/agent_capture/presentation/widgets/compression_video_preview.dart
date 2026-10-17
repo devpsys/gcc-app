@@ -16,13 +16,14 @@ class CompressionVideoPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     final l10n = context.l10n;
     return AspectRatio(
       aspectRatio: 16 / 9,
       child: ExcludeSemantics(
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: const Color(0xFF0B1220),
+            color: scheme.inverseSurface,
             borderRadius: BorderRadius.circular(AppRadii.dialog),
             border: Border.all(color: context.semanticColors.border),
           ),
@@ -32,7 +33,7 @@ class CompressionVideoPreview extends StatelessWidget {
                 child: Icon(
                   Icons.play_circle_outline,
                   size: AppDimensions.iconLg * 2,
-                  color: const Color(0xCCFFFFFF),
+                  color: scheme.surface.withValues(alpha: 0.8),
                 ),
               ),
               Positioned(
@@ -71,22 +72,21 @@ class CompressionPreviewBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.xs,
         vertical: AppSpacing.xxs / 2,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xBF000000),
+        color: scheme.scrim,
         borderRadius: BorderRadius.circular(AppRadii.input),
       ),
       child: Text(
         label,
         style: AppTextStyles.mono(
           Theme.of(context).textTheme.labelSmall!.copyWith(
-            color: emphasise
-                ? const Color(0xFFFFFFFF)
-                : const Color(0xFFD1D5DB),
+            color: emphasise ? scheme.surface : scheme.outlineVariant,
             fontWeight: emphasise ? FontWeight.w700 : FontWeight.w400,
           ),
         ),

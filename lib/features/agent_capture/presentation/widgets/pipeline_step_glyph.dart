@@ -26,7 +26,7 @@ class PipelineStepGlyph extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: running ? colors.warningContainer : Colors.transparent,
+          color: running ? colors.warningContainer : null,
           border: Border.all(
             color: state == PipelineStepState.pending ? colors.border : tone,
           ),

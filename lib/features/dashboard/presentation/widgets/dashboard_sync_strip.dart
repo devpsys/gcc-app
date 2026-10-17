@@ -5,15 +5,17 @@ class DashboardSyncStrip extends StatefulWidget {
   const DashboardSyncStrip({
     required this.kind,
     required this.message,
-    required this.disabledReason,
     this.detail,
+    this.disabledReason,
+    this.onPressed,
     super.key,
   });
 
   final SyncBannerKind kind;
   final String message;
   final String? detail;
-  final String disabledReason;
+  final String? disabledReason;
+  final VoidCallback? onPressed;
 
   @override
   State<DashboardSyncStrip> createState() => _DashboardSyncStripState();
@@ -32,17 +34,24 @@ class _DashboardSyncStripState extends State<DashboardSyncStrip> {
         }
       });
     }
-    return Tooltip(
-      message: widget.disabledReason,
-      child: Semantics(
-        liveRegion: announce,
-        child: SyncStatusBanner(
-          kind: widget.kind,
-          message: widget.message,
-          detail: widget.detail,
-          inline: true,
-        ),
+    final banner = Semantics(
+      button: widget.onPressed != null,
+      liveRegion: announce,
+      child: SyncStatusBanner(
+        kind: widget.kind,
+        message: widget.message,
+        detail: widget.detail,
+        inline: true,
       ),
     );
+    final open = widget.onPressed;
+    if (open != null) {
+      return InkWell(onTap: open, child: banner);
+    }
+    final reason = widget.disabledReason;
+    if (reason == null) {
+      return banner;
+    }
+    return Tooltip(message: reason, child: banner);
   }
 }
