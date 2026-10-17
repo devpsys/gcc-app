@@ -11,6 +11,7 @@ abstract final class RoutePaths {
   static const String captureReview = '/agent/capture/review';
   static const String captureDone = '/agent/capture/done';
   static const String agentQueue = '/agent/queue';
+  static const String agentQueueItem = '/agent/queue/:reference';
   static const String agentShops = '/agent/shops';
   static const String agentMap = '/agent/map';
   static const String agentWallet = '/agent/wallet';

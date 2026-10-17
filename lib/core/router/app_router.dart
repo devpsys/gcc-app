@@ -5,6 +5,16 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/route_error_page.dart';
 import 'package:gcc_app/features/agent_capture/presentation/bloc/capture_cubit.dart';
 import 'package:gcc_app/features/agent_capture/presentation/pages/capture_assets_page.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/bloc/assigned_shops_cubit.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/pages/assigned_shops_screen.dart';
+import 'package:gcc_app/features/agent_field_ops/presentation/pages/field_map_screen.dart';
+import 'package:gcc_app/features/agent_sync/presentation/bloc/sync_queue_cubit.dart';
+import 'package:gcc_app/features/agent_sync/presentation/pages/queue_item_route_page.dart';
+import 'package:gcc_app/features/agent_sync/presentation/pages/sync_queue_screen.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_camera_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/capture_review_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/compression_route_page.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/submission_queued_page.dart';
 import 'package:gcc_app/features/agent_capture/presentation/pages/capture_location_page.dart';
 import 'package:gcc_app/features/agent_capture/presentation/pages/capture_shop_page.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
@@ -72,7 +82,53 @@ GoRouter createAppRouter() {
             name: RouteNames.captureAssets,
             builder: (context, state) => const CaptureAssetsPage(),
           ),
+          GoRoute(
+            path: RoutePaths.captureMedia,
+            name: RouteNames.captureMedia,
+            builder: (context, state) => const CaptureCameraPage(),
+          ),
+          GoRoute(
+            path: RoutePaths.captureCompress,
+            name: RouteNames.captureCompress,
+            builder: (context, state) => const CompressionRoutePage(),
+          ),
+          GoRoute(
+            path: RoutePaths.captureReview,
+            name: RouteNames.captureReview,
+            builder: (context, state) => const CaptureReviewPage(),
+          ),
+          GoRoute(
+            path: RoutePaths.captureDone,
+            name: RouteNames.captureDone,
+            builder: (context, state) => const SubmissionQueuedPage(),
+          ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.agentMap,
+        name: RouteNames.agentMap,
+        builder: (context, state) => const FieldMapScreen(),
+      ),
+      GoRoute(
+        path: RoutePaths.agentShops,
+        name: RouteNames.agentShops,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<AssignedShopsCubit>()..load(),
+          child: const AssignedShopsScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.agentQueue,
+        name: RouteNames.agentQueue,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<SyncQueueCubit>()..load(),
+          child: const SyncQueueScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.agentQueueItem,
+        name: RouteNames.agentQueueItem,
+        builder: (context, state) => const QueueItemRoutePage(),
       ),
       GoRoute(
         path: RoutePaths.agentToday,

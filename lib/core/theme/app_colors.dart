@@ -50,5 +50,12 @@ abstract final class AppColors {
   static const Color shadow = Color(0x1F101828);
   static const Color stickyShadow = Color(0x0F101828);
   static const Color scrim = Color(0x73000000);
+
+  /// Hatch stroke for an area with no cached map tiles.
+  ///
+  /// The field map marks uncached ground with a 45° hatch. The stroke needs to
+  /// live in the theme because a painter cannot reach a color scheme.
+  static const Color uncachedHatch = Color(0xFFE5E7EB);
+
   static const Color transparent = Color(0x00000000);
 }

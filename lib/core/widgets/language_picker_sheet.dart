@@ -37,29 +37,29 @@ class _LanguagePickerSheetState extends State<LanguagePickerSheet> {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            LimitedBox(
-              maxHeight: MediaQuery.sizeOf(context).height * 0.45,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    for (final option in options) ...[
-                      LanguageOptionRow(
-                        option: option,
-                        selected: option.id == _selectedId,
-                        currentLabel: l10n.authLanguageCurrent,
-                        unavailableReason: l10n.authLanguageUnavailable,
-                        onTap: () => _select(option),
-                      ),
-                      const SizedBox(height: AppSpacing.sm),
-                    ],
-                  ],
-                ),
+        // No hand-rolled height cap here. AppSheet already bounds the body to
+        // the space left after its chrome, and that space already accounts for
+        // the keyboard — guessing a fraction of the screen instead overflowed
+        // the sheet on tall devices and at large text scales. The scroll view
+        // stays a direct child of the Padding: a Flexible here would sit
+        // outside AppSheet's Flex and throw a ParentData error.
+        child: ListView.builder(
+          shrinkWrap: true,
+          padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+          itemCount: options.length,
+          itemBuilder: (context, index) {
+            final option = options[index];
+            return Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+              child: LanguageOptionRow(
+                option: option,
+                selected: option.id == _selectedId,
+                currentLabel: l10n.authLanguageCurrent,
+                unavailableReason: l10n.authLanguageUnavailable,
+                onTap: () => _select(option),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );

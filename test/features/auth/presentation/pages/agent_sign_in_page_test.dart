@@ -68,10 +68,17 @@ void main() {
 
     expect(find.text('Èdè Yorùbá'), findsOneWidget);
     expect(find.text('Asụsụ Igbo'), findsOneWidget);
-    expect(
-      find.text("This language isn't available in the app yet."),
-      findsNWidgets(4),
+
+    // The sheet scrolls, so the unavailable count is only fully readable once
+    // the list has been dragged to the end.
+    final unavailable = find.text(
+      "This language isn't available in the app yet.",
     );
+    for (var i = 0; i < 5 && unavailable.evaluate().length < 4; i++) {
+      await tester.drag(find.byType(ListView), const Offset(0, -200));
+      await tester.pumpAndSettle();
+    }
+    expect(unavailable, findsNWidgets(4));
   });
 
   testWidgets('survives a short viewport and large text', (tester) async {

@@ -2367,6 +2367,2140 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The bounty is ₦5,000 per shop, not per asset.'**
   String get captureAssetBountyAmount;
+
+  /// No description provided for @gpsHelperTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Improve accuracy'**
+  String get gpsHelperTitle;
+
+  /// No description provided for @gpsHelperClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get gpsHelperClose;
+
+  /// No description provided for @gpsSignalWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Signal weak'**
+  String get gpsSignalWeak;
+
+  /// No description provided for @gpsSignalGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Signal good'**
+  String get gpsSignalGood;
+
+  /// No description provided for @gpsAccuracyValue.
+  ///
+  /// In en, this message translates to:
+  /// **'±{value} m'**
+  String gpsAccuracyValue(Object value);
+
+  /// No description provided for @gpsAccuracyTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target ±25 m or better'**
+  String get gpsAccuracyTarget;
+
+  /// No description provided for @gpsStepOpenSky.
+  ///
+  /// In en, this message translates to:
+  /// **'Step into the open sky'**
+  String get gpsStepOpenSky;
+
+  /// No description provided for @gpsStepHoldStill.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold still for 5 seconds'**
+  String get gpsStepHoldStill;
+
+  /// No description provided for @gpsStepAwayFromMetal.
+  ///
+  /// In en, this message translates to:
+  /// **'Move away from metal roofs and walls'**
+  String get gpsStepAwayFromMetal;
+
+  /// No description provided for @gpsAcquiring.
+  ///
+  /// In en, this message translates to:
+  /// **'Acquiring fix…'**
+  String get gpsAcquiring;
+
+  /// No description provided for @gpsSecondsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} s'**
+  String gpsSecondsShort(Object count);
+
+  /// No description provided for @gpsTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get gpsTryAgain;
+
+  /// No description provided for @gpsUseLastKnown.
+  ///
+  /// In en, this message translates to:
+  /// **'Use last known location'**
+  String get gpsUseLastKnown;
+
+  /// No description provided for @gpsEnterCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter coordinates manually'**
+  String get gpsEnterCoordinates;
+
+  /// No description provided for @gpsPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location access is off'**
+  String get gpsPermissionTitle;
+
+  /// No description provided for @gpsPermissionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'GCC uses your location to verify shops you map. Without it, bounties may take longer to approve.'**
+  String get gpsPermissionBody;
+
+  /// No description provided for @gpsHowToAllow.
+  ///
+  /// In en, this message translates to:
+  /// **'How to allow location'**
+  String get gpsHowToAllow;
+
+  /// No description provided for @gpsAllowStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get gpsAllowStep1;
+
+  /// No description provided for @gpsAllowStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Permissions'**
+  String get gpsAllowStep2;
+
+  /// No description provided for @gpsAllowStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get gpsAllowStep3;
+
+  /// No description provided for @gpsAllowFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS coordinates required for rapid automated bounty payout.'**
+  String get gpsAllowFootnote;
+
+  /// No description provided for @gpsTurnOnLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on location'**
+  String get gpsTurnOnLocation;
+
+  /// No description provided for @gpsOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get gpsOpenSettings;
+
+  /// No description provided for @gpsCoordinatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter coordinates'**
+  String get gpsCoordinatesTitle;
+
+  /// No description provided for @gpsCoordinatesHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter coordinates manually'**
+  String get gpsCoordinatesHeading;
+
+  /// No description provided for @gpsCoordinatesHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Read them off any map app. Use decimal degrees.'**
+  String get gpsCoordinatesHelper;
+
+  /// No description provided for @gpsLatitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get gpsLatitude;
+
+  /// No description provided for @gpsLongitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get gpsLongitude;
+
+  /// No description provided for @gpsDirectionNorth.
+  ///
+  /// In en, this message translates to:
+  /// **'° N'**
+  String get gpsDirectionNorth;
+
+  /// No description provided for @gpsDirectionEast.
+  ///
+  /// In en, this message translates to:
+  /// **'° E'**
+  String get gpsDirectionEast;
+
+  /// No description provided for @gpsLatitudeRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude must be between -90 and 90'**
+  String get gpsLatitudeRange;
+
+  /// No description provided for @gpsLongitudeRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude must be between -180 and 180'**
+  String get gpsLongitudeRange;
+
+  /// No description provided for @gpsSaveCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Save coordinates'**
+  String get gpsSaveCoordinates;
+
+  /// No description provided for @gpsDiscardCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get gpsDiscardCoordinates;
+
+  /// No description provided for @gpsLatitudeExample.
+  ///
+  /// In en, this message translates to:
+  /// **'9.0580'**
+  String get gpsLatitudeExample;
+
+  /// No description provided for @gpsLongitudeExample.
+  ///
+  /// In en, this message translates to:
+  /// **'7.3986'**
+  String get gpsLongitudeExample;
+
+  /// No description provided for @gpsContinueWithFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this location'**
+  String get gpsContinueWithFix;
+
+  /// No description provided for @gpsContinueWithoutFix.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue without a verified fix'**
+  String get gpsContinueWithoutFix;
+
+  /// No description provided for @captureMediaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture media'**
+  String get captureMediaTitle;
+
+  /// No description provided for @captureMediaStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total} · Photo & video'**
+  String captureMediaStep(Object current, Object total);
+
+  /// No description provided for @captureWhatToFilm.
+  ///
+  /// In en, this message translates to:
+  /// **'What to film'**
+  String get captureWhatToFilm;
+
+  /// No description provided for @captureWhatToFilmReady.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} ready'**
+  String captureWhatToFilmReady(Object done, Object total);
+
+  /// No description provided for @captureWhatToFilmComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} complete'**
+  String captureWhatToFilmComplete(Object done, Object total);
+
+  /// No description provided for @captureWhatToFilmExpand.
+  ///
+  /// In en, this message translates to:
+  /// **'View all {count}'**
+  String captureWhatToFilmExpand(Object count);
+
+  /// No description provided for @captureWhatToFilmCollapse.
+  ///
+  /// In en, this message translates to:
+  /// **'Collapse'**
+  String get captureWhatToFilmCollapse;
+
+  /// No description provided for @captureFilmWholeMachine.
+  ///
+  /// In en, this message translates to:
+  /// **'Whole machine from all four sides'**
+  String get captureFilmWholeMachine;
+
+  /// No description provided for @captureFilmExistingDamage.
+  ///
+  /// In en, this message translates to:
+  /// **'Existing damage and wear'**
+  String get captureFilmExistingDamage;
+
+  /// No description provided for @captureFilmSerialPlate.
+  ///
+  /// In en, this message translates to:
+  /// **'Serial number plate'**
+  String get captureFilmSerialPlate;
+
+  /// No description provided for @captureFilmFluidLevels.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel and fluid levels'**
+  String get captureFilmFluidLevels;
+
+  /// No description provided for @captureFilmAccessories.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessories and attachments'**
+  String get captureFilmAccessories;
+
+  /// No description provided for @captureKeepInFrame.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the whole machine in frame'**
+  String get captureKeepInFrame;
+
+  /// No description provided for @captureClipLengthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'30s CLIP'**
+  String get captureClipLengthLabel;
+
+  /// No description provided for @captureRetake.
+  ///
+  /// In en, this message translates to:
+  /// **'Retake'**
+  String get captureRetake;
+
+  /// No description provided for @captureUsePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Use photo'**
+  String get captureUsePhoto;
+
+  /// No description provided for @captureRecordClip.
+  ///
+  /// In en, this message translates to:
+  /// **'Record 30s'**
+  String get captureRecordClip;
+
+  /// No description provided for @captureRecordingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recording condition clip'**
+  String get captureRecordingTitle;
+
+  /// No description provided for @captureRecordingBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'● RECORDING'**
+  String get captureRecordingBadge;
+
+  /// No description provided for @captureRecordingElapsed.
+  ///
+  /// In en, this message translates to:
+  /// **'REC: {elapsed}s / 30s MINIMUM'**
+  String captureRecordingElapsed(Object elapsed);
+
+  /// No description provided for @captureRecordingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap square to finish early (≥30s)'**
+  String get captureRecordingHint;
+
+  /// No description provided for @captureAlmostDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost done — keep it steady'**
+  String get captureAlmostDone;
+
+  /// No description provided for @captureTimerValue.
+  ///
+  /// In en, this message translates to:
+  /// **'00:{seconds}'**
+  String captureTimerValue(Object seconds);
+
+  /// No description provided for @capturePermissionBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'CAMERA BLOCKED'**
+  String get capturePermissionBadge;
+
+  /// No description provided for @capturePermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera access is off'**
+  String get capturePermissionTitle;
+
+  /// No description provided for @capturePermissionHowTo.
+  ///
+  /// In en, this message translates to:
+  /// **'How to allow camera access'**
+  String get capturePermissionHowTo;
+
+  /// No description provided for @capturePermissionStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera → Allow while using app'**
+  String get capturePermissionStep3;
+
+  /// No description provided for @captureTurnOnCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on camera'**
+  String get captureTurnOnCamera;
+
+  /// No description provided for @captureContinueWithoutVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue without video'**
+  String get captureContinueWithoutVideo;
+
+  /// No description provided for @captureIncompleteClipBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'INCOMPLETE CLIP'**
+  String get captureIncompleteClipBadge;
+
+  /// No description provided for @captureClipTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Recording stopped after {seconds} s — the minimum is 30 seconds.'**
+  String captureClipTooShort(Object seconds);
+
+  /// No description provided for @captureClipTooShortWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Clip too short for warranty dispute audit'**
+  String get captureClipTooShortWhy;
+
+  /// No description provided for @captureRerecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-record 30s video'**
+  String get captureRerecord;
+
+  /// No description provided for @captureUseWhatWeHave.
+  ///
+  /// In en, this message translates to:
+  /// **'Use what we have ({seconds} s)'**
+  String captureUseWhatWeHave(Object seconds);
+
+  /// No description provided for @captureGalleryCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}'**
+  String captureGalleryCount(Object count);
+
+  /// No description provided for @captureStartRecording.
+  ///
+  /// In en, this message translates to:
+  /// **'Start recording'**
+  String get captureStartRecording;
+
+  /// No description provided for @captureStopRecording.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop recording'**
+  String get captureStopRecording;
+
+  /// No description provided for @captureGalleryThumbnail.
+  ///
+  /// In en, this message translates to:
+  /// **'Open gallery, {count} items'**
+  String captureGalleryThumbnail(Object count);
+
+  /// No description provided for @captureSignalVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Location pinned'**
+  String get captureSignalVerified;
+
+  /// No description provided for @captureUnverifiedPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Unverified'**
+  String get captureUnverifiedPlace;
+
+  /// No description provided for @captureAccuracyValue.
+  ///
+  /// In en, this message translates to:
+  /// **'±{value} m'**
+  String captureAccuracyValue(Object value);
+
+  /// No description provided for @capturePermissionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A condition clip protects the vendor if a rental is disputed. Without it, disputes are harder to settle.'**
+  String get capturePermissionBody;
+
+  /// No description provided for @compressTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing video'**
+  String get compressTitle;
+
+  /// No description provided for @compressTitleUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading clip'**
+  String get compressTitleUploading;
+
+  /// No description provided for @compressDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'00:30'**
+  String get compressDuration;
+
+  /// No description provided for @compressFormat.
+  ///
+  /// In en, this message translates to:
+  /// **'1080p · MP4'**
+  String get compressFormat;
+
+  /// No description provided for @compressStepOptimised.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressed 1080p → optimised'**
+  String get compressStepOptimised;
+
+  /// No description provided for @compressStepCompressing.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressing in {seconds} s…'**
+  String compressStepCompressing(Object seconds);
+
+  /// No description provided for @compressStepSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'File saved to this phone'**
+  String get compressStepSaved;
+
+  /// No description provided for @compressStepQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued — uploads automatically'**
+  String get compressStepQueued;
+
+  /// No description provided for @compressStepUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading when you\'re on data'**
+  String get compressStepUploading;
+
+  /// No description provided for @compressStepPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'Paused — waiting for power'**
+  String get compressStepPaused;
+
+  /// No description provided for @compressProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String compressProgress(Object percent);
+
+  /// No description provided for @compressUploadingDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading · {done} of {total}'**
+  String compressUploadingDetail(Object done, Object total);
+
+  /// No description provided for @compressTransferRate.
+  ///
+  /// In en, this message translates to:
+  /// **'≈ {rate} · about {seconds} left'**
+  String compressTransferRate(Object rate, Object seconds);
+
+  /// No description provided for @compressNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Compression happens on this phone. Your video never leaves uncompressed — GCC uploads a small file so your data lasts.'**
+  String get compressNote;
+
+  /// No description provided for @compressQualityHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Quality options'**
+  String get compressQualityHeading;
+
+  /// No description provided for @compressQualitySmallest.
+  ///
+  /// In en, this message translates to:
+  /// **'Smallest'**
+  String get compressQualitySmallest;
+
+  /// No description provided for @compressQualityBalanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Balanced'**
+  String get compressQualityBalanced;
+
+  /// No description provided for @compressQualityOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Original 1080p'**
+  String get compressQualityOriginal;
+
+  /// No description provided for @compressQualitySmallestHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Best quality for reviews'**
+  String get compressQualitySmallestHint;
+
+  /// No description provided for @compressQualityBalancedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharper, larger file'**
+  String get compressQualityBalancedHint;
+
+  /// No description provided for @compressQualityOriginalHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Not recommended on 3G'**
+  String get compressQualityOriginalHint;
+
+  /// No description provided for @compressRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get compressRecommended;
+
+  /// No description provided for @compressApproxOn3g.
+  ///
+  /// In en, this message translates to:
+  /// **'≈{duration} on 3G'**
+  String compressApproxOn3g(Object duration);
+
+  /// No description provided for @compressChooseQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a different quality'**
+  String get compressChooseQuality;
+
+  /// No description provided for @compressContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get compressContinue;
+
+  /// No description provided for @compressQueuedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending 3G'**
+  String get compressQueuedBadge;
+
+  /// No description provided for @compressDoneBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get compressDoneBadge;
+
+  /// No description provided for @compressSelectedProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected profile'**
+  String get compressSelectedProfile;
+
+  /// No description provided for @compressDraftSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Your submission draft is synced with offline queue item {reference}'**
+  String compressDraftSynced(Object reference);
+
+  /// No description provided for @compressUploadOnWifi.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload now if you\'re on Wi-Fi'**
+  String get compressUploadOnWifi;
+
+  /// No description provided for @compressWaitForUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Wait for the upload to finish'**
+  String get compressWaitForUpload;
+
+  /// No description provided for @compressContinueBackground.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue in background'**
+  String get compressContinueBackground;
+
+  /// No description provided for @compressNetworkWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected to {network}. Do not close this app until complete.'**
+  String compressNetworkWarning(Object network);
+
+  /// No description provided for @compressStorageBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Space Low'**
+  String get compressStorageBadge;
+
+  /// No description provided for @compressStorageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough storage on this phone'**
+  String get compressStorageTitle;
+
+  /// No description provided for @compressStorageReason.
+  ///
+  /// In en, this message translates to:
+  /// **'{required} required to upload, {free} free. Cached upload history takes {cache}'**
+  String compressStorageReason(Object cache, Object free, Object required);
+
+  /// No description provided for @compressStorageHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s taking space'**
+  String get compressStorageHeading;
+
+  /// No description provided for @compressSpaceHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Cached upload history'**
+  String get compressSpaceHistory;
+
+  /// No description provided for @compressSpacePhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop photos'**
+  String get compressSpacePhotos;
+
+  /// No description provided for @compressSpaceMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded maps'**
+  String get compressSpaceMaps;
+
+  /// No description provided for @compressClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get compressClear;
+
+  /// No description provided for @compressFreeUpSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Free up space'**
+  String get compressFreeUpSpace;
+
+  /// No description provided for @compressUploadLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload later'**
+  String get compressUploadLater;
+
+  /// No description provided for @compressBatteryBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe'**
+  String get compressBatteryBadge;
+
+  /// No description provided for @compressBatteryReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Low battery — {percent}% remaining'**
+  String compressBatteryReason(Object percent);
+
+  /// No description provided for @compressSavedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to {destination}'**
+  String compressSavedTo(Object destination);
+
+  /// No description provided for @reviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review & submit'**
+  String get reviewTitle;
+
+  /// No description provided for @reviewSectionShop.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop'**
+  String get reviewSectionShop;
+
+  /// No description provided for @reviewSectionLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get reviewSectionLocation;
+
+  /// No description provided for @reviewSectionAssets.
+  ///
+  /// In en, this message translates to:
+  /// **'Assets'**
+  String get reviewSectionAssets;
+
+  /// No description provided for @reviewSectionMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Media'**
+  String get reviewSectionMedia;
+
+  /// No description provided for @reviewLabelShopName.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop name'**
+  String get reviewLabelShopName;
+
+  /// No description provided for @reviewLabelShopType.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop type'**
+  String get reviewLabelShopType;
+
+  /// No description provided for @reviewLabelOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get reviewLabelOwner;
+
+  /// No description provided for @reviewLabelPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get reviewLabelPhone;
+
+  /// No description provided for @reviewLabelSells.
+  ///
+  /// In en, this message translates to:
+  /// **'Sells'**
+  String get reviewLabelSells;
+
+  /// No description provided for @reviewLabelMarket.
+  ///
+  /// In en, this message translates to:
+  /// **'Market'**
+  String get reviewLabelMarket;
+
+  /// No description provided for @reviewLabelZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone'**
+  String get reviewLabelZone;
+
+  /// No description provided for @reviewLabelLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Line'**
+  String get reviewLabelLine;
+
+  /// No description provided for @reviewLabelLandmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Landmark'**
+  String get reviewLabelLandmark;
+
+  /// No description provided for @reviewCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'{latitude}° N, {longitude}° E · {accuracy}'**
+  String reviewCoordinates(Object accuracy, Object latitude, Object longitude);
+
+  /// No description provided for @reviewLandmarkMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'[Missing description]'**
+  String get reviewLandmarkMissing;
+
+  /// No description provided for @reviewLandmarkMissingWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a landmark description — shops without one can\'t be verified'**
+  String get reviewLandmarkMissingWhy;
+
+  /// No description provided for @reviewGpsOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS only'**
+  String get reviewGpsOnly;
+
+  /// No description provided for @reviewLandmarkMissingBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Landmark missing'**
+  String get reviewLandmarkMissingBadge;
+
+  /// No description provided for @reviewEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get reviewEdit;
+
+  /// No description provided for @reviewFixNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix now →'**
+  String get reviewFixNow;
+
+  /// No description provided for @reviewAssetsCaptured.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 asset captured} other{{count} assets captured}}'**
+  String reviewAssetsCaptured(num count);
+
+  /// No description provided for @reviewRetake.
+  ///
+  /// In en, this message translates to:
+  /// **'Retake'**
+  String get reviewRetake;
+
+  /// No description provided for @reviewMediaPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopfront'**
+  String get reviewMediaPhoto;
+
+  /// No description provided for @reviewMediaPhotoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Exterior facade & sign'**
+  String get reviewMediaPhotoHint;
+
+  /// No description provided for @reviewMediaClip.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition clip · {duration}'**
+  String reviewMediaClip(Object duration);
+
+  /// No description provided for @reviewMediaWalkaround.
+  ///
+  /// In en, this message translates to:
+  /// **'360° walkaround proof'**
+  String get reviewMediaWalkaround;
+
+  /// No description provided for @reviewMediaCompressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Compressed from {original} on this phone'**
+  String reviewMediaCompressed(Object original);
+
+  /// No description provided for @reviewBountyEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'BOUNTY IF VERIFIED'**
+  String get reviewBountyEyebrow;
+
+  /// No description provided for @reviewBountyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'{earned} earned from {count} verified shops this week.'**
+  String reviewBountyNote(Object count, Object earned);
+
+  /// No description provided for @reviewSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get reviewSubmit;
+
+  /// No description provided for @reviewSaveDraft.
+  ///
+  /// In en, this message translates to:
+  /// **'Save draft'**
+  String get reviewSaveDraft;
+
+  /// No description provided for @reviewOfflineBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline · this will be queued'**
+  String get reviewOfflineBadge;
+
+  /// No description provided for @reviewOfflineReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline. Submit will save to this phone and upload automatically.'**
+  String get reviewOfflineReason;
+
+  /// No description provided for @reviewNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 field needs attention} other{{count} fields need attention}}'**
+  String reviewNeedsAttention(num count);
+
+  /// No description provided for @reviewBlockedReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a landmark description to submit'**
+  String get reviewBlockedReason;
+
+  /// No description provided for @queuedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop captured'**
+  String get queuedTitle;
+
+  /// No description provided for @queuedShopLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{shop} · {market}'**
+  String queuedShopLine(Object market, Object shop);
+
+  /// No description provided for @queuedUploadedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploaded and sent to review'**
+  String get queuedUploadedHeadline;
+
+  /// No description provided for @queuedOfflineHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on this phone'**
+  String get queuedOfflineHeadline;
+
+  /// No description provided for @queuedVerificationNote.
+  ///
+  /// In en, this message translates to:
+  /// **'An admin checks every shop before the bounty is paid. Usually within 24 hours.'**
+  String get queuedVerificationNote;
+
+  /// No description provided for @queuedLabelReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Reference'**
+  String get queuedLabelReference;
+
+  /// No description provided for @queuedLabelCaptured.
+  ///
+  /// In en, this message translates to:
+  /// **'Captured'**
+  String get queuedLabelCaptured;
+
+  /// No description provided for @queuedLabelAssets.
+  ///
+  /// In en, this message translates to:
+  /// **'Assets'**
+  String get queuedLabelAssets;
+
+  /// No description provided for @queuedLabelMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Media'**
+  String get queuedLabelMedia;
+
+  /// No description provided for @queuedLabelBounty.
+  ///
+  /// In en, this message translates to:
+  /// **'Bounty'**
+  String get queuedLabelBounty;
+
+  /// No description provided for @queuedPendingVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending verification'**
+  String get queuedPendingVerification;
+
+  /// No description provided for @queuedWhatNext.
+  ///
+  /// In en, this message translates to:
+  /// **'What happens next'**
+  String get queuedWhatNext;
+
+  /// No description provided for @queuedStepReview.
+  ///
+  /// In en, this message translates to:
+  /// **'An admin reviews the shop and photos'**
+  String get queuedStepReview;
+
+  /// No description provided for @queuedStepApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'If it\'s approved,'**
+  String get queuedStepApproved;
+
+  /// No description provided for @queuedStepPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'goes into your next payout run'**
+  String get queuedStepPayout;
+
+  /// No description provided for @queuedStepSms.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll get an SMS when the verdict comes through'**
+  String get queuedStepSms;
+
+  /// No description provided for @queuedStepQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Your shop is queued and uploads when you\'re online'**
+  String get queuedStepQueued;
+
+  /// No description provided for @queuedCaptureAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture another'**
+  String get queuedCaptureAnother;
+
+  /// No description provided for @queuedBackToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to today'**
+  String get queuedBackToToday;
+
+  /// No description provided for @queuedViewQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'View my queue'**
+  String get queuedViewQueue;
+
+  /// No description provided for @queuedDailyMilestone.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 shop captured today} other{{count} shops captured today}}'**
+  String queuedDailyMilestone(num count);
+
+  /// No description provided for @queuedDailyPending.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} pending'**
+  String queuedDailyPending(Object amount);
+
+  /// No description provided for @compressSizePair.
+  ///
+  /// In en, this message translates to:
+  /// **'{before} → {after}'**
+  String compressSizePair(Object after, Object before);
+
+  /// No description provided for @compressNetworkName.
+  ///
+  /// In en, this message translates to:
+  /// **'Kugbo_Fast_WiFi'**
+  String get compressNetworkName;
+
+  /// No description provided for @compressQueueReference.
+  ///
+  /// In en, this message translates to:
+  /// **'SUB-2204'**
+  String get compressQueueReference;
+
+  /// No description provided for @syncQueueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync queue'**
+  String get syncQueueTitle;
+
+  /// No description provided for @syncStripOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get syncStripOffline;
+
+  /// No description provided for @syncStripDataLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'DATA LIMIT'**
+  String get syncStripDataLimit;
+
+  /// No description provided for @syncStripLastSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Last synced {time}'**
+  String syncStripLastSynced(Object time);
+
+  /// No description provided for @syncStripSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'◐ Syncing · {done} of {total}'**
+  String syncStripSyncing(Object done, Object total);
+
+  /// No description provided for @syncLabelConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection'**
+  String get syncLabelConnection;
+
+  /// No description provided for @syncLabelLastSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Last sync'**
+  String get syncLabelLastSync;
+
+  /// No description provided for @syncLabelStorage.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get syncLabelStorage;
+
+  /// No description provided for @syncLabelQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued'**
+  String get syncLabelQueued;
+
+  /// No description provided for @syncConnectionOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get syncConnectionOffline;
+
+  /// No description provided for @syncConnectionOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'4G LTE · Online'**
+  String get syncConnectionOnline;
+
+  /// No description provided for @syncConnectionCapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit capped'**
+  String get syncConnectionCapped;
+
+  /// No description provided for @syncConnectionWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'3G · weak'**
+  String get syncConnectionWeak;
+
+  /// No description provided for @syncLastInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress…'**
+  String get syncLastInProgress;
+
+  /// No description provided for @syncJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get syncJustNow;
+
+  /// No description provided for @syncStorageFree.
+  ///
+  /// In en, this message translates to:
+  /// **'{free} free of {total}'**
+  String syncStorageFree(Object free, Object total);
+
+  /// No description provided for @syncQueuedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items · {size}'**
+  String syncQueuedCount(Object count, Object size);
+
+  /// No description provided for @syncQueuedNothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing waiting'**
+  String get syncQueuedNothing;
+
+  /// No description provided for @syncStorageCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'{free} free of {total}'**
+  String syncStorageCaption(Object free, Object total);
+
+  /// No description provided for @syncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync now'**
+  String get syncNow;
+
+  /// No description provided for @syncUploadWifiOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload on Wi-Fi only'**
+  String get syncUploadWifiOnly;
+
+  /// No description provided for @syncProcessingBatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing Batch'**
+  String get syncProcessingBatch;
+
+  /// No description provided for @syncPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get syncPause;
+
+  /// No description provided for @syncWaitingToUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting to upload ({count})'**
+  String syncWaitingToUpload(Object count);
+
+  /// No description provided for @syncFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter'**
+  String get syncFilter;
+
+  /// No description provided for @syncDiscardFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard failed items'**
+  String get syncDiscardFailed;
+
+  /// No description provided for @syncProgressPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% completed'**
+  String syncProgressPercent(Object percent);
+
+  /// No description provided for @syncBatchProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing {done} of {total} · {doneSize} of {totalSize}'**
+  String syncBatchProgress(
+    Object done,
+    Object doneSize,
+    Object total,
+    Object totalSize,
+  );
+
+  /// No description provided for @syncCloseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can close this screen. Syncing continues.'**
+  String get syncCloseHint;
+
+  /// No description provided for @syncUploadBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload blocked — daily data limit reached (2 GB). Resets {date}.'**
+  String syncUploadBlocked(Object date);
+
+  /// No description provided for @syncAllSyncedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything is synced'**
+  String get syncAllSyncedHeadline;
+
+  /// No description provided for @syncAllSyncedDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Last sync {time} · {count, plural, =1{1 submission} other{{count} submissions}} this week'**
+  String syncAllSyncedDetail(num count, Object time);
+
+  /// No description provided for @syncViewSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'View submitted shops'**
+  String get syncViewSubmitted;
+
+  /// No description provided for @syncBountyHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your bounty is'**
+  String get syncBountyHeadline;
+
+  /// No description provided for @syncBountyAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} for {count, plural, =1{1 verified shop} other{{count} verified shops}} in this run.'**
+  String syncBountyAmount(Object amount, num count);
+
+  /// No description provided for @syncItemQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued'**
+  String get syncItemQueued;
+
+  /// No description provided for @syncItemSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'◐ Uploading'**
+  String get syncItemSyncing;
+
+  /// No description provided for @syncItemSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Synced'**
+  String get syncItemSynced;
+
+  /// No description provided for @syncItemFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'✕ Failed'**
+  String get syncItemFailed;
+
+  /// No description provided for @syncItemCaptured.
+  ///
+  /// In en, this message translates to:
+  /// **'Captured {time} · {count, plural, =1{1 item} other{{count} items}}'**
+  String syncItemCaptured(num count, Object time);
+
+  /// No description provided for @syncItemSizes.
+  ///
+  /// In en, this message translates to:
+  /// **'{photos} photo + {videos} video'**
+  String syncItemSizes(Object photos, Object videos);
+
+  /// No description provided for @syncItemTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} total payload'**
+  String syncItemTotal(Object size);
+
+  /// No description provided for @syncItemUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent} % · {done} of {total}'**
+  String syncItemUploading(Object done, Object percent, Object total);
+
+  /// No description provided for @syncItemSyncedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced {time}'**
+  String syncItemSyncedAt(Object time);
+
+  /// No description provided for @syncItemFailedReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Network timeout after {seconds} s'**
+  String syncItemFailedReason(Object seconds);
+
+  /// No description provided for @syncItemFailedData.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload blocked — daily data limit reached (2 GB).'**
+  String get syncItemFailedData;
+
+  /// No description provided for @syncOpensQueueItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {shop} queue item'**
+  String syncOpensQueueItem(Object shop);
+
+  /// No description provided for @itemTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Queue item'**
+  String get itemTitle;
+
+  /// No description provided for @itemFailedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Network timeout'**
+  String get itemFailedBadge;
+
+  /// No description provided for @itemFailedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'✕ Upload failed · {reason}'**
+  String itemFailedHeadline(Object reason);
+
+  /// No description provided for @itemRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get itemRetry;
+
+  /// No description provided for @itemSyncedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Synced {time}'**
+  String itemSyncedBadge(Object time);
+
+  /// No description provided for @itemSyncedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced {time}'**
+  String itemSyncedHeadline(Object time);
+
+  /// No description provided for @itemVerifiedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'100% verified'**
+  String get itemVerifiedHeadline;
+
+  /// No description provided for @itemProgressLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} / {total}'**
+  String itemProgressLabel(Object done, Object total);
+
+  /// No description provided for @itemCaptureData.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture data'**
+  String get itemCaptureData;
+
+  /// No description provided for @itemLabelShop.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop'**
+  String get itemLabelShop;
+
+  /// No description provided for @itemLabelOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner'**
+  String get itemLabelOwner;
+
+  /// No description provided for @itemLabelLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get itemLabelLocation;
+
+  /// No description provided for @itemLabelGps.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS'**
+  String get itemLabelGps;
+
+  /// No description provided for @itemLabelCaptured.
+  ///
+  /// In en, this message translates to:
+  /// **'Captured'**
+  String get itemLabelCaptured;
+
+  /// No description provided for @itemLabelDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Device'**
+  String get itemLabelDevice;
+
+  /// No description provided for @itemFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Files'**
+  String get itemFiles;
+
+  /// No description provided for @itemGpsAtCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'{accuracy} at capture'**
+  String itemGpsAtCapture(Object accuracy);
+
+  /// No description provided for @itemWhyFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Why did this fail?'**
+  String get itemWhyFailed;
+
+  /// No description provided for @itemRetryUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry upload'**
+  String get itemRetryUpload;
+
+  /// No description provided for @itemEditOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit on device'**
+  String get itemEditOnDevice;
+
+  /// No description provided for @itemDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard this submission'**
+  String get itemDiscard;
+
+  /// No description provided for @itemDelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered safely to central ingest servers.'**
+  String get itemDelivered;
+
+  /// No description provided for @itemSentToReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploaded and sent to review'**
+  String get itemSentToReview;
+
+  /// No description provided for @itemSentToReviewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'An admin will verify this shop, usually within 24 hours. Your bounty of {amount} will unlock upon approval.'**
+  String itemSentToReviewBody(Object amount);
+
+  /// No description provided for @itemViewSubmission.
+  ///
+  /// In en, this message translates to:
+  /// **'View submission'**
+  String get itemViewSubmission;
+
+  /// No description provided for @itemEditLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Submissions can\'t be edited after upload.'**
+  String get itemEditLocked;
+
+  /// No description provided for @itemConflictHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Someone else mapped this shop first'**
+  String get itemConflictHeadline;
+
+  /// No description provided for @itemConflictAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}'**
+  String itemConflictAgent(Object name);
+
+  /// No description provided for @itemConflictAgentId.
+  ///
+  /// In en, this message translates to:
+  /// **'{id}'**
+  String itemConflictAgentId(Object id);
+
+  /// No description provided for @itemConflictMapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Mapped first'**
+  String get itemConflictMapped;
+
+  /// No description provided for @itemConflictVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified first'**
+  String get itemConflictVerified;
+
+  /// No description provided for @itemFileNotUploaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Not uploaded'**
+  String get itemFileNotUploaded;
+
+  /// No description provided for @itemFileSyncedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Synced {time}'**
+  String itemFileSyncedAt(Object time);
+
+  /// No description provided for @itemConflictRetained.
+  ///
+  /// In en, this message translates to:
+  /// **'Local media retained safely in offline storage.'**
+  String get itemConflictRetained;
+
+  /// No description provided for @itemDiscardMyCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard my copy'**
+  String get itemDiscardMyCopy;
+
+  /// No description provided for @itemKeepForReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep for reference'**
+  String get itemKeepForReference;
+
+  /// No description provided for @itemDiscardConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Discarding requires 2-step confirmation. No data lost.'**
+  String get itemDiscardConfirm;
+
+  /// No description provided for @itemDiscardedHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Submission discarded'**
+  String get itemDiscardedHeadline;
+
+  /// No description provided for @itemDiscardedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{shop} was removed from this phone. The {amount} bounty is no longer claimable for this shop.'**
+  String itemDiscardedBody(Object amount, Object shop);
+
+  /// No description provided for @itemStorageReclaimed.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} storage reclaimed on {device}'**
+  String itemStorageReclaimed(Object device, Object size);
+
+  /// No description provided for @itemBackToQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to sync queue'**
+  String get itemBackToQueue;
+
+  /// No description provided for @itemCaptureAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture another'**
+  String get itemCaptureAnother;
+
+  /// No description provided for @itemItemFailedShort.
+  ///
+  /// In en, this message translates to:
+  /// **'✕ Failed'**
+  String get itemItemFailedShort;
+
+  /// No description provided for @itemKeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep'**
+  String get itemKeep;
+
+  /// No description provided for @syncNothingYetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing in the queue yet'**
+  String get syncNothingYetTitle;
+
+  /// No description provided for @syncNothingYetBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Captures you make in the field will wait here until they upload.'**
+  String get syncNothingYetBody;
+
+  /// No description provided for @syncNothingYetNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Queuing is working offline-first: nothing is lost if you lose signal.'**
+  String get syncNothingYetNote;
+
+  /// No description provided for @shopsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned shops'**
+  String get shopsTitle;
+
+  /// No description provided for @shopsScopeToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get shopsScopeToday;
+
+  /// No description provided for @shopsScopeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All 24'**
+  String get shopsScopeAll;
+
+  /// No description provided for @shopsSummaryDone.
+  ///
+  /// In en, this message translates to:
+  /// **'done'**
+  String get shopsSummaryDone;
+
+  /// No description provided for @shopsSummaryCaptured.
+  ///
+  /// In en, this message translates to:
+  /// **'Captured'**
+  String get shopsSummaryCaptured;
+
+  /// No description provided for @shopsSummaryRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Route total'**
+  String get shopsSummaryRoute;
+
+  /// No description provided for @shopsFilterAllMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'All markets'**
+  String get shopsFilterAllMarkets;
+
+  /// No description provided for @shopsFilterAllStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'All status'**
+  String get shopsFilterAllStatus;
+
+  /// No description provided for @shopsFilterNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs attention ({count})'**
+  String shopsFilterNeedsAttention(Object count);
+
+  /// No description provided for @shopsFilterTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get shopsFilterTotal;
+
+  /// No description provided for @shopsFilterMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'Markets'**
+  String get shopsFilterMarkets;
+
+  /// No description provided for @shopsSortedByDistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorted by distance'**
+  String get shopsSortedByDistance;
+
+  /// No description provided for @shopsClearSort.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear sort'**
+  String get shopsClearSort;
+
+  /// No description provided for @shopsStatusQueued.
+  ///
+  /// In en, this message translates to:
+  /// **'Queued'**
+  String get shopsStatusQueued;
+
+  /// No description provided for @shopsStatusSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced'**
+  String get shopsStatusSynced;
+
+  /// No description provided for @shopsStatusNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs attention'**
+  String get shopsStatusNeedsAttention;
+
+  /// No description provided for @shopsStatusNotStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Not started'**
+  String get shopsStatusNotStarted;
+
+  /// No description provided for @shopsStatusVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get shopsStatusVerified;
+
+  /// No description provided for @shopsVerifiedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified {date} by {agent}'**
+  String shopsVerifiedBy(Object agent, Object date);
+
+  /// No description provided for @shopsCoords.
+  ///
+  /// In en, this message translates to:
+  /// **'{coords} · {distance}'**
+  String shopsCoords(Object coords, Object distance);
+
+  /// No description provided for @shopsStartNextStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Start next stop — {distance}'**
+  String shopsStartNextStop(Object distance);
+
+  /// No description provided for @shopsAllDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All {count} shops captured'**
+  String shopsAllDoneTitle(Object count);
+
+  /// No description provided for @shopsAllDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploaded {uploaded} · {pending, plural, =1{1 pending} other{{pending} pending}}. Your route is {distance} and took {elapsed}.'**
+  String shopsAllDoneBody(
+    Object distance,
+    Object elapsed,
+    num pending,
+    Object uploaded,
+  );
+
+  /// No description provided for @shopsLoadNextRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Load next route'**
+  String get shopsLoadNextRoute;
+
+  /// No description provided for @shopsViewSubmissions.
+  ///
+  /// In en, this message translates to:
+  /// **'View submissions'**
+  String get shopsViewSubmissions;
+
+  /// No description provided for @shopsEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No shops on this route yet'**
+  String get shopsEmptyTitle;
+
+  /// No description provided for @shopsEmptyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Your supervisor assigns shops here. Pull down to check again.'**
+  String get shopsEmptyDesc;
+
+  /// No description provided for @shopsStatusAt.
+  ///
+  /// In en, this message translates to:
+  /// **'{shop} is {status}'**
+  String shopsStatusAt(Object shop, Object status);
+
+  /// No description provided for @shopsNoMoneyNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Work list only. No bounty is shown here — see your Wallet.'**
+  String get shopsNoMoneyNotice;
+
+  /// No description provided for @mapTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get mapTitle;
+
+  /// No description provided for @mapStripOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline map · cached {date}'**
+  String mapStripOffline(Object date);
+
+  /// No description provided for @mapStripOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Map'**
+  String get mapStripOnline;
+
+  /// No description provided for @mapRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get mapRefresh;
+
+  /// No description provided for @mapRefreshOnline.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading map areas · {percent}%'**
+  String mapRefreshOnline(Object percent);
+
+  /// No description provided for @mapRefreshTile.
+  ///
+  /// In en, this message translates to:
+  /// **'Tile {done} of {total}'**
+  String mapRefreshTile(Object done, Object total);
+
+  /// No description provided for @mapRefreshVector.
+  ///
+  /// In en, this message translates to:
+  /// **'Fetching vectors…'**
+  String get mapRefreshVector;
+
+  /// No description provided for @mapRefreshBoundary.
+  ///
+  /// In en, this message translates to:
+  /// **'Dei-Dei boundary…'**
+  String get mapRefreshBoundary;
+
+  /// No description provided for @mapRefreshSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing tile vectors…'**
+  String get mapRefreshSync;
+
+  /// No description provided for @mapCachedPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% cached'**
+  String mapCachedPercent(Object percent);
+
+  /// No description provided for @mapNearbyCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 shop near you} other{{count} shops near you}}'**
+  String mapNearbyCount(num count);
+
+  /// No description provided for @mapRadiusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'{radius} active'**
+  String mapRadiusActive(Object radius);
+
+  /// No description provided for @mapFilterVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get mapFilterVerified;
+
+  /// No description provided for @mapFilterMine.
+  ///
+  /// In en, this message translates to:
+  /// **'Mine'**
+  String get mapFilterMine;
+
+  /// No description provided for @mapFilterLeads.
+  ///
+  /// In en, this message translates to:
+  /// **'Leads'**
+  String get mapFilterLeads;
+
+  /// No description provided for @mapFilterRadius.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter radius'**
+  String get mapFilterRadius;
+
+  /// No description provided for @mapCachedOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Cached areas only. Showing {shown} of {total} shops in the cached region.'**
+  String mapCachedOnly(Object shown, Object total);
+
+  /// No description provided for @mapStartCaptureHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Start capture from here'**
+  String get mapStartCaptureHere;
+
+  /// No description provided for @mapOutsideCachedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re outside the cached map area'**
+  String get mapOutsideCachedTitle;
+
+  /// No description provided for @mapOutsideCachedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shops here won\'t load until you\'re back in {areas}.'**
+  String mapOutsideCachedBody(Object areas);
+
+  /// No description provided for @mapOutsideCachedEdge.
+  ///
+  /// In en, this message translates to:
+  /// **'{area} cache edge'**
+  String mapOutsideCachedEdge(Object area);
+
+  /// No description provided for @mapOutsideCachedNoVectors.
+  ///
+  /// In en, this message translates to:
+  /// **'No cached vector data'**
+  String get mapOutsideCachedNoVectors;
+
+  /// No description provided for @mapDownloadedAreas.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded areas: {areas} · {size}'**
+  String mapDownloadedAreas(Object areas, Object size);
+
+  /// No description provided for @mapDownloadThisArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Download this area'**
+  String get mapDownloadThisArea;
+
+  /// No description provided for @mapNeedsConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs an active data connection.'**
+  String get mapNeedsConnection;
+
+  /// No description provided for @mapMyLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'My location'**
+  String get mapMyLocation;
+
+  /// No description provided for @mapZoomIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom in'**
+  String get mapZoomIn;
+
+  /// No description provided for @mapZoomOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom out'**
+  String get mapZoomOut;
+
+  /// No description provided for @mapCentre.
+  ///
+  /// In en, this message translates to:
+  /// **'Centre on my location'**
+  String get mapCentre;
+
+  /// No description provided for @mapShopMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{zone} · Line {line} · {distance}'**
+  String mapShopMeta(Object distance, Object line, Object zone);
+
+  /// No description provided for @mapAtYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'at your location'**
+  String get mapAtYourLocation;
+
+  /// No description provided for @mapCapturedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Captured {date} · {reference}'**
+  String mapCapturedAt(Object date, Object reference);
+
+  /// No description provided for @mapLeadStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Lead'**
+  String get mapLeadStatus;
+
+  /// No description provided for @mapOpensShop.
+  ///
+  /// In en, this message translates to:
+  /// **'Open {shop} on the map'**
+  String mapOpensShop(Object shop);
+
+  /// No description provided for @mapLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Map legend'**
+  String get mapLegend;
+
+  /// No description provided for @mapRadius500m.
+  ///
+  /// In en, this message translates to:
+  /// **'500 m'**
+  String get mapRadius500m;
+
+  /// No description provided for @mapRadius1km.
+  ///
+  /// In en, this message translates to:
+  /// **'1 km'**
+  String get mapRadius1km;
+
+  /// No description provided for @mapRadius2km.
+  ///
+  /// In en, this message translates to:
+  /// **'2 km'**
+  String get mapRadius2km;
+
+  /// No description provided for @mapRadius5km.
+  ///
+  /// In en, this message translates to:
+  /// **'5 km'**
+  String get mapRadius5km;
+
+  /// No description provided for @mapLegendVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get mapLegendVerified;
+
+  /// No description provided for @mapLegendMine.
+  ///
+  /// In en, this message translates to:
+  /// **'Mine'**
+  String get mapLegendMine;
+
+  /// No description provided for @mapLegendLeads.
+  ///
+  /// In en, this message translates to:
+  /// **'Leads'**
+  String get mapLegendLeads;
+
+  /// No description provided for @syncDiscardFailedConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Discarding {count, plural, =1{1 failed submission} other{{count} failed submissions}}. This cannot be undone.'**
+  String syncDiscardFailedConfirm(num count);
+
+  /// No description provided for @syncDiscardFailedAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard them'**
+  String get syncDiscardFailedAction;
 }
 
 class _AppLocalizationsDelegate

@@ -1,6 +1,8 @@
 import 'package:gcc_app/core/config/app_config.dart';
 import 'package:gcc_app/core/di/auth_module.dart';
 import 'package:gcc_app/core/di/capture_module.dart';
+import 'package:gcc_app/core/di/field_ops_module.dart';
+import 'package:gcc_app/core/di/sync_module.dart';
 import 'package:gcc_app/core/di/dashboard_module.dart';
 import 'package:gcc_app/core/di/home_module.dart';
 import 'package:gcc_app/core/di/onboarding_module.dart';
@@ -28,5 +30,7 @@ Future<void> configureDependencies({
   registerAuthModule();
   registerDashboardModule();
   registerCaptureModule();
+  registerSyncModule();
+  registerFieldOpsModule();
   getIt.registerLazySingleton<GoRouter>(createAppRouter);
 }

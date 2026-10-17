@@ -1278,4 +1278,1314 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get captureAssetBountyAmount =>
       'The bounty is ₦5,000 per shop, not per asset.';
+
+  @override
+  String get gpsHelperTitle => 'Improve accuracy';
+
+  @override
+  String get gpsHelperClose => 'Close';
+
+  @override
+  String get gpsSignalWeak => 'Signal weak';
+
+  @override
+  String get gpsSignalGood => 'Signal good';
+
+  @override
+  String gpsAccuracyValue(Object value) {
+    return '±$value m';
+  }
+
+  @override
+  String get gpsAccuracyTarget => 'Target ±25 m or better';
+
+  @override
+  String get gpsStepOpenSky => 'Step into the open sky';
+
+  @override
+  String get gpsStepHoldStill => 'Hold still for 5 seconds';
+
+  @override
+  String get gpsStepAwayFromMetal => 'Move away from metal roofs and walls';
+
+  @override
+  String get gpsAcquiring => 'Acquiring fix…';
+
+  @override
+  String gpsSecondsShort(Object count) {
+    return '$count s';
+  }
+
+  @override
+  String get gpsTryAgain => 'Try again';
+
+  @override
+  String get gpsUseLastKnown => 'Use last known location';
+
+  @override
+  String get gpsEnterCoordinates => 'Enter coordinates manually';
+
+  @override
+  String get gpsPermissionTitle => 'Location access is off';
+
+  @override
+  String get gpsPermissionBody =>
+      'GCC uses your location to verify shops you map. Without it, bounties may take longer to approve.';
+
+  @override
+  String get gpsHowToAllow => 'How to allow location';
+
+  @override
+  String get gpsAllowStep1 => 'Open Settings';
+
+  @override
+  String get gpsAllowStep2 => 'Permissions';
+
+  @override
+  String get gpsAllowStep3 => 'Location';
+
+  @override
+  String get gpsAllowFootnote =>
+      'GPS coordinates required for rapid automated bounty payout.';
+
+  @override
+  String get gpsTurnOnLocation => 'Turn on location';
+
+  @override
+  String get gpsOpenSettings => 'Open Settings';
+
+  @override
+  String get gpsCoordinatesTitle => 'Enter coordinates';
+
+  @override
+  String get gpsCoordinatesHeading => 'Enter coordinates manually';
+
+  @override
+  String get gpsCoordinatesHelper =>
+      'Read them off any map app. Use decimal degrees.';
+
+  @override
+  String get gpsLatitude => 'Latitude';
+
+  @override
+  String get gpsLongitude => 'Longitude';
+
+  @override
+  String get gpsDirectionNorth => '° N';
+
+  @override
+  String get gpsDirectionEast => '° E';
+
+  @override
+  String get gpsLatitudeRange => 'Latitude must be between -90 and 90';
+
+  @override
+  String get gpsLongitudeRange => 'Longitude must be between -180 and 180';
+
+  @override
+  String get gpsSaveCoordinates => 'Save coordinates';
+
+  @override
+  String get gpsDiscardCoordinates => 'Discard';
+
+  @override
+  String get gpsLatitudeExample => '9.0580';
+
+  @override
+  String get gpsLongitudeExample => '7.3986';
+
+  @override
+  String get gpsContinueWithFix => 'Use this location';
+
+  @override
+  String get gpsContinueWithoutFix => 'Continue without a verified fix';
+
+  @override
+  String get captureMediaTitle => 'Capture media';
+
+  @override
+  String captureMediaStep(Object current, Object total) {
+    return 'Step $current of $total · Photo & video';
+  }
+
+  @override
+  String get captureWhatToFilm => 'What to film';
+
+  @override
+  String captureWhatToFilmReady(Object done, Object total) {
+    return '$done/$total ready';
+  }
+
+  @override
+  String captureWhatToFilmComplete(Object done, Object total) {
+    return '$done/$total complete';
+  }
+
+  @override
+  String captureWhatToFilmExpand(Object count) {
+    return 'View all $count';
+  }
+
+  @override
+  String get captureWhatToFilmCollapse => 'Collapse';
+
+  @override
+  String get captureFilmWholeMachine => 'Whole machine from all four sides';
+
+  @override
+  String get captureFilmExistingDamage => 'Existing damage and wear';
+
+  @override
+  String get captureFilmSerialPlate => 'Serial number plate';
+
+  @override
+  String get captureFilmFluidLevels => 'Fuel and fluid levels';
+
+  @override
+  String get captureFilmAccessories => 'Accessories and attachments';
+
+  @override
+  String get captureKeepInFrame => 'Keep the whole machine in frame';
+
+  @override
+  String get captureClipLengthLabel => '30s CLIP';
+
+  @override
+  String get captureRetake => 'Retake';
+
+  @override
+  String get captureUsePhoto => 'Use photo';
+
+  @override
+  String get captureRecordClip => 'Record 30s';
+
+  @override
+  String get captureRecordingTitle => 'Recording condition clip';
+
+  @override
+  String get captureRecordingBadge => '● RECORDING';
+
+  @override
+  String captureRecordingElapsed(Object elapsed) {
+    return 'REC: ${elapsed}s / 30s MINIMUM';
+  }
+
+  @override
+  String get captureRecordingHint => 'Tap square to finish early (≥30s)';
+
+  @override
+  String get captureAlmostDone => 'Almost done — keep it steady';
+
+  @override
+  String captureTimerValue(Object seconds) {
+    return '00:$seconds';
+  }
+
+  @override
+  String get capturePermissionBadge => 'CAMERA BLOCKED';
+
+  @override
+  String get capturePermissionTitle => 'Camera access is off';
+
+  @override
+  String get capturePermissionHowTo => 'How to allow camera access';
+
+  @override
+  String get capturePermissionStep3 => 'Camera → Allow while using app';
+
+  @override
+  String get captureTurnOnCamera => 'Turn on camera';
+
+  @override
+  String get captureContinueWithoutVideo => 'Continue without video';
+
+  @override
+  String get captureIncompleteClipBadge => 'INCOMPLETE CLIP';
+
+  @override
+  String captureClipTooShort(Object seconds) {
+    return 'Recording stopped after $seconds s — the minimum is 30 seconds.';
+  }
+
+  @override
+  String get captureClipTooShortWhy =>
+      'Clip too short for warranty dispute audit';
+
+  @override
+  String get captureRerecord => 'Re-record 30s video';
+
+  @override
+  String captureUseWhatWeHave(Object seconds) {
+    return 'Use what we have ($seconds s)';
+  }
+
+  @override
+  String captureGalleryCount(Object count) {
+    return '$count';
+  }
+
+  @override
+  String get captureStartRecording => 'Start recording';
+
+  @override
+  String get captureStopRecording => 'Stop recording';
+
+  @override
+  String captureGalleryThumbnail(Object count) {
+    return 'Open gallery, $count items';
+  }
+
+  @override
+  String get captureSignalVerified => 'Location pinned';
+
+  @override
+  String get captureUnverifiedPlace => 'Unverified';
+
+  @override
+  String captureAccuracyValue(Object value) {
+    return '±$value m';
+  }
+
+  @override
+  String get capturePermissionBody =>
+      'A condition clip protects the vendor if a rental is disputed. Without it, disputes are harder to settle.';
+
+  @override
+  String get compressTitle => 'Preparing video';
+
+  @override
+  String get compressTitleUploading => 'Uploading clip';
+
+  @override
+  String get compressDuration => '00:30';
+
+  @override
+  String get compressFormat => '1080p · MP4';
+
+  @override
+  String get compressStepOptimised => 'Compressed 1080p → optimised';
+
+  @override
+  String compressStepCompressing(Object seconds) {
+    return 'Compressing in $seconds s…';
+  }
+
+  @override
+  String get compressStepSaved => 'File saved to this phone';
+
+  @override
+  String get compressStepQueued => 'Queued — uploads automatically';
+
+  @override
+  String get compressStepUploading => 'Uploading when you\'re on data';
+
+  @override
+  String get compressStepPaused => 'Paused — waiting for power';
+
+  @override
+  String compressProgress(Object percent) {
+    return '$percent%';
+  }
+
+  @override
+  String compressUploadingDetail(Object done, Object total) {
+    return 'Uploading · $done of $total';
+  }
+
+  @override
+  String compressTransferRate(Object rate, Object seconds) {
+    return '≈ $rate · about $seconds left';
+  }
+
+  @override
+  String get compressNote =>
+      'Compression happens on this phone. Your video never leaves uncompressed — GCC uploads a small file so your data lasts.';
+
+  @override
+  String get compressQualityHeading => 'Quality options';
+
+  @override
+  String get compressQualitySmallest => 'Smallest';
+
+  @override
+  String get compressQualityBalanced => 'Balanced';
+
+  @override
+  String get compressQualityOriginal => 'Original 1080p';
+
+  @override
+  String get compressQualitySmallestHint => 'Best quality for reviews';
+
+  @override
+  String get compressQualityBalancedHint => 'Sharper, larger file';
+
+  @override
+  String get compressQualityOriginalHint => 'Not recommended on 3G';
+
+  @override
+  String get compressRecommended => 'Recommended';
+
+  @override
+  String compressApproxOn3g(Object duration) {
+    return '≈$duration on 3G';
+  }
+
+  @override
+  String get compressChooseQuality => 'Choose a different quality';
+
+  @override
+  String get compressContinue => 'Continue';
+
+  @override
+  String get compressQueuedBadge => 'Pending 3G';
+
+  @override
+  String get compressDoneBadge => 'Done';
+
+  @override
+  String get compressSelectedProfile => 'Selected profile';
+
+  @override
+  String compressDraftSynced(Object reference) {
+    return 'Your submission draft is synced with offline queue item $reference';
+  }
+
+  @override
+  String get compressUploadOnWifi => 'Upload now if you\'re on Wi-Fi';
+
+  @override
+  String get compressWaitForUpload => 'Wait for the upload to finish';
+
+  @override
+  String get compressContinueBackground => 'Continue in background';
+
+  @override
+  String compressNetworkWarning(Object network) {
+    return 'Connected to $network. Do not close this app until complete.';
+  }
+
+  @override
+  String get compressStorageBadge => 'Space Low';
+
+  @override
+  String get compressStorageTitle => 'Not enough storage on this phone';
+
+  @override
+  String compressStorageReason(Object cache, Object free, Object required) {
+    return '$required required to upload, $free free. Cached upload history takes $cache';
+  }
+
+  @override
+  String get compressStorageHeading => 'What\'s taking space';
+
+  @override
+  String get compressSpaceHistory => 'Cached upload history';
+
+  @override
+  String get compressSpacePhotos => 'Shop photos';
+
+  @override
+  String get compressSpaceMaps => 'Downloaded maps';
+
+  @override
+  String get compressClear => 'Clear';
+
+  @override
+  String get compressFreeUpSpace => 'Free up space';
+
+  @override
+  String get compressUploadLater => 'Upload later';
+
+  @override
+  String get compressBatteryBadge => 'Safe';
+
+  @override
+  String compressBatteryReason(Object percent) {
+    return 'Low battery — $percent% remaining';
+  }
+
+  @override
+  String compressSavedTo(Object destination) {
+    return 'Saved to $destination';
+  }
+
+  @override
+  String get reviewTitle => 'Review & submit';
+
+  @override
+  String get reviewSectionShop => 'Shop';
+
+  @override
+  String get reviewSectionLocation => 'Location';
+
+  @override
+  String get reviewSectionAssets => 'Assets';
+
+  @override
+  String get reviewSectionMedia => 'Media';
+
+  @override
+  String get reviewLabelShopName => 'Shop name';
+
+  @override
+  String get reviewLabelShopType => 'Shop type';
+
+  @override
+  String get reviewLabelOwner => 'Owner';
+
+  @override
+  String get reviewLabelPhone => 'Phone';
+
+  @override
+  String get reviewLabelSells => 'Sells';
+
+  @override
+  String get reviewLabelMarket => 'Market';
+
+  @override
+  String get reviewLabelZone => 'Zone';
+
+  @override
+  String get reviewLabelLine => 'Line';
+
+  @override
+  String get reviewLabelLandmark => 'Landmark';
+
+  @override
+  String reviewCoordinates(Object accuracy, Object latitude, Object longitude) {
+    return '$latitude° N, $longitude° E · $accuracy';
+  }
+
+  @override
+  String get reviewLandmarkMissing => '[Missing description]';
+
+  @override
+  String get reviewLandmarkMissingWhy =>
+      'Add a landmark description — shops without one can\'t be verified';
+
+  @override
+  String get reviewGpsOnly => 'GPS only';
+
+  @override
+  String get reviewLandmarkMissingBadge => 'Landmark missing';
+
+  @override
+  String get reviewEdit => 'Edit';
+
+  @override
+  String get reviewFixNow => 'Fix now →';
+
+  @override
+  String reviewAssetsCaptured(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count assets captured',
+      one: '1 asset captured',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewRetake => 'Retake';
+
+  @override
+  String get reviewMediaPhoto => 'Shopfront';
+
+  @override
+  String get reviewMediaPhotoHint => 'Exterior facade & sign';
+
+  @override
+  String reviewMediaClip(Object duration) {
+    return 'Condition clip · $duration';
+  }
+
+  @override
+  String get reviewMediaWalkaround => '360° walkaround proof';
+
+  @override
+  String reviewMediaCompressed(Object original) {
+    return 'Compressed from $original on this phone';
+  }
+
+  @override
+  String get reviewBountyEyebrow => 'BOUNTY IF VERIFIED';
+
+  @override
+  String reviewBountyNote(Object count, Object earned) {
+    return '$earned earned from $count verified shops this week.';
+  }
+
+  @override
+  String get reviewSubmit => 'Submit';
+
+  @override
+  String get reviewSaveDraft => 'Save draft';
+
+  @override
+  String get reviewOfflineBadge => 'Offline · this will be queued';
+
+  @override
+  String get reviewOfflineReason =>
+      'Offline. Submit will save to this phone and upload automatically.';
+
+  @override
+  String reviewNeedsAttention(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count fields need attention',
+      one: '1 field needs attention',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewBlockedReason => 'Add a landmark description to submit';
+
+  @override
+  String get queuedTitle => 'Shop captured';
+
+  @override
+  String queuedShopLine(Object market, Object shop) {
+    return '$shop · $market';
+  }
+
+  @override
+  String get queuedUploadedHeadline => 'Uploaded and sent to review';
+
+  @override
+  String get queuedOfflineHeadline => 'Saved on this phone';
+
+  @override
+  String get queuedVerificationNote =>
+      'An admin checks every shop before the bounty is paid. Usually within 24 hours.';
+
+  @override
+  String get queuedLabelReference => 'Reference';
+
+  @override
+  String get queuedLabelCaptured => 'Captured';
+
+  @override
+  String get queuedLabelAssets => 'Assets';
+
+  @override
+  String get queuedLabelMedia => 'Media';
+
+  @override
+  String get queuedLabelBounty => 'Bounty';
+
+  @override
+  String get queuedPendingVerification => 'Pending verification';
+
+  @override
+  String get queuedWhatNext => 'What happens next';
+
+  @override
+  String get queuedStepReview => 'An admin reviews the shop and photos';
+
+  @override
+  String get queuedStepApproved => 'If it\'s approved,';
+
+  @override
+  String get queuedStepPayout => 'goes into your next payout run';
+
+  @override
+  String get queuedStepSms =>
+      'You\'ll get an SMS when the verdict comes through';
+
+  @override
+  String get queuedStepQueued =>
+      'Your shop is queued and uploads when you\'re online';
+
+  @override
+  String get queuedCaptureAnother => 'Capture another';
+
+  @override
+  String get queuedBackToToday => 'Back to today';
+
+  @override
+  String get queuedViewQueue => 'View my queue';
+
+  @override
+  String queuedDailyMilestone(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count shops captured today',
+      one: '1 shop captured today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String queuedDailyPending(Object amount) {
+    return '$amount pending';
+  }
+
+  @override
+  String compressSizePair(Object after, Object before) {
+    return '$before → $after';
+  }
+
+  @override
+  String get compressNetworkName => 'Kugbo_Fast_WiFi';
+
+  @override
+  String get compressQueueReference => 'SUB-2204';
+
+  @override
+  String get syncQueueTitle => 'Sync queue';
+
+  @override
+  String get syncStripOffline => 'Offline';
+
+  @override
+  String get syncStripDataLimit => 'DATA LIMIT';
+
+  @override
+  String syncStripLastSynced(Object time) {
+    return 'Last synced $time';
+  }
+
+  @override
+  String syncStripSyncing(Object done, Object total) {
+    return '◐ Syncing · $done of $total';
+  }
+
+  @override
+  String get syncLabelConnection => 'Connection';
+
+  @override
+  String get syncLabelLastSync => 'Last sync';
+
+  @override
+  String get syncLabelStorage => 'Storage';
+
+  @override
+  String get syncLabelQueued => 'Queued';
+
+  @override
+  String get syncConnectionOffline => 'Offline';
+
+  @override
+  String get syncConnectionOnline => '4G LTE · Online';
+
+  @override
+  String get syncConnectionCapped => 'Limit capped';
+
+  @override
+  String get syncConnectionWeak => '3G · weak';
+
+  @override
+  String get syncLastInProgress => 'In progress…';
+
+  @override
+  String get syncJustNow => 'Just now';
+
+  @override
+  String syncStorageFree(Object free, Object total) {
+    return '$free free of $total';
+  }
+
+  @override
+  String syncQueuedCount(Object count, Object size) {
+    return '$count items · $size';
+  }
+
+  @override
+  String get syncQueuedNothing => 'Nothing waiting';
+
+  @override
+  String syncStorageCaption(Object free, Object total) {
+    return '$free free of $total';
+  }
+
+  @override
+  String get syncNow => 'Sync now';
+
+  @override
+  String get syncUploadWifiOnly => 'Upload on Wi-Fi only';
+
+  @override
+  String get syncProcessingBatch => 'Processing Batch';
+
+  @override
+  String get syncPause => 'Pause';
+
+  @override
+  String syncWaitingToUpload(Object count) {
+    return 'Waiting to upload ($count)';
+  }
+
+  @override
+  String get syncFilter => 'Filter';
+
+  @override
+  String get syncDiscardFailed => 'Discard failed items';
+
+  @override
+  String syncProgressPercent(Object percent) {
+    return '$percent% completed';
+  }
+
+  @override
+  String syncBatchProgress(
+    Object done,
+    Object doneSize,
+    Object total,
+    Object totalSize,
+  ) {
+    return 'Syncing $done of $total · $doneSize of $totalSize';
+  }
+
+  @override
+  String get syncCloseHint => 'You can close this screen. Syncing continues.';
+
+  @override
+  String syncUploadBlocked(Object date) {
+    return 'Upload blocked — daily data limit reached (2 GB). Resets $date.';
+  }
+
+  @override
+  String get syncAllSyncedHeadline => 'Everything is synced';
+
+  @override
+  String syncAllSyncedDetail(num count, Object time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count submissions',
+      one: '1 submission',
+    );
+    return 'Last sync $time · $_temp0 this week';
+  }
+
+  @override
+  String get syncViewSubmitted => 'View submitted shops';
+
+  @override
+  String get syncBountyHeadline => 'Your bounty is';
+
+  @override
+  String syncBountyAmount(Object amount, num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count verified shops',
+      one: '1 verified shop',
+    );
+    return '$amount for $_temp0 in this run.';
+  }
+
+  @override
+  String get syncItemQueued => 'Queued';
+
+  @override
+  String get syncItemSyncing => '◐ Uploading';
+
+  @override
+  String get syncItemSynced => '✓ Synced';
+
+  @override
+  String get syncItemFailed => '✕ Failed';
+
+  @override
+  String syncItemCaptured(num count, Object time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return 'Captured $time · $_temp0';
+  }
+
+  @override
+  String syncItemSizes(Object photos, Object videos) {
+    return '$photos photo + $videos video';
+  }
+
+  @override
+  String syncItemTotal(Object size) {
+    return '$size total payload';
+  }
+
+  @override
+  String syncItemUploading(Object done, Object percent, Object total) {
+    return '$percent % · $done of $total';
+  }
+
+  @override
+  String syncItemSyncedAt(Object time) {
+    return 'Synced $time';
+  }
+
+  @override
+  String syncItemFailedReason(Object seconds) {
+    return 'Network timeout after $seconds s';
+  }
+
+  @override
+  String get syncItemFailedData =>
+      'Upload blocked — daily data limit reached (2 GB).';
+
+  @override
+  String syncOpensQueueItem(Object shop) {
+    return 'Open $shop queue item';
+  }
+
+  @override
+  String get itemTitle => 'Queue item';
+
+  @override
+  String get itemFailedBadge => 'Network timeout';
+
+  @override
+  String itemFailedHeadline(Object reason) {
+    return '✕ Upload failed · $reason';
+  }
+
+  @override
+  String get itemRetry => 'Retry';
+
+  @override
+  String itemSyncedBadge(Object time) {
+    return '✓ Synced $time';
+  }
+
+  @override
+  String itemSyncedHeadline(Object time) {
+    return 'Synced $time';
+  }
+
+  @override
+  String get itemVerifiedHeadline => '100% verified';
+
+  @override
+  String itemProgressLabel(Object done, Object total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get itemCaptureData => 'Capture data';
+
+  @override
+  String get itemLabelShop => 'Shop';
+
+  @override
+  String get itemLabelOwner => 'Owner';
+
+  @override
+  String get itemLabelLocation => 'Location';
+
+  @override
+  String get itemLabelGps => 'GPS';
+
+  @override
+  String get itemLabelCaptured => 'Captured';
+
+  @override
+  String get itemLabelDevice => 'Device';
+
+  @override
+  String get itemFiles => 'Files';
+
+  @override
+  String itemGpsAtCapture(Object accuracy) {
+    return '$accuracy at capture';
+  }
+
+  @override
+  String get itemWhyFailed => 'Why did this fail?';
+
+  @override
+  String get itemRetryUpload => 'Retry upload';
+
+  @override
+  String get itemEditOnDevice => 'Edit on device';
+
+  @override
+  String get itemDiscard => 'Discard this submission';
+
+  @override
+  String get itemDelivered => 'Delivered safely to central ingest servers.';
+
+  @override
+  String get itemSentToReview => 'Uploaded and sent to review';
+
+  @override
+  String itemSentToReviewBody(Object amount) {
+    return 'An admin will verify this shop, usually within 24 hours. Your bounty of $amount will unlock upon approval.';
+  }
+
+  @override
+  String get itemViewSubmission => 'View submission';
+
+  @override
+  String get itemEditLocked => 'Submissions can\'t be edited after upload.';
+
+  @override
+  String get itemConflictHeadline => 'Someone else mapped this shop first';
+
+  @override
+  String itemConflictAgent(Object name) {
+    return '$name';
+  }
+
+  @override
+  String itemConflictAgentId(Object id) {
+    return '$id';
+  }
+
+  @override
+  String get itemConflictMapped => 'Mapped first';
+
+  @override
+  String get itemConflictVerified => 'Verified first';
+
+  @override
+  String get itemFileNotUploaded => 'Not uploaded';
+
+  @override
+  String itemFileSyncedAt(Object time) {
+    return '✓ Synced $time';
+  }
+
+  @override
+  String get itemConflictRetained =>
+      'Local media retained safely in offline storage.';
+
+  @override
+  String get itemDiscardMyCopy => 'Discard my copy';
+
+  @override
+  String get itemKeepForReference => 'Keep for reference';
+
+  @override
+  String get itemDiscardConfirm =>
+      'Discarding requires 2-step confirmation. No data lost.';
+
+  @override
+  String get itemDiscardedHeadline => 'Submission discarded';
+
+  @override
+  String itemDiscardedBody(Object amount, Object shop) {
+    return '$shop was removed from this phone. The $amount bounty is no longer claimable for this shop.';
+  }
+
+  @override
+  String itemStorageReclaimed(Object device, Object size) {
+    return '$size storage reclaimed on $device';
+  }
+
+  @override
+  String get itemBackToQueue => 'Back to sync queue';
+
+  @override
+  String get itemCaptureAnother => 'Capture another';
+
+  @override
+  String get itemItemFailedShort => '✕ Failed';
+
+  @override
+  String get itemKeep => 'Keep';
+
+  @override
+  String get syncNothingYetTitle => 'Nothing in the queue yet';
+
+  @override
+  String get syncNothingYetBody =>
+      'Captures you make in the field will wait here until they upload.';
+
+  @override
+  String get syncNothingYetNote =>
+      'Queuing is working offline-first: nothing is lost if you lose signal.';
+
+  @override
+  String get shopsTitle => 'Assigned shops';
+
+  @override
+  String get shopsScopeToday => 'Today';
+
+  @override
+  String get shopsScopeAll => 'All 24';
+
+  @override
+  String get shopsSummaryDone => 'done';
+
+  @override
+  String get shopsSummaryCaptured => 'Captured';
+
+  @override
+  String get shopsSummaryRoute => 'Route total';
+
+  @override
+  String get shopsFilterAllMarkets => 'All markets';
+
+  @override
+  String get shopsFilterAllStatus => 'All status';
+
+  @override
+  String shopsFilterNeedsAttention(Object count) {
+    return 'Needs attention ($count)';
+  }
+
+  @override
+  String get shopsFilterTotal => 'Total';
+
+  @override
+  String get shopsFilterMarkets => 'Markets';
+
+  @override
+  String get shopsSortedByDistance => 'Sorted by distance';
+
+  @override
+  String get shopsClearSort => 'Clear sort';
+
+  @override
+  String get shopsStatusQueued => 'Queued';
+
+  @override
+  String get shopsStatusSynced => 'Synced';
+
+  @override
+  String get shopsStatusNeedsAttention => 'Needs attention';
+
+  @override
+  String get shopsStatusNotStarted => 'Not started';
+
+  @override
+  String get shopsStatusVerified => 'Verified';
+
+  @override
+  String shopsVerifiedBy(Object agent, Object date) {
+    return 'Verified $date by $agent';
+  }
+
+  @override
+  String shopsCoords(Object coords, Object distance) {
+    return '$coords · $distance';
+  }
+
+  @override
+  String shopsStartNextStop(Object distance) {
+    return 'Start next stop — $distance';
+  }
+
+  @override
+  String shopsAllDoneTitle(Object count) {
+    return 'All $count shops captured';
+  }
+
+  @override
+  String shopsAllDoneBody(
+    Object distance,
+    Object elapsed,
+    num pending,
+    Object uploaded,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      pending,
+      locale: localeName,
+      other: '$pending pending',
+      one: '1 pending',
+    );
+    return 'Uploaded $uploaded · $_temp0. Your route is $distance and took $elapsed.';
+  }
+
+  @override
+  String get shopsLoadNextRoute => 'Load next route';
+
+  @override
+  String get shopsViewSubmissions => 'View submissions';
+
+  @override
+  String get shopsEmptyTitle => 'No shops on this route yet';
+
+  @override
+  String get shopsEmptyDesc =>
+      'Your supervisor assigns shops here. Pull down to check again.';
+
+  @override
+  String shopsStatusAt(Object shop, Object status) {
+    return '$shop is $status';
+  }
+
+  @override
+  String get shopsNoMoneyNotice =>
+      'Work list only. No bounty is shown here — see your Wallet.';
+
+  @override
+  String get mapTitle => 'Map';
+
+  @override
+  String mapStripOffline(Object date) {
+    return 'Offline map · cached $date';
+  }
+
+  @override
+  String get mapStripOnline => 'Map';
+
+  @override
+  String get mapRefresh => 'Refresh';
+
+  @override
+  String mapRefreshOnline(Object percent) {
+    return 'Downloading map areas · $percent%';
+  }
+
+  @override
+  String mapRefreshTile(Object done, Object total) {
+    return 'Tile $done of $total';
+  }
+
+  @override
+  String get mapRefreshVector => 'Fetching vectors…';
+
+  @override
+  String get mapRefreshBoundary => 'Dei-Dei boundary…';
+
+  @override
+  String get mapRefreshSync => 'Syncing tile vectors…';
+
+  @override
+  String mapCachedPercent(Object percent) {
+    return '$percent% cached';
+  }
+
+  @override
+  String mapNearbyCount(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count shops near you',
+      one: '1 shop near you',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String mapRadiusActive(Object radius) {
+    return '$radius active';
+  }
+
+  @override
+  String get mapFilterVerified => 'Verified';
+
+  @override
+  String get mapFilterMine => 'Mine';
+
+  @override
+  String get mapFilterLeads => 'Leads';
+
+  @override
+  String get mapFilterRadius => 'Filter radius';
+
+  @override
+  String mapCachedOnly(Object shown, Object total) {
+    return 'Cached areas only. Showing $shown of $total shops in the cached region.';
+  }
+
+  @override
+  String get mapStartCaptureHere => 'Start capture from here';
+
+  @override
+  String get mapOutsideCachedTitle => 'You\'re outside the cached map area';
+
+  @override
+  String mapOutsideCachedBody(Object areas) {
+    return 'Shops here won\'t load until you\'re back in $areas.';
+  }
+
+  @override
+  String mapOutsideCachedEdge(Object area) {
+    return '$area cache edge';
+  }
+
+  @override
+  String get mapOutsideCachedNoVectors => 'No cached vector data';
+
+  @override
+  String mapDownloadedAreas(Object areas, Object size) {
+    return 'Downloaded areas: $areas · $size';
+  }
+
+  @override
+  String get mapDownloadThisArea => 'Download this area';
+
+  @override
+  String get mapNeedsConnection => 'Needs an active data connection.';
+
+  @override
+  String get mapMyLocation => 'My location';
+
+  @override
+  String get mapZoomIn => 'Zoom in';
+
+  @override
+  String get mapZoomOut => 'Zoom out';
+
+  @override
+  String get mapCentre => 'Centre on my location';
+
+  @override
+  String mapShopMeta(Object distance, Object line, Object zone) {
+    return '$zone · Line $line · $distance';
+  }
+
+  @override
+  String get mapAtYourLocation => 'at your location';
+
+  @override
+  String mapCapturedAt(Object date, Object reference) {
+    return 'Captured $date · $reference';
+  }
+
+  @override
+  String get mapLeadStatus => 'Lead';
+
+  @override
+  String mapOpensShop(Object shop) {
+    return 'Open $shop on the map';
+  }
+
+  @override
+  String get mapLegend => 'Map legend';
+
+  @override
+  String get mapRadius500m => '500 m';
+
+  @override
+  String get mapRadius1km => '1 km';
+
+  @override
+  String get mapRadius2km => '2 km';
+
+  @override
+  String get mapRadius5km => '5 km';
+
+  @override
+  String get mapLegendVerified => 'Verified';
+
+  @override
+  String get mapLegendMine => 'Mine';
+
+  @override
+  String get mapLegendLeads => 'Leads';
+
+  @override
+  String syncDiscardFailedConfirm(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count failed submissions',
+      one: '1 failed submission',
+    );
+    return 'Discarding $_temp0. This cannot be undone.';
+  }
+
+  @override
+  String get syncDiscardFailedAction => 'Discard them';
 }

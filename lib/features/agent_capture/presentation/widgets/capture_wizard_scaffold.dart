@@ -18,11 +18,13 @@ class CaptureWizardScaffold extends StatelessWidget {
     required this.stepEyebrow,
     required this.stepBadge,
     required this.stepBadgeStyle,
-    required this.children,
+    this.children = const [],
     required this.actionBar,
     this.autosaveLabel,
     this.statusLabel,
     this.statusAlert = false,
+    this.aboveStage,
+    this.stage,
     super.key,
   });
 
@@ -43,6 +45,14 @@ class CaptureWizardScaffold extends StatelessWidget {
   final String? autosaveLabel;
   final String? statusLabel;
   final bool statusAlert;
+
+  /// Pinned between the step tracker and the body — the camera step's
+  /// collapsible checklist sits here.
+  final Widget? aboveStage;
+
+  /// Replaces the scrolling body with a full-bleed surface. Used by the camera
+  /// step, whose viewfinder has to own the whole area under the chrome.
+  final Widget? stage;
 
   @override
   Widget build(BuildContext context) {
@@ -179,17 +189,23 @@ class CaptureWizardScaffold extends StatelessWidget {
             badge: stepBadge,
             badgeStyle: stepBadgeStyle,
           ),
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.md,
-                AppSpacing.md,
-                AppSpacing.md,
-                AppSpacing.xxxl,
+          ?aboveStage,
+          if (stage != null)
+            // The stage owns the remaining space so a full-bleed surface can
+            // sit under the chrome without pushing the bar off screen.
+            Expanded(child: stage!)
+          else
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(
+                  AppSpacing.md,
+                  AppSpacing.md,
+                  AppSpacing.md,
+                  AppSpacing.xxxl,
+                ),
+                children: children,
               ),
-              children: children,
             ),
-          ),
           actionBar,
         ],
       ),

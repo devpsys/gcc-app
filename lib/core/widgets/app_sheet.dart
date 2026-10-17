@@ -16,6 +16,13 @@ class AppSheet extends StatelessWidget {
   });
 
   final String title;
+
+  /// The sheet body.
+  ///
+  /// Given at most the height left after the handle, header and footer, so a
+  /// tall body is clamped rather than overflowing the sheet. A body that can
+  /// scroll should scroll itself; one that cannot will be clipped at the
+  /// bottom rather than painting over the footer.
   final Widget child;
   final String? subtitle;
   final String? closeLabel;
@@ -82,7 +89,7 @@ class AppSheet extends StatelessWidget {
               ],
             ),
           ),
-          child,
+          Flexible(fit: FlexFit.loose, child: child),
           if (footerWidget != null)
             DecoratedBox(
               decoration: BoxDecoration(

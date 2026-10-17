@@ -25,11 +25,16 @@ abstract final class AppDimensions {
   static const double noticeIcon = 48;
   static const double skeletonThumb = 72;
   static const double previewThumb = 56;
-  static const double locationMapHeight = 160;
+
+  /// 200 px — the location map preview in the capture and field-ops designs.
+  static const double locationMapHeight = 200;
   static const double accentBorderWidth = 3;
   static const double skeletonCardHeight = 88;
   static const double sheetHandleWidth = 36;
   static const double sheetHandleHeight = 4;
+
+  /// Shadow blur for the raised sheet above the map.
+  static const double sheetBlur = 24;
   static const double syncProgressHeight = 6;
   static const double borderWidth = 1;
   static const double emphasisBorderWidth = 1.5;

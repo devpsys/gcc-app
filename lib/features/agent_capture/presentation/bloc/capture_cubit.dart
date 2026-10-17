@@ -181,6 +181,18 @@ class CaptureCubit extends Cubit<CaptureState> {
     }
   }
 
+  /// Starts a fresh capture, discarding the submitted draft.
+  ///
+  /// Editing is deliberately locked once a draft has been submitted, so this is
+  /// the only way back into a capturable state. Without it "Capture another"
+  /// after a submission has nowhere to go.
+  void startNewCapture() {
+    if (state is CaptureSubmitting) {
+      return;
+    }
+    emit(const CaptureDrafting());
+  }
+
   CaptureDraft get draft => state.draft;
 
   void _edit(CaptureDraft next) {

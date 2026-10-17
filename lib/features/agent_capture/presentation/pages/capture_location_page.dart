@@ -7,6 +7,8 @@ import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/features/agent_capture/presentation/bloc/capture_cubit.dart';
 import 'package:gcc_app/features/agent_capture/presentation/bloc/capture_state.dart';
+import 'package:gcc_app/features/agent_capture/presentation/pages/gps_helper_sheet.dart';
+import 'package:gcc_app/features/agent_capture/presentation/widgets/gps_helper_view.dart';
 import 'package:gcc_app/core/widgets/wizard_step_badge.dart';
 import 'package:gcc_app/features/agent_capture/presentation/widgets/capture_wizard_scaffold.dart';
 import 'package:gcc_app/features/agent_capture/presentation/widgets/location_context_note.dart';
@@ -162,7 +164,10 @@ class CaptureLocationPage extends StatelessWidget {
             const SizedBox(height: AppSpacing.md),
             const LocationSignalPanel(),
             const SizedBox(height: AppSpacing.md),
-            const LocationMapFallback(),
+            LocationMapFallback(
+              onEnterCoordinates: () =>
+                  showGpsHelper(context, view: GpsHelperView.manualEntry),
+            ),
             const LocationContextNote(),
           ],
         );

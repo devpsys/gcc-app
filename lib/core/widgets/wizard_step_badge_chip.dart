@@ -39,6 +39,9 @@ class WizardStepBadgeChip extends StatelessWidget {
     };
     final text = Text(
       label,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      textAlign: TextAlign.end,
       style: AppTextStyles.mono(
         Theme.of(context).textTheme.labelSmall!.copyWith(
           color: foreground,

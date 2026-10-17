@@ -73,9 +73,14 @@ class AppWizardStepper extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Expanded(
+                        // Both sides give way: a long badge such as
+                        // "Offline · this will be queued" must not push the
+                        // eyebrow off screen at 360 px.
+                        Flexible(
                           child: Text(
                             eyebrow.toUpperCase(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                             style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                                   color: scheme.onSurfaceVariant,
@@ -84,7 +89,12 @@ class AppWizardStepper extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: AppSpacing.xs),
-                        WizardStepBadgeChip(label: badge, style: badgeStyle),
+                        Flexible(
+                          child: WizardStepBadgeChip(
+                            label: badge,
+                            style: badgeStyle,
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: AppSpacing.tight),
