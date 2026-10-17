@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_gradients.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
@@ -7,6 +8,7 @@ import 'package:gcc_app/core/theme/app_text_styles.dart';
 
 class AgentTodayHeader extends StatelessWidget {
   const AgentTodayHeader({
+    this.onOpenProfile,
     required this.dateLabel,
     required this.greeting,
     required this.assignment,
@@ -20,6 +22,10 @@ class AgentTodayHeader extends StatelessWidget {
   final String greeting;
   final String? assignment;
   final String? agentId;
+
+  /// Opens the profile. The profile is not one of the five agent tabs, so this
+  /// is how an agent reaches it — an avatar is the discoverable convention.
+  final VoidCallback? onOpenProfile;
   final String installLabel;
   final String disabledReason;
 
@@ -56,6 +62,8 @@ class AgentTodayHeader extends StatelessWidget {
                   ),
                   const SizedBox(width: AppSpacing.xs),
                   Flexible(child: _installChip(context, onHeader)),
+                  const SizedBox(width: AppSpacing.xs),
+                  _avatarButton(context, onHeader),
                 ],
               ),
               const SizedBox(height: AppSpacing.xs),
@@ -157,6 +165,35 @@ class AgentTodayHeader extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _avatarButton(BuildContext context, Color onHeader) {
+    return Semantics(
+      button: onOpenProfile != null,
+      label: context.l10n.profileTitle,
+      child: Material(
+        color: Colors.transparent,
+        shape: const CircleBorder(),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onOpenProfile,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: onHeader.withValues(alpha: 0.5)),
+            ),
+            child: SizedBox.square(
+              dimension: AppDimensions.minTouchTarget - AppSpacing.sm,
+              child: Icon(
+                Icons.person_outline,
+                size: AppSpacing.xl,
+                color: onHeader,
+              ),
+            ),
           ),
         ),
       ),

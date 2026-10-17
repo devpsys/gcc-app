@@ -2035,5 +2035,10 @@
   "notificationsChannelEmail": "Email",
   "notificationsLastSent": "Last SMS sent",
   "notificationsDelivered": "delivered",
-  "notificationsNotDelivered": "not delivered"
+  "notificationsNotDelivered": "not delivered",
+  "bountyNotFoundTitle": "Submission not found",
+  "bountyNotFoundBody": "This app has no record of {reference}. It may have been submitted from another device, or discarded.",
+  "bountyTitle": "Bounty status",
+  "profileUnavailableTitle": "No profile on this device",
+  "profileUnavailableBody": "Sign in to see your agent details, markets and preferences."
 }

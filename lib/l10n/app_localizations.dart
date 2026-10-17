@@ -5089,6 +5089,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'not delivered'**
   String get notificationsNotDelivered;
+
+  /// No description provided for @bountyNotFoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Submission not found'**
+  String get bountyNotFoundTitle;
+
+  /// No description provided for @bountyNotFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This app has no record of {reference}. It may have been submitted from another device, or discarded.'**
+  String bountyNotFoundBody(Object reference);
+
+  /// No description provided for @bountyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bounty status'**
+  String get bountyTitle;
+
+  /// No description provided for @profileUnavailableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No profile on this device'**
+  String get profileUnavailableTitle;
+
+  /// No description provided for @profileUnavailableBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to see your agent details, markets and preferences.'**
+  String get profileUnavailableBody;
 }
 
 class _AppLocalizationsDelegate

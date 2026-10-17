@@ -2914,4 +2914,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notificationsNotDelivered => 'not delivered';
+
+  @override
+  String get bountyNotFoundTitle => 'Submission not found';
+
+  @override
+  String bountyNotFoundBody(Object reference) {
+    return 'This app has no record of $reference. It may have been submitted from another device, or discarded.';
+  }
+
+  @override
+  String get bountyTitle => 'Bounty status';
+
+  @override
+  String get profileUnavailableTitle => 'No profile on this device';
+
+  @override
+  String get profileUnavailableBody =>
+      'Sign in to see your agent details, markets and preferences.';
 }

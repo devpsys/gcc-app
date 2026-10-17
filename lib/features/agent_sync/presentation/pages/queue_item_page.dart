@@ -37,6 +37,7 @@ class QueueItemPage extends StatelessWidget {
     this.syncedAt,
     this.claim,
     this.onRetry,
+    this.onViewSubmission,
     super.key,
   });
   final QueueItemDetailState state;
@@ -50,6 +51,9 @@ class QueueItemPage extends StatelessWidget {
   final String? syncedAt;
   final ConflictClaim? claim;
   final VoidCallback? onRetry;
+
+  /// Opens the bounty status for this submission.
+  final VoidCallback? onViewSubmission;
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -218,7 +222,7 @@ class QueueItemPage extends StatelessWidget {
           AppPrimaryButton(
             label: l10n.itemViewSubmission,
             expand: true,
-            onPressed: onRetry,
+            onPressed: onViewSubmission,
           ),
           const SizedBox(height: AppSpacing.xs),
           Text(

@@ -19,7 +19,8 @@ import 'package:gcc_app/features/agent_sync/presentation/pages/queue_item_route_
 import 'package:gcc_app/features/agent_sync/presentation/pages/sync_queue_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_profile_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_screen.dart';
-import 'package:gcc_app/features/agent_wallet/presentation/pages/notification_channels_page.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_status_screen.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/pages/notification_channels_screen.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart';
@@ -118,10 +119,16 @@ GoRouter createAppRouter() {
         builder: (context, state) => const AgentProfileScreen(),
       ),
       GoRoute(
+        path: RoutePaths.agentBountyStatus,
+        name: RouteNames.agentBountyStatus,
+        builder: (context, state) => BountyStatusScreen(
+          reference: state.pathParameters['reference'] ?? '',
+        ),
+      ),
+      GoRoute(
         path: RoutePaths.agentNotifications,
         name: RouteNames.agentNotifications,
-        builder: (context, state) =>
-            const NotificationChannelsPage(channels: []),
+        builder: (context, state) => const NotificationChannelsScreen(),
       ),
       GoRoute(
         path: RoutePaths.agentMap,
@@ -147,7 +154,9 @@ GoRouter createAppRouter() {
       GoRoute(
         path: RoutePaths.agentQueueItem,
         name: RouteNames.agentQueueItem,
-        builder: (context, state) => const QueueItemRoutePage(),
+        builder: (context, state) => QueueItemRoutePage(
+          reference: state.pathParameters['reference'] ?? '',
+        ),
       ),
       GoRoute(
         path: RoutePaths.agentToday,

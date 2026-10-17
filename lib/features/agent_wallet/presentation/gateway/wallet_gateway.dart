@@ -1,4 +1,5 @@
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/agent_profile.dart';
+import 'package:gcc_app/features/agent_wallet/presentation/bloc/bounty_submission.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/notification_channel.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/payout_run.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/storage_category.dart';
@@ -29,4 +30,10 @@ abstract interface class WalletGateway {
 
   /// The agent's storage breakdown. Unwired returns empty.
   Future<List<StorageCategory>> loadStorageCategories();
+
+  /// One submission's bounty status and audit trail.
+  ///
+  /// Null when the app holds no record of [reference] — which is distinct from
+  /// "pending" and must not be rendered as though it were.
+  Future<BountySubmission?> loadBountySubmission(String reference);
 }
