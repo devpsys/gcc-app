@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
+import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 
-/// One tappable settings row: a label, a value, and an optional trailing glyph.
+/// One settings row: icon tile, label, trailing value, and a chevron when it
+/// opens something.
 ///
-/// The whole row is the target, not just the chevron — the designs set a 48 px
-/// minimum for every control and this is the most-tapped element on the screen.
+/// The whole row is the target. The profile design draws these at 56 px inside
+/// a grouped card.
 class SettingsRow extends StatelessWidget {
   const SettingsRow({
     required this.label,
@@ -14,6 +16,8 @@ class SettingsRow extends StatelessWidget {
     this.onTap,
     this.trailing,
     this.detail,
+    this.icon,
+    this.destructive = false,
     super.key,
   });
 
@@ -29,56 +33,109 @@ class SettingsRow extends StatelessWidget {
   /// swallows a tap is worse than one that visibly does nothing yet.
   final VoidCallback? onTap;
   final Widget? trailing;
+  final IconData? icon;
+
+  /// Danger treatment for leaving the account.
+  final bool destructive;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final colors = context.semanticColors;
     final valueText = value;
     final detailText = detail;
+    final glyph = icon;
+    final labelColor = destructive ? colors.danger : scheme.onSurface;
+    final mark =
+        trailing ??
+        (onTap == null
+            ? null
+            : Icon(
+                Icons.chevron_right,
+                size: AppDimensions.iconSm,
+                color: scheme.onSurfaceVariant,
+              ));
 
     return Semantics(
       button: onTap != null,
       label: label,
       child: InkWell(
         onTap: onTap,
-        child: Container(
+        child: ConstrainedBox(
           constraints: const BoxConstraints(
-            minHeight: AppDimensions.minTouchTarget,
+            minHeight: AppDimensions.topBarHeight,
           ),
-          padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
-          decoration: BoxDecoration(
-            border: Border(
-              bottom: BorderSide(color: context.semanticColors.border),
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(label, style: Theme.of(context).textTheme.bodyMedium),
-                    if (detailText != null)
-                      Text(
-                        detailText,
-                        style: Theme.of(context).textTheme.labelSmall
-                            ?.copyWith(color: scheme.onSurfaceVariant),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+            child: Row(
+              children: [
+                if (glyph != null) ...[
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: destructive
+                          ? colors.dangerContainer
+                          : scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(AppRadii.button),
+                    ),
+                    child: SizedBox.square(
+                      dimension: AppSpacing.xxl,
+                      child: Icon(
+                        glyph,
+                        size: AppDimensions.iconSm,
+                        color: destructive
+                            ? colors.danger
+                            : scheme.onSurfaceVariant,
                       ),
-                  ],
+                    ),
+                  ),
+                  const SizedBox(width: AppSpacing.sm),
+                ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        label,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: labelColor,
+                          fontWeight: destructive
+                              ? FontWeight.w600
+                              : FontWeight.w500,
+                        ),
+                      ),
+                      if (detailText != null)
+                        Text(
+                          detailText,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-              if (valueText != null) ...[
-                const SizedBox(width: AppSpacing.xs),
-                Text(
-                  valueText,
-                  style: Theme.of(context).textTheme.bodyMedium
-                      ?.copyWith(color: scheme.onSurfaceVariant),
-                ),
+                if (valueText != null) ...[
+                  const SizedBox(width: AppSpacing.xs),
+                  Flexible(
+                    child: Text(
+                      valueText,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.end,
+                      style: Theme.of(context).textTheme.bodySmall
+                          ?.copyWith(color: scheme.onSurfaceVariant),
+                    ),
+                  ),
+                ],
+                if (mark != null) ...[
+                  const SizedBox(width: AppSpacing.xs),
+                  mark,
+                ],
               ],
-              const SizedBox(width: AppSpacing.tight),
-              ?trailing,
-            ],
+            ),
           ),
         ),
       ),

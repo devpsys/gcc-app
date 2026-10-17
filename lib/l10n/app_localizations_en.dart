@@ -2806,6 +2806,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileTitle => 'Profile';
 
   @override
+  String get profileVerifiedBadge => 'Verified';
+
+  @override
+  String get profileAgentKind => 'Field agent';
+
+  @override
+  String get profileSectionAccount => 'Account';
+
+  @override
   String profileAgentRole(Object id) {
     return 'Field Agent · $id';
   }

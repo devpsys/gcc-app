@@ -19,7 +19,10 @@ class StorageCategoryRow extends StatelessWidget {
     final clearable = category.clearable && onClear != null;
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: AppSpacing.xs),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xs,
+      ),
       child: Row(
         children: [
           Expanded(

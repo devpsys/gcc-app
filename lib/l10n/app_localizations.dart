@@ -4880,6 +4880,24 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get profileTitle;
 
+  /// No description provided for @profileVerifiedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get profileVerifiedBadge;
+
+  /// No description provided for @profileAgentKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Field agent'**
+  String get profileAgentKind;
+
+  /// No description provided for @profileSectionAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get profileSectionAccount;
+
   /// No description provided for @profileAgentRole.
   ///
   /// In en, this message translates to:

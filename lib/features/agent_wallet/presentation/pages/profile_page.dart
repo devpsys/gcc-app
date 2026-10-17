@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/theme/app_dimensions.dart';
+import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
-import 'package:gcc_app/core/widgets/app_secondary_button.dart';
 import 'package:gcc_app/core/widgets/app_switch_track.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/agent_profile.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/bloc/storage_category.dart';
@@ -50,12 +51,24 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.profileTitle),
+        toolbarHeight: AppDimensions.topBarHeight,
+        title: Text(
+          l10n.profileTitle,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
         backgroundColor: scheme.surface,
+        surfaceTintColor: scheme.surface,
+        elevation: 0,
+        actions: [_languageChip(context)],
       ),
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.all(AppSpacing.md),
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.md,
+            AppSpacing.sm,
+            AppSpacing.md,
+            AppSpacing.md,
+          ),
           children: [
             ProfileHeader(profile: profile),
             const SizedBox(height: AppSpacing.sm),
@@ -63,15 +76,15 @@ class ProfilePage extends StatelessWidget {
               title: l10n.profileSectionPreferences,
               children: [
                 SettingsRow(
+                  icon: Icons.language,
                   label: l10n.profileRowLanguage,
                   value: l10n.authLanguage,
-                  trailing: const Icon(Icons.chevron_right),
                   onTap: onOpenLanguage,
                 ),
                 SettingsRow(
+                  icon: Icons.notifications_none,
                   label: l10n.profileRowNotifications,
                   value: l10n.profileRowSmsOnly,
-                  trailing: const Icon(Icons.chevron_right),
                   onTap: onOpenNotifications,
                 ),
               ],
@@ -80,19 +93,25 @@ class ProfilePage extends StatelessWidget {
               title: l10n.profileSectionWork,
               children: [
                 SettingsRow(
+                  icon: Icons.place_outlined,
                   label: l10n.profileAssignedMarkets,
                   value: profile.coveredMarkets,
                 ),
                 if (profile.supportPhone != null)
                   // No dialer is wired up, so the row is shown but inert
                   // rather than accepting a tap that goes nowhere.
-                  SettingsRow(label: l10n.profileRowSupportPhone),
+                  SettingsRow(
+                    icon: Icons.phone_outlined,
+                    label: l10n.profileSectionSupport,
+                    value: profile.supportPhone,
+                  ),
               ],
             ),
             SettingsSection(
               title: l10n.profileRowStorage,
               children: [
                 SettingsRow(
+                  icon: Icons.sd_storage_outlined,
                   label: l10n.profileStorageFree,
                   detail: profile.coveredMarkets,
                   value: profile.agentId,
@@ -111,6 +130,7 @@ class ProfilePage extends StatelessWidget {
               title: l10n.profileSectionThisDevice,
               children: [
                 SettingsRow(
+                  icon: Icons.smartphone_outlined,
                   label: l10n.profileRowModel,
                   value: l10n.profileDeviceModelValue,
                 ),
@@ -128,6 +148,7 @@ class ProfilePage extends StatelessWidget {
               title: l10n.profileSectionOffline,
               children: [
                 SettingsRow(
+                  icon: Icons.cloud_off_outlined,
                   label: l10n.profileRowOfflineCapture,
                   trailing: AppSwitchTrack(
                     value: offlineCaptureAllowed,
@@ -138,12 +159,61 @@ class ProfilePage extends StatelessWidget {
             ),
             InstallPromptCard(onInstall: onInstall),
             const SizedBox(height: AppSpacing.sm),
-            AppSecondaryButton(
-              label: l10n.profileSignOut,
-              expand: true,
-              onPressed: onSignOut,
+            SettingsSection(
+              title: l10n.profileSectionAccount,
+              children: [
+                SettingsRow(
+                  icon: Icons.logout,
+                  label: l10n.profileSignOut,
+                  destructive: true,
+                  onTap: onSignOut,
+                ),
+              ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _languageChip(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(right: AppSpacing.md),
+      child: Center(
+        child: Material(
+          type: MaterialType.transparency,
+          child: InkWell(
+            onTap: onOpenLanguage,
+            customBorder: const StadiumBorder(),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(AppRadii.pill),
+                border: Border.all(color: scheme.outline),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
+                child: SizedBox(
+                  height: AppSpacing.xxl,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        context.l10n.dashboardLanguageShort,
+                        style: Theme.of(context).textTheme.bodySmall
+                            ?.copyWith(fontWeight: FontWeight.w500),
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        size: AppDimensions.iconSm,
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
