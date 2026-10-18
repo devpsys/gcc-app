@@ -31,33 +31,36 @@ class HeldFundsIndicator extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppRadii.card),
             border: Border.all(color: colors.heldFunds),
           ),
-          child: CustomPaint(
-            painter: _EscrowHatchPainter(colors.heldFunds),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.sm,
-                vertical: AppSpacing.xs,
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.lock,
-                    size: AppDimensions.iconSm,
-                    color: colors.heldFunds,
-                  ),
-                  const SizedBox(width: AppSpacing.xxs),
-                  Flexible(
-                    child: Text(
-                      amount,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.tabular(
-                        Theme.of(context).textTheme.labelLarge!
-                            .copyWith(color: colors.heldFunds),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppRadii.card),
+            child: CustomPaint(
+              painter: _EscrowHatchPainter(colors.heldFunds),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xs,
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.lock,
+                      size: AppDimensions.iconSm,
+                      color: colors.heldFunds,
+                    ),
+                    const SizedBox(width: AppSpacing.xxs),
+                    Flexible(
+                      child: Text(
+                        amount,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.tabular(
+                          Theme.of(context).textTheme.labelLarge!
+                              .copyWith(color: colors.heldFunds),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -71,43 +74,49 @@ class HeldFundsIndicator extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadii.card),
         border: Border.all(color: colors.heldFunds),
       ),
-      child: CustomPaint(
-        painter: _EscrowHatchPainter(colors.heldFunds),
-        child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.sm),
-          child: Row(
-            children: [
-              Icon(
-                Icons.lock,
-                size: AppDimensions.iconSm,
-                color: colors.heldFunds,
-              ),
-              const SizedBox(width: AppSpacing.xs),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(label, style: Theme.of(context).textTheme.bodyMedium),
-                    if (captionText != null)
-                      Text(
-                        captionText,
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                  ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(AppRadii.card),
+        child: CustomPaint(
+          painter: _EscrowHatchPainter(colors.heldFunds),
+          child: Padding(
+            padding: const EdgeInsets.all(AppSpacing.sm),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.lock,
+                  size: AppDimensions.iconSm,
+                  color: colors.heldFunds,
                 ),
-              ),
-              const SizedBox(width: AppSpacing.xs),
-              Flexible(
-                child: Text(
-                  amount,
-                  textAlign: TextAlign.end,
-                  style: AppTextStyles.tabular(
-                    Theme.of(context).textTheme.labelLarge!
-                        .copyWith(color: colors.heldFunds),
+                const SizedBox(width: AppSpacing.xs),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        label,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      if (captionText != null)
+                        Text(
+                          captionText,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                    ],
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(width: AppSpacing.xs),
+                Flexible(
+                  child: Text(
+                    amount,
+                    textAlign: TextAlign.end,
+                    style: AppTextStyles.tabular(
+                      Theme.of(context).textTheme.labelLarge!
+                          .copyWith(color: colors.heldFunds),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
