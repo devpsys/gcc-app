@@ -39,8 +39,10 @@ import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_cubit.d
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_language_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_in_page.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/pages/vendor_asset_edit_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_catalog_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_request_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -237,6 +239,16 @@ GoRouter createAppRouter() {
         builder: (context, state) => BlocProvider(
           create: (_) => getIt<VendorRequestCubit>()..load(),
           child: const VendorRequestScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.vendorAssetEdit,
+        name: RouteNames.vendorAssetEdit,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<VendorAssetEditCubit>(
+            param1: state.pathParameters['reference'] ?? '',
+          )..load(),
+          child: const VendorAssetEditScreen(),
         ),
       ),
       GoRoute(

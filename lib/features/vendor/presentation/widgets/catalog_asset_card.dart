@@ -20,6 +20,7 @@ class CatalogAssetCard extends StatelessWidget {
     required this.maintenanceLabel,
     required this.pendingNote,
     required this.onStatus,
+    this.onOpen,
     this.undoLabel,
     this.undoHint,
     this.onUndo,
@@ -34,6 +35,7 @@ class CatalogAssetCard extends StatelessWidget {
   final String maintenanceLabel;
   final String pendingNote;
   final ValueChanged<VendorAssetStatus> onStatus;
+  final VoidCallback? onOpen;
   final String? undoLabel;
   final String? undoHint;
   final VoidCallback? onUndo;
@@ -58,84 +60,87 @@ class CatalogAssetCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _thumb(context, asset.mark),
-                const SizedBox(width: AppSpacing.sm),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              asset.name,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context).textTheme.bodyMedium
-                                  ?.copyWith(fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                          const SizedBox(width: AppSpacing.xs),
-                          Flexible(
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: AlignmentDirectional.topEnd,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    asset.ratePerDay,
-                                    style: AppTextStyles.tabular(
-                                      Theme.of(context).textTheme.bodyMedium!
-                                          .copyWith(
-                                            fontWeight: FontWeight.w700,
-                                          ),
-                                    ),
-                                  ),
-                                  Text(
-                                    perDay,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall
-                                        ?.copyWith(
-                                          color: scheme.onSurfaceVariant,
-                                        ),
-                                  ),
-                                ],
+            InkWell(
+              onTap: onOpen,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _thumb(context, asset.mark),
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                asset.name,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context).textTheme.bodyMedium
+                                    ?.copyWith(fontWeight: FontWeight.w600),
                               ),
                             ),
+                            const SizedBox(width: AppSpacing.xs),
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: AlignmentDirectional.topEnd,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      asset.ratePerDay,
+                                      style: AppTextStyles.tabular(
+                                        Theme.of(context).textTheme.bodyMedium!
+                                            .copyWith(
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      perDay,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall
+                                          ?.copyWith(
+                                            color: scheme.onSurfaceVariant,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          '${asset.reference} · ${asset.place}',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyles.mono(
+                            Theme.of(context).textTheme.bodySmall!
+                                .copyWith(color: scheme.onSurfaceVariant),
+                          ),
+                        ),
+                        Text(
+                          asset.specification,
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: scheme.onSurfaceVariant),
+                        ),
+                        if (deposit != null) ...[
+                          const SizedBox(height: AppSpacing.xxs),
+                          CatalogDepositLine(
+                            amount: deposit,
+                            caption: depositCaption,
                           ),
                         ],
-                      ),
-                      Text(
-                        '${asset.reference} · ${asset.place}',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTextStyles.mono(
-                          Theme.of(context).textTheme.bodySmall!
-                              .copyWith(color: scheme.onSurfaceVariant),
-                        ),
-                      ),
-                      Text(
-                        asset.specification,
-                        style: Theme.of(context).textTheme.bodySmall
-                            ?.copyWith(color: scheme.onSurfaceVariant),
-                      ),
-                      if (deposit != null) ...[
-                        const SizedBox(height: AppSpacing.xxs),
-                        CatalogDepositLine(
-                          amount: deposit,
-                          caption: depositCaption,
-                        ),
                       ],
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             if (line != null) ...[
               const SizedBox(height: AppSpacing.xs),

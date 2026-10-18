@@ -2238,5 +2238,91 @@
   "requestDeclineAnyway": "Decline anyway",
   "requestSmsReverse": "Accepting by SMS can be reversed up to 1 hour before collection.",
   "requestDeclinedTitle": "Request declined",
-  "requestEmpty": "No booking requests are waiting."
+  "requestEmpty": "No booking requests are waiting.",
+  "editAutosaved": "Autosaved {when}",
+  "@editAutosaved": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "editAutosavedOneIncomplete": "Autosaved {when} · 1 field incomplete",
+  "@editAutosavedOneIncomplete": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "editAutosavedIncomplete": "Autosaved {when} · {count} fields incomplete",
+  "@editAutosavedIncomplete": {
+    "placeholders": {
+      "when": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+  "editOneFieldNeedsAttention": "1 field needs attention",
+  "editFieldsNeedAttention": "{count} fields need attention",
+  "@editFieldsNeedAttention": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "editHowYouCharge": "How do you charge?",
+  "editHourly": "Hourly",
+  "editDaily": "Daily",
+  "editWeekly": "Weekly",
+  "editProject": "Project",
+  "editRatePerDay": "Rate per day",
+  "editPerDay": "per day",
+  "editRequired": "Required",
+  "editRateError": "Enter a rate per day",
+  "editProjectRate": "Project price",
+  "editProjectError": "Enter a project price",
+  "editProjectHelper": "A project price replaces the daily rate for this booking.",
+  "editCommission": "Buyer pays this plus 12% GCC commission.",
+  "editWeeklySet": "Weekly rate is set for you at 5.6 × daily ({amount}).",
+  "@editWeeklySet": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "editHourlySet": "Hourly rate is set for you at daily ÷ 8 ({amount}).",
+  "@editHourlySet": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "editDeposit": "Caution deposit",
+  "editDepositSuffix": "Deposit",
+  "editDepositHeld": "Held by GCC as a locked deposit. Refunded to the buyer after the return condition is approved.",
+  "editDepositError": "Enter a refundable deposit — buyers see this and it must be accurate",
+  "editAssignOperator": "Assign operator by default",
+  "editOperatorFee": "Operator fee",
+  "editExampleTitle": "Example · {days}-day booking",
+  "@editExampleTitle": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "editProjectExample": "Example · project booking",
+  "editRentalFee": "Rental fee",
+  "editRentalDetail": "({days} days × {rate})",
+  "@editRentalDetail": {
+    "placeholders": {
+      "days": { "type": "int" },
+      "rate": { "type": "String" }
+    }
+  },
+  "editDelivery": "Delivery",
+  "editInsurance": "Micro-insurance",
+  "editInsuranceDetail": "(1.5%/day)",
+  "editBuyerPays": "Buyer pays",
+  "editBeforeRefund": "Before the refund",
+  "editWalletLanding": "After you approve the return, the deposit goes back to them and {amount} lands in your wallet.",
+  "@editWalletLanding": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "editPausedTitle": "Add a rate and deposit to see what buyers will pay.",
+  "editPausedBody": "Live calculation is paused while required fields are empty.",
+  "editPhotos": "Photos & video",
+  "editVideo": "Condition video · {when}",
+  "@editVideo": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "editReplace": "Replace",
+  "editVideoNote": "Buyers see the condition video before they book. It is how disputes get settled fairly.",
+  "editDiscard": "Discard",
+  "editSave": "Save changes",
+  "editSaveBlockedOne": "Fix the highlighted field",
+  "editSaveBlocked": "Fix the {count} highlighted fields",
+  "@editSaveBlocked": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "editMissing": "This asset is not in the catalog."
 }

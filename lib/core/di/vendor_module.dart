@@ -1,8 +1,11 @@
 import 'package:gcc_app/core/di/injection.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_asset_edit_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_catalog_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_request_gateway.dart';
+import 'package:gcc_app/features/vendor/presentation/gateway/vendor_asset_edit_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/vendor_catalog_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/vendor_request_gateway.dart';
 
@@ -12,5 +15,11 @@ void registerVendorModule() {
     ..registerLazySingleton<VendorCatalogGateway>(MockVendorCatalogGateway.new)
     ..registerFactory<VendorCatalogCubit>(() => VendorCatalogCubit(getIt()))
     ..registerLazySingleton<VendorRequestGateway>(MockVendorRequestGateway.new)
-    ..registerFactory<VendorRequestCubit>(() => VendorRequestCubit(getIt()));
+    ..registerFactory<VendorRequestCubit>(() => VendorRequestCubit(getIt()))
+    ..registerLazySingleton<VendorAssetEditGateway>(
+      MockVendorAssetEditGateway.new,
+    )
+    ..registerFactoryParam<VendorAssetEditCubit, String, void>(
+      (reference, _) => VendorAssetEditCubit(getIt(), reference),
+    );
 }

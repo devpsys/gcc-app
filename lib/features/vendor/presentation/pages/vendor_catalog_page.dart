@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
@@ -10,6 +11,7 @@ import 'package:gcc_app/features/vendor/domain/vendor_catalog_kind.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_state.dart';
 import 'package:gcc_app/features/vendor/presentation/widgets/catalog_asset_card.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gcc_app/features/vendor/presentation/widgets/catalog_undo_banner.dart';
 
 class VendorCatalogPage extends StatelessWidget {
@@ -117,6 +119,9 @@ class VendorCatalogPage extends StatelessWidget {
                       onUndo: state.undoReference == asset.reference
                           ? cubit.undo
                           : null,
+                      onOpen: () => context.push(
+                        RoutePaths.vendorAssetEditOf(asset.reference),
+                      ),
                       onStatus: (status) =>
                           cubit.requestStatus(asset.reference, status),
                     ),

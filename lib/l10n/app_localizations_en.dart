@@ -3359,4 +3359,173 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get requestEmpty => 'No booking requests are waiting.';
+
+  @override
+  String editAutosaved(String when) {
+    return 'Autosaved $when';
+  }
+
+  @override
+  String editAutosavedOneIncomplete(String when) {
+    return 'Autosaved $when · 1 field incomplete';
+  }
+
+  @override
+  String editAutosavedIncomplete(String when, int count) {
+    return 'Autosaved $when · $count fields incomplete';
+  }
+
+  @override
+  String get editOneFieldNeedsAttention => '1 field needs attention';
+
+  @override
+  String editFieldsNeedAttention(int count) {
+    return '$count fields need attention';
+  }
+
+  @override
+  String get editHowYouCharge => 'How do you charge?';
+
+  @override
+  String get editHourly => 'Hourly';
+
+  @override
+  String get editDaily => 'Daily';
+
+  @override
+  String get editWeekly => 'Weekly';
+
+  @override
+  String get editProject => 'Project';
+
+  @override
+  String get editRatePerDay => 'Rate per day';
+
+  @override
+  String get editPerDay => 'per day';
+
+  @override
+  String get editRequired => 'Required';
+
+  @override
+  String get editRateError => 'Enter a rate per day';
+
+  @override
+  String get editProjectRate => 'Project price';
+
+  @override
+  String get editProjectError => 'Enter a project price';
+
+  @override
+  String get editProjectHelper =>
+      'A project price replaces the daily rate for this booking.';
+
+  @override
+  String get editCommission => 'Buyer pays this plus 12% GCC commission.';
+
+  @override
+  String editWeeklySet(String amount) {
+    return 'Weekly rate is set for you at 5.6 × daily ($amount).';
+  }
+
+  @override
+  String editHourlySet(String amount) {
+    return 'Hourly rate is set for you at daily ÷ 8 ($amount).';
+  }
+
+  @override
+  String get editDeposit => 'Caution deposit';
+
+  @override
+  String get editDepositSuffix => 'Deposit';
+
+  @override
+  String get editDepositHeld =>
+      'Held by GCC as a locked deposit. Refunded to the buyer after the return condition is approved.';
+
+  @override
+  String get editDepositError =>
+      'Enter a refundable deposit — buyers see this and it must be accurate';
+
+  @override
+  String get editAssignOperator => 'Assign operator by default';
+
+  @override
+  String get editOperatorFee => 'Operator fee';
+
+  @override
+  String editExampleTitle(int days) {
+    return 'Example · $days-day booking';
+  }
+
+  @override
+  String get editProjectExample => 'Example · project booking';
+
+  @override
+  String get editRentalFee => 'Rental fee';
+
+  @override
+  String editRentalDetail(int days, String rate) {
+    return '($days days × $rate)';
+  }
+
+  @override
+  String get editDelivery => 'Delivery';
+
+  @override
+  String get editInsurance => 'Micro-insurance';
+
+  @override
+  String get editInsuranceDetail => '(1.5%/day)';
+
+  @override
+  String get editBuyerPays => 'Buyer pays';
+
+  @override
+  String get editBeforeRefund => 'Before the refund';
+
+  @override
+  String editWalletLanding(String amount) {
+    return 'After you approve the return, the deposit goes back to them and $amount lands in your wallet.';
+  }
+
+  @override
+  String get editPausedTitle =>
+      'Add a rate and deposit to see what buyers will pay.';
+
+  @override
+  String get editPausedBody =>
+      'Live calculation is paused while required fields are empty.';
+
+  @override
+  String get editPhotos => 'Photos & video';
+
+  @override
+  String editVideo(String when) {
+    return 'Condition video · $when';
+  }
+
+  @override
+  String get editReplace => 'Replace';
+
+  @override
+  String get editVideoNote =>
+      'Buyers see the condition video before they book. It is how disputes get settled fairly.';
+
+  @override
+  String get editDiscard => 'Discard';
+
+  @override
+  String get editSave => 'Save changes';
+
+  @override
+  String get editSaveBlockedOne => 'Fix the highlighted field';
+
+  @override
+  String editSaveBlocked(int count) {
+    return 'Fix the $count highlighted fields';
+  }
+
+  @override
+  String get editMissing => 'This asset is not in the catalog.';
 }

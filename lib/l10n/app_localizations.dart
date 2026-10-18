@@ -5857,6 +5857,288 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No booking requests are waiting.'**
   String get requestEmpty;
+
+  /// No description provided for @editAutosaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Autosaved {when}'**
+  String editAutosaved(String when);
+
+  /// No description provided for @editAutosavedOneIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Autosaved {when} · 1 field incomplete'**
+  String editAutosavedOneIncomplete(String when);
+
+  /// No description provided for @editAutosavedIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Autosaved {when} · {count} fields incomplete'**
+  String editAutosavedIncomplete(String when, int count);
+
+  /// No description provided for @editOneFieldNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'1 field needs attention'**
+  String get editOneFieldNeedsAttention;
+
+  /// No description provided for @editFieldsNeedAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} fields need attention'**
+  String editFieldsNeedAttention(int count);
+
+  /// No description provided for @editHowYouCharge.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you charge?'**
+  String get editHowYouCharge;
+
+  /// No description provided for @editHourly.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly'**
+  String get editHourly;
+
+  /// No description provided for @editDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get editDaily;
+
+  /// No description provided for @editWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get editWeekly;
+
+  /// No description provided for @editProject.
+  ///
+  /// In en, this message translates to:
+  /// **'Project'**
+  String get editProject;
+
+  /// No description provided for @editRatePerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate per day'**
+  String get editRatePerDay;
+
+  /// No description provided for @editPerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'per day'**
+  String get editPerDay;
+
+  /// No description provided for @editRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get editRequired;
+
+  /// No description provided for @editRateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a rate per day'**
+  String get editRateError;
+
+  /// No description provided for @editProjectRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Project price'**
+  String get editProjectRate;
+
+  /// No description provided for @editProjectError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a project price'**
+  String get editProjectError;
+
+  /// No description provided for @editProjectHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'A project price replaces the daily rate for this booking.'**
+  String get editProjectHelper;
+
+  /// No description provided for @editCommission.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyer pays this plus 12% GCC commission.'**
+  String get editCommission;
+
+  /// No description provided for @editWeeklySet.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly rate is set for you at 5.6 × daily ({amount}).'**
+  String editWeeklySet(String amount);
+
+  /// No description provided for @editHourlySet.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly rate is set for you at daily ÷ 8 ({amount}).'**
+  String editHourlySet(String amount);
+
+  /// No description provided for @editDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Caution deposit'**
+  String get editDeposit;
+
+  /// No description provided for @editDepositSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit'**
+  String get editDepositSuffix;
+
+  /// No description provided for @editDepositHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Held by GCC as a locked deposit. Refunded to the buyer after the return condition is approved.'**
+  String get editDepositHeld;
+
+  /// No description provided for @editDepositError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a refundable deposit — buyers see this and it must be accurate'**
+  String get editDepositError;
+
+  /// No description provided for @editAssignOperator.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign operator by default'**
+  String get editAssignOperator;
+
+  /// No description provided for @editOperatorFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Operator fee'**
+  String get editOperatorFee;
+
+  /// No description provided for @editExampleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Example · {days}-day booking'**
+  String editExampleTitle(int days);
+
+  /// No description provided for @editProjectExample.
+  ///
+  /// In en, this message translates to:
+  /// **'Example · project booking'**
+  String get editProjectExample;
+
+  /// No description provided for @editRentalFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental fee'**
+  String get editRentalFee;
+
+  /// No description provided for @editRentalDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'({days} days × {rate})'**
+  String editRentalDetail(int days, String rate);
+
+  /// No description provided for @editDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get editDelivery;
+
+  /// No description provided for @editInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Micro-insurance'**
+  String get editInsurance;
+
+  /// No description provided for @editInsuranceDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'(1.5%/day)'**
+  String get editInsuranceDetail;
+
+  /// No description provided for @editBuyerPays.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyer pays'**
+  String get editBuyerPays;
+
+  /// No description provided for @editBeforeRefund.
+  ///
+  /// In en, this message translates to:
+  /// **'Before the refund'**
+  String get editBeforeRefund;
+
+  /// No description provided for @editWalletLanding.
+  ///
+  /// In en, this message translates to:
+  /// **'After you approve the return, the deposit goes back to them and {amount} lands in your wallet.'**
+  String editWalletLanding(String amount);
+
+  /// No description provided for @editPausedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a rate and deposit to see what buyers will pay.'**
+  String get editPausedTitle;
+
+  /// No description provided for @editPausedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Live calculation is paused while required fields are empty.'**
+  String get editPausedBody;
+
+  /// No description provided for @editPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Photos & video'**
+  String get editPhotos;
+
+  /// No description provided for @editVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition video · {when}'**
+  String editVideo(String when);
+
+  /// No description provided for @editReplace.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace'**
+  String get editReplace;
+
+  /// No description provided for @editVideoNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyers see the condition video before they book. It is how disputes get settled fairly.'**
+  String get editVideoNote;
+
+  /// No description provided for @editDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get editDiscard;
+
+  /// No description provided for @editSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get editSave;
+
+  /// No description provided for @editSaveBlockedOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix the highlighted field'**
+  String get editSaveBlockedOne;
+
+  /// No description provided for @editSaveBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix the {count} highlighted fields'**
+  String editSaveBlocked(int count);
+
+  /// No description provided for @editMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'This asset is not in the catalog.'**
+  String get editMissing;
 }
 
 class _AppLocalizationsDelegate
