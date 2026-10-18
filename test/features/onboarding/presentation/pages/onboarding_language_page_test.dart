@@ -6,13 +6,17 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_langua
 import 'package:gcc_app/features/onboarding/presentation/widgets/onboarding_language_row.dart';
 
 import '../../../../helpers/pump_app.dart';
+import '../../../auth/fake_session_repository.dart';
 import '../../fake_onboarding_gateway.dart';
 
 void main() {
   testWidgets('shows native names and disables untranslated languages', (
     tester,
   ) async {
-    final cubit = OnboardingCubit(FakeOnboardingGateway());
+    final cubit = OnboardingCubit(
+      FakeOnboardingGateway(),
+      FakeSessionRepository(),
+    );
     await pumpLocalized(
       tester,
       size: const Size(360, 800),

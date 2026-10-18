@@ -35,13 +35,17 @@ abstract final class DashboardDestinations {
     int requestsBadge = 0,
   }) {
     return [
-      _home(l10n),
-      _item(
+      ShellDestination(
+        label: l10n.dashboardHome,
+        icon: Icons.home_outlined,
+        selectedIcon: Icons.home,
+        location: '${RoutePaths.home}?role=vendor',
+      ),
+      _built(
         l10n.dashboardCatalog,
         Icons.inventory_2_outlined,
         Icons.inventory_2,
-        '/catalog',
-        l10n,
+        RoutePaths.vendorCatalog,
       ),
       _item(
         l10n.dashboardRequests,

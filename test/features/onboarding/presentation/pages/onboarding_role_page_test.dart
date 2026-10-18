@@ -7,12 +7,15 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_p
 import 'package:gcc_app/features/onboarding/presentation/widgets/role_option_card.dart';
 
 import '../../../../helpers/pump_app.dart';
+import '../../../auth/fake_session_repository.dart';
 import '../../fake_onboarding_gateway.dart';
 
 void main() {
   testWidgets('shows both roles and the look-around action', (tester) async {
-    final cubit = OnboardingCubit(FakeOnboardingGateway())
-      ..selectLanguage(OnboardingLanguage.english);
+    final cubit = OnboardingCubit(
+      FakeOnboardingGateway(),
+      FakeSessionRepository(),
+    )..selectLanguage(OnboardingLanguage.english);
     await pumpLocalized(
       tester,
       size: const Size(360, 800),

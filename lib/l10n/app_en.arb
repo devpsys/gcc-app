@@ -2085,5 +2085,82 @@
   "biometricEnrollmentLostTitle": "Biometric unlock was reset",
   "biometricEnrollmentLost": "The device biometric changed. Sign in with a verification code to turn it back on.",
   "biometricGenericFailure": "Biometric unlock failed. Try again, or use a verification code.",
-  "biometricSignInFirst": "Use a verification code to sign in."
+  "biometricSignInFirst": "Use a verification code to sign in.",
+  "catalogTitle": "My catalog",
+  "catalogAddAsset": "Add asset",
+  "catalogKindEquipment": "Equipment ({count})",
+  "@catalogKindEquipment": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogKindBulk": "Bulk goods ({count})",
+  "@catalogKindBulk": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogFilterAll": "All ({count})",
+  "@catalogFilterAll": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogFilterReady": "Ready ({count})",
+  "@catalogFilterReady": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogFilterRented": "Rented out ({count})",
+  "@catalogFilterRented": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogFilterMaintenance": "Maintenance ({count})",
+  "@catalogFilterMaintenance": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogFilterPending": "Pending verification ({count})",
+  "@catalogFilterPending": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogPerDay": "per day",
+  "catalogCautionDeposit": "caution deposit",
+  "catalogStatusReady": "Ready for work",
+  "catalogStatusRented": "Rented out",
+  "catalogStatusMaintenance": "Maintenance",
+  "catalogStatusPending": "Pending",
+  "catalogPendingReview": "Awaiting GCC review — not visible to buyers",
+  "catalogPendingNote": "You can set availability once this is verified.",
+  "catalogReturns": "Returns {when}",
+  "@catalogReturns": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "catalogLocked": "Locked while {reference} is active.",
+  "@catalogLocked": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "catalogBlockedTitle": "Set to In maintenance?",
+  "catalogBlockedAffected": "{count} active booking is affected",
+  "@catalogBlockedAffected": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "catalogBlockedActive": "ACTIVE",
+  "catalogSetAfterReturn": "Set after return",
+  "catalogRecommended": "Recommended",
+  "catalogSetAfterReturnDetail": "Status changes automatically at {when}.",
+  "@catalogSetAfterReturnDetail": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "catalogSetNow": "Set now anyway",
+  "catalogSetNowDetail": "The machine stays bookable until {until}. Buyers may request it.",
+  "@catalogSetNowDetail": {
+    "placeholders": { "until": { "type": "String" } }
+  },
+  "catalogBuyersNotTold": "Buyers are not told why a machine is unavailable.",
+  "catalogCancel": "Cancel",
+  "catalogUndo": "Undo",
+  "catalogUndoToast": "{reference} set to In maintenance",
+  "@catalogUndoToast": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "catalogUndoHint": "Reversible within 10 seconds",
+  "catalogScheduled": "Set to In maintenance · changes again on {when}",
+  "@catalogScheduled": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "catalogEmptyBulk": "No bulk goods in this catalog.",
+  "catalogEmptyFilter": "Nothing in this view."
 }

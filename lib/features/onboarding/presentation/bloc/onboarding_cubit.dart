@@ -1,14 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
+import 'package:gcc_app/features/auth/domain/auth_role.dart';
+import 'package:gcc_app/features/auth/domain/session_repository.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_state.dart';
 import 'package:gcc_app/features/onboarding/presentation/onboarding_gateway.dart';
 import 'package:gcc_app/features/onboarding/presentation/onboarding_language.dart';
 import 'package:gcc_app/features/onboarding/presentation/onboarding_role.dart';
 
 class OnboardingCubit extends Cubit<OnboardingState> {
-  OnboardingCubit(this._gateway) : super(const OnboardingStarted());
+  OnboardingCubit(this._gateway, this._session)
+    : super(const OnboardingStarted());
 
   final OnboardingGateway _gateway;
+  final SessionRepository _session;
 
   static const int phoneLength = 11;
   static const int codeLength = 6;
@@ -144,6 +148,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     );
     try {
       await _gateway.verifySignInCode(phone, code);
+      await _session.establish(_sessionRole(role));
       emit(
         OnboardingCompleted(
           language: language,
@@ -164,4 +169,14 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       );
     }
   }
+}
+
+/// Listing equipment opens the vendor home. Renting and browsing open the
+/// lessee home. Both need an unlocked session or the router sends `/` back
+/// to the language screen.
+AuthRole _sessionRole(OnboardingRole role) {
+  return switch (role) {
+    OnboardingRole.list => AuthRole.vendor,
+    OnboardingRole.rent || OnboardingRole.browse => AuthRole.lessee,
+  };
 }

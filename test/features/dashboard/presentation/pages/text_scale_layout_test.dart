@@ -34,7 +34,10 @@ void main() {
           size: size,
           scale: scale,
           child: BlocProvider(
-            create: (_) => OnboardingCubit(FakeOnboardingGateway()),
+            create: (_) => OnboardingCubit(
+              FakeOnboardingGateway(),
+              FakeSessionRepository(),
+            ),
             child: const OnboardingLanguagePage(),
           ),
         );
@@ -46,7 +49,10 @@ void main() {
           size: size,
           scale: scale,
           child: BlocProvider(
-            create: (_) => OnboardingCubit(FakeOnboardingGateway()),
+            create: (_) => OnboardingCubit(
+              FakeOnboardingGateway(),
+              FakeSessionRepository(),
+            ),
             child: const OnboardingRolePage(),
           ),
         );
@@ -58,7 +64,10 @@ void main() {
           size: size,
           scale: scale,
           child: BlocProvider(
-            create: (_) => OnboardingCubit(FakeOnboardingGateway()),
+            create: (_) => OnboardingCubit(
+              FakeOnboardingGateway(),
+              FakeSessionRepository(),
+            ),
             child: const OnboardingSignInPage(),
           ),
         );

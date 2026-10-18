@@ -6,5 +6,5 @@ import 'package:gcc_app/features/onboarding/presentation/unwired_onboarding_gate
 void registerOnboardingModule() {
   getIt
     ..registerLazySingleton<OnboardingGateway>(UnwiredOnboardingGateway.new)
-    ..registerFactory(() => OnboardingCubit(getIt()));
+    ..registerFactory(() => OnboardingCubit(getIt(), getIt()));
 }

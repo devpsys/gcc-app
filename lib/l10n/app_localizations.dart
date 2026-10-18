@@ -5299,6 +5299,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Use a verification code to sign in.'**
   String get biometricSignInFirst;
+
+  /// No description provided for @catalogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My catalog'**
+  String get catalogTitle;
+
+  /// No description provided for @catalogAddAsset.
+  ///
+  /// In en, this message translates to:
+  /// **'Add asset'**
+  String get catalogAddAsset;
+
+  /// No description provided for @catalogKindEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment ({count})'**
+  String catalogKindEquipment(int count);
+
+  /// No description provided for @catalogKindBulk.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk goods ({count})'**
+  String catalogKindBulk(int count);
+
+  /// No description provided for @catalogFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All ({count})'**
+  String catalogFilterAll(int count);
+
+  /// No description provided for @catalogFilterReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready ({count})'**
+  String catalogFilterReady(int count);
+
+  /// No description provided for @catalogFilterRented.
+  ///
+  /// In en, this message translates to:
+  /// **'Rented out ({count})'**
+  String catalogFilterRented(int count);
+
+  /// No description provided for @catalogFilterMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance ({count})'**
+  String catalogFilterMaintenance(int count);
+
+  /// No description provided for @catalogFilterPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending verification ({count})'**
+  String catalogFilterPending(int count);
+
+  /// No description provided for @catalogPerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'per day'**
+  String get catalogPerDay;
+
+  /// No description provided for @catalogCautionDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'caution deposit'**
+  String get catalogCautionDeposit;
+
+  /// No description provided for @catalogStatusReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for work'**
+  String get catalogStatusReady;
+
+  /// No description provided for @catalogStatusRented.
+  ///
+  /// In en, this message translates to:
+  /// **'Rented out'**
+  String get catalogStatusRented;
+
+  /// No description provided for @catalogStatusMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance'**
+  String get catalogStatusMaintenance;
+
+  /// No description provided for @catalogStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get catalogStatusPending;
+
+  /// No description provided for @catalogPendingReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting GCC review — not visible to buyers'**
+  String get catalogPendingReview;
+
+  /// No description provided for @catalogPendingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You can set availability once this is verified.'**
+  String get catalogPendingNote;
+
+  /// No description provided for @catalogReturns.
+  ///
+  /// In en, this message translates to:
+  /// **'Returns {when}'**
+  String catalogReturns(String when);
+
+  /// No description provided for @catalogLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked while {reference} is active.'**
+  String catalogLocked(String reference);
+
+  /// No description provided for @catalogBlockedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set to In maintenance?'**
+  String get catalogBlockedTitle;
+
+  /// No description provided for @catalogBlockedAffected.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} active booking is affected'**
+  String catalogBlockedAffected(int count);
+
+  /// No description provided for @catalogBlockedActive.
+  ///
+  /// In en, this message translates to:
+  /// **'ACTIVE'**
+  String get catalogBlockedActive;
+
+  /// No description provided for @catalogSetAfterReturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Set after return'**
+  String get catalogSetAfterReturn;
+
+  /// No description provided for @catalogRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get catalogRecommended;
+
+  /// No description provided for @catalogSetAfterReturnDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Status changes automatically at {when}.'**
+  String catalogSetAfterReturnDetail(String when);
+
+  /// No description provided for @catalogSetNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Set now anyway'**
+  String get catalogSetNow;
+
+  /// No description provided for @catalogSetNowDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'The machine stays bookable until {until}. Buyers may request it.'**
+  String catalogSetNowDetail(String until);
+
+  /// No description provided for @catalogBuyersNotTold.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyers are not told why a machine is unavailable.'**
+  String get catalogBuyersNotTold;
+
+  /// No description provided for @catalogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get catalogCancel;
+
+  /// No description provided for @catalogUndo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get catalogUndo;
+
+  /// No description provided for @catalogUndoToast.
+  ///
+  /// In en, this message translates to:
+  /// **'{reference} set to In maintenance'**
+  String catalogUndoToast(String reference);
+
+  /// No description provided for @catalogUndoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Reversible within 10 seconds'**
+  String get catalogUndoHint;
+
+  /// No description provided for @catalogScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Set to In maintenance · changes again on {when}'**
+  String catalogScheduled(String when);
+
+  /// No description provided for @catalogEmptyBulk.
+  ///
+  /// In en, this message translates to:
+  /// **'No bulk goods in this catalog.'**
+  String get catalogEmptyBulk;
+
+  /// No description provided for @catalogEmptyFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing in this view.'**
+  String get catalogEmptyFilter;
 }
 
 class _AppLocalizationsDelegate

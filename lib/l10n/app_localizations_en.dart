@@ -3031,4 +3031,140 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get biometricSignInFirst => 'Use a verification code to sign in.';
+
+  @override
+  String get catalogTitle => 'My catalog';
+
+  @override
+  String get catalogAddAsset => 'Add asset';
+
+  @override
+  String catalogKindEquipment(int count) {
+    return 'Equipment ($count)';
+  }
+
+  @override
+  String catalogKindBulk(int count) {
+    return 'Bulk goods ($count)';
+  }
+
+  @override
+  String catalogFilterAll(int count) {
+    return 'All ($count)';
+  }
+
+  @override
+  String catalogFilterReady(int count) {
+    return 'Ready ($count)';
+  }
+
+  @override
+  String catalogFilterRented(int count) {
+    return 'Rented out ($count)';
+  }
+
+  @override
+  String catalogFilterMaintenance(int count) {
+    return 'Maintenance ($count)';
+  }
+
+  @override
+  String catalogFilterPending(int count) {
+    return 'Pending verification ($count)';
+  }
+
+  @override
+  String get catalogPerDay => 'per day';
+
+  @override
+  String get catalogCautionDeposit => 'caution deposit';
+
+  @override
+  String get catalogStatusReady => 'Ready for work';
+
+  @override
+  String get catalogStatusRented => 'Rented out';
+
+  @override
+  String get catalogStatusMaintenance => 'Maintenance';
+
+  @override
+  String get catalogStatusPending => 'Pending';
+
+  @override
+  String get catalogPendingReview =>
+      'Awaiting GCC review — not visible to buyers';
+
+  @override
+  String get catalogPendingNote =>
+      'You can set availability once this is verified.';
+
+  @override
+  String catalogReturns(String when) {
+    return 'Returns $when';
+  }
+
+  @override
+  String catalogLocked(String reference) {
+    return 'Locked while $reference is active.';
+  }
+
+  @override
+  String get catalogBlockedTitle => 'Set to In maintenance?';
+
+  @override
+  String catalogBlockedAffected(int count) {
+    return '$count active booking is affected';
+  }
+
+  @override
+  String get catalogBlockedActive => 'ACTIVE';
+
+  @override
+  String get catalogSetAfterReturn => 'Set after return';
+
+  @override
+  String get catalogRecommended => 'Recommended';
+
+  @override
+  String catalogSetAfterReturnDetail(String when) {
+    return 'Status changes automatically at $when.';
+  }
+
+  @override
+  String get catalogSetNow => 'Set now anyway';
+
+  @override
+  String catalogSetNowDetail(String until) {
+    return 'The machine stays bookable until $until. Buyers may request it.';
+  }
+
+  @override
+  String get catalogBuyersNotTold =>
+      'Buyers are not told why a machine is unavailable.';
+
+  @override
+  String get catalogCancel => 'Cancel';
+
+  @override
+  String get catalogUndo => 'Undo';
+
+  @override
+  String catalogUndoToast(String reference) {
+    return '$reference set to In maintenance';
+  }
+
+  @override
+  String get catalogUndoHint => 'Reversible within 10 seconds';
+
+  @override
+  String catalogScheduled(String when) {
+    return 'Set to In maintenance · changes again on $when';
+  }
+
+  @override
+  String get catalogEmptyBulk => 'No bulk goods in this catalog.';
+
+  @override
+  String get catalogEmptyFilter => 'Nothing in this view.';
 }

@@ -27,6 +27,25 @@ void main() {
       authRedirect(session: signedOut, location: RoutePaths.agentToday),
       RoutePaths.onboardingLanguage,
     );
+    expect(
+      authRedirect(session: signedOut, location: RoutePaths.home),
+      RoutePaths.onboardingLanguage,
+    );
+  });
+
+  test('an unlocked vendor can stay on home', () {
+    expect(
+      authRedirect(
+        session: const SessionRedirectState(
+          enrolled: false,
+          unlocked: true,
+          homeLocation: '/?role=vendor',
+          signInLocation: RoutePaths.onboardingSignIn,
+        ),
+        location: RoutePaths.home,
+      ),
+      isNull,
+    );
   });
 
   test('a known role returns to that sign-in', () {

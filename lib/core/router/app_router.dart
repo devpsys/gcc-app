@@ -39,6 +39,8 @@ import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_cubit.d
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_language_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_in_page.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/pages/vendor_catalog_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter createAppRouter() {
@@ -226,6 +228,14 @@ GoRouter createAppRouter() {
             builder: (context, state) => const OnboardingSignInPage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.vendorCatalog,
+        name: RouteNames.vendorCatalog,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<VendorCatalogCubit>()..load(),
+          child: const VendorCatalogScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.biometricUnlock,

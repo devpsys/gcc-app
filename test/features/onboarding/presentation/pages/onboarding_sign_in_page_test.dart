@@ -7,13 +7,15 @@ import 'package:gcc_app/features/onboarding/presentation/onboarding_role.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_in_page.dart';
 
 import '../../../../helpers/pump_app.dart';
+import '../../../auth/fake_session_repository.dart';
 import '../../fake_onboarding_gateway.dart';
 
 void main() {
   testWidgets('keeps send code disabled until 11 digits', (tester) async {
-    final cubit = OnboardingCubit(FakeOnboardingGateway())
-      ..selectLanguage(OnboardingLanguage.english)
-      ..selectRole(OnboardingRole.rent);
+    final cubit =
+        OnboardingCubit(FakeOnboardingGateway(), FakeSessionRepository())
+          ..selectLanguage(OnboardingLanguage.english)
+          ..selectRole(OnboardingRole.rent);
     await pumpLocalized(
       tester,
       size: const Size(360, 800),

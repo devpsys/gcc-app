@@ -35,7 +35,7 @@ class VendorDashboardPage extends StatelessWidget {
           showAppBar: false,
           title: snapshot?.place ?? l10n.dashboardNoMarket,
           menuLabel: l10n.openNavigationMenu,
-          selectedLocation: RoutePaths.home,
+          selectedLocation: '${RoutePaths.home}?role=vendor',
           destinations: DashboardDestinations.vendor(
             l10n,
             requestsBadge: snapshot?.requests?.count ?? 0,
