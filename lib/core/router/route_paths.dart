@@ -25,4 +25,5 @@ abstract final class RoutePaths {
   static const String agentVerify = '/auth/agent/verify';
   static const String biometricUnlock = '/auth/unlock';
   static const String vendorCatalog = '/vendor/catalog';
+  static const String vendorRequests = '/vendor/requests';
 }

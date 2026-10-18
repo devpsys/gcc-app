@@ -47,12 +47,11 @@ abstract final class DashboardDestinations {
         Icons.inventory_2,
         RoutePaths.vendorCatalog,
       ),
-      _item(
+      _built(
         l10n.dashboardRequests,
         Icons.inbox_outlined,
         Icons.inbox,
-        '/requests',
-        l10n,
+        RoutePaths.vendorRequests,
         badgeCount: requestsBadge,
       ),
       _wallet(l10n),

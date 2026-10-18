@@ -3167,4 +3167,196 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get catalogEmptyFilter => 'Nothing in this view.';
+
+  @override
+  String get requestTitle => 'Booking request';
+
+  @override
+  String get requestReceivedSms => 'You received this by SMS';
+
+  @override
+  String get requestSmsParity =>
+      'Reply 1 to accept or 2 to reject — same effect.';
+
+  @override
+  String get requestViewSms => 'View the SMS';
+
+  @override
+  String get requestSmsTitle => 'SMS';
+
+  @override
+  String get requestReadyInYard => 'Ready in yard';
+
+  @override
+  String get requestCall => 'Call';
+
+  @override
+  String get requestMessage => 'Message';
+
+  @override
+  String get requestDates => 'Dates';
+
+  @override
+  String get requestDuration => 'Duration';
+
+  @override
+  String get requestRentalFee => 'Rental fee';
+
+  @override
+  String get requestDelivery => 'Delivery';
+
+  @override
+  String get requestYoullReceive => 'You\'ll receive';
+
+  @override
+  String get requestNetEarning => 'Net vendor earning';
+
+  @override
+  String get requestEarningNote =>
+      'After GCC\'s 12% commission and delivery. Released to your wallet once you record the check-in condition.';
+
+  @override
+  String requestHoldDeposit(String amount) {
+    return 'You\'ll hold their $amount deposit until the return is approved';
+  }
+
+  @override
+  String get requestExpiresIn => 'Expires in';
+
+  @override
+  String get requestAutoReassigns => 'Auto-reassigns';
+
+  @override
+  String get requestUrgent => 'Urgent';
+
+  @override
+  String get requestExpiresDetail =>
+      'After this, we offer the booking to the next vendor.';
+
+  @override
+  String get requestReject => 'Reject';
+
+  @override
+  String get requestAccept => 'Accept booking';
+
+  @override
+  String requestAcceptTitle(String reference) {
+    return 'Accept $reference?';
+  }
+
+  @override
+  String requestAcceptBody(String window, String place) {
+    return 'This confirms collection on $window from $place. The lessee is notified by SMS immediately.';
+  }
+
+  @override
+  String get requestAcceptChangeWindow =>
+      'You can change the collection window after accepting.';
+
+  @override
+  String get requestCollectionWindow => 'Collection window';
+
+  @override
+  String get requestDeclineTitle => 'Decline this request';
+
+  @override
+  String get requestDeclineReason => 'Select a reason';
+
+  @override
+  String get requestReasonUnavailable => 'Asset unavailable';
+
+  @override
+  String get requestReasonRate => 'Rate needs review';
+
+  @override
+  String get requestReasonArea => 'Outside my delivery area';
+
+  @override
+  String get requestReasonMaintenance => 'Needs maintenance';
+
+  @override
+  String get requestReasonOther => 'Other';
+
+  @override
+  String get requestReasonNote => 'Reason note';
+
+  @override
+  String get requestReasonNoteHint =>
+      'The vendor sees this. Keep it short and factual.';
+
+  @override
+  String get requestDeclineNotice =>
+      'Declining offers the booking to the next vendor. The lessee isn\'t told who declined.';
+
+  @override
+  String get requestDecline => 'Decline request';
+
+  @override
+  String get requestChooseReason => 'Choose a reason to decline';
+
+  @override
+  String get requestAcceptedSms => 'Accepted by SMS';
+
+  @override
+  String get requestAcceptedSmsBody =>
+      'You accepted this from your feature phone. Nothing else to do.';
+
+  @override
+  String get requestAccepted => 'Accepted';
+
+  @override
+  String requestAcceptedAt(String when) {
+    return 'Accepted $when';
+  }
+
+  @override
+  String requestCollectionConfirmed(String window) {
+    return 'Collection confirmed for $window';
+  }
+
+  @override
+  String get requestAuditTitle => 'Arbitration audit trail';
+
+  @override
+  String get requestAuditReceived => 'Request received';
+
+  @override
+  String get requestAuditBySms => 'By SMS';
+
+  @override
+  String get requestAuditAcceptedSms => 'Accepted by SMS';
+
+  @override
+  String get requestAuditReply => 'Reply \"1\"';
+
+  @override
+  String get requestAuditCollection => 'Collection at yard';
+
+  @override
+  String get requestAuditPending => 'Pending';
+
+  @override
+  String get requestEquipment => 'Equipment';
+
+  @override
+  String get requestNetPayout => 'Net payout';
+
+  @override
+  String get requestHeldDeposit => 'Held deposit';
+
+  @override
+  String get requestRecordCondition => 'Record collection condition';
+
+  @override
+  String get requestDeclineAnyway => 'Decline anyway';
+
+  @override
+  String get requestSmsReverse =>
+      'Accepting by SMS can be reversed up to 1 hour before collection.';
+
+  @override
+  String get requestDeclinedTitle => 'Request declined';
+
+  @override
+  String get requestEmpty => 'No booking requests are waiting.';
 }

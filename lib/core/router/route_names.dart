@@ -25,4 +25,5 @@ abstract final class RouteNames {
   static const String agentVerify = 'agentVerify';
   static const String biometricUnlock = 'biometricUnlock';
   static const String vendorCatalog = 'vendorCatalog';
+  static const String vendorRequests = 'vendorRequests';
 }

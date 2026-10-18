@@ -5509,6 +5509,354 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nothing in this view.'**
   String get catalogEmptyFilter;
+
+  /// No description provided for @requestTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking request'**
+  String get requestTitle;
+
+  /// No description provided for @requestReceivedSms.
+  ///
+  /// In en, this message translates to:
+  /// **'You received this by SMS'**
+  String get requestReceivedSms;
+
+  /// No description provided for @requestSmsParity.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply 1 to accept or 2 to reject — same effect.'**
+  String get requestSmsParity;
+
+  /// No description provided for @requestViewSms.
+  ///
+  /// In en, this message translates to:
+  /// **'View the SMS'**
+  String get requestViewSms;
+
+  /// No description provided for @requestSmsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS'**
+  String get requestSmsTitle;
+
+  /// No description provided for @requestReadyInYard.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready in yard'**
+  String get requestReadyInYard;
+
+  /// No description provided for @requestCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get requestCall;
+
+  /// No description provided for @requestMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get requestMessage;
+
+  /// No description provided for @requestDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get requestDates;
+
+  /// No description provided for @requestDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Duration'**
+  String get requestDuration;
+
+  /// No description provided for @requestRentalFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental fee'**
+  String get requestRentalFee;
+
+  /// No description provided for @requestDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get requestDelivery;
+
+  /// No description provided for @requestYoullReceive.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll receive'**
+  String get requestYoullReceive;
+
+  /// No description provided for @requestNetEarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Net vendor earning'**
+  String get requestNetEarning;
+
+  /// No description provided for @requestEarningNote.
+  ///
+  /// In en, this message translates to:
+  /// **'After GCC\'s 12% commission and delivery. Released to your wallet once you record the check-in condition.'**
+  String get requestEarningNote;
+
+  /// No description provided for @requestHoldDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll hold their {amount} deposit until the return is approved'**
+  String requestHoldDeposit(String amount);
+
+  /// No description provided for @requestExpiresIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires in'**
+  String get requestExpiresIn;
+
+  /// No description provided for @requestAutoReassigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-reassigns'**
+  String get requestAutoReassigns;
+
+  /// No description provided for @requestUrgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent'**
+  String get requestUrgent;
+
+  /// No description provided for @requestExpiresDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'After this, we offer the booking to the next vendor.'**
+  String get requestExpiresDetail;
+
+  /// No description provided for @requestReject.
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get requestReject;
+
+  /// No description provided for @requestAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept booking'**
+  String get requestAccept;
+
+  /// No description provided for @requestAcceptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept {reference}?'**
+  String requestAcceptTitle(String reference);
+
+  /// No description provided for @requestAcceptBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This confirms collection on {window} from {place}. The lessee is notified by SMS immediately.'**
+  String requestAcceptBody(String window, String place);
+
+  /// No description provided for @requestAcceptChangeWindow.
+  ///
+  /// In en, this message translates to:
+  /// **'You can change the collection window after accepting.'**
+  String get requestAcceptChangeWindow;
+
+  /// No description provided for @requestCollectionWindow.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection window'**
+  String get requestCollectionWindow;
+
+  /// No description provided for @requestDeclineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline this request'**
+  String get requestDeclineTitle;
+
+  /// No description provided for @requestDeclineReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a reason'**
+  String get requestDeclineReason;
+
+  /// No description provided for @requestReasonUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Asset unavailable'**
+  String get requestReasonUnavailable;
+
+  /// No description provided for @requestReasonRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate needs review'**
+  String get requestReasonRate;
+
+  /// No description provided for @requestReasonArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Outside my delivery area'**
+  String get requestReasonArea;
+
+  /// No description provided for @requestReasonMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs maintenance'**
+  String get requestReasonMaintenance;
+
+  /// No description provided for @requestReasonOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get requestReasonOther;
+
+  /// No description provided for @requestReasonNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason note'**
+  String get requestReasonNote;
+
+  /// No description provided for @requestReasonNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The vendor sees this. Keep it short and factual.'**
+  String get requestReasonNoteHint;
+
+  /// No description provided for @requestDeclineNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Declining offers the booking to the next vendor. The lessee isn\'t told who declined.'**
+  String get requestDeclineNotice;
+
+  /// No description provided for @requestDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline request'**
+  String get requestDecline;
+
+  /// No description provided for @requestChooseReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a reason to decline'**
+  String get requestChooseReason;
+
+  /// No description provided for @requestAcceptedSms.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted by SMS'**
+  String get requestAcceptedSms;
+
+  /// No description provided for @requestAcceptedSmsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You accepted this from your feature phone. Nothing else to do.'**
+  String get requestAcceptedSmsBody;
+
+  /// No description provided for @requestAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted'**
+  String get requestAccepted;
+
+  /// No description provided for @requestAcceptedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted {when}'**
+  String requestAcceptedAt(String when);
+
+  /// No description provided for @requestCollectionConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection confirmed for {window}'**
+  String requestCollectionConfirmed(String window);
+
+  /// No description provided for @requestAuditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Arbitration audit trail'**
+  String get requestAuditTitle;
+
+  /// No description provided for @requestAuditReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Request received'**
+  String get requestAuditReceived;
+
+  /// No description provided for @requestAuditBySms.
+  ///
+  /// In en, this message translates to:
+  /// **'By SMS'**
+  String get requestAuditBySms;
+
+  /// No description provided for @requestAuditAcceptedSms.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted by SMS'**
+  String get requestAuditAcceptedSms;
+
+  /// No description provided for @requestAuditReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply \"1\"'**
+  String get requestAuditReply;
+
+  /// No description provided for @requestAuditCollection.
+  ///
+  /// In en, this message translates to:
+  /// **'Collection at yard'**
+  String get requestAuditCollection;
+
+  /// No description provided for @requestAuditPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get requestAuditPending;
+
+  /// No description provided for @requestEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment'**
+  String get requestEquipment;
+
+  /// No description provided for @requestNetPayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Net payout'**
+  String get requestNetPayout;
+
+  /// No description provided for @requestHeldDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Held deposit'**
+  String get requestHeldDeposit;
+
+  /// No description provided for @requestRecordCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Record collection condition'**
+  String get requestRecordCondition;
+
+  /// No description provided for @requestDeclineAnyway.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline anyway'**
+  String get requestDeclineAnyway;
+
+  /// No description provided for @requestSmsReverse.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepting by SMS can be reversed up to 1 hour before collection.'**
+  String get requestSmsReverse;
+
+  /// No description provided for @requestDeclinedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Request declined'**
+  String get requestDeclinedTitle;
+
+  /// No description provided for @requestEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No booking requests are waiting.'**
+  String get requestEmpty;
 }
 
 class _AppLocalizationsDelegate

@@ -40,7 +40,9 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_langua
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_in_page.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_catalog_screen.dart';
+import 'package:gcc_app/features/vendor/presentation/pages/vendor_request_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter createAppRouter() {
@@ -228,6 +230,14 @@ GoRouter createAppRouter() {
             builder: (context, state) => const OnboardingSignInPage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.vendorRequests,
+        name: RouteNames.vendorRequests,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<VendorRequestCubit>()..load(),
+          child: const VendorRequestScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.vendorCatalog,

@@ -2162,5 +2162,81 @@
     "placeholders": { "when": { "type": "String" } }
   },
   "catalogEmptyBulk": "No bulk goods in this catalog.",
-  "catalogEmptyFilter": "Nothing in this view."
+  "catalogEmptyFilter": "Nothing in this view.",
+  "requestTitle": "Booking request",
+  "requestReceivedSms": "You received this by SMS",
+  "requestSmsParity": "Reply 1 to accept or 2 to reject — same effect.",
+  "requestViewSms": "View the SMS",
+  "requestSmsTitle": "SMS",
+  "requestReadyInYard": "Ready in yard",
+  "requestCall": "Call",
+  "requestMessage": "Message",
+  "requestDates": "Dates",
+  "requestDuration": "Duration",
+  "requestRentalFee": "Rental fee",
+  "requestDelivery": "Delivery",
+  "requestYoullReceive": "You'll receive",
+  "requestNetEarning": "Net vendor earning",
+  "requestEarningNote": "After GCC's 12% commission and delivery. Released to your wallet once you record the check-in condition.",
+  "requestHoldDeposit": "You'll hold their {amount} deposit until the return is approved",
+  "@requestHoldDeposit": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "requestExpiresIn": "Expires in",
+  "requestAutoReassigns": "Auto-reassigns",
+  "requestUrgent": "Urgent",
+  "requestExpiresDetail": "After this, we offer the booking to the next vendor.",
+  "requestReject": "Reject",
+  "requestAccept": "Accept booking",
+  "requestAcceptTitle": "Accept {reference}?",
+  "@requestAcceptTitle": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "requestAcceptBody": "This confirms collection on {window} from {place}. The lessee is notified by SMS immediately.",
+  "@requestAcceptBody": {
+    "placeholders": {
+      "window": { "type": "String" },
+      "place": { "type": "String" }
+    }
+  },
+  "requestAcceptChangeWindow": "You can change the collection window after accepting.",
+  "requestCollectionWindow": "Collection window",
+  "requestDeclineTitle": "Decline this request",
+  "requestDeclineReason": "Select a reason",
+  "requestReasonUnavailable": "Asset unavailable",
+  "requestReasonRate": "Rate needs review",
+  "requestReasonArea": "Outside my delivery area",
+  "requestReasonMaintenance": "Needs maintenance",
+  "requestReasonOther": "Other",
+  "requestReasonNote": "Reason note",
+  "requestReasonNoteHint": "The vendor sees this. Keep it short and factual.",
+  "requestDeclineNotice": "Declining offers the booking to the next vendor. The lessee isn't told who declined.",
+  "requestDecline": "Decline request",
+  "requestChooseReason": "Choose a reason to decline",
+  "requestAcceptedSms": "Accepted by SMS",
+  "requestAcceptedSmsBody": "You accepted this from your feature phone. Nothing else to do.",
+  "requestAccepted": "Accepted",
+  "requestAcceptedAt": "Accepted {when}",
+  "@requestAcceptedAt": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "requestCollectionConfirmed": "Collection confirmed for {window}",
+  "@requestCollectionConfirmed": {
+    "placeholders": { "window": { "type": "String" } }
+  },
+  "requestAuditTitle": "Arbitration audit trail",
+  "requestAuditReceived": "Request received",
+  "requestAuditBySms": "By SMS",
+  "requestAuditAcceptedSms": "Accepted by SMS",
+  "requestAuditReply": "Reply \"1\"",
+  "requestAuditCollection": "Collection at yard",
+  "requestAuditPending": "Pending",
+  "requestEquipment": "Equipment",
+  "requestNetPayout": "Net payout",
+  "requestHeldDeposit": "Held deposit",
+  "requestRecordCondition": "Record collection condition",
+  "requestDeclineAnyway": "Decline anyway",
+  "requestSmsReverse": "Accepting by SMS can be reversed up to 1 hour before collection.",
+  "requestDeclinedTitle": "Request declined",
+  "requestEmpty": "No booking requests are waiting."
 }
