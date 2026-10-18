@@ -17,6 +17,9 @@ Failure toFailure(AppException exception) {
     CacheException(:final cause) => CacheFailure(cause),
     ConfigurationException() => const ConfigurationFailure(),
     CancelledException() => const CancelledFailure(),
+    BiometricLockoutException() => const BiometricLockoutFailure(),
+    BiometricEnrollmentLostException() =>
+      const BiometricEnrollmentLostFailure(),
     UnexpectedException(:final cause) => UnexpectedFailure(cause),
   };
 }

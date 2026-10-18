@@ -65,6 +65,14 @@ final class CancelledException extends AppException {
   const CancelledException();
 }
 
+final class BiometricLockoutException extends AppException {
+  const BiometricLockoutException();
+}
+
+final class BiometricEnrollmentLostException extends AppException {
+  const BiometricEnrollmentLostException();
+}
+
 final class UnexpectedException extends AppException {
   const UnexpectedException([this.cause]);
 

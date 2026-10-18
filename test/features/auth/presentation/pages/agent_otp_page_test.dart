@@ -8,13 +8,14 @@ import 'package:gcc_app/features/auth/presentation/widgets/otp_code_box.dart';
 
 import '../../../../helpers/pump_app.dart';
 import '../../fake_agent_auth_gateway.dart';
+import '../../fake_session_repository.dart';
 
 void main() {
   testWidgets('uses one code field and disables verify until six digits', (
     tester,
   ) async {
     final gateway = FakeAgentAuthGateway();
-    final cubit = AgentAuthCubit(gateway);
+    final cubit = AgentAuthCubit(gateway, FakeSessionRepository());
     cubit.identifierChanged('AG-0142');
     await cubit.submitIdentifier();
 

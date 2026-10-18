@@ -2,7 +2,9 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:gcc_app/core/constants/storage_keys.dart';
 import 'package:gcc_app/core/di/injection.dart';
 import 'package:gcc_app/core/storage/flutter_secure_credential_store.dart';
+import 'package:gcc_app/core/storage/memory_credential_store.dart';
 import 'package:gcc_app/core/storage/secure_credential_store.dart';
+import 'package:gcc_app/core/storage/storage_environment.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> registerStorageModule({String? storageDirectory}) async {
@@ -13,10 +15,23 @@ Future<void> registerStorageModule({String? storageDirectory}) async {
   }
 
   final preferences = await Hive.openBox<String>(StorageKeys.preferencesBox);
+  final inMemory = storageDirectory != null;
   getIt
     ..registerSingleton<Box<String>>(preferences)
+    ..registerSingleton<StorageEnvironment>(
+      StorageEnvironment(inMemory: inMemory),
+    );
+  if (inMemory) {
+    getIt.registerSingleton<SecureCredentialStore>(MemoryCredentialStore());
+    return;
+  }
+  getIt
     ..registerLazySingleton<FlutterSecureStorage>(
-      () => const FlutterSecureStorage(),
+      () => const FlutterSecureStorage(
+        iOptions: IOSOptions(
+          accessibility: KeychainAccessibility.first_unlock_this_device,
+        ),
+      ),
     )
     ..registerLazySingleton<SecureCredentialStore>(
       () => FlutterSecureCredentialStore(getIt()),

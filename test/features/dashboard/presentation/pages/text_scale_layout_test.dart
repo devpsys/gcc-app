@@ -17,6 +17,7 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_i
 
 import '../../../../helpers/pump_app.dart';
 import '../../../auth/fake_agent_auth_gateway.dart';
+import '../../../auth/fake_session_repository.dart';
 import '../../../onboarding/fake_onboarding_gateway.dart';
 
 void main() {
@@ -69,7 +70,8 @@ void main() {
           size: size,
           scale: scale,
           child: BlocProvider(
-            create: (_) => AgentAuthCubit(FakeAgentAuthGateway()),
+            create: (_) =>
+                AgentAuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
             child: const AgentSignInPage(),
           ),
         );
@@ -81,7 +83,8 @@ void main() {
           size: size,
           scale: scale,
           child: BlocProvider(
-            create: (_) => AgentAuthCubit(FakeAgentAuthGateway()),
+            create: (_) =>
+                AgentAuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
             child: const AgentOtpPage(),
           ),
         );

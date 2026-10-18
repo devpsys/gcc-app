@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
@@ -6,8 +8,12 @@ import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_primary_button.dart';
+import 'package:gcc_app/features/auth/domain/biometric_capability.dart';
+import 'package:gcc_app/features/auth/domain/device_lock_snapshot.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_state.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/device_lock_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/device_lock_state.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/auth_screen_scaffold.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/auth_session_footer.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/masked_phone_line.dart';
@@ -25,7 +31,7 @@ class AgentOtpPage extends StatelessWidget {
       listenWhen: (previous, current) =>
           current is AgentAuthVerified && previous is! AgentAuthVerified,
       listener: (context, state) {
-        GoRouter.maybeOf(context)?.go(RoutePaths.agentToday);
+        unawaited(_continueAfterVerification(context));
       },
       child: BlocBuilder<AgentAuthCubit, AgentAuthState>(
         builder: (context, state) {
@@ -131,4 +137,36 @@ class AgentOtpPage extends StatelessWidget {
       ),
     );
   }
+}
+
+Future<void> _continueAfterVerification(BuildContext context) async {
+  final lock = _lockCubit(context);
+  if (lock != null) {
+    await lock.load();
+    if (!context.mounted) {
+      return;
+    }
+    final current = lock.state;
+    if (current is DeviceLockReady && _shouldOfferLock(current.snapshot)) {
+      await lock.enroll();
+    }
+  }
+  if (!context.mounted) {
+    return;
+  }
+  GoRouter.maybeOf(context)?.go(RoutePaths.agentToday);
+}
+
+DeviceLockCubit? _lockCubit(BuildContext context) {
+  try {
+    return context.read<DeviceLockCubit>();
+  } on ProviderNotFoundException {
+    return null;
+  }
+}
+
+bool _shouldOfferLock(DeviceLockSnapshot snapshot) {
+  return snapshot.capability is BiometricAvailable &&
+      !snapshot.enrolled &&
+      !snapshot.promptDeclined;
 }

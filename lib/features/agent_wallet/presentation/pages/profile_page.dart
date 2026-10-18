@@ -28,6 +28,10 @@ class ProfilePage extends StatelessWidget {
     this.onOpenNotifications,
     this.onInstall,
     this.onSignOut,
+    this.biometricEnrolled = false,
+    this.biometricValue,
+    this.biometricDetail,
+    this.onBiometricChanged,
     this.onClearStorage,
     this.offlineCaptureAllowed = true,
     this.onOfflineCaptureChanged,
@@ -41,6 +45,12 @@ class ProfilePage extends StatelessWidget {
   final VoidCallback? onOpenNotifications;
   final VoidCallback? onInstall;
   final VoidCallback? onSignOut;
+
+  /// When null, and [biometricDetail] is also null, the biometric row is omitted.
+  final bool biometricEnrolled;
+  final String? biometricValue;
+  final String? biometricDetail;
+  final ValueChanged<bool>? onBiometricChanged;
 
   /// Clears one storage category. Null withholds the clear affordance.
   final void Function(String label)? onClearStorage;
@@ -146,6 +156,21 @@ class ProfilePage extends StatelessWidget {
                   label: l10n.profileRowAppVersion,
                   value: l10n.profileAppVersion,
                 ),
+                if (biometricValue != null ||
+                    biometricDetail != null ||
+                    onBiometricChanged != null)
+                  SettingsRow(
+                    icon: Icons.fingerprint,
+                    label: l10n.biometricProfileLabel,
+                    value: biometricValue,
+                    detail: biometricDetail,
+                    trailing: onBiometricChanged == null
+                        ? null
+                        : AppSwitchTrack(
+                            value: biometricEnrolled,
+                            onChanged: onBiometricChanged,
+                          ),
+                  ),
               ],
             ),
             SettingsSection(

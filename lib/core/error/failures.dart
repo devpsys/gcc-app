@@ -106,6 +106,20 @@ final class CancelledFailure extends Failure {
   List<Object?> get props => const [];
 }
 
+final class BiometricLockoutFailure extends Failure {
+  const BiometricLockoutFailure();
+
+  @override
+  List<Object?> get props => const [];
+}
+
+final class BiometricEnrollmentLostFailure extends Failure {
+  const BiometricEnrollmentLostFailure();
+
+  @override
+  List<Object?> get props => const [];
+}
+
 final class UnexpectedFailure extends Failure {
   const UnexpectedFailure([this.cause]);
 

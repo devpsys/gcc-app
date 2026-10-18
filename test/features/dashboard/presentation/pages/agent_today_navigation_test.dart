@@ -11,6 +11,7 @@ import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
 
+import '../../../../helpers/establish_agent_session.dart';
 import '../../../../helpers/test_config.dart';
 
 void main() {
@@ -23,6 +24,7 @@ void main() {
       config: testConfig,
       storageDirectory: directory.path,
     );
+    await establishAgentSession();
     router = createAppRouter();
   });
 

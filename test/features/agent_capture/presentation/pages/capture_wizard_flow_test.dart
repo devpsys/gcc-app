@@ -13,6 +13,7 @@ import 'package:gcc_app/features/agent_capture/presentation/pages/capture_review
 import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:hive/hive.dart';
 
+import '../../../../helpers/establish_agent_session.dart';
 import '../../../../helpers/test_config.dart';
 
 /// Drives the media step through the **real** router.
@@ -32,6 +33,7 @@ void main() {
       config: testConfig,
       storageDirectory: directory.path,
     );
+    await establishAgentSession();
   });
 
   tearDown(() async {

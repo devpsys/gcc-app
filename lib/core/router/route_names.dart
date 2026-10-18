@@ -23,4 +23,5 @@ abstract final class RouteNames {
   static const String onboardingSignIn = 'onboardingSignIn';
   static const String agentSignIn = 'agentSignIn';
   static const String agentVerify = 'agentVerify';
+  static const String biometricUnlock = 'biometricUnlock';
 }

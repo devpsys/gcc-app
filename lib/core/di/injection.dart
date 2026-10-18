@@ -34,5 +34,6 @@ Future<void> configureDependencies({
   registerCaptureModule();
   registerFieldOpsModule();
   registerWalletModule();
+  await prepareAuthSession();
   getIt.registerLazySingleton<GoRouter>(createAppRouter);
 }

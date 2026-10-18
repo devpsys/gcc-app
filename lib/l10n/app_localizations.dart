@@ -5161,6 +5161,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign in to see your agent details, markets and preferences.'**
   String get profileUnavailableBody;
+
+  /// No description provided for @biometricUnlockTitleFace.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with Face ID'**
+  String get biometricUnlockTitleFace;
+
+  /// No description provided for @biometricUnlockTitleFingerprint.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with your fingerprint'**
+  String get biometricUnlockTitleFingerprint;
+
+  /// No description provided for @biometricUnlockTitleGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock this device'**
+  String get biometricUnlockTitleGeneric;
+
+  /// No description provided for @biometricUnlockAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock'**
+  String get biometricUnlockAction;
+
+  /// No description provided for @biometricUseCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Use verification code instead'**
+  String get biometricUseCode;
+
+  /// No description provided for @biometricEnrollTitleFace.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock GCC with Face ID on this device?'**
+  String get biometricEnrollTitleFace;
+
+  /// No description provided for @biometricEnrollTitleFingerprint.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock GCC with your fingerprint on this device?'**
+  String get biometricEnrollTitleFingerprint;
+
+  /// No description provided for @biometricEnrollBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your sign-in stays on this device. GCC asks for the biometric when you open the app again.'**
+  String get biometricEnrollBody;
+
+  /// No description provided for @biometricEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get biometricEnable;
+
+  /// No description provided for @biometricNotNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get biometricNotNow;
+
+  /// No description provided for @biometricProfileLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock with biometrics'**
+  String get biometricProfileLabel;
+
+  /// No description provided for @biometricMethodFace.
+  ///
+  /// In en, this message translates to:
+  /// **'Face ID'**
+  String get biometricMethodFace;
+
+  /// No description provided for @biometricMethodFingerprint.
+  ///
+  /// In en, this message translates to:
+  /// **'Fingerprint'**
+  String get biometricMethodFingerprint;
+
+  /// No description provided for @biometricMethodIris.
+  ///
+  /// In en, this message translates to:
+  /// **'Iris'**
+  String get biometricMethodIris;
+
+  /// No description provided for @biometricMethodGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometrics'**
+  String get biometricMethodGeneric;
+
+  /// No description provided for @biometricUnavailableWeb.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric unlock is not available in the browser.'**
+  String get biometricUnavailableWeb;
+
+  /// No description provided for @biometricUnavailableHardware.
+  ///
+  /// In en, this message translates to:
+  /// **'This device has no biometric sensor.'**
+  String get biometricUnavailableHardware;
+
+  /// No description provided for @biometricUnavailableNoneEnrolled.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up a fingerprint or Face ID in the device settings first.'**
+  String get biometricUnavailableNoneEnrolled;
+
+  /// No description provided for @biometricUnavailableLockout.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Use a verification code, or try again later.'**
+  String get biometricUnavailableLockout;
+
+  /// No description provided for @biometricEnrollmentLostTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric unlock was reset'**
+  String get biometricEnrollmentLostTitle;
+
+  /// No description provided for @biometricEnrollmentLost.
+  ///
+  /// In en, this message translates to:
+  /// **'The device biometric changed. Sign in with a verification code to turn it back on.'**
+  String get biometricEnrollmentLost;
+
+  /// No description provided for @biometricGenericFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Biometric unlock failed. Try again, or use a verification code.'**
+  String get biometricGenericFailure;
+
+  /// No description provided for @biometricSignInFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a verification code to sign in.'**
+  String get biometricSignInFirst;
 }
 
 class _AppLocalizationsDelegate

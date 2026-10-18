@@ -21,6 +21,7 @@ dependencies:
   flutter_secure_storage: ^11.2.0
   intl: ^0.20.3
   cupertino_icons: ^2.0.0
+  local_auth: ^3.0.2
 
 dev_dependencies:
   flutter_test:

@@ -7,12 +7,16 @@ import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart
 
 import '../../../../helpers/pump_app.dart';
 import '../../fake_agent_auth_gateway.dart';
+import '../../fake_session_repository.dart';
 
 void main() {
   testWidgets('disables continue until the identifier is valid', (
     tester,
   ) async {
-    final cubit = AgentAuthCubit(FakeAgentAuthGateway());
+    final cubit = AgentAuthCubit(
+      FakeAgentAuthGateway(),
+      FakeSessionRepository(),
+    );
     await pumpLocalized(
       tester,
       size: const Size(360, 800),
@@ -42,7 +46,7 @@ void main() {
       ..requestFailure = const ValidationFailure(
         fieldErrors: {'identifier': []},
       );
-    final cubit = AgentAuthCubit(gateway);
+    final cubit = AgentAuthCubit(gateway, FakeSessionRepository());
     await pumpLocalized(
       tester,
       size: const Size(360, 800),
@@ -64,7 +68,10 @@ void main() {
   });
 
   testWidgets('opens the language sheet with native names', (tester) async {
-    final cubit = AgentAuthCubit(FakeAgentAuthGateway());
+    final cubit = AgentAuthCubit(
+      FakeAgentAuthGateway(),
+      FakeSessionRepository(),
+    );
     await pumpLocalized(
       tester,
       size: const Size(360, 800),
@@ -90,7 +97,10 @@ void main() {
   });
 
   testWidgets('survives a short viewport and large text', (tester) async {
-    final cubit = AgentAuthCubit(FakeAgentAuthGateway());
+    final cubit = AgentAuthCubit(
+      FakeAgentAuthGateway(),
+      FakeSessionRepository(),
+    );
     await pumpLocalized(
       tester,
       size: const Size(320, 640),

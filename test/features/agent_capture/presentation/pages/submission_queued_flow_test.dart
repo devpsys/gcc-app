@@ -14,6 +14,7 @@ import 'package:gcc_app/features/agent_capture/presentation/pages/submission_que
 import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:hive/hive.dart';
 
+import '../../../../helpers/establish_agent_session.dart';
 import '../../../../helpers/test_config.dart';
 
 /// Drives the terminal "shop captured" screen through the real router.
@@ -36,6 +37,7 @@ void main() {
       config: testConfig,
       storageDirectory: directory.path,
     );
+    await establishAgentSession();
     router = createAppRouter();
   });
 

@@ -2953,4 +2953,82 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get profileUnavailableBody =>
       'Sign in to see your agent details, markets and preferences.';
+
+  @override
+  String get biometricUnlockTitleFace => 'Unlock with Face ID';
+
+  @override
+  String get biometricUnlockTitleFingerprint => 'Unlock with your fingerprint';
+
+  @override
+  String get biometricUnlockTitleGeneric => 'Unlock this device';
+
+  @override
+  String get biometricUnlockAction => 'Unlock';
+
+  @override
+  String get biometricUseCode => 'Use verification code instead';
+
+  @override
+  String get biometricEnrollTitleFace =>
+      'Unlock GCC with Face ID on this device?';
+
+  @override
+  String get biometricEnrollTitleFingerprint =>
+      'Unlock GCC with your fingerprint on this device?';
+
+  @override
+  String get biometricEnrollBody =>
+      'Your sign-in stays on this device. GCC asks for the biometric when you open the app again.';
+
+  @override
+  String get biometricEnable => 'Enable';
+
+  @override
+  String get biometricNotNow => 'Not now';
+
+  @override
+  String get biometricProfileLabel => 'Unlock with biometrics';
+
+  @override
+  String get biometricMethodFace => 'Face ID';
+
+  @override
+  String get biometricMethodFingerprint => 'Fingerprint';
+
+  @override
+  String get biometricMethodIris => 'Iris';
+
+  @override
+  String get biometricMethodGeneric => 'Biometrics';
+
+  @override
+  String get biometricUnavailableWeb =>
+      'Biometric unlock is not available in the browser.';
+
+  @override
+  String get biometricUnavailableHardware =>
+      'This device has no biometric sensor.';
+
+  @override
+  String get biometricUnavailableNoneEnrolled =>
+      'Set up a fingerprint or Face ID in the device settings first.';
+
+  @override
+  String get biometricUnavailableLockout =>
+      'Too many attempts. Use a verification code, or try again later.';
+
+  @override
+  String get biometricEnrollmentLostTitle => 'Biometric unlock was reset';
+
+  @override
+  String get biometricEnrollmentLost =>
+      'The device biometric changed. Sign in with a verification code to turn it back on.';
+
+  @override
+  String get biometricGenericFailure =>
+      'Biometric unlock failed. Try again, or use a verification code.';
+
+  @override
+  String get biometricSignInFirst => 'Use a verification code to sign in.';
 }

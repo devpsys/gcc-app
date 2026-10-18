@@ -1,13 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
+import 'package:gcc_app/features/auth/domain/auth_role.dart';
+import 'package:gcc_app/features/auth/domain/session_repository.dart';
 import 'package:gcc_app/features/auth/presentation/agent_auth_gateway.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_state.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_identifier_validator.dart';
 
 class AgentAuthCubit extends Cubit<AgentAuthState> {
-  AgentAuthCubit(this._gateway) : super(const AgentAuthIdle());
+  AgentAuthCubit(this._gateway, this._session) : super(const AgentAuthIdle());
 
   final AgentAuthGateway _gateway;
+  final SessionRepository _session;
 
   bool get _busy => state is AgentAuthValidating || state is AgentAuthVerifying;
 
@@ -149,14 +152,6 @@ class AgentAuthCubit extends Cubit<AgentAuthState> {
     );
     try {
       await _gateway.verifyCode(current.identifier, current.code);
-      emit(
-        AgentAuthVerified(
-          identifier: current.identifier,
-          languageId: current.languageId,
-          maskedPhone: current.maskedPhone,
-          code: current.code,
-        ),
-      );
     } on Failure catch (failure) {
       emit(
         AgentAuthFailed(
@@ -168,7 +163,31 @@ class AgentAuthCubit extends Cubit<AgentAuthState> {
           failure: failure,
         ),
       );
+      return;
     }
+    try {
+      await _session.establish(AuthRole.agent);
+    } on Failure catch (failure) {
+      emit(
+        AgentAuthFailed(
+          identifier: current.identifier,
+          languageId: current.languageId,
+          maskedPhone: current.maskedPhone,
+          code: current.code,
+          kind: AgentAuthFailureKind.generic,
+          failure: failure,
+        ),
+      );
+      return;
+    }
+    emit(
+      AgentAuthVerified(
+        identifier: current.identifier,
+        languageId: current.languageId,
+        maskedPhone: current.maskedPhone,
+        code: current.code,
+      ),
+    );
   }
 
   Future<void> resendCode() async {

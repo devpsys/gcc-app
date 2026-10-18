@@ -1,7 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/di/injection.dart';
+import 'package:gcc_app/core/router/auth_redirect.dart';
 import 'package:gcc_app/core/router/route_names.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
+import 'package:gcc_app/core/router/session_gate.dart';
 import 'package:gcc_app/core/widgets/route_error_page.dart';
 import 'package:gcc_app/features/agent_capture/presentation/bloc/capture_cubit.dart';
 import 'package:gcc_app/features/agent_capture/presentation/pages/capture_assets_page.dart';
@@ -24,8 +26,10 @@ import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_sc
 import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_status_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/notification_channels_screen.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/device_lock_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart';
+import 'package:gcc_app/features/auth/presentation/pages/biometric_unlock_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_cubit.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart';
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
@@ -38,8 +42,13 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_i
 import 'package:go_router/go_router.dart';
 
 GoRouter createAppRouter() {
+  final gate = getIt<SessionGate>();
   return GoRouter(
-    initialLocation: RoutePaths.onboardingLanguage,
+    initialLocation: initialAuthLocation(gate.state),
+    refreshListenable: gate.changes,
+    redirect: (context, state) {
+      return authRedirect(session: gate.state, location: state.uri.path);
+    },
     errorBuilder: (context, state) => const RouteErrorPage(),
     routes: [
       ShellRoute(
@@ -121,8 +130,11 @@ GoRouter createAppRouter() {
       GoRoute(
         path: RoutePaths.agentProfile,
         name: RouteNames.agentProfile,
-        builder: (context, state) => BlocProvider(
-          create: (_) => getIt<WalletCubit>()..loadProfile(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => getIt<WalletCubit>()..loadProfile()),
+            BlocProvider(create: (_) => getIt<DeviceLockCubit>()..load()),
+          ],
           child: const AgentProfileScreen(),
         ),
       ),
@@ -215,10 +227,21 @@ GoRouter createAppRouter() {
           ),
         ],
       ),
+      GoRoute(
+        path: RoutePaths.biometricUnlock,
+        name: RouteNames.biometricUnlock,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<DeviceLockCubit>()..load(),
+          child: const BiometricUnlockPage(),
+        ),
+      ),
       ShellRoute(
         builder: (context, state, child) {
-          return BlocProvider(
-            create: (_) => getIt<AgentAuthCubit>(),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => getIt<AgentAuthCubit>()),
+              BlocProvider(create: (_) => getIt<DeviceLockCubit>()..load()),
+            ],
             child: child,
           );
         },

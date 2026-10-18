@@ -188,6 +188,7 @@ List<String> _registeredPaths() => const <String>[
   RoutePaths.onboardingSignIn,
   RoutePaths.agentSignIn,
   RoutePaths.agentVerify,
+  RoutePaths.biometricUnlock,
   RoutePaths.agentToday,
   RoutePaths.captureShop,
   RoutePaths.captureLocation,
