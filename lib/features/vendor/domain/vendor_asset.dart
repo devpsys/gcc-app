@@ -48,16 +48,19 @@ class VendorAsset extends Equatable {
 
   VendorAsset copyWith({
     VendorAssetStatus? status,
+    String? ratePerDay,
+    String? deposit,
     String? scheduledNote,
+    bool clearDeposit = false,
     bool clearScheduledNote = false,
   }) {
     return VendorAsset(
       reference: reference,
       name: name,
-      ratePerDay: ratePerDay,
+      ratePerDay: ratePerDay ?? this.ratePerDay,
       place: place,
       specification: specification,
-      deposit: deposit,
+      deposit: clearDeposit ? null : deposit ?? this.deposit,
       mark: mark,
       statusLine: statusLine,
       status: status ?? this.status,

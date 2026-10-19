@@ -16,6 +16,7 @@ import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubi
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_state.dart';
 import 'package:gcc_app/features/vendor/presentation/widgets/edit_money_field.dart';
 import 'package:gcc_app/features/vendor/presentation/widgets/edit_quote_card.dart';
+import 'package:go_router/go_router.dart';
 
 class VendorAssetEditPage extends StatelessWidget {
   const VendorAssetEditPage({required this.state, super.key});
@@ -167,7 +168,7 @@ class VendorAssetEditPage extends StatelessWidget {
                       child: AppSecondaryButton(
                         label: l10n.editDiscard,
                         expand: false,
-                        onPressed: cubit.discard,
+                        onPressed: () => _discard(context, cubit),
                       ),
                     ),
                     const SizedBox(width: AppSpacing.sm),
@@ -175,7 +176,9 @@ class VendorAssetEditPage extends StatelessWidget {
                       child: AppPrimaryButton(
                         label: l10n.editSave,
                         expand: false,
-                        onPressed: gaps.clear ? cubit.save : null,
+                        onPressed: gaps.clear
+                            ? () => _save(context, cubit)
+                            : null,
                       ),
                     ),
                   ],
@@ -449,6 +452,26 @@ class VendorAssetEditPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _discard(BuildContext context, VendorAssetEditCubit cubit) {
+    final router = GoRouter.maybeOf(context);
+    if (router != null && router.canPop()) {
+      router.pop();
+      return;
+    }
+    cubit.discard();
+  }
+
+  Future<void> _save(BuildContext context, VendorAssetEditCubit cubit) async {
+    final draft = await cubit.save();
+    if (!context.mounted || draft == null) {
+      return;
+    }
+    final router = GoRouter.maybeOf(context);
+    if (router != null && router.canPop()) {
+      router.pop(draft);
+    }
   }
 
   String _status(BuildContext context, VendorAssetStatus status) {

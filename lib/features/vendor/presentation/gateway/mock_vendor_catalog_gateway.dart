@@ -6,15 +6,28 @@ import 'package:gcc_app/features/vendor/presentation/gateway/vendor_catalog_gate
 
 /// The four catalog cards from MOB-VND-12.
 final class MockVendorCatalogGateway implements VendorCatalogGateway {
-  const MockVendorCatalogGateway();
+  MockVendorCatalogGateway() : _assets = [..._seed];
+
+  final List<VendorAsset> _assets;
 
   @override
-  Future<List<VendorAsset>> loadAssets() async => _assets;
+  Future<List<VendorAsset>> loadAssets() async => List.unmodifiable(_assets);
 
   @override
   Future<int> loadRequestsWaiting() async => 3;
 
-  static const _assets = <VendorAsset>[
+  @override
+  Future<void> saveListing(VendorAsset asset) async {
+    final index = _assets.indexWhere(
+      (item) => item.reference == asset.reference,
+    );
+    if (index < 0) {
+      return;
+    }
+    _assets[index] = asset;
+  }
+
+  static const _seed = <VendorAsset>[
     VendorAsset(
       reference: 'AST-0912',
       name: 'Mika 100kVA Diesel Generator Set',

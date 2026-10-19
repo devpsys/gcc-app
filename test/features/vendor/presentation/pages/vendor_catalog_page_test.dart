@@ -89,7 +89,7 @@ Future<void> _pump(
   Size size = const Size(360, 800),
   double scale = 1,
 }) async {
-  final cubit = VendorCatalogCubit(const MockVendorCatalogGateway());
+  final cubit = VendorCatalogCubit(MockVendorCatalogGateway());
   await cubit.load();
   addTearDown(cubit.close);
   await pumpLocalized(

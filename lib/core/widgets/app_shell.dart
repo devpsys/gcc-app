@@ -190,7 +190,16 @@ class AppShell extends StatelessWidget {
 
   void _go(BuildContext context, int index) {
     final destination = destinations[index];
-    if (!destination.available || destination.location == selectedLocation) {
+    if (!destination.available) {
+      return;
+    }
+    final router = GoRouter.maybeOf(context);
+    if (router == null) {
+      return;
+    }
+    final current = GoRouterState.of(context).uri;
+    final target = Uri.parse(destination.location);
+    if (current.path == target.path && current.query == target.query) {
       return;
     }
     context.go(destination.location);

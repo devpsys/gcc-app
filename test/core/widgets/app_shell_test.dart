@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gcc_app/core/theme/app_theme.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
 import 'package:gcc_app/core/widgets/shell_destination.dart';
+import 'package:gcc_app/l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -78,5 +81,68 @@ void main() {
 
     expect(find.byType(NavigationRail), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);
+  });
+
+  testWidgets('a highlighted tab still opens its route from a nested page', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    const tabs = [
+      ShellDestination(
+        label: 'Catalog',
+        icon: Icons.inventory_2_outlined,
+        selectedIcon: Icons.inventory_2,
+        location: '/vendor/catalog',
+      ),
+      ShellDestination(
+        label: 'Requests',
+        icon: Icons.inbox_outlined,
+        selectedIcon: Icons.inbox,
+        location: '/vendor/requests',
+      ),
+    ];
+    final router = GoRouter(
+      initialLocation: '/vendor/catalog/edit/AST-0912',
+      routes: [
+        GoRoute(
+          path: '/vendor/catalog',
+          builder: (context, state) => const Scaffold(body: Text('CATALOG')),
+        ),
+        GoRoute(
+          path: '/vendor/requests',
+          builder: (context, state) => const Scaffold(body: Text('REQUESTS')),
+        ),
+        GoRoute(
+          path: '/vendor/catalog/edit/:reference',
+          builder: (context, state) => const AppShell(
+            title: 'AST-0912',
+            menuLabel: 'Open navigation menu',
+            selectedLocation: '/vendor/catalog',
+            destinations: tabs,
+            child: Text('EDIT'),
+          ),
+        ),
+      ],
+    );
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(
+      MaterialApp.router(
+        theme: AppTheme.light(),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        routerConfig: router,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('EDIT'), findsOneWidget);
+    await tester.tap(find.text('Catalog'));
+    await tester.pumpAndSettle();
+    expect(find.text('CATALOG'), findsOneWidget);
   });
 }

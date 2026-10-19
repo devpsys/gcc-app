@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
 import 'package:gcc_app/features/vendor/domain/naira_amount.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_asset_draft.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_charge_basis.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_state.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/vendor_asset_edit_gateway.dart';
@@ -62,28 +63,30 @@ class VendorAssetEditCubit extends Cubit<VendorAssetEditState> {
     emit(restored.copyWith(revision: ready.revision + 1));
   }
 
-  void save() {
+  /// Writes the current rate card and returns it. Null when a field is empty.
+  Future<VendorAssetDraft?> save() async {
     final ready = _ready;
     if (ready == null || !ready.gaps.clear) {
-      return;
+      return null;
     }
     final operator = parseNairaInput(ready.operatorText);
-    emit(
-      ready.copyWith(
-        original: ready.original.copyWith(
-          basis: ready.basis,
-          dailyRate: ready.daily,
-          deposit: ready.deposit,
-          projectRate: ready.project,
-          assignOperator: ready.assignOperator,
-          operatorFee: operator,
-          clearDaily: ready.daily == null,
-          clearDeposit: ready.deposit == null,
-          clearProject: ready.project == null,
-          clearOperator: operator == null,
-        ),
-      ),
+    final saved = ready.original.copyWith(
+      basis: ready.basis,
+      dailyRate: ready.daily,
+      deposit: ready.deposit,
+      projectRate: ready.project,
+      assignOperator: ready.assignOperator,
+      operatorFee: operator,
+      clearDaily: ready.daily == null,
+      clearDeposit: ready.deposit == null,
+      clearProject: ready.project == null,
+      clearOperator: operator == null,
     );
+    await _gateway.save(saved);
+    if (!isClosed) {
+      emit(ready.copyWith(original: saved));
+    }
+    return saved;
   }
 
   void _text(VendorAssetEditReady Function(VendorAssetEditReady ready) change) {

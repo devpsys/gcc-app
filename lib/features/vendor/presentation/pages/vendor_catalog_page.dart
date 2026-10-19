@@ -6,6 +6,7 @@ import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_asset_draft.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_asset_status.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_catalog_kind.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
@@ -119,9 +120,15 @@ class VendorCatalogPage extends StatelessWidget {
                       onUndo: state.undoReference == asset.reference
                           ? cubit.undo
                           : null,
-                      onOpen: () => context.push(
-                        RoutePaths.vendorAssetEditOf(asset.reference),
-                      ),
+                      onOpen: () async {
+                        final draft = await context.push<VendorAssetDraft>(
+                          RoutePaths.vendorAssetEditOf(asset.reference),
+                        );
+                        if (!context.mounted || draft == null) {
+                          return;
+                        }
+                        await cubit.applyEdited(draft);
+                      },
                       onStatus: (status) =>
                           cubit.requestStatus(asset.reference, status),
                     ),

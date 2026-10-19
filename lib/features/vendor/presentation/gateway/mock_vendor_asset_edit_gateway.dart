@@ -5,19 +5,20 @@ import 'package:gcc_app/features/vendor/presentation/gateway/vendor_asset_edit_g
 
 /// Rate cards for the four catalog assets. AST-0912 matches MOB-VND-13.
 final class MockVendorAssetEditGateway implements VendorAssetEditGateway {
-  const MockVendorAssetEditGateway();
+  MockVendorAssetEditGateway()
+    : _drafts = {for (final draft in _seed) draft.reference: draft};
+
+  final Map<String, VendorAssetDraft> _drafts;
 
   @override
-  Future<VendorAssetDraft?> load(String reference) async {
-    for (final draft in _drafts) {
-      if (draft.reference == reference) {
-        return draft;
-      }
-    }
-    return null;
+  Future<VendorAssetDraft?> load(String reference) async => _drafts[reference];
+
+  @override
+  Future<void> save(VendorAssetDraft draft) async {
+    _drafts[draft.reference] = draft;
   }
 
-  static const _drafts = <VendorAssetDraft>[
+  static const _seed = <VendorAssetDraft>[
     VendorAssetDraft(
       reference: 'AST-0912',
       name: 'Mika 100kVA Diesel Generator Set',

@@ -1,7 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
 import 'package:gcc_app/features/vendor/domain/catalog_status_effect.dart';
+import 'package:gcc_app/features/vendor/domain/naira_amount.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_asset.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_asset_draft.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_charge_basis.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_asset_status.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_catalog_kind.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_state.dart';
@@ -106,6 +109,34 @@ class VendorCatalogCubit extends Cubit<VendorCatalogState> {
       return;
     }
     emit(ready.copyWith(clearBlocked: true));
+  }
+
+  /// Puts a saved rate and deposit back on the catalog card.
+  Future<void> applyEdited(VendorAssetDraft draft) async {
+    final ready = _ready;
+    final asset = ready?.assetBy(draft.reference);
+    if (ready == null || asset == null) {
+      return;
+    }
+    final amount = draft.basis == VendorChargeBasis.project
+        ? draft.projectRate ?? draft.dailyRate
+        : draft.dailyRate ?? draft.projectRate;
+    final next = asset.copyWith(
+      ratePerDay: amount == null ? null : fullNaira(amount),
+      deposit: draft.deposit == null ? null : fullNaira(draft.deposit!),
+      clearDeposit: draft.deposit == null,
+    );
+    await _gateway.saveListing(next);
+    final current = _ready;
+    if (current == null || isClosed) {
+      return;
+    }
+    emit(
+      current.copyWith(
+        assets: _mapped(current.assets, next.reference, next),
+        clearUndo: true,
+      ),
+    );
   }
 
   void undo() {

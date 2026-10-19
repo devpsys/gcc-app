@@ -50,16 +50,52 @@ void main() {
     await _pump(tester, 'AST-0912', size: const Size(320, 640), scale: 2);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('discard restores the rate and save keeps the new one', (
+    tester,
+  ) async {
+    final gateway = MockVendorAssetEditGateway();
+    await _pump(tester, 'AST-0912', gateway: gateway);
+
+    await tester.enterText(find.byType(TextField).first, '1000');
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Discard'));
+    await tester.pumpAndSettle();
+    expect(find.text('35,000'), findsOneWidget);
+
+    await tester.enterText(find.byType(TextField).first, '42000');
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Save changes'));
+    await tester.pumpAndSettle();
+
+    final saved = await gateway.load('AST-0912');
+    expect(saved?.dailyRate, 42000);
+  });
+
+  testWidgets('the charge buttons change the rate the quote uses', (
+    tester,
+  ) async {
+    await _pump(tester, 'AST-0912');
+
+    await tester.tap(find.text('Hourly'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('₦4,375'), findsOneWidget);
+
+    await tester.tap(find.text('Project'));
+    await tester.pumpAndSettle();
+    expect(find.text('Project price'), findsOneWidget);
+  });
 }
 
 Future<void> _pump(
   WidgetTester tester,
   String reference, {
+  MockVendorAssetEditGateway? gateway,
   Size size = const Size(360, 800),
   double scale = 1,
 }) async {
   final cubit = VendorAssetEditCubit(
-    const MockVendorAssetEditGateway(),
+    gateway ?? MockVendorAssetEditGateway(),
     reference,
   );
   await cubit.load();
