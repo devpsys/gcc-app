@@ -10,12 +10,11 @@ abstract final class DashboardDestinations {
   }) {
     return [
       _home(l10n),
-      _item(
+      _built(
         l10n.dashboardBrowse,
         Icons.manage_search_outlined,
         Icons.manage_search,
-        '/browse',
-        l10n,
+        RoutePaths.browse,
       ),
       _item(
         l10n.dashboardBookings,

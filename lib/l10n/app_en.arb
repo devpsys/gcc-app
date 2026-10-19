@@ -2501,5 +2501,118 @@
   "vendorNoticeSmsAfter": " to reject. Damage claims need the app.",
   "vendorNoticeReply": "Reply 1 · accept booking",
   "vendorNoticeWalletNote": "Everything about money is also in your wallet statement.",
-  "vendorNoticeOpenWallet": "Open Wallet ledger"
+  "vendorNoticeOpenWallet": "Open Wallet ledger",
+  "marketplaceSearchHint": "Search equipment",
+  "marketplaceClearSearch": "Clear search",
+  "marketplaceRentals": "Rentals",
+  "marketplaceBulk": "Bulk trade",
+  "marketplaceBulkEmpty": "No bulk goods yet",
+  "marketplaceBulkEmptyBody": "Bulk goods will show here when a yard lists them.",
+  "marketplaceRecent": "Recent searches",
+  "marketplaceClearAll": "Clear all",
+  "marketplaceFilters": "Filters",
+  "marketplaceFilterCount": "Filters ({count})",
+  "@marketplaceFilterCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "marketplaceAvailableNow": "Available now",
+  "marketplaceWithOperator": "With operator",
+  "marketplaceResults": "{count} results",
+  "@marketplaceResults": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "marketplaceSortRelevance": "Sort: Relevance",
+  "marketplaceEmptyTitle": "No equipment matches",
+  "marketplaceEmptyBody": "Nothing for {query} in your {count} active filters.",
+  "@marketplaceEmptyBody": {
+    "placeholders": {
+      "query": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+  "marketplacePopular": "Popular categories",
+  "marketplaceMarket": "Market",
+  "marketplaceAllMarkets": "All markets",
+  "marketplaceNearMe": "Near me",
+  "marketplaceCategories": "Categories",
+  "marketplaceCategoryCount": "{name} ({count})",
+  "@marketplaceCategoryCount": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+  "marketplaceRate": "Daily rate",
+  "marketplaceAnyRate": "Any rate",
+  "marketplaceDepositUnder": "Deposit under {amount}",
+  "@marketplaceDepositUnder": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceRateDepositConflict": "Deposit range can't be combined with a rate filter.",
+  "marketplaceShowResults": "Show {count} results",
+  "@marketplaceShowResults": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "marketplaceReset": "Reset",
+  "marketplacePerDay": "per day",
+  "marketplaceDeposit": "{amount} deposit",
+  "@marketplaceDeposit": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceAvailable": "Available",
+  "marketplaceInUseUntil": "In use until {date}",
+  "@marketplaceInUseUntil": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "marketplaceOutOfService": "Out of service",
+  "marketplaceVerified": "Verified vendor",
+  "marketplacePhotos": "{index} / {count}",
+  "@marketplacePhotos": {
+    "placeholders": {
+      "index": { "type": "int" },
+      "count": { "type": "int" }
+    }
+  },
+  "marketplaceSpecs": "Specifications",
+  "marketplaceSpecCapacity": "Capacity",
+  "marketplaceSpecFuel": "Fuel",
+  "marketplaceSpecYear": "Year",
+  "marketplaceSpecSerial": "Serial",
+  "marketplaceSpecCondition": "Condition",
+  "marketplaceSpecHours": "Hours",
+  "marketplaceIncluded": "What's included",
+  "marketplaceRates": "Rates",
+  "marketplaceDaily": "Daily",
+  "marketplaceWeekly": "Weekly",
+  "marketplaceMonthly": "Monthly",
+  "marketplaceRateNote": "Longer bookings get better rates. Rates apply per calendar day, rounded up.",
+  "marketplaceDepositTitle": "Refundable deposit",
+  "marketplaceDepositBody": "Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard's return condition video is approved. Not part of what you pay for the equipment. You get it back.",
+  "marketplaceInsurance": "Micro-insurance",
+  "marketplaceInsurancePerDay": "{amount} per day",
+  "@marketplaceInsurancePerDay": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceInsuranceStay": "{amount} for 3 days",
+  "@marketplaceInsuranceStay": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceInsuranceNote": "1.5% of the daily rate, minimum ₦500 per day.",
+  "marketplaceAudit": "Condition audit",
+  "marketplaceLocation": "Location",
+  "marketplaceSimilar": "Similar equipment",
+  "marketplaceReport": "Report this listing",
+  "marketplaceStay": "{rate} per day · Est. 3-day total {total}",
+  "@marketplaceStay": {
+    "placeholders": {
+      "rate": { "type": "String" },
+      "total": { "type": "String" }
+    }
+  },
+  "marketplaceRefundable": "+ {amount} refundable deposit",
+  "@marketplaceRefundable": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceBookNow": "Book now",
+  "marketplaceMissing": "This listing is no longer available."
 }

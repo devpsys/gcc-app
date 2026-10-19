@@ -6805,6 +6805,378 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open Wallet ledger'**
   String get vendorNoticeOpenWallet;
+
+  /// No description provided for @marketplaceSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search equipment'**
+  String get marketplaceSearchHint;
+
+  /// No description provided for @marketplaceClearSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear search'**
+  String get marketplaceClearSearch;
+
+  /// No description provided for @marketplaceRentals.
+  ///
+  /// In en, this message translates to:
+  /// **'Rentals'**
+  String get marketplaceRentals;
+
+  /// No description provided for @marketplaceBulk.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk trade'**
+  String get marketplaceBulk;
+
+  /// No description provided for @marketplaceBulkEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No bulk goods yet'**
+  String get marketplaceBulkEmpty;
+
+  /// No description provided for @marketplaceBulkEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk goods will show here when a yard lists them.'**
+  String get marketplaceBulkEmptyBody;
+
+  /// No description provided for @marketplaceRecent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent searches'**
+  String get marketplaceRecent;
+
+  /// No description provided for @marketplaceClearAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get marketplaceClearAll;
+
+  /// No description provided for @marketplaceFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get marketplaceFilters;
+
+  /// No description provided for @marketplaceFilterCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters ({count})'**
+  String marketplaceFilterCount(int count);
+
+  /// No description provided for @marketplaceAvailableNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Available now'**
+  String get marketplaceAvailableNow;
+
+  /// No description provided for @marketplaceWithOperator.
+  ///
+  /// In en, this message translates to:
+  /// **'With operator'**
+  String get marketplaceWithOperator;
+
+  /// No description provided for @marketplaceResults.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} results'**
+  String marketplaceResults(int count);
+
+  /// No description provided for @marketplaceSortRelevance.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort: Relevance'**
+  String get marketplaceSortRelevance;
+
+  /// No description provided for @marketplaceEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No equipment matches'**
+  String get marketplaceEmptyTitle;
+
+  /// No description provided for @marketplaceEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing for {query} in your {count} active filters.'**
+  String marketplaceEmptyBody(String query, int count);
+
+  /// No description provided for @marketplacePopular.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular categories'**
+  String get marketplacePopular;
+
+  /// No description provided for @marketplaceMarket.
+  ///
+  /// In en, this message translates to:
+  /// **'Market'**
+  String get marketplaceMarket;
+
+  /// No description provided for @marketplaceAllMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'All markets'**
+  String get marketplaceAllMarkets;
+
+  /// No description provided for @marketplaceNearMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Near me'**
+  String get marketplaceNearMe;
+
+  /// No description provided for @marketplaceCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get marketplaceCategories;
+
+  /// No description provided for @marketplaceCategoryCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} ({count})'**
+  String marketplaceCategoryCount(String name, int count);
+
+  /// No description provided for @marketplaceRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily rate'**
+  String get marketplaceRate;
+
+  /// No description provided for @marketplaceAnyRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Any rate'**
+  String get marketplaceAnyRate;
+
+  /// No description provided for @marketplaceDepositUnder.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit under {amount}'**
+  String marketplaceDepositUnder(String amount);
+
+  /// No description provided for @marketplaceRateDepositConflict.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit range can\'t be combined with a rate filter.'**
+  String get marketplaceRateDepositConflict;
+
+  /// No description provided for @marketplaceShowResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Show {count} results'**
+  String marketplaceShowResults(int count);
+
+  /// No description provided for @marketplaceReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get marketplaceReset;
+
+  /// No description provided for @marketplacePerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'per day'**
+  String get marketplacePerDay;
+
+  /// No description provided for @marketplaceDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} deposit'**
+  String marketplaceDeposit(String amount);
+
+  /// No description provided for @marketplaceAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get marketplaceAvailable;
+
+  /// No description provided for @marketplaceInUseUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'In use until {date}'**
+  String marketplaceInUseUntil(String date);
+
+  /// No description provided for @marketplaceOutOfService.
+  ///
+  /// In en, this message translates to:
+  /// **'Out of service'**
+  String get marketplaceOutOfService;
+
+  /// No description provided for @marketplaceVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified vendor'**
+  String get marketplaceVerified;
+
+  /// No description provided for @marketplacePhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'{index} / {count}'**
+  String marketplacePhotos(int index, int count);
+
+  /// No description provided for @marketplaceSpecs.
+  ///
+  /// In en, this message translates to:
+  /// **'Specifications'**
+  String get marketplaceSpecs;
+
+  /// No description provided for @marketplaceSpecCapacity.
+  ///
+  /// In en, this message translates to:
+  /// **'Capacity'**
+  String get marketplaceSpecCapacity;
+
+  /// No description provided for @marketplaceSpecFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel'**
+  String get marketplaceSpecFuel;
+
+  /// No description provided for @marketplaceSpecYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get marketplaceSpecYear;
+
+  /// No description provided for @marketplaceSpecSerial.
+  ///
+  /// In en, this message translates to:
+  /// **'Serial'**
+  String get marketplaceSpecSerial;
+
+  /// No description provided for @marketplaceSpecCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition'**
+  String get marketplaceSpecCondition;
+
+  /// No description provided for @marketplaceSpecHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Hours'**
+  String get marketplaceSpecHours;
+
+  /// No description provided for @marketplaceIncluded.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s included'**
+  String get marketplaceIncluded;
+
+  /// No description provided for @marketplaceRates.
+  ///
+  /// In en, this message translates to:
+  /// **'Rates'**
+  String get marketplaceRates;
+
+  /// No description provided for @marketplaceDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get marketplaceDaily;
+
+  /// No description provided for @marketplaceWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get marketplaceWeekly;
+
+  /// No description provided for @marketplaceMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get marketplaceMonthly;
+
+  /// No description provided for @marketplaceRateNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Longer bookings get better rates. Rates apply per calendar day, rounded up.'**
+  String get marketplaceRateNote;
+
+  /// No description provided for @marketplaceDepositTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Refundable deposit'**
+  String get marketplaceDepositTitle;
+
+  /// No description provided for @marketplaceDepositBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved. Not part of what you pay for the equipment. You get it back.'**
+  String get marketplaceDepositBody;
+
+  /// No description provided for @marketplaceInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Micro-insurance'**
+  String get marketplaceInsurance;
+
+  /// No description provided for @marketplaceInsurancePerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} per day'**
+  String marketplaceInsurancePerDay(String amount);
+
+  /// No description provided for @marketplaceInsuranceStay.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} for 3 days'**
+  String marketplaceInsuranceStay(String amount);
+
+  /// No description provided for @marketplaceInsuranceNote.
+  ///
+  /// In en, this message translates to:
+  /// **'1.5% of the daily rate, minimum ₦500 per day.'**
+  String get marketplaceInsuranceNote;
+
+  /// No description provided for @marketplaceAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition audit'**
+  String get marketplaceAudit;
+
+  /// No description provided for @marketplaceLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get marketplaceLocation;
+
+  /// No description provided for @marketplaceSimilar.
+  ///
+  /// In en, this message translates to:
+  /// **'Similar equipment'**
+  String get marketplaceSimilar;
+
+  /// No description provided for @marketplaceReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Report this listing'**
+  String get marketplaceReport;
+
+  /// No description provided for @marketplaceStay.
+  ///
+  /// In en, this message translates to:
+  /// **'{rate} per day · Est. 3-day total {total}'**
+  String marketplaceStay(String rate, String total);
+
+  /// No description provided for @marketplaceRefundable.
+  ///
+  /// In en, this message translates to:
+  /// **'+ {amount} refundable deposit'**
+  String marketplaceRefundable(String amount);
+
+  /// No description provided for @marketplaceBookNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Book now'**
+  String get marketplaceBookNow;
+
+  /// No description provided for @marketplaceMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'This listing is no longer available.'**
+  String get marketplaceMissing;
 }
 
 class _AppLocalizationsDelegate

@@ -3917,4 +3917,221 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vendorNoticeOpenWallet => 'Open Wallet ledger';
+
+  @override
+  String get marketplaceSearchHint => 'Search equipment';
+
+  @override
+  String get marketplaceClearSearch => 'Clear search';
+
+  @override
+  String get marketplaceRentals => 'Rentals';
+
+  @override
+  String get marketplaceBulk => 'Bulk trade';
+
+  @override
+  String get marketplaceBulkEmpty => 'No bulk goods yet';
+
+  @override
+  String get marketplaceBulkEmptyBody =>
+      'Bulk goods will show here when a yard lists them.';
+
+  @override
+  String get marketplaceRecent => 'Recent searches';
+
+  @override
+  String get marketplaceClearAll => 'Clear all';
+
+  @override
+  String get marketplaceFilters => 'Filters';
+
+  @override
+  String marketplaceFilterCount(int count) {
+    return 'Filters ($count)';
+  }
+
+  @override
+  String get marketplaceAvailableNow => 'Available now';
+
+  @override
+  String get marketplaceWithOperator => 'With operator';
+
+  @override
+  String marketplaceResults(int count) {
+    return '$count results';
+  }
+
+  @override
+  String get marketplaceSortRelevance => 'Sort: Relevance';
+
+  @override
+  String get marketplaceEmptyTitle => 'No equipment matches';
+
+  @override
+  String marketplaceEmptyBody(String query, int count) {
+    return 'Nothing for $query in your $count active filters.';
+  }
+
+  @override
+  String get marketplacePopular => 'Popular categories';
+
+  @override
+  String get marketplaceMarket => 'Market';
+
+  @override
+  String get marketplaceAllMarkets => 'All markets';
+
+  @override
+  String get marketplaceNearMe => 'Near me';
+
+  @override
+  String get marketplaceCategories => 'Categories';
+
+  @override
+  String marketplaceCategoryCount(String name, int count) {
+    return '$name ($count)';
+  }
+
+  @override
+  String get marketplaceRate => 'Daily rate';
+
+  @override
+  String get marketplaceAnyRate => 'Any rate';
+
+  @override
+  String marketplaceDepositUnder(String amount) {
+    return 'Deposit under $amount';
+  }
+
+  @override
+  String get marketplaceRateDepositConflict =>
+      'Deposit range can\'t be combined with a rate filter.';
+
+  @override
+  String marketplaceShowResults(int count) {
+    return 'Show $count results';
+  }
+
+  @override
+  String get marketplaceReset => 'Reset';
+
+  @override
+  String get marketplacePerDay => 'per day';
+
+  @override
+  String marketplaceDeposit(String amount) {
+    return '$amount deposit';
+  }
+
+  @override
+  String get marketplaceAvailable => 'Available';
+
+  @override
+  String marketplaceInUseUntil(String date) {
+    return 'In use until $date';
+  }
+
+  @override
+  String get marketplaceOutOfService => 'Out of service';
+
+  @override
+  String get marketplaceVerified => 'Verified vendor';
+
+  @override
+  String marketplacePhotos(int index, int count) {
+    return '$index / $count';
+  }
+
+  @override
+  String get marketplaceSpecs => 'Specifications';
+
+  @override
+  String get marketplaceSpecCapacity => 'Capacity';
+
+  @override
+  String get marketplaceSpecFuel => 'Fuel';
+
+  @override
+  String get marketplaceSpecYear => 'Year';
+
+  @override
+  String get marketplaceSpecSerial => 'Serial';
+
+  @override
+  String get marketplaceSpecCondition => 'Condition';
+
+  @override
+  String get marketplaceSpecHours => 'Hours';
+
+  @override
+  String get marketplaceIncluded => 'What\'s included';
+
+  @override
+  String get marketplaceRates => 'Rates';
+
+  @override
+  String get marketplaceDaily => 'Daily';
+
+  @override
+  String get marketplaceWeekly => 'Weekly';
+
+  @override
+  String get marketplaceMonthly => 'Monthly';
+
+  @override
+  String get marketplaceRateNote =>
+      'Longer bookings get better rates. Rates apply per calendar day, rounded up.';
+
+  @override
+  String get marketplaceDepositTitle => 'Refundable deposit';
+
+  @override
+  String get marketplaceDepositBody =>
+      'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved. Not part of what you pay for the equipment. You get it back.';
+
+  @override
+  String get marketplaceInsurance => 'Micro-insurance';
+
+  @override
+  String marketplaceInsurancePerDay(String amount) {
+    return '$amount per day';
+  }
+
+  @override
+  String marketplaceInsuranceStay(String amount) {
+    return '$amount for 3 days';
+  }
+
+  @override
+  String get marketplaceInsuranceNote =>
+      '1.5% of the daily rate, minimum ₦500 per day.';
+
+  @override
+  String get marketplaceAudit => 'Condition audit';
+
+  @override
+  String get marketplaceLocation => 'Location';
+
+  @override
+  String get marketplaceSimilar => 'Similar equipment';
+
+  @override
+  String get marketplaceReport => 'Report this listing';
+
+  @override
+  String marketplaceStay(String rate, String total) {
+    return '$rate per day · Est. 3-day total $total';
+  }
+
+  @override
+  String marketplaceRefundable(String amount) {
+    return '+ $amount refundable deposit';
+  }
+
+  @override
+  String get marketplaceBookNow => 'Book now';
+
+  @override
+  String get marketplaceMissing => 'This listing is no longer available.';
 }

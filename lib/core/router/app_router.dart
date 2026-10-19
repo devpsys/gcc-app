@@ -35,6 +35,10 @@ import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_switcher.dart';
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
+import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_browse_cubit.dart';
+import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_cubit.dart';
+import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_browse_screen.dart';
+import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_listing_screen.dart';
 import 'package:gcc_app/features/onboarding/presentation/bloc/onboarding_cubit.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_language_page.dart';
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_page.dart';
@@ -87,6 +91,24 @@ GoRouter createAppRouter() {
             builder: (context, state) => const HomePage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.marketplaceListing,
+        name: RouteNames.marketplaceListing,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<MarketplaceListingCubit>(
+            param1: state.pathParameters['id'] ?? '',
+          )..load(),
+          child: const MarketplaceListingScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.browse,
+        name: RouteNames.browse,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<MarketplaceBrowseCubit>()..load(),
+          child: const MarketplaceBrowseScreen(),
+        ),
       ),
       ShellRoute(
         builder: (context, state, child) {
