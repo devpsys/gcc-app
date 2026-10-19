@@ -15,7 +15,8 @@ void main() {
     await _pump(tester);
 
     expect(find.text('Mika 100kVA Diesel Generator Set'), findsOneWidget);
-    expect(find.text('5 results'), findsOneWidget);
+    expect(find.text('5 results in 3 markets'), findsOneWidget);
+    expect(find.text('100 kVA · 23'), findsOneWidget);
     final mika = find.ancestor(
       of: find.text('Mika 100kVA Diesel Generator Set'),
       matching: find.byType(MarketplaceListingCard),
@@ -48,6 +49,7 @@ void main() {
 
     expect(find.text('No equipment matches'), findsOneWidget);
     expect(find.textContaining('catering freezer'), findsWidgets);
+    expect(find.text('Clear all filters'), findsOneWidget);
     expect(find.text('Mika 100kVA Diesel Generator Set'), findsNothing);
   });
 
@@ -56,16 +58,16 @@ void main() {
   ) async {
     await _pump(tester);
 
-    await tester.tap(find.text('Available now'));
+    await tester.tap(find.text('Available now').first);
     await tester.pumpAndSettle();
 
-    expect(find.text('3 results'), findsOneWidget);
+    expect(find.textContaining('3 results'), findsOneWidget);
     expect(find.text('250A Welding Machine'), findsNothing);
     expect(find.text('5HP Water Pump'), findsNothing);
     expect(find.text('Mika 100kVA Diesel Generator Set'), findsOneWidget);
   });
 
-  testWidgets('a rate filter cannot be combined with a deposit filter', (
+  testWidgets('the filter sheet matches the market and category layout', (
     tester,
   ) async {
     await _pump(tester);
@@ -74,19 +76,25 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Near me'), findsOneWidget);
-    expect(find.text('All markets'), findsOneWidget);
+    expect(find.text('All'), findsOneWidget);
+    expect(find.text('Category'), findsOneWidget);
+    expect(find.text('Rate per day'), findsOneWidget);
 
-    await tester.tap(find.text('₦10,000'));
+    await tester.drag(find.byType(ListView).last, const Offset(0, -600));
     await tester.pumpAndSettle();
-    await tester.drag(find.byType(ListView).last, const Offset(0, -400));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Deposit under ₦25,000'));
-    await tester.pumpAndSettle();
-
+    expect(find.text('With certified operator'), findsOneWidget);
     expect(
       find.text("Deposit range can't be combined with a rate filter."),
       findsOneWidget,
     );
+
+    await tester.tap(find.text('Caution deposit under ₦25,000'));
+    await tester.pumpAndSettle();
+
+    final slider = tester.widget<RangeSlider>(find.byType(RangeSlider));
+    slider.onChanged!(const RangeValues(5000, 40000));
+    await tester.pumpAndSettle();
+    expect(find.textContaining("can't be combined"), findsOneWidget);
   });
 
   testWidgets('bulk trade has no goods to show', (tester) async {

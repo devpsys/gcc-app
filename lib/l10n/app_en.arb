@@ -2511,15 +2511,22 @@
   "marketplaceRecent": "Recent searches",
   "marketplaceClearAll": "Clear all",
   "marketplaceFilters": "Filters",
-  "marketplaceFilterCount": "Filters ({count})",
-  "@marketplaceFilterCount": {
-    "placeholders": { "count": { "type": "int" } }
-  },
   "marketplaceAvailableNow": "Available now",
   "marketplaceWithOperator": "With operator",
-  "marketplaceResults": "{count} results",
-  "@marketplaceResults": {
-    "placeholders": { "count": { "type": "int" } }
+  "marketplaceWithCertifiedOperator": "With certified operator",
+  "marketplaceResultsInMarkets": "{count} results in {markets} markets",
+  "@marketplaceResultsInMarkets": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "markets": { "type": "int" }
+    }
+  },
+  "marketplaceResultsInMarket": "{count} results in {market} Market",
+  "@marketplaceResultsInMarket": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "market": { "type": "String" }
+    }
   },
   "marketplaceSortRelevance": "Sort: Relevance",
   "marketplaceEmptyTitle": "No equipment matches",
@@ -2530,21 +2537,29 @@
       "count": { "type": "int" }
     }
   },
+  "marketplaceEmptyHint": "Try searching a different market or broad term.",
+  "marketplaceClearFilters": "Clear all filters",
   "marketplacePopular": "Popular categories",
-  "marketplaceMarket": "Market",
-  "marketplaceAllMarkets": "All markets",
-  "marketplaceNearMe": "Near me",
-  "marketplaceCategories": "Categories",
-  "marketplaceCategoryCount": "{name} ({count})",
-  "@marketplaceCategoryCount": {
-    "placeholders": {
-      "name": { "type": "String" },
-      "count": { "type": "int" }
-    }
+  "marketplaceFacetResults": "{count} results",
+  "@marketplaceFacetResults": {
+    "placeholders": { "count": { "type": "int" } }
   },
-  "marketplaceRate": "Daily rate",
-  "marketplaceAnyRate": "Any rate",
-  "marketplaceDepositUnder": "Deposit under {amount}",
+  "marketplaceMarket": "Market",
+  "marketplaceMarketName": "{market} Market",
+  "@marketplaceMarketName": {
+    "placeholders": { "market": { "type": "String" } }
+  },
+  "marketplaceAll": "All",
+  "marketplaceAllMarkets": "All markets",
+  "marketplaceAllMarketsResults": "All markets · {count} results",
+  "@marketplaceAllMarketsResults": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "marketplaceNearMe": "Near me",
+  "marketplaceCategory": "Category",
+  "marketplaceOptions": "Options",
+  "marketplaceRate": "Rate per day",
+  "marketplaceDepositUnder": "Caution deposit under {amount}",
   "@marketplaceDepositUnder": {
     "placeholders": { "amount": { "type": "String" } }
   },
@@ -2559,7 +2574,7 @@
   "@marketplaceDeposit": {
     "placeholders": { "amount": { "type": "String" } }
   },
-  "marketplaceAvailable": "Available",
+  "marketplaceAvailable": "Available ✓",
   "marketplaceInUseUntil": "In use until {date}",
   "@marketplaceInUseUntil": {
     "placeholders": { "date": { "type": "String" } }

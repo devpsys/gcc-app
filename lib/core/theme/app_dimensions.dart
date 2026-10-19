@@ -26,6 +26,10 @@ abstract final class AppDimensions {
   static const double skeletonThumb = 72;
   static const double previewThumb = 56;
 
+  /// Browse listing card from MOB-VND-03 (`h-[140px]`, `w-24` thumb).
+  static const double marketplaceListingCard = 140;
+  static const double marketplaceListingThumb = 96;
+
   /// 200 px — the location map preview in the capture and field-ops designs.
   static const double locationMapHeight = 200;
   static const double accentBorderWidth = 3;

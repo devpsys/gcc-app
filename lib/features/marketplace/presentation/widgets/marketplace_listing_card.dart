@@ -3,12 +3,14 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
+import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/core/widgets/status_chip.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_availability.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_listing.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_money.dart';
+import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_deposit_chip.dart';
 
-/// One browse result. The lock sits on the deposit, not on the status.
+/// One browse result. Matches the 140px MOB-VND-03 card.
 class MarketplaceListingCard extends StatelessWidget {
   const MarketplaceListingCard({
     required this.listing,
@@ -24,76 +26,177 @@ class MarketplaceListingCard extends StatelessWidget {
     final l10n = context.l10n;
     final scheme = Theme.of(context).colorScheme;
     final colors = context.semanticColors;
-    final thumb = AppSpacing.max + AppSpacing.xxl;
-    return Card(
+    final badge = listing.thumbBadge;
+    return Material(
+      color: scheme.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppRadii.card),
+        side: BorderSide(color: colors.border),
+      ),
       child: InkWell(
         onTap: onOpen,
         borderRadius: BorderRadius.circular(AppRadii.card),
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.sm),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  color: scheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(AppRadii.card),
-                ),
-                child: SizedBox.square(
-                  dimension: thumb,
-                  child: Icon(
-                    Icons.precision_manufacturing_outlined,
-                    color: colors.muted,
-                    size: AppDimensions.iconLg,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              minHeight: AppDimensions.marketplaceListingCard - AppSpacing.md,
+            ),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    width: AppDimensions.marketplaceListingThumb,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: scheme.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(AppRadii.input),
+                        border: Border.all(color: colors.border),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Icon(
+                            Icons.precision_manufacturing_outlined,
+                            color: scheme.primary.withValues(alpha: 0.7),
+                            size: AppDimensions.iconLg,
+                          ),
+                          if (badge != null)
+                            Positioned(
+                              left: AppSpacing.xxs,
+                              right: AppSpacing.xxs,
+                              bottom: AppSpacing.xxs,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  color: scheme.onSurface.withValues(
+                                    alpha: 0.6,
+                                  ),
+                                  borderRadius: BorderRadius.circular(
+                                    AppRadii.micro,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: AppSpacing.xxs / 2,
+                                  ),
+                                  child: Text(
+                                    badge,
+                                    textAlign: TextAlign.center,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: AppTextStyles.mono(
+                                      Theme.of(context).textTheme.labelSmall!
+                                          .copyWith(color: scheme.surface),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const SizedBox(width: AppSpacing.sm),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      listing.title,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    const SizedBox(height: AppSpacing.xxs),
-                    Text(
-                      '${fullNaira(listing.dailyRate)} ${l10n.marketplacePerDay}',
-                      style: Theme.of(context).textTheme.titleSmall,
-                    ),
-                    Text(
-                      '${listing.yard} · ${listing.market}',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                    Text(
-                      listing.specification,
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                    const SizedBox(height: AppSpacing.xs),
-                    Row(
+                  const SizedBox(width: AppSpacing.sm),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.lock,
-                          size: AppDimensions.iconSm,
-                          color: colors.heldFunds,
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                listing.title,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context).textTheme.titleSmall
+                                    ?.copyWith(fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                            const SizedBox(width: AppSpacing.xxs),
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerRight,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      fullNaira(listing.dailyRate),
+                                      style: AppTextStyles.tabular(
+                                        Theme.of(context)
+                                            .textTheme
+                                            .titleSmall!
+                                            .copyWith(
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      l10n.marketplacePerDay,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall
+                                          ?.copyWith(color: colors.muted),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: AppSpacing.xxs),
-                        Flexible(
-                          child: Text(
-                            l10n.marketplaceDeposit(fullNaira(listing.deposit)),
-                            style: Theme.of(context).textTheme.bodySmall
-                                ?.copyWith(color: colors.heldFunds),
+                        const SizedBox(height: AppSpacing.xxs / 2),
+                        Text(
+                          '${listing.yard} · ${listing.market} Market',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: colors.muted),
+                        ),
+                        Text(
+                          listing.specification,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyles.mono(
+                            Theme.of(context).textTheme.bodySmall!
+                                .copyWith(color: colors.muted),
+                          ),
+                        ),
+                        const Spacer(),
+                        const SizedBox(height: AppSpacing.xxs),
+                        DecoratedBox(
+                          decoration: BoxDecoration(
+                            border: Border(
+                              top: BorderSide(color: colors.border),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: AppSpacing.xxs),
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: MarketplaceDepositChip(
+                                    amount: listing.deposit,
+                                  ),
+                                ),
+                                const SizedBox(width: AppSpacing.xs),
+                                Flexible(
+                                  child: StatusChip(
+                                    label: _status(context),
+                                    tone: _tone,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: AppSpacing.xs),
-                    StatusChip(label: _status(context), tone: _tone),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

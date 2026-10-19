@@ -3947,19 +3947,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get marketplaceFilters => 'Filters';
 
   @override
-  String marketplaceFilterCount(int count) {
-    return 'Filters ($count)';
-  }
-
-  @override
   String get marketplaceAvailableNow => 'Available now';
 
   @override
   String get marketplaceWithOperator => 'With operator';
 
   @override
-  String marketplaceResults(int count) {
-    return '$count results';
+  String get marketplaceWithCertifiedOperator => 'With certified operator';
+
+  @override
+  String marketplaceResultsInMarkets(int count, int markets) {
+    return '$count results in $markets markets';
+  }
+
+  @override
+  String marketplaceResultsInMarket(int count, String market) {
+    return '$count results in $market Market';
   }
 
   @override
@@ -3974,34 +3977,54 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get marketplaceEmptyHint =>
+      'Try searching a different market or broad term.';
+
+  @override
+  String get marketplaceClearFilters => 'Clear all filters';
+
+  @override
   String get marketplacePopular => 'Popular categories';
+
+  @override
+  String marketplaceFacetResults(int count) {
+    return '$count results';
+  }
 
   @override
   String get marketplaceMarket => 'Market';
 
   @override
+  String marketplaceMarketName(String market) {
+    return '$market Market';
+  }
+
+  @override
+  String get marketplaceAll => 'All';
+
+  @override
   String get marketplaceAllMarkets => 'All markets';
+
+  @override
+  String marketplaceAllMarketsResults(int count) {
+    return 'All markets · $count results';
+  }
 
   @override
   String get marketplaceNearMe => 'Near me';
 
   @override
-  String get marketplaceCategories => 'Categories';
+  String get marketplaceCategory => 'Category';
 
   @override
-  String marketplaceCategoryCount(String name, int count) {
-    return '$name ($count)';
-  }
+  String get marketplaceOptions => 'Options';
 
   @override
-  String get marketplaceRate => 'Daily rate';
-
-  @override
-  String get marketplaceAnyRate => 'Any rate';
+  String get marketplaceRate => 'Rate per day';
 
   @override
   String marketplaceDepositUnder(String amount) {
-    return 'Deposit under $amount';
+    return 'Caution deposit under $amount';
   }
 
   @override
@@ -4025,7 +4048,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get marketplaceAvailable => 'Available';
+  String get marketplaceAvailable => 'Available ✓';
 
   @override
   String marketplaceInUseUntil(String date) {

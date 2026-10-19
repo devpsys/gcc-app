@@ -6860,12 +6860,6 @@ abstract class AppLocalizations {
   /// **'Filters'**
   String get marketplaceFilters;
 
-  /// No description provided for @marketplaceFilterCount.
-  ///
-  /// In en, this message translates to:
-  /// **'Filters ({count})'**
-  String marketplaceFilterCount(int count);
-
   /// No description provided for @marketplaceAvailableNow.
   ///
   /// In en, this message translates to:
@@ -6878,11 +6872,23 @@ abstract class AppLocalizations {
   /// **'With operator'**
   String get marketplaceWithOperator;
 
-  /// No description provided for @marketplaceResults.
+  /// No description provided for @marketplaceWithCertifiedOperator.
   ///
   /// In en, this message translates to:
-  /// **'{count} results'**
-  String marketplaceResults(int count);
+  /// **'With certified operator'**
+  String get marketplaceWithCertifiedOperator;
+
+  /// No description provided for @marketplaceResultsInMarkets.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} results in {markets} markets'**
+  String marketplaceResultsInMarkets(int count, int markets);
+
+  /// No description provided for @marketplaceResultsInMarket.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} results in {market} Market'**
+  String marketplaceResultsInMarket(int count, String market);
 
   /// No description provided for @marketplaceSortRelevance.
   ///
@@ -6902,11 +6908,29 @@ abstract class AppLocalizations {
   /// **'Nothing for {query} in your {count} active filters.'**
   String marketplaceEmptyBody(String query, int count);
 
+  /// No description provided for @marketplaceEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Try searching a different market or broad term.'**
+  String get marketplaceEmptyHint;
+
+  /// No description provided for @marketplaceClearFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all filters'**
+  String get marketplaceClearFilters;
+
   /// No description provided for @marketplacePopular.
   ///
   /// In en, this message translates to:
   /// **'Popular categories'**
   String get marketplacePopular;
+
+  /// No description provided for @marketplaceFacetResults.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} results'**
+  String marketplaceFacetResults(int count);
 
   /// No description provided for @marketplaceMarket.
   ///
@@ -6914,11 +6938,29 @@ abstract class AppLocalizations {
   /// **'Market'**
   String get marketplaceMarket;
 
+  /// No description provided for @marketplaceMarketName.
+  ///
+  /// In en, this message translates to:
+  /// **'{market} Market'**
+  String marketplaceMarketName(String market);
+
+  /// No description provided for @marketplaceAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get marketplaceAll;
+
   /// No description provided for @marketplaceAllMarkets.
   ///
   /// In en, this message translates to:
   /// **'All markets'**
   String get marketplaceAllMarkets;
+
+  /// No description provided for @marketplaceAllMarketsResults.
+  ///
+  /// In en, this message translates to:
+  /// **'All markets · {count} results'**
+  String marketplaceAllMarketsResults(int count);
 
   /// No description provided for @marketplaceNearMe.
   ///
@@ -6926,34 +6968,28 @@ abstract class AppLocalizations {
   /// **'Near me'**
   String get marketplaceNearMe;
 
-  /// No description provided for @marketplaceCategories.
+  /// No description provided for @marketplaceCategory.
   ///
   /// In en, this message translates to:
-  /// **'Categories'**
-  String get marketplaceCategories;
+  /// **'Category'**
+  String get marketplaceCategory;
 
-  /// No description provided for @marketplaceCategoryCount.
+  /// No description provided for @marketplaceOptions.
   ///
   /// In en, this message translates to:
-  /// **'{name} ({count})'**
-  String marketplaceCategoryCount(String name, int count);
+  /// **'Options'**
+  String get marketplaceOptions;
 
   /// No description provided for @marketplaceRate.
   ///
   /// In en, this message translates to:
-  /// **'Daily rate'**
+  /// **'Rate per day'**
   String get marketplaceRate;
-
-  /// No description provided for @marketplaceAnyRate.
-  ///
-  /// In en, this message translates to:
-  /// **'Any rate'**
-  String get marketplaceAnyRate;
 
   /// No description provided for @marketplaceDepositUnder.
   ///
   /// In en, this message translates to:
-  /// **'Deposit under {amount}'**
+  /// **'Caution deposit under {amount}'**
   String marketplaceDepositUnder(String amount);
 
   /// No description provided for @marketplaceRateDepositConflict.
@@ -6989,7 +7025,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketplaceAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Available'**
+  /// **'Available ✓'**
   String get marketplaceAvailable;
 
   /// No description provided for @marketplaceInUseUntil.

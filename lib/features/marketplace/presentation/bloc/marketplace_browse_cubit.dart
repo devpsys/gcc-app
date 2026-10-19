@@ -57,12 +57,21 @@ class MarketplaceBrowseCubit extends Cubit<MarketplaceBrowseState> {
     }
     emit(
       ready.copyWith(
+        nearMeNotice: false,
         filters: ready.filters.copyWith(
           market: market,
           clearMarket: market == null,
         ),
       ),
     );
+  }
+
+  void selectNearMe() {
+    final ready = _ready;
+    if (ready == null) {
+      return;
+    }
+    emit(ready.copyWith(nearMeNotice: true));
   }
 
   void toggleCategory(String category) {
@@ -110,7 +119,7 @@ class MarketplaceBrowseCubit extends Cubit<MarketplaceBrowseState> {
     if (ready == null) {
       return;
     }
-    if (!ready.filters.depositUnder && ready.filters.maxRate != null) {
+    if (!ready.filters.depositUnder && ready.filters.hasRateFilter) {
       emit(ready.copyWith(rateDepositConflict: true));
       return;
     }
@@ -124,22 +133,22 @@ class MarketplaceBrowseCubit extends Cubit<MarketplaceBrowseState> {
     );
   }
 
-  void setMaxRate(int? rate) {
+  void setRateRange(int min, int max) {
     final ready = _ready;
     if (ready == null) {
       return;
     }
-    if (rate != null && ready.filters.depositUnder) {
+    final full = min <= rateFilterFloor && max >= rateFilterCeiling;
+    if (!full && ready.filters.depositUnder) {
       emit(ready.copyWith(rateDepositConflict: true));
       return;
     }
     emit(
       ready.copyWith(
         rateDepositConflict: false,
-        filters: ready.filters.copyWith(
-          maxRate: rate,
-          clearMaxRate: rate == null,
-        ),
+        filters: full
+            ? ready.filters.copyWith(clearRate: true)
+            : ready.filters.copyWith(minRate: min, maxRate: max),
       ),
     );
   }
@@ -152,7 +161,21 @@ class MarketplaceBrowseCubit extends Cubit<MarketplaceBrowseState> {
     emit(
       ready.copyWith(
         rateDepositConflict: false,
+        nearMeNotice: false,
         filters: MarketplaceFilters(query: ready.filters.query),
+      ),
+    );
+  }
+
+  void clearMarketFilter() {
+    final ready = _ready;
+    if (ready == null) {
+      return;
+    }
+    emit(
+      ready.copyWith(
+        nearMeNotice: false,
+        filters: ready.filters.copyWith(clearMarket: true),
       ),
     );
   }

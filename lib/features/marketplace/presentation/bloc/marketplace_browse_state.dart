@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:gcc_app/core/error/failures.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_catalog.dart';
+import 'package:gcc_app/features/marketplace/domain/marketplace_category_facet.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_filters.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_listing.dart';
 
@@ -34,6 +35,7 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
     this.filters = const MarketplaceFilters(),
     this.mode = MarketplaceMode.rentals,
     this.rateDepositConflict = false,
+    this.nearMeNotice = false,
   });
 
   final List<MarketplaceListing> listings;
@@ -42,17 +44,30 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
   final MarketplaceFilters filters;
   final MarketplaceMode mode;
   final bool rateDepositConflict;
+  final bool nearMeNotice;
 
   List<MarketplaceListing> get visible => matchingListings(listings, filters);
 
-  Set<String> get markets => {for (final listing in listings) listing.market};
+  List<String> get markets {
+    final found = <String>{};
+    final ordered = <String>[];
+    for (final listing in listings) {
+      if (found.add(listing.market)) {
+        ordered.add(listing.market);
+      }
+    }
+    return ordered;
+  }
 
-  Map<String, int> get categoryCounts {
+  List<MarketplaceCategoryFacet> get categoryFacets {
     final counts = <String, int>{};
     for (final listing in listings) {
       counts[listing.category] = (counts[listing.category] ?? 0) + 1;
     }
-    return counts;
+    return [
+      for (final name in marketplaceCategoryOrder)
+        MarketplaceCategoryFacet(name: name, count: counts[name] ?? 0),
+    ];
   }
 
   MarketplaceBrowseReady copyWith({
@@ -60,6 +75,7 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
     MarketplaceFilters? filters,
     MarketplaceMode? mode,
     bool? rateDepositConflict,
+    bool? nearMeNotice,
   }) {
     return MarketplaceBrowseReady(
       listings: listings,
@@ -68,6 +84,7 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
       filters: filters ?? this.filters,
       mode: mode ?? this.mode,
       rateDepositConflict: rateDepositConflict ?? this.rateDepositConflict,
+      nearMeNotice: nearMeNotice ?? this.nearMeNotice,
     );
   }
 
@@ -79,5 +96,6 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
     filters,
     mode,
     rateDepositConflict,
+    nearMeNotice,
   ];
 }

@@ -5,6 +5,10 @@ import 'package:gcc_app/features/marketplace/domain/marketplace_listing.dart';
 /// The highest deposit that the "under ₦25,000" filter still accepts.
 const depositFilterCeiling = 25000;
 
+/// Rate slider floor and ceiling from the browse filter sheet.
+const rateFilterFloor = 0;
+const rateFilterCeiling = 50000;
+
 class MarketplaceFilters extends Equatable {
   const MarketplaceFilters({
     this.query = '',
@@ -13,6 +17,7 @@ class MarketplaceFilters extends Equatable {
     this.availableNow = false,
     this.withOperator = false,
     this.depositUnder = false,
+    this.minRate,
     this.maxRate,
   });
 
@@ -22,7 +27,10 @@ class MarketplaceFilters extends Equatable {
   final bool availableNow;
   final bool withOperator;
   final bool depositUnder;
+  final int? minRate;
   final int? maxRate;
+
+  bool get hasRateFilter => minRate != null || maxRate != null;
 
   int get activeCount {
     var count = 0;
@@ -39,7 +47,7 @@ class MarketplaceFilters extends Equatable {
     if (depositUnder) {
       count += 1;
     }
-    if (maxRate != null) {
+    if (hasRateFilter) {
       count += 1;
     }
     return count;
@@ -53,8 +61,9 @@ class MarketplaceFilters extends Equatable {
     bool? availableNow,
     bool? withOperator,
     bool? depositUnder,
+    int? minRate,
     int? maxRate,
-    bool clearMaxRate = false,
+    bool clearRate = false,
   }) {
     return MarketplaceFilters(
       query: query ?? this.query,
@@ -63,7 +72,8 @@ class MarketplaceFilters extends Equatable {
       availableNow: availableNow ?? this.availableNow,
       withOperator: withOperator ?? this.withOperator,
       depositUnder: depositUnder ?? this.depositUnder,
-      maxRate: clearMaxRate ? null : maxRate ?? this.maxRate,
+      minRate: clearRate ? null : minRate ?? this.minRate,
+      maxRate: clearRate ? null : maxRate ?? this.maxRate,
     );
   }
 
@@ -75,6 +85,7 @@ class MarketplaceFilters extends Equatable {
     availableNow,
     withOperator,
     depositUnder,
+    minRate,
     maxRate,
   ];
 }
@@ -113,8 +124,12 @@ bool _matches(
   if (filters.depositUnder && listing.deposit > depositFilterCeiling) {
     return false;
   }
-  final cap = filters.maxRate;
-  if (cap != null && listing.dailyRate > cap) {
+  final min = filters.minRate;
+  final max = filters.maxRate;
+  if (min != null && listing.dailyRate < min) {
+    return false;
+  }
+  if (max != null && listing.dailyRate > max) {
     return false;
   }
   if (query.isEmpty) {

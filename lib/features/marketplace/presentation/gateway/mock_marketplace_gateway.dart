@@ -12,9 +12,9 @@ class MockMarketplaceGateway implements MarketplaceGateway {
   static const catalog = MarketplaceCatalog(
     bookingsWaiting: 2,
     recentSearches: [
-      MarketplaceSearch(label: 'generator · Kugbo', query: 'generator'),
-      MarketplaceSearch(label: '100 kVA', query: '100 kVA'),
-      MarketplaceSearch(label: 'sound system · Wuse', query: 'sound system'),
+      MarketplaceSearch(query: 'generator', place: 'Kugbo'),
+      MarketplaceSearch(query: '100 kVA'),
+      MarketplaceSearch(query: 'sound system', place: 'Wuse'),
     ],
     listings: [
       MarketplaceListing(
@@ -25,6 +25,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         place: 'Kugbo Market · Zone C, Line 4',
         category: 'Generators',
         specification: '100 kVA · Diesel · 2023',
+        thumbBadge: '100 kVA · 23',
         dailyRate: 35000,
         deposit: 50000,
         deliveryFee: 7500,
@@ -63,6 +64,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         place: 'Wuse Market',
         category: 'Sound & PA',
         specification: '5 kW · 2 mics · 400 W',
+        thumbBadge: 'PA System',
         dailyRate: 18000,
         deposit: 30000,
         availability: MarketplaceAvailability.available,
@@ -76,6 +78,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         place: 'Kugbo Market',
         category: 'Welding',
         specification: '250 A · Petrol · 2022',
+        thumbBadge: '250A Welder',
         dailyRate: 8500,
         deposit: 20000,
         availability: MarketplaceAvailability.inUse,
@@ -90,6 +93,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         place: 'Utako Market',
         category: 'Water pumps',
         specification: '5 HP · Diesel · 2021',
+        thumbBadge: '5HP Pump',
         dailyRate: 6000,
         deposit: 15000,
         availability: MarketplaceAvailability.outOfService,
@@ -103,6 +107,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         place: 'Wuse Market',
         category: 'Generators',
         specification: '20 kVA · Diesel · 2024',
+        thumbBadge: '20 kVA · 24',
         dailyRate: 22000,
         deposit: 40000,
         availability: MarketplaceAvailability.available,

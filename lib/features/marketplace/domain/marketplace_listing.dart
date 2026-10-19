@@ -16,6 +16,7 @@ class MarketplaceListing extends Equatable {
     required this.deposit,
     required this.availability,
     required this.withOperator,
+    this.thumbBadge,
     this.unavailableUntil,
     this.verified = false,
     this.distance,
@@ -40,6 +41,9 @@ class MarketplaceListing extends Equatable {
   final int deposit;
   final MarketplaceAvailability availability;
   final bool withOperator;
+
+  /// Mono label on the thumbnail, e.g. `100 kVA · 23`.
+  final String? thumbBadge;
   final String? unavailableUntil;
   final bool verified;
   final String? distance;
@@ -65,6 +69,7 @@ class MarketplaceListing extends Equatable {
     deposit,
     availability,
     withOperator,
+    thumbBadge,
     unavailableUntil,
     verified,
     distance,
