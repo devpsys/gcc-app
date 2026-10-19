@@ -3756,4 +3756,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vendorWithdrawBack => 'Back to Wallet Overview';
+
+  @override
+  String get vendorProfileVerified => 'Verified';
+
+  @override
+  String get vendorProfileBoth => 'You\'re signed in as both';
+
+  @override
+  String get vendorProfileLessee => 'Lessee';
+
+  @override
+  String get vendorProfileVendor => 'Vendor';
+
+  @override
+  String get vendorProfileModeExplanation =>
+      'Switch mode to see bookings you\'re renting, or to manage your yard.';
+
+  @override
+  String get vendorProfileKeepCatalog => 'Your catalog and availability';
+
+  @override
+  String get vendorProfileKeepRequests =>
+      'Booking requests to accept or decline';
+
+  @override
+  String get vendorProfileKeepVideos => 'Condition videos to record';
+
+  @override
+  String get vendorProfileWhatChanges => 'What changes?';
+
+  @override
+  String get vendorProfileBusiness => 'Business';
+
+  @override
+  String get vendorProfileAddresses => 'Saved addresses';
+
+  @override
+  String get vendorProfilePayout => 'Payout account';
+
+  @override
+  String get vendorProfileShop => 'Shop profile & location';
+
+  @override
+  String get vendorProfileHelp => 'Help';
+
+  @override
+  String get vendorProfileAbout => 'About GCC';
+
+  @override
+  String vendorProfileVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get vendorProfileUssdEyebrow => 'No data? Use your basic phone';
+
+  @override
+  String get vendorProfileUssdBefore => 'Dial ';
+
+  @override
+  String get vendorProfileUssdAfter =>
+      ' to check your balance or withdraw to your bank.';
+
+  @override
+  String get vendorProfileUssdDetail =>
+      'Works on any phone. No internet needed.';
+
+  @override
+  String vendorProfileCopyCode(String code) {
+    return 'Copy $code';
+  }
+
+  @override
+  String vendorProfileCopied(String code) {
+    return 'Copied $code';
+  }
+
+  @override
+  String get vendorProfileSwitchTitle => 'Switch to Lessee mode?';
+
+  @override
+  String get vendorProfileSwitchBody =>
+      'You\'ll see bookings you\'re renting instead of your yard. Your catalog stays exactly as it is — nothing changes.';
+
+  @override
+  String get vendorProfileSwitchHidden => 'In Lessee mode you won\'t see:';
+
+  @override
+  String get vendorProfileSwitchStill =>
+      'You\'ll still see your wallet and payouts.';
+
+  @override
+  String get vendorProfileSwitchConfirm => 'Switch to Lessee';
+
+  @override
+  String get vendorProfileSwitchStay => 'Stay in Vendor mode';
 }

@@ -6517,6 +6517,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to Wallet Overview'**
   String get vendorWithdrawBack;
+
+  /// No description provided for @vendorProfileVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get vendorProfileVerified;
+
+  /// No description provided for @vendorProfileBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re signed in as both'**
+  String get vendorProfileBoth;
+
+  /// No description provided for @vendorProfileLessee.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee'**
+  String get vendorProfileLessee;
+
+  /// No description provided for @vendorProfileVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor'**
+  String get vendorProfileVendor;
+
+  /// No description provided for @vendorProfileModeExplanation.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch mode to see bookings you\'re renting, or to manage your yard.'**
+  String get vendorProfileModeExplanation;
+
+  /// No description provided for @vendorProfileKeepCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'Your catalog and availability'**
+  String get vendorProfileKeepCatalog;
+
+  /// No description provided for @vendorProfileKeepRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking requests to accept or decline'**
+  String get vendorProfileKeepRequests;
+
+  /// No description provided for @vendorProfileKeepVideos.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition videos to record'**
+  String get vendorProfileKeepVideos;
+
+  /// No description provided for @vendorProfileWhatChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'What changes?'**
+  String get vendorProfileWhatChanges;
+
+  /// No description provided for @vendorProfileBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Business'**
+  String get vendorProfileBusiness;
+
+  /// No description provided for @vendorProfileAddresses.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved addresses'**
+  String get vendorProfileAddresses;
+
+  /// No description provided for @vendorProfilePayout.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout account'**
+  String get vendorProfilePayout;
+
+  /// No description provided for @vendorProfileShop.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop profile & location'**
+  String get vendorProfileShop;
+
+  /// No description provided for @vendorProfileHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get vendorProfileHelp;
+
+  /// No description provided for @vendorProfileAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About GCC'**
+  String get vendorProfileAbout;
+
+  /// No description provided for @vendorProfileVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version}'**
+  String vendorProfileVersion(String version);
+
+  /// No description provided for @vendorProfileUssdEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'No data? Use your basic phone'**
+  String get vendorProfileUssdEyebrow;
+
+  /// No description provided for @vendorProfileUssdBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'Dial '**
+  String get vendorProfileUssdBefore;
+
+  /// No description provided for @vendorProfileUssdAfter.
+  ///
+  /// In en, this message translates to:
+  /// **' to check your balance or withdraw to your bank.'**
+  String get vendorProfileUssdAfter;
+
+  /// No description provided for @vendorProfileUssdDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Works on any phone. No internet needed.'**
+  String get vendorProfileUssdDetail;
+
+  /// No description provided for @vendorProfileCopyCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy {code}'**
+  String vendorProfileCopyCode(String code);
+
+  /// No description provided for @vendorProfileCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied {code}'**
+  String vendorProfileCopied(String code);
+
+  /// No description provided for @vendorProfileSwitchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Lessee mode?'**
+  String get vendorProfileSwitchTitle;
+
+  /// No description provided for @vendorProfileSwitchBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll see bookings you\'re renting instead of your yard. Your catalog stays exactly as it is — nothing changes.'**
+  String get vendorProfileSwitchBody;
+
+  /// No description provided for @vendorProfileSwitchHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'In Lessee mode you won\'t see:'**
+  String get vendorProfileSwitchHidden;
+
+  /// No description provided for @vendorProfileSwitchStill.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll still see your wallet and payouts.'**
+  String get vendorProfileSwitchStill;
+
+  /// No description provided for @vendorProfileSwitchConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Lessee'**
+  String get vendorProfileSwitchConfirm;
+
+  /// No description provided for @vendorProfileSwitchStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay in Vendor mode'**
+  String get vendorProfileSwitchStay;
 }
 
 class _AppLocalizationsDelegate

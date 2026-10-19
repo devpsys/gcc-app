@@ -60,7 +60,12 @@ abstract final class DashboardDestinations {
         Icons.account_balance_wallet,
         RoutePaths.vendorWallet,
       ),
-      _profile(l10n),
+      _built(
+        l10n.dashboardProfile,
+        Icons.person_outline,
+        Icons.person,
+        RoutePaths.vendorProfile,
+      ),
     ];
   }
 

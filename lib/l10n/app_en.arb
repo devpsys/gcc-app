@@ -2435,5 +2435,42 @@
   "vendorWithdrawRemaining": "Remaining Balance",
   "vendorWithdrawSms": "You'll get an SMS confirmation once clearing settles. Usually within 2 hours.",
   "vendorWithdrawTrack": "Track Settlement",
-  "vendorWithdrawBack": "Back to Wallet Overview"
+  "vendorWithdrawBack": "Back to Wallet Overview",
+  "vendorProfileVerified": "Verified",
+  "vendorProfileBoth": "You're signed in as both",
+  "vendorProfileLessee": "Lessee",
+  "vendorProfileVendor": "Vendor",
+  "vendorProfileModeExplanation": "Switch mode to see bookings you're renting, or to manage your yard.",
+  "vendorProfileKeepCatalog": "Your catalog and availability",
+  "vendorProfileKeepRequests": "Booking requests to accept or decline",
+  "vendorProfileKeepVideos": "Condition videos to record",
+  "vendorProfileWhatChanges": "What changes?",
+  "vendorProfileBusiness": "Business",
+  "vendorProfileAddresses": "Saved addresses",
+  "vendorProfilePayout": "Payout account",
+  "vendorProfileShop": "Shop profile & location",
+  "vendorProfileHelp": "Help",
+  "vendorProfileAbout": "About GCC",
+  "vendorProfileVersion": "Version {version}",
+  "@vendorProfileVersion": {
+    "placeholders": { "version": { "type": "String" } }
+  },
+  "vendorProfileUssdEyebrow": "No data? Use your basic phone",
+  "vendorProfileUssdBefore": "Dial ",
+  "vendorProfileUssdAfter": " to check your balance or withdraw to your bank.",
+  "vendorProfileUssdDetail": "Works on any phone. No internet needed.",
+  "vendorProfileCopyCode": "Copy {code}",
+  "@vendorProfileCopyCode": {
+    "placeholders": { "code": { "type": "String" } }
+  },
+  "vendorProfileCopied": "Copied {code}",
+  "@vendorProfileCopied": {
+    "placeholders": { "code": { "type": "String" } }
+  },
+  "vendorProfileSwitchTitle": "Switch to Lessee mode?",
+  "vendorProfileSwitchBody": "You'll see bookings you're renting instead of your yard. Your catalog stays exactly as it is — nothing changes.",
+  "vendorProfileSwitchHidden": "In Lessee mode you won't see:",
+  "vendorProfileSwitchStill": "You'll still see your wallet and payouts.",
+  "vendorProfileSwitchConfirm": "Switch to Lessee",
+  "vendorProfileSwitchStay": "Stay in Vendor mode"
 }
