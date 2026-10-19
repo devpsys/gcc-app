@@ -71,6 +71,9 @@ class VendorProfileScreen extends StatelessWidget {
                 );
               },
               onSignOut: () => context.read<DeviceLockCubit>().signOut(),
+              onOpenNotifications: () =>
+                  GoRouter.maybeOf(context)
+                      ?.push(RoutePaths.vendorNotifications),
             ),
           },
         );

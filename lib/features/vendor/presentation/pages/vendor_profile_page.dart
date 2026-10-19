@@ -16,6 +16,7 @@ class VendorProfilePage extends StatelessWidget {
     required this.onSwitchToLessee,
     required this.onCopyUssd,
     required this.onSignOut,
+    this.onOpenNotifications,
     super.key,
   });
 
@@ -23,6 +24,7 @@ class VendorProfilePage extends StatelessWidget {
   final Future<void> Function() onSwitchToLessee;
   final Future<void> Function() onCopyUssd;
   final VoidCallback onSignOut;
+  final VoidCallback? onOpenNotifications;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +89,7 @@ class VendorProfilePage extends StatelessWidget {
               icon: Icons.notifications_none,
               label: l10n.profileRowNotifications,
               value: profile.notificationSummary,
+              onTap: onOpenNotifications,
             ),
           ],
         ),

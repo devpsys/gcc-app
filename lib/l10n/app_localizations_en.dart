@@ -3852,4 +3852,69 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vendorProfileSwitchStay => 'Stay in Vendor mode';
+
+  @override
+  String get vendorNoticeTitle => 'Notifications';
+
+  @override
+  String get vendorNoticeMarkRead => 'Mark all read';
+
+  @override
+  String get vendorNoticeAll => 'All';
+
+  @override
+  String get vendorNoticeRequests => 'Requests';
+
+  @override
+  String get vendorNoticeMoney => 'Money';
+
+  @override
+  String vendorNoticeTab(String label, int count) {
+    return '$label ($count)';
+  }
+
+  @override
+  String get vendorNoticeSms => 'SMS';
+
+  @override
+  String get vendorNoticeUnread => 'Unread';
+
+  @override
+  String get vendorNoticeActiveRequests => 'Active requests';
+
+  @override
+  String get vendorNoticeAudit => 'Financial audit trail';
+
+  @override
+  String get vendorNoticeDecision => '1 item needs a decision';
+
+  @override
+  String vendorNoticeWindow(String deadline) {
+    return 'The damage claim window closes $deadline.';
+  }
+
+  @override
+  String get vendorNoticeSmsBefore => 'You can also respond by SMS. Reply ';
+
+  @override
+  String get vendorNoticeSmsAccept => '1';
+
+  @override
+  String get vendorNoticeSmsMiddle => ' to accept a booking, ';
+
+  @override
+  String get vendorNoticeSmsReject => '2';
+
+  @override
+  String get vendorNoticeSmsAfter => ' to reject. Damage claims need the app.';
+
+  @override
+  String get vendorNoticeReply => 'Reply 1 · accept booking';
+
+  @override
+  String get vendorNoticeWalletNote =>
+      'Everything about money is also in your wallet statement.';
+
+  @override
+  String get vendorNoticeOpenWallet => 'Open Wallet ledger';
 }

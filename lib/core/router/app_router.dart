@@ -41,12 +41,14 @@ import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_role_p
 import 'package:gcc_app/features/onboarding/presentation/pages/onboarding_sign_in_page.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_notice_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_profile_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_withdraw_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_asset_edit_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_catalog_screen.dart';
+import 'package:gcc_app/features/vendor/presentation/pages/vendor_notice_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_profile_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_request_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_wallet_screen.dart';
@@ -271,6 +273,14 @@ GoRouter createAppRouter() {
             param1: state.pathParameters['reference'] ?? '',
           )..load(),
           child: const VendorAssetEditScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.vendorNotifications,
+        name: RouteNames.vendorNotifications,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<VendorNoticeCubit>()..load(),
+          child: const VendorNoticeScreen(),
         ),
       ),
       GoRoute(

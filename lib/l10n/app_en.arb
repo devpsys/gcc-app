@@ -2472,5 +2472,34 @@
   "vendorProfileSwitchHidden": "In Lessee mode you won't see:",
   "vendorProfileSwitchStill": "You'll still see your wallet and payouts.",
   "vendorProfileSwitchConfirm": "Switch to Lessee",
-  "vendorProfileSwitchStay": "Stay in Vendor mode"
+  "vendorProfileSwitchStay": "Stay in Vendor mode",
+  "vendorNoticeTitle": "Notifications",
+  "vendorNoticeMarkRead": "Mark all read",
+  "vendorNoticeAll": "All",
+  "vendorNoticeRequests": "Requests",
+  "vendorNoticeMoney": "Money",
+  "vendorNoticeTab": "{label} ({count})",
+  "@vendorNoticeTab": {
+    "placeholders": {
+      "label": { "type": "String" },
+      "count": { "type": "int" }
+    }
+  },
+  "vendorNoticeSms": "SMS",
+  "vendorNoticeUnread": "Unread",
+  "vendorNoticeActiveRequests": "Active requests",
+  "vendorNoticeAudit": "Financial audit trail",
+  "vendorNoticeDecision": "1 item needs a decision",
+  "vendorNoticeWindow": "The damage claim window closes {deadline}.",
+  "@vendorNoticeWindow": {
+    "placeholders": { "deadline": { "type": "String" } }
+  },
+  "vendorNoticeSmsBefore": "You can also respond by SMS. Reply ",
+  "vendorNoticeSmsAccept": "1",
+  "vendorNoticeSmsMiddle": " to accept a booking, ",
+  "vendorNoticeSmsReject": "2",
+  "vendorNoticeSmsAfter": " to reject. Damage claims need the app.",
+  "vendorNoticeReply": "Reply 1 · accept booking",
+  "vendorNoticeWalletNote": "Everything about money is also in your wallet statement.",
+  "vendorNoticeOpenWallet": "Open Wallet ledger"
 }

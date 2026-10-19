@@ -6685,6 +6685,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stay in Vendor mode'**
   String get vendorProfileSwitchStay;
+
+  /// No description provided for @vendorNoticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get vendorNoticeTitle;
+
+  /// No description provided for @vendorNoticeMarkRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all read'**
+  String get vendorNoticeMarkRead;
+
+  /// No description provided for @vendorNoticeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get vendorNoticeAll;
+
+  /// No description provided for @vendorNoticeRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get vendorNoticeRequests;
+
+  /// No description provided for @vendorNoticeMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Money'**
+  String get vendorNoticeMoney;
+
+  /// No description provided for @vendorNoticeTab.
+  ///
+  /// In en, this message translates to:
+  /// **'{label} ({count})'**
+  String vendorNoticeTab(String label, int count);
+
+  /// No description provided for @vendorNoticeSms.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS'**
+  String get vendorNoticeSms;
+
+  /// No description provided for @vendorNoticeUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get vendorNoticeUnread;
+
+  /// No description provided for @vendorNoticeActiveRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Active requests'**
+  String get vendorNoticeActiveRequests;
+
+  /// No description provided for @vendorNoticeAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial audit trail'**
+  String get vendorNoticeAudit;
+
+  /// No description provided for @vendorNoticeDecision.
+  ///
+  /// In en, this message translates to:
+  /// **'1 item needs a decision'**
+  String get vendorNoticeDecision;
+
+  /// No description provided for @vendorNoticeWindow.
+  ///
+  /// In en, this message translates to:
+  /// **'The damage claim window closes {deadline}.'**
+  String vendorNoticeWindow(String deadline);
+
+  /// No description provided for @vendorNoticeSmsBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'You can also respond by SMS. Reply '**
+  String get vendorNoticeSmsBefore;
+
+  /// No description provided for @vendorNoticeSmsAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'1'**
+  String get vendorNoticeSmsAccept;
+
+  /// No description provided for @vendorNoticeSmsMiddle.
+  ///
+  /// In en, this message translates to:
+  /// **' to accept a booking, '**
+  String get vendorNoticeSmsMiddle;
+
+  /// No description provided for @vendorNoticeSmsReject.
+  ///
+  /// In en, this message translates to:
+  /// **'2'**
+  String get vendorNoticeSmsReject;
+
+  /// No description provided for @vendorNoticeSmsAfter.
+  ///
+  /// In en, this message translates to:
+  /// **' to reject. Damage claims need the app.'**
+  String get vendorNoticeSmsAfter;
+
+  /// No description provided for @vendorNoticeReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply 1 · accept booking'**
+  String get vendorNoticeReply;
+
+  /// No description provided for @vendorNoticeWalletNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything about money is also in your wallet statement.'**
+  String get vendorNoticeWalletNote;
+
+  /// No description provided for @vendorNoticeOpenWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Wallet ledger'**
+  String get vendorNoticeOpenWallet;
 }
 
 class _AppLocalizationsDelegate
