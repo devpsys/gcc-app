@@ -17,6 +17,8 @@ class VendorWallet extends Equatable {
     this.releaseAmount,
     this.releaseSteps = const [],
     this.failure,
+    this.accountName = 'Kugbo Generator Yard',
+    this.accountNumber = '0123 4567 8901',
   });
 
   /// Display figure, such as `₦486,200` or `₦0`.
@@ -34,17 +36,21 @@ class VendorWallet extends Equatable {
   final VendorPayoutFailure? failure;
   final List<VendorWalletEntry> entries;
   final int requestsWaiting;
+  final String accountName;
+  final String accountNumber;
 
   bool get showPeriods => failure == null && entries.isNotEmpty;
 
   VendorWallet copyWith({
+    String? available,
+    int? availableAmount,
     VendorPayoutFailure? failure,
     bool clearFailure = false,
     List<VendorWalletEntry>? entries,
   }) {
     return VendorWallet(
-      available: available,
-      availableAmount: availableAmount,
+      available: available ?? this.available,
+      availableAmount: availableAmount ?? this.availableAmount,
       bank: bank,
       awaiting: awaiting,
       held: held,
@@ -53,6 +59,8 @@ class VendorWallet extends Equatable {
       failure: clearFailure ? null : failure ?? this.failure,
       entries: entries ?? this.entries,
       requestsWaiting: requestsWaiting,
+      accountName: accountName,
+      accountNumber: accountNumber,
     );
   }
 
@@ -68,5 +76,7 @@ class VendorWallet extends Equatable {
     failure,
     entries,
     requestsWaiting,
+    accountName,
+    accountNumber,
   ];
 }

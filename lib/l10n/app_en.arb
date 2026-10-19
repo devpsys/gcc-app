@@ -2374,5 +2374,66 @@
   "vendorWalletRetryNote": "Failed payouts are retried automatically after 6 hours.",
   "vendorWalletEmptyTitle": "No transactions yet",
   "vendorWalletEmptyBody": "Release a booking to move money into your wallet. Releases happen after the buyer approves a return condition.",
-  "vendorWalletViewBookings": "View my bookings"
+  "vendorWalletViewBookings": "View my bookings",
+  "vendorWithdrawTitle": "Withdraw",
+  "vendorWithdrawStatus": "Withdrawal status",
+  "vendorWithdrawVerified": "Verified",
+  "vendorWithdrawChange": "Change",
+  "vendorWithdrawAccountNote": "Payouts go to the account name on your verified bank record.",
+  "vendorWithdrawHowMuch": "How much?",
+  "vendorWithdrawAvailableOf": "Available {amount}",
+  "@vendorWithdrawAvailableOf": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "vendorWithdrawEnterAmount": "Enter an amount to withdraw",
+  "vendorWithdrawRange": "Enter an amount between {minimum} and {available}",
+  "@vendorWithdrawRange": {
+    "placeholders": {
+      "minimum": { "type": "String" },
+      "available": { "type": "String" }
+    }
+  },
+  "vendorWithdrawAll": "All",
+  "vendorWithdrawAmount": "Withdrawal Amount",
+  "vendorWithdrawFee": "Transfer processing fee",
+  "vendorWithdrawFree": "Free",
+  "vendorWithdrawNet": "Net account credit",
+  "vendorWithdrawArrives": "Arrives in {bank}",
+  "@vendorWithdrawArrives": {
+    "placeholders": { "bank": { "type": "String" } }
+  },
+  "vendorWithdrawArrivesBody": "Usually within 2 hours on weekdays. Some clearing runs take longer.",
+  "vendorWithdrawOnly": "Withdrawing available funds only",
+  "vendorWithdrawAuditAnd": "in condition audit and",
+  "vendorWithdrawQuarantine": "caution deposits remain quarantined for other bookings.",
+  "vendorWithdrawNeedAmount": "Add an amount to see fees and arrival time.",
+  "vendorWithdrawHeldStay": "Held funds remain quarantined until contract milestones complete.",
+  "vendorWithdrawCancel": "Cancel",
+  "vendorWithdrawAction": "Withdraw",
+  "vendorWithdrawSubmit": "Withdraw {amount}",
+  "@vendorWithdrawSubmit": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "vendorWithdrawContinue": "Enter an amount to continue",
+  "vendorWithdrawOnTheWay": "{amount} is on its way",
+  "@vendorWithdrawOnTheWay": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "vendorWithdrawReference": "Payout Reference",
+  "vendorWithdrawDebited": "Amount debited",
+  "vendorWithdrawDispatched": "Dispatched timestamp",
+  "vendorWithdrawEstimated": "Estimated bank arrival",
+  "vendorWithdrawAccountMatches": "Account matches {name}",
+  "@vendorWithdrawAccountMatches": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "vendorWithdrawChannelClear": "{bank} settlement channel clear",
+  "@vendorWithdrawChannelClear": {
+    "placeholders": { "bank": { "type": "String" } }
+  },
+  "vendorWithdrawLedgerUpdated": "Vendor balance ledger updated",
+  "vendorWithdrawRemaining": "Remaining Balance",
+  "vendorWithdrawSms": "You'll get an SMS confirmation once clearing settles. Usually within 2 hours.",
+  "vendorWithdrawTrack": "Track Settlement",
+  "vendorWithdrawBack": "Back to Wallet Overview"
 }

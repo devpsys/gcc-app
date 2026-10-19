@@ -6295,6 +6295,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View my bookings'**
   String get vendorWalletViewBookings;
+
+  /// No description provided for @vendorWithdrawTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get vendorWithdrawTitle;
+
+  /// No description provided for @vendorWithdrawStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawal status'**
+  String get vendorWithdrawStatus;
+
+  /// No description provided for @vendorWithdrawVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified'**
+  String get vendorWithdrawVerified;
+
+  /// No description provided for @vendorWithdrawChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get vendorWithdrawChange;
+
+  /// No description provided for @vendorWithdrawAccountNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts go to the account name on your verified bank record.'**
+  String get vendorWithdrawAccountNote;
+
+  /// No description provided for @vendorWithdrawHowMuch.
+  ///
+  /// In en, this message translates to:
+  /// **'How much?'**
+  String get vendorWithdrawHowMuch;
+
+  /// No description provided for @vendorWithdrawAvailableOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Available {amount}'**
+  String vendorWithdrawAvailableOf(String amount);
+
+  /// No description provided for @vendorWithdrawEnterAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an amount to withdraw'**
+  String get vendorWithdrawEnterAmount;
+
+  /// No description provided for @vendorWithdrawRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an amount between {minimum} and {available}'**
+  String vendorWithdrawRange(String minimum, String available);
+
+  /// No description provided for @vendorWithdrawAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get vendorWithdrawAll;
+
+  /// No description provided for @vendorWithdrawAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawal Amount'**
+  String get vendorWithdrawAmount;
+
+  /// No description provided for @vendorWithdrawFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer processing fee'**
+  String get vendorWithdrawFee;
+
+  /// No description provided for @vendorWithdrawFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free'**
+  String get vendorWithdrawFree;
+
+  /// No description provided for @vendorWithdrawNet.
+  ///
+  /// In en, this message translates to:
+  /// **'Net account credit'**
+  String get vendorWithdrawNet;
+
+  /// No description provided for @vendorWithdrawArrives.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrives in {bank}'**
+  String vendorWithdrawArrives(String bank);
+
+  /// No description provided for @vendorWithdrawArrivesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Usually within 2 hours on weekdays. Some clearing runs take longer.'**
+  String get vendorWithdrawArrivesBody;
+
+  /// No description provided for @vendorWithdrawOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdrawing available funds only'**
+  String get vendorWithdrawOnly;
+
+  /// No description provided for @vendorWithdrawAuditAnd.
+  ///
+  /// In en, this message translates to:
+  /// **'in condition audit and'**
+  String get vendorWithdrawAuditAnd;
+
+  /// No description provided for @vendorWithdrawQuarantine.
+  ///
+  /// In en, this message translates to:
+  /// **'caution deposits remain quarantined for other bookings.'**
+  String get vendorWithdrawQuarantine;
+
+  /// No description provided for @vendorWithdrawNeedAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an amount to see fees and arrival time.'**
+  String get vendorWithdrawNeedAmount;
+
+  /// No description provided for @vendorWithdrawHeldStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Held funds remain quarantined until contract milestones complete.'**
+  String get vendorWithdrawHeldStay;
+
+  /// No description provided for @vendorWithdrawCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get vendorWithdrawCancel;
+
+  /// No description provided for @vendorWithdrawAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw'**
+  String get vendorWithdrawAction;
+
+  /// No description provided for @vendorWithdrawSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw {amount}'**
+  String vendorWithdrawSubmit(String amount);
+
+  /// No description provided for @vendorWithdrawContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an amount to continue'**
+  String get vendorWithdrawContinue;
+
+  /// No description provided for @vendorWithdrawOnTheWay.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} is on its way'**
+  String vendorWithdrawOnTheWay(String amount);
+
+  /// No description provided for @vendorWithdrawReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Reference'**
+  String get vendorWithdrawReference;
+
+  /// No description provided for @vendorWithdrawDebited.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount debited'**
+  String get vendorWithdrawDebited;
+
+  /// No description provided for @vendorWithdrawDispatched.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispatched timestamp'**
+  String get vendorWithdrawDispatched;
+
+  /// No description provided for @vendorWithdrawEstimated.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated bank arrival'**
+  String get vendorWithdrawEstimated;
+
+  /// No description provided for @vendorWithdrawAccountMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'Account matches {name}'**
+  String vendorWithdrawAccountMatches(String name);
+
+  /// No description provided for @vendorWithdrawChannelClear.
+  ///
+  /// In en, this message translates to:
+  /// **'{bank} settlement channel clear'**
+  String vendorWithdrawChannelClear(String bank);
+
+  /// No description provided for @vendorWithdrawLedgerUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor balance ledger updated'**
+  String get vendorWithdrawLedgerUpdated;
+
+  /// No description provided for @vendorWithdrawRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining Balance'**
+  String get vendorWithdrawRemaining;
+
+  /// No description provided for @vendorWithdrawSms.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll get an SMS confirmation once clearing settles. Usually within 2 hours.'**
+  String get vendorWithdrawSms;
+
+  /// No description provided for @vendorWithdrawTrack.
+  ///
+  /// In en, this message translates to:
+  /// **'Track Settlement'**
+  String get vendorWithdrawTrack;
+
+  /// No description provided for @vendorWithdrawBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Wallet Overview'**
+  String get vendorWithdrawBack;
 }
 
 class _AppLocalizationsDelegate

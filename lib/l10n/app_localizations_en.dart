@@ -3625,4 +3625,135 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vendorWalletViewBookings => 'View my bookings';
+
+  @override
+  String get vendorWithdrawTitle => 'Withdraw';
+
+  @override
+  String get vendorWithdrawStatus => 'Withdrawal status';
+
+  @override
+  String get vendorWithdrawVerified => 'Verified';
+
+  @override
+  String get vendorWithdrawChange => 'Change';
+
+  @override
+  String get vendorWithdrawAccountNote =>
+      'Payouts go to the account name on your verified bank record.';
+
+  @override
+  String get vendorWithdrawHowMuch => 'How much?';
+
+  @override
+  String vendorWithdrawAvailableOf(String amount) {
+    return 'Available $amount';
+  }
+
+  @override
+  String get vendorWithdrawEnterAmount => 'Enter an amount to withdraw';
+
+  @override
+  String vendorWithdrawRange(String minimum, String available) {
+    return 'Enter an amount between $minimum and $available';
+  }
+
+  @override
+  String get vendorWithdrawAll => 'All';
+
+  @override
+  String get vendorWithdrawAmount => 'Withdrawal Amount';
+
+  @override
+  String get vendorWithdrawFee => 'Transfer processing fee';
+
+  @override
+  String get vendorWithdrawFree => 'Free';
+
+  @override
+  String get vendorWithdrawNet => 'Net account credit';
+
+  @override
+  String vendorWithdrawArrives(String bank) {
+    return 'Arrives in $bank';
+  }
+
+  @override
+  String get vendorWithdrawArrivesBody =>
+      'Usually within 2 hours on weekdays. Some clearing runs take longer.';
+
+  @override
+  String get vendorWithdrawOnly => 'Withdrawing available funds only';
+
+  @override
+  String get vendorWithdrawAuditAnd => 'in condition audit and';
+
+  @override
+  String get vendorWithdrawQuarantine =>
+      'caution deposits remain quarantined for other bookings.';
+
+  @override
+  String get vendorWithdrawNeedAmount =>
+      'Add an amount to see fees and arrival time.';
+
+  @override
+  String get vendorWithdrawHeldStay =>
+      'Held funds remain quarantined until contract milestones complete.';
+
+  @override
+  String get vendorWithdrawCancel => 'Cancel';
+
+  @override
+  String get vendorWithdrawAction => 'Withdraw';
+
+  @override
+  String vendorWithdrawSubmit(String amount) {
+    return 'Withdraw $amount';
+  }
+
+  @override
+  String get vendorWithdrawContinue => 'Enter an amount to continue';
+
+  @override
+  String vendorWithdrawOnTheWay(String amount) {
+    return '$amount is on its way';
+  }
+
+  @override
+  String get vendorWithdrawReference => 'Payout Reference';
+
+  @override
+  String get vendorWithdrawDebited => 'Amount debited';
+
+  @override
+  String get vendorWithdrawDispatched => 'Dispatched timestamp';
+
+  @override
+  String get vendorWithdrawEstimated => 'Estimated bank arrival';
+
+  @override
+  String vendorWithdrawAccountMatches(String name) {
+    return 'Account matches $name';
+  }
+
+  @override
+  String vendorWithdrawChannelClear(String bank) {
+    return '$bank settlement channel clear';
+  }
+
+  @override
+  String get vendorWithdrawLedgerUpdated => 'Vendor balance ledger updated';
+
+  @override
+  String get vendorWithdrawRemaining => 'Remaining Balance';
+
+  @override
+  String get vendorWithdrawSms =>
+      'You\'ll get an SMS confirmation once clearing settles. Usually within 2 hours.';
+
+  @override
+  String get vendorWithdrawTrack => 'Track Settlement';
+
+  @override
+  String get vendorWithdrawBack => 'Back to Wallet Overview';
 }

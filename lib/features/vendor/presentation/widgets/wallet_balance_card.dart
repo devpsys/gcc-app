@@ -12,8 +12,9 @@ class WalletBalanceCard extends StatelessWidget {
     required this.amount,
     required this.bank,
     required this.withdrawLabel,
-    required this.withdrawReason,
-    required this.faded,
+    this.onWithdraw,
+    this.withdrawReason,
+    this.faded = false,
     super.key,
   });
 
@@ -21,7 +22,8 @@ class WalletBalanceCard extends StatelessWidget {
   final String amount;
   final String bank;
   final String withdrawLabel;
-  final String withdrawReason;
+  final VoidCallback? onWithdraw;
+  final String? withdrawReason;
   final bool faded;
 
   @override
@@ -68,8 +70,10 @@ class WalletBalanceCard extends StatelessWidget {
             Divider(color: onCard.withValues(alpha: 0.2), height: 1),
             const SizedBox(height: AppSpacing.sm),
             FilledButton(
-              onPressed: null,
+              onPressed: onWithdraw,
               style: FilledButton.styleFrom(
+                backgroundColor: scheme.surface,
+                foregroundColor: scheme.primary,
                 disabledBackgroundColor: scheme.surface.withValues(
                   alpha: faded ? 0.4 : 1,
                 ),
@@ -84,13 +88,15 @@ class WalletBalanceCard extends StatelessWidget {
               ),
               child: Text(withdrawLabel),
             ),
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              withdrawReason,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodySmall
-                  ?.copyWith(color: onCard.withValues(alpha: 0.85)),
-            ),
+            if (onWithdraw == null && withdrawReason != null) ...[
+              const SizedBox(height: AppSpacing.xs),
+              Text(
+                withdrawReason!,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall
+                    ?.copyWith(color: onCard.withValues(alpha: 0.85)),
+              ),
+            ],
           ],
         ),
       ),

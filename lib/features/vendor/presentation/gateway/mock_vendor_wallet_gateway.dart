@@ -1,19 +1,59 @@
+import 'package:gcc_app/features/vendor/domain/naira_amount.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_payout_failure.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_release_step.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet_entry.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet_entry_kind.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet_period.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_withdrawal_gap.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_withdrawal_receipt.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/vendor_wallet_gateway.dart';
 
 /// MOB-VND-14. The app opens on the active ledger.
 final class MockVendorWalletGateway implements VendorWalletGateway {
   MockVendorWalletGateway({VendorWallet? wallet}) : _wallet = wallet ?? active;
 
-  final VendorWallet _wallet;
+  VendorWallet _wallet;
+  var _nextReference = 8842;
 
   @override
   Future<VendorWallet> load() async => _wallet;
+
+  @override
+  Future<VendorWithdrawalReceipt?> withdraw(int amount) async {
+    final available = _wallet.availableAmount;
+    if (withdrawalGap(amount: amount, available: available) != null) {
+      return null;
+    }
+    final reference = 'PAY-$_nextReference';
+    _nextReference += 1;
+    final receipt = VendorWithdrawalReceipt(
+      reference: reference,
+      amount: amount,
+      previous: available,
+      remaining: available - amount,
+      bank: _wallet.bank,
+      accountName: _wallet.accountName,
+      dispatchedAt: '13 Oct, 11:42 WAT',
+      arrivesAt: '13 Oct, ~13:30 WAT',
+    );
+    _wallet = _wallet.copyWith(
+      available: fullNaira(receipt.remaining),
+      availableAmount: receipt.remaining,
+      entries: [
+        VendorWalletEntry(
+          heading: '13 OCT',
+          kind: VendorWalletEntryKind.payoutSent,
+          reference: reference,
+          detail: '${receipt.dispatchedAt} · ${_wallet.bank}',
+          amount: '−${fullNaira(amount)}',
+          earliest: VendorWalletPeriod.week,
+        ),
+        ..._wallet.entries,
+      ],
+    );
+    return receipt;
+  }
 
   static const active = VendorWallet(
     available: '₦486,200',

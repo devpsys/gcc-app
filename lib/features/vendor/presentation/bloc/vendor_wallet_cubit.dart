@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_wallet.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet_entry_kind.dart';
 import 'package:gcc_app/features/vendor/domain/vendor_wallet_period.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_state.dart';
@@ -18,6 +19,14 @@ class VendorWalletCubit extends Cubit<VendorWalletState> {
     } on Failure catch (failure) {
       emit(VendorWalletFailed(failure));
     }
+  }
+
+  void apply(VendorWallet wallet) {
+    final ready = _ready;
+    if (ready == null) {
+      return;
+    }
+    emit(ready.copyWith(wallet: wallet));
   }
 
   void selectPeriod(VendorWalletPeriod period) {

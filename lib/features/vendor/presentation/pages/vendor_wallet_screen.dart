@@ -8,6 +8,7 @@ import 'package:gcc_app/core/widgets/app_shell.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_language_chip.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_cubit.dart';
+import 'package:gcc_app/features/vendor/domain/vendor_wallet.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_state.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_wallet_page.dart';
 import 'package:go_router/go_router.dart';
@@ -43,6 +44,15 @@ class VendorWalletScreen extends StatelessWidget {
             VendorWalletReady() => VendorWalletPage(
               state: state,
               onViewBookings: () => context.go(RoutePaths.vendorRequests),
+              onWithdraw: () async {
+                final updated = await context.push<VendorWallet>(
+                  RoutePaths.vendorWithdraw,
+                );
+                if (!context.mounted || updated == null) {
+                  return;
+                }
+                context.read<VendorWalletCubit>().apply(updated);
+              },
             ),
           },
         );

@@ -21,11 +21,13 @@ class VendorWalletPage extends StatelessWidget {
   const VendorWalletPage({
     required this.state,
     required this.onViewBookings,
+    this.onWithdraw,
     super.key,
   });
 
   final VendorWalletReady state;
   final VoidCallback onViewBookings;
+  final VoidCallback? onWithdraw;
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +58,10 @@ class VendorWalletPage extends StatelessWidget {
                 amount: wallet.available,
                 bank: wallet.bank,
                 withdrawLabel: l10n.vendorWalletWithdraw,
+                onWithdraw: wallet.availableAmount == 0 ? null : onWithdraw,
                 withdrawReason: wallet.availableAmount == 0
                     ? l10n.vendorWalletNothingToWithdraw
-                    : l10n.dashboardActionUnavailable,
+                    : null,
                 faded: wallet.availableAmount == 0,
               ),
               const SizedBox(height: AppSpacing.md),

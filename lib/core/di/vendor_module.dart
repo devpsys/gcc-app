@@ -3,6 +3,7 @@ import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubi
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_withdraw_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_asset_edit_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_catalog_gateway.dart';
 import 'package:gcc_app/features/vendor/presentation/gateway/mock_vendor_request_gateway.dart';
@@ -21,6 +22,7 @@ void registerVendorModule() {
     ..registerFactory<VendorRequestCubit>(() => VendorRequestCubit(getIt()))
     ..registerLazySingleton<VendorWalletGateway>(MockVendorWalletGateway.new)
     ..registerFactory<VendorWalletCubit>(() => VendorWalletCubit(getIt()))
+    ..registerFactory<VendorWithdrawCubit>(() => VendorWithdrawCubit(getIt()))
     ..registerLazySingleton<VendorAssetEditGateway>(
       MockVendorAssetEditGateway.new,
     )

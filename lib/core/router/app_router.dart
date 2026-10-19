@@ -43,10 +43,12 @@ import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubi
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_request_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_cubit.dart';
+import 'package:gcc_app/features/vendor/presentation/bloc/vendor_withdraw_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_asset_edit_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_catalog_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_request_screen.dart';
 import 'package:gcc_app/features/vendor/presentation/pages/vendor_wallet_screen.dart';
+import 'package:gcc_app/features/vendor/presentation/pages/vendor_withdraw_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter createAppRouter() {
@@ -234,6 +236,14 @@ GoRouter createAppRouter() {
             builder: (context, state) => const OnboardingSignInPage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.vendorWithdraw,
+        name: RouteNames.vendorWithdraw,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<VendorWithdrawCubit>()..load(),
+          child: const VendorWithdrawScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.vendorWallet,

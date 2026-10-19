@@ -28,6 +28,7 @@ abstract final class RoutePaths {
   static const String vendorAssetEdit = '/vendor/catalog/edit/:reference';
   static const String vendorRequests = '/vendor/requests';
   static const String vendorWallet = '/vendor/wallet';
+  static const String vendorWithdraw = '/vendor/wallet/withdraw';
 
   static String vendorAssetEditOf(String reference) =>
       '/vendor/catalog/edit/$reference';

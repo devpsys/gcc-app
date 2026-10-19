@@ -29,7 +29,7 @@ void main() {
     final withdraw = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, 'Withdraw to bank'),
     );
-    expect(withdraw.onPressed, isNull);
+    expect(withdraw.onPressed, isNotNull);
 
     await tester.drag(find.byType(ListView), const Offset(0, -900));
     await tester.pumpAndSettle();
