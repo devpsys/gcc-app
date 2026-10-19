@@ -2324,5 +2324,55 @@
   "@editSaveBlocked": {
     "placeholders": { "count": { "type": "int" } }
   },
-  "editMissing": "This asset is not in the catalog."
+  "editMissing": "This asset is not in the catalog.",
+  "vendorWalletAvailable": "Available to withdraw",
+  "vendorWalletAwaiting": "Awaiting condition check",
+  "vendorWalletAwaitingCaption": "Released after you approve a return",
+  "vendorWalletHeld": "Held as caution deposits",
+  "vendorWalletHeldCaption": "Other buyers' money. Never yours to touch.",
+  "vendorWalletWithdraw": "Withdraw to bank",
+  "vendorWalletNothingToWithdraw": "Nothing available to withdraw yet",
+  "vendorWalletCondition": "Condition recorded",
+  "vendorWalletCheckIn": "Check-in recorded",
+  "vendorWalletMoney": "Money to wallet",
+  "vendorWalletPending": "Pending",
+  "vendorWalletReleases": "{amount} releases when you record the check-in and the buyer approves it.",
+  "@vendorWalletReleases": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "vendorWalletThisWeek": "This week",
+  "vendorWalletThisMonth": "This month",
+  "vendorWalletThisYear": "This year",
+  "vendorWalletBookingReleased": "Booking {reference} released",
+  "@vendorWalletBookingReleased": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "vendorWalletDepositHeld": "Caution deposit held · {reference}",
+  "@vendorWalletDepositHeld": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "vendorWalletPayoutSent": "Payout {reference} sent",
+  "@vendorWalletPayoutSent": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "vendorWalletPayoutFailed": "Payout {reference} failed",
+  "@vendorWalletPayoutFailed": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "vendorWalletPayoutFailedBanner": "Payout {reference} failed · {amount} returned to your balance",
+  "@vendorWalletPayoutFailedBanner": {
+    "placeholders": {
+      "reference": { "type": "String" },
+      "amount": { "type": "String" }
+    }
+  },
+  "vendorWalletPayoutFailedBody": "{bank} did not respond within 30 seconds. Nothing was lost.",
+  "@vendorWalletPayoutFailedBody": {
+    "placeholders": { "bank": { "type": "String" } }
+  },
+  "vendorWalletRetry": "Retry payout",
+  "vendorWalletRetryNote": "Failed payouts are retried automatically after 6 hours.",
+  "vendorWalletEmptyTitle": "No transactions yet",
+  "vendorWalletEmptyBody": "Release a booking to move money into your wallet. Releases happen after the buyer approves a return condition.",
+  "vendorWalletViewBookings": "View my bookings"
 }

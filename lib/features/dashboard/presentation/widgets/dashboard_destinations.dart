@@ -54,7 +54,12 @@ abstract final class DashboardDestinations {
         RoutePaths.vendorRequests,
         badgeCount: requestsBadge,
       ),
-      _wallet(l10n),
+      _built(
+        l10n.dashboardWallet,
+        Icons.account_balance_wallet_outlined,
+        Icons.account_balance_wallet,
+        RoutePaths.vendorWallet,
+      ),
       _profile(l10n),
     ];
   }

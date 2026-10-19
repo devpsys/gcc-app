@@ -3528,4 +3528,101 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editMissing => 'This asset is not in the catalog.';
+
+  @override
+  String get vendorWalletAvailable => 'Available to withdraw';
+
+  @override
+  String get vendorWalletAwaiting => 'Awaiting condition check';
+
+  @override
+  String get vendorWalletAwaitingCaption =>
+      'Released after you approve a return';
+
+  @override
+  String get vendorWalletHeld => 'Held as caution deposits';
+
+  @override
+  String get vendorWalletHeldCaption =>
+      'Other buyers\' money. Never yours to touch.';
+
+  @override
+  String get vendorWalletWithdraw => 'Withdraw to bank';
+
+  @override
+  String get vendorWalletNothingToWithdraw =>
+      'Nothing available to withdraw yet';
+
+  @override
+  String get vendorWalletCondition => 'Condition recorded';
+
+  @override
+  String get vendorWalletCheckIn => 'Check-in recorded';
+
+  @override
+  String get vendorWalletMoney => 'Money to wallet';
+
+  @override
+  String get vendorWalletPending => 'Pending';
+
+  @override
+  String vendorWalletReleases(String amount) {
+    return '$amount releases when you record the check-in and the buyer approves it.';
+  }
+
+  @override
+  String get vendorWalletThisWeek => 'This week';
+
+  @override
+  String get vendorWalletThisMonth => 'This month';
+
+  @override
+  String get vendorWalletThisYear => 'This year';
+
+  @override
+  String vendorWalletBookingReleased(String reference) {
+    return 'Booking $reference released';
+  }
+
+  @override
+  String vendorWalletDepositHeld(String reference) {
+    return 'Caution deposit held · $reference';
+  }
+
+  @override
+  String vendorWalletPayoutSent(String reference) {
+    return 'Payout $reference sent';
+  }
+
+  @override
+  String vendorWalletPayoutFailed(String reference) {
+    return 'Payout $reference failed';
+  }
+
+  @override
+  String vendorWalletPayoutFailedBanner(String reference, String amount) {
+    return 'Payout $reference failed · $amount returned to your balance';
+  }
+
+  @override
+  String vendorWalletPayoutFailedBody(String bank) {
+    return '$bank did not respond within 30 seconds. Nothing was lost.';
+  }
+
+  @override
+  String get vendorWalletRetry => 'Retry payout';
+
+  @override
+  String get vendorWalletRetryNote =>
+      'Failed payouts are retried automatically after 6 hours.';
+
+  @override
+  String get vendorWalletEmptyTitle => 'No transactions yet';
+
+  @override
+  String get vendorWalletEmptyBody =>
+      'Release a booking to move money into your wallet. Releases happen after the buyer approves a return condition.';
+
+  @override
+  String get vendorWalletViewBookings => 'View my bookings';
 }

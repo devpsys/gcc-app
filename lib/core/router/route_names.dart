@@ -27,4 +27,5 @@ abstract final class RouteNames {
   static const String vendorCatalog = 'vendorCatalog';
   static const String vendorAssetEdit = 'vendorAssetEdit';
   static const String vendorRequests = 'vendorRequests';
+  static const String vendorWallet = 'vendorWallet';
 }

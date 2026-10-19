@@ -6139,6 +6139,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This asset is not in the catalog.'**
   String get editMissing;
+
+  /// No description provided for @vendorWalletAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available to withdraw'**
+  String get vendorWalletAvailable;
+
+  /// No description provided for @vendorWalletAwaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting condition check'**
+  String get vendorWalletAwaiting;
+
+  /// No description provided for @vendorWalletAwaitingCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Released after you approve a return'**
+  String get vendorWalletAwaitingCaption;
+
+  /// No description provided for @vendorWalletHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Held as caution deposits'**
+  String get vendorWalletHeld;
+
+  /// No description provided for @vendorWalletHeldCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Other buyers\' money. Never yours to touch.'**
+  String get vendorWalletHeldCaption;
+
+  /// No description provided for @vendorWalletWithdraw.
+  ///
+  /// In en, this message translates to:
+  /// **'Withdraw to bank'**
+  String get vendorWalletWithdraw;
+
+  /// No description provided for @vendorWalletNothingToWithdraw.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing available to withdraw yet'**
+  String get vendorWalletNothingToWithdraw;
+
+  /// No description provided for @vendorWalletCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition recorded'**
+  String get vendorWalletCondition;
+
+  /// No description provided for @vendorWalletCheckIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in recorded'**
+  String get vendorWalletCheckIn;
+
+  /// No description provided for @vendorWalletMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Money to wallet'**
+  String get vendorWalletMoney;
+
+  /// No description provided for @vendorWalletPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get vendorWalletPending;
+
+  /// No description provided for @vendorWalletReleases.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} releases when you record the check-in and the buyer approves it.'**
+  String vendorWalletReleases(String amount);
+
+  /// No description provided for @vendorWalletThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'This week'**
+  String get vendorWalletThisWeek;
+
+  /// No description provided for @vendorWalletThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'This month'**
+  String get vendorWalletThisMonth;
+
+  /// No description provided for @vendorWalletThisYear.
+  ///
+  /// In en, this message translates to:
+  /// **'This year'**
+  String get vendorWalletThisYear;
+
+  /// No description provided for @vendorWalletBookingReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking {reference} released'**
+  String vendorWalletBookingReleased(String reference);
+
+  /// No description provided for @vendorWalletDepositHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Caution deposit held · {reference}'**
+  String vendorWalletDepositHeld(String reference);
+
+  /// No description provided for @vendorWalletPayoutSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout {reference} sent'**
+  String vendorWalletPayoutSent(String reference);
+
+  /// No description provided for @vendorWalletPayoutFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout {reference} failed'**
+  String vendorWalletPayoutFailed(String reference);
+
+  /// No description provided for @vendorWalletPayoutFailedBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout {reference} failed · {amount} returned to your balance'**
+  String vendorWalletPayoutFailedBanner(String reference, String amount);
+
+  /// No description provided for @vendorWalletPayoutFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{bank} did not respond within 30 seconds. Nothing was lost.'**
+  String vendorWalletPayoutFailedBody(String bank);
+
+  /// No description provided for @vendorWalletRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry payout'**
+  String get vendorWalletRetry;
+
+  /// No description provided for @vendorWalletRetryNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed payouts are retried automatically after 6 hours.'**
+  String get vendorWalletRetryNote;
+
+  /// No description provided for @vendorWalletEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions yet'**
+  String get vendorWalletEmptyTitle;
+
+  /// No description provided for @vendorWalletEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Release a booking to move money into your wallet. Releases happen after the buyer approves a return condition.'**
+  String get vendorWalletEmptyBody;
+
+  /// No description provided for @vendorWalletViewBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'View my bookings'**
+  String get vendorWalletViewBookings;
 }
 
 class _AppLocalizationsDelegate
