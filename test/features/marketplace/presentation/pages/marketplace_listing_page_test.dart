@@ -63,7 +63,7 @@ void main() {
         matching: find.widgetWithText(FilledButton, 'Book now'),
       ),
     );
-    expect(book.onPressed, isNull);
+    expect(book.onPressed, isNotNull);
   });
 
   testWidgets('lays out at 320×640 with text scale 2', (tester) async {

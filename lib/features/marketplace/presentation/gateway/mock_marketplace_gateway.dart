@@ -32,6 +32,7 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         dailyRate: 35000,
         deposit: 50000,
         deliveryFee: 7500,
+        operatorDailyFee: 8000,
         availability: MarketplaceAvailability.available,
         withOperator: true,
         verified: true,

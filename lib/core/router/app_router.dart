@@ -35,6 +35,8 @@ import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_switcher.dart';
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/rental_request_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/pages/rental_request_screen.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_browse_cubit.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_cubit.dart';
 import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_browse_screen.dart';
@@ -91,6 +93,24 @@ GoRouter createAppRouter() {
             builder: (context, state) => const HomePage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.rentalRequest,
+        name: RouteNames.rentalRequest,
+        builder: (context, state) {
+          final id = state.pathParameters['id'] ?? '';
+          final extra = state.extra;
+          if (extra is RentalRequestCubit) {
+            return BlocProvider(
+              create: (_) => extra,
+              child: const RentalRequestScreen(),
+            );
+          }
+          return BlocProvider(
+            create: (_) => getIt<RentalRequestCubit>(param1: id)..load(),
+            child: const RentalRequestScreen(),
+          );
+        },
       ),
       GoRoute(
         path: RoutePaths.marketplaceListing,

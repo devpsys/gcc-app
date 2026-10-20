@@ -4,6 +4,7 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
+import 'package:gcc_app/features/booking/presentation/rental_book_flow.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_cubit.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_state.dart';
 import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_listing_page.dart';
@@ -56,6 +57,10 @@ class MarketplaceListingScreen extends StatelessWidget {
                 }
                 router.push(RoutePaths.marketplaceListingOf(id));
               },
+              onBookNow: () => startRentalRequest(
+                context: context,
+                listingId: state.listing.id,
+              ),
             ),
           },
         );

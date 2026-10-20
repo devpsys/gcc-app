@@ -33,4 +33,5 @@ abstract final class RouteNames {
   static const String vendorNotifications = 'vendorNotifications';
   static const String browse = 'browse';
   static const String marketplaceListing = 'marketplaceListing';
+  static const String rentalRequest = 'rentalRequest';
 }

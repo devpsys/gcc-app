@@ -7249,6 +7249,264 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This listing is no longer available.'**
   String get marketplaceMissing;
+
+  /// No description provided for @rentalWhenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'When do you need it?'**
+  String get rentalWhenTitle;
+
+  /// No description provided for @rentalFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get rentalFrom;
+
+  /// No description provided for @rentalTo.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get rentalTo;
+
+  /// No description provided for @rentalDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} day · billing by calendar day, rounded up} other{{count} days · billing by calendar day, rounded up}}'**
+  String rentalDuration(int count);
+
+  /// No description provided for @rentalDurationInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'1 day (invalid chronological order)'**
+  String get rentalDurationInvalid;
+
+  /// No description provided for @rentalDatesInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Return date must be after the collection date'**
+  String get rentalDatesInvalid;
+
+  /// No description provided for @rentalChooseAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a date after {when}'**
+  String rentalChooseAfter(String when);
+
+  /// No description provided for @rentalQuickCorrections.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick date corrections'**
+  String get rentalQuickCorrections;
+
+  /// No description provided for @rentalPlus1Day.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 day'**
+  String get rentalPlus1Day;
+
+  /// No description provided for @rentalPlus2Days.
+  ///
+  /// In en, this message translates to:
+  /// **'+2 days'**
+  String get rentalPlus2Days;
+
+  /// No description provided for @rentalPlus3Days.
+  ///
+  /// In en, this message translates to:
+  /// **'+3 days'**
+  String get rentalPlus3Days;
+
+  /// No description provided for @rentalPlus1Week.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 week'**
+  String get rentalPlus1Week;
+
+  /// No description provided for @rentalReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review booking'**
+  String get rentalReview;
+
+  /// No description provided for @rentalChooseValidFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose valid dates first'**
+  String get rentalChooseValidFirst;
+
+  /// No description provided for @rentalCloseDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get rentalCloseDates;
+
+  /// No description provided for @rentalConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm booking'**
+  String get rentalConfirmTitle;
+
+  /// No description provided for @rentalDates.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get rentalDates;
+
+  /// No description provided for @rentalDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get rentalDelivery;
+
+  /// No description provided for @rentalDeliverTo.
+  ///
+  /// In en, this message translates to:
+  /// **'To {place}'**
+  String rentalDeliverTo(String place);
+
+  /// No description provided for @rentalCollectYard.
+  ///
+  /// In en, this message translates to:
+  /// **'Collect from yard'**
+  String get rentalCollectYard;
+
+  /// No description provided for @rentalChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get rentalChange;
+
+  /// No description provided for @rentalDeliverToMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Deliver to me'**
+  String get rentalDeliverToMe;
+
+  /// No description provided for @rentalCollectFromYard.
+  ///
+  /// In en, this message translates to:
+  /// **'Collect from yard'**
+  String get rentalCollectFromYard;
+
+  /// No description provided for @rentalAssignOperator.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign a certified operator'**
+  String get rentalAssignOperator;
+
+  /// No description provided for @rentalOperatorDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'+{amount}'**
+  String rentalOperatorDaily(String amount);
+
+  /// No description provided for @rentalMicroInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Micro-insurance'**
+  String get rentalMicroInsurance;
+
+  /// No description provided for @rentalInsurancePerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} / day'**
+  String rentalInsurancePerDay(String amount);
+
+  /// No description provided for @rentalOperatorNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Our operator will deliver, start and return the machine. You don\'t need to be there — but someone over 18 must be.'**
+  String get rentalOperatorNote;
+
+  /// No description provided for @rentalPriceBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Price Breakdown'**
+  String get rentalPriceBreakdown;
+
+  /// No description provided for @rentalFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental fee'**
+  String get rentalFee;
+
+  /// No description provided for @rentalFeeDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days × {rate}'**
+  String rentalFeeDetail(int days, String rate);
+
+  /// No description provided for @rentalInsuranceDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'{rate} / day × {days} days'**
+  String rentalInsuranceDetail(String rate, int days);
+
+  /// No description provided for @rentalOperator.
+  ///
+  /// In en, this message translates to:
+  /// **'Operator'**
+  String get rentalOperator;
+
+  /// No description provided for @rentalOperatorDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days × {rate}'**
+  String rentalOperatorDetail(int days, String rate);
+
+  /// No description provided for @rentalOperatorNotRequested.
+  ///
+  /// In en, this message translates to:
+  /// **'Not requested'**
+  String get rentalOperatorNotRequested;
+
+  /// No description provided for @rentalAmountDash.
+  ///
+  /// In en, this message translates to:
+  /// **'—'**
+  String get rentalAmountDash;
+
+  /// No description provided for @rentalChargedToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Total charged today'**
+  String get rentalChargedToday;
+
+  /// No description provided for @rentalChargedIncludes.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes rental, logistics & insurance'**
+  String get rentalChargedIncludes;
+
+  /// No description provided for @rentalChargedIncludesOperator.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes operator deployment fee'**
+  String get rentalChargedIncludesOperator;
+
+  /// No description provided for @rentalRefundableDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Refundable caution deposit'**
+  String get rentalRefundableDeposit;
+
+  /// No description provided for @rentalDepositBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Held by GCC. Refunded to your GCC wallet once the yard records the return condition and you approve it. Not part of the {amount} above.'**
+  String rentalDepositBody(String amount);
+
+  /// No description provided for @rentalBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get rentalBack;
+
+  /// No description provided for @rentalContinuePayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to payment'**
+  String get rentalContinuePayment;
 }
 
 class _AppLocalizationsDelegate

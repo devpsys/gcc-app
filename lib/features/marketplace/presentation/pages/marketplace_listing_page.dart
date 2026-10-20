@@ -19,11 +19,13 @@ class MarketplaceListingPage extends StatelessWidget {
   const MarketplaceListingPage({
     required this.state,
     required this.onOpen,
+    required this.onBookNow,
     super.key,
   });
 
   final MarketplaceListingReady state;
   final ValueChanged<String> onOpen;
+  final VoidCallback onBookNow;
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +107,7 @@ class MarketplaceListingPage extends StatelessWidget {
             ],
           ),
         ),
-        MarketplaceListingFooter(listing: listing),
+        MarketplaceListingFooter(listing: listing, onBookNow: onBookNow),
       ],
     );
   }

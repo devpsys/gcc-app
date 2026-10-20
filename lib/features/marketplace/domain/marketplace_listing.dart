@@ -25,6 +25,7 @@ class MarketplaceListing extends Equatable {
     this.inBrowse = true,
     this.distance,
     this.deliveryFee = 0,
+    this.operatorDailyFee = 0,
     this.photoCount = 1,
     this.videoCaption,
     this.specs = const [],
@@ -60,6 +61,9 @@ class MarketplaceListing extends Equatable {
   final bool inBrowse;
   final String? distance;
   final int deliveryFee;
+
+  /// Daily fee when the lessee assigns a certified operator.
+  final int operatorDailyFee;
   final int photoCount;
   final String? videoCaption;
   final List<MarketplaceSpec> specs;
@@ -90,6 +94,7 @@ class MarketplaceListing extends Equatable {
     inBrowse,
     distance,
     deliveryFee,
+    operatorDailyFee,
     photoCount,
     videoCaption,
     specs,

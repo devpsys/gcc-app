@@ -3,6 +3,7 @@ import 'package:gcc_app/core/di/auth_module.dart';
 import 'package:gcc_app/core/di/capture_module.dart';
 import 'package:gcc_app/core/di/field_ops_module.dart';
 import 'package:gcc_app/core/di/sync_module.dart';
+import 'package:gcc_app/core/di/booking_module.dart';
 import 'package:gcc_app/core/di/marketplace_module.dart';
 import 'package:gcc_app/core/di/vendor_module.dart';
 import 'package:gcc_app/core/di/wallet_module.dart';
@@ -38,6 +39,7 @@ Future<void> configureDependencies({
   registerWalletModule();
   registerVendorModule();
   registerMarketplaceModule();
+  registerBookingModule();
   await prepareAuthSession();
   getIt.registerLazySingleton<GoRouter>(createAppRouter);
 }

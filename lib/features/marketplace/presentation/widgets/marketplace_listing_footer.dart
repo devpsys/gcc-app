@@ -10,9 +10,14 @@ import 'package:gcc_app/features/marketplace/domain/marketplace_rates.dart';
 
 /// Sticky book bar. The deposit stays off the payable total.
 class MarketplaceListingFooter extends StatelessWidget {
-  const MarketplaceListingFooter({required this.listing, super.key});
+  const MarketplaceListingFooter({
+    required this.listing,
+    this.onBookNow,
+    super.key,
+  });
 
   final MarketplaceListing listing;
+  final VoidCallback? onBookNow;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +57,8 @@ class MarketplaceListingFooter extends StatelessWidget {
                         child: Text(
                           fullNaira(listing.dailyRate),
                           style: AppTextStyles.tabular(
-                            Theme.of(context).textTheme.titleLarge!.copyWith(
-                              fontWeight: FontWeight.w700,
-                            ),
+                            Theme.of(context).textTheme.titleLarge!
+                                .copyWith(fontWeight: FontWeight.w700),
                           ),
                         ),
                       ),
@@ -63,9 +67,8 @@ class MarketplaceListingFooter extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: AppTextStyles.tabular(
-                          Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: colors.muted,
-                          ),
+                          Theme.of(context).textTheme.bodySmall!
+                              .copyWith(color: colors.muted),
                         ),
                       ),
                       Row(
@@ -101,8 +104,10 @@ class MarketplaceListingFooter extends StatelessWidget {
                   flex: 2,
                   child: AppPrimaryButton(
                     label: l10n.marketplaceBookNow,
-                    onPressed: null,
-                    disabledReason: l10n.dashboardActionUnavailable,
+                    onPressed: onBookNow,
+                    disabledReason: onBookNow == null
+                        ? l10n.dashboardActionUnavailable
+                        : null,
                   ),
                 ),
               ],

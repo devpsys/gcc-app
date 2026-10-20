@@ -33,9 +33,12 @@ abstract final class RoutePaths {
   static const String vendorNotifications = '/vendor/profile/notifications';
   static const String browse = '/browse';
   static const String marketplaceListing = '/browse/:id';
+  static const String rentalRequest = '/browse/:id/request';
 
   static String vendorAssetEditOf(String reference) =>
       '/vendor/catalog/edit/$reference';
 
   static String marketplaceListingOf(String id) => '/browse/$id';
+
+  static String rentalRequestOf(String id) => '/browse/$id/request';
 }

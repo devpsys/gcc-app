@@ -2635,5 +2635,84 @@
   "marketplaceBookNow": "Book now",
   "marketplaceShare": "Share",
   "marketplaceMore": "More",
-  "marketplaceMissing": "This listing is no longer available."
+  "marketplaceMissing": "This listing is no longer available.",
+  "rentalWhenTitle": "When do you need it?",
+  "rentalFrom": "From",
+  "rentalTo": "To",
+  "rentalDuration": "{count, plural, one{{count} day · billing by calendar day, rounded up} other{{count} days · billing by calendar day, rounded up}}",
+  "@rentalDuration": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "rentalDurationInvalid": "1 day (invalid chronological order)",
+  "rentalDatesInvalid": "Return date must be after the collection date",
+  "rentalChooseAfter": "Choose a date after {when}",
+  "@rentalChooseAfter": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "rentalQuickCorrections": "Quick date corrections",
+  "rentalPlus1Day": "+1 day",
+  "rentalPlus2Days": "+2 days",
+  "rentalPlus3Days": "+3 days",
+  "rentalPlus1Week": "+1 week",
+  "rentalReview": "Review booking",
+  "rentalChooseValidFirst": "Choose valid dates first",
+  "rentalCloseDates": "Close",
+  "rentalConfirmTitle": "Confirm booking",
+  "rentalDates": "Dates",
+  "rentalDelivery": "Delivery",
+  "rentalDeliverTo": "To {place}",
+  "@rentalDeliverTo": {
+    "placeholders": { "place": { "type": "String" } }
+  },
+  "rentalCollectYard": "Collect from yard",
+  "rentalChange": "Change",
+  "rentalDeliverToMe": "Deliver to me",
+  "rentalCollectFromYard": "Collect from yard",
+  "rentalAssignOperator": "Assign a certified operator",
+  "rentalOperatorDaily": "+{amount}",
+  "@rentalOperatorDaily": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalMicroInsurance": "Micro-insurance",
+  "rentalInsurancePerDay": "{amount} / day",
+  "@rentalInsurancePerDay": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalOperatorNote": "Our operator will deliver, start and return the machine. You don't need to be there — but someone over 18 must be.",
+  "rentalPriceBreakdown": "Price Breakdown",
+  "rentalFee": "Rental fee",
+  "rentalFeeDetail": "{days} days × {rate}",
+  "@rentalFeeDetail": {
+    "placeholders": {
+      "days": { "type": "int" },
+      "rate": { "type": "String" }
+    }
+  },
+  "rentalInsuranceDetail": "{rate} / day × {days} days",
+  "@rentalInsuranceDetail": {
+    "placeholders": {
+      "rate": { "type": "String" },
+      "days": { "type": "int" }
+    }
+  },
+  "rentalOperator": "Operator",
+  "rentalOperatorDetail": "{days} days × {rate}",
+  "@rentalOperatorDetail": {
+    "placeholders": {
+      "days": { "type": "int" },
+      "rate": { "type": "String" }
+    }
+  },
+  "rentalOperatorNotRequested": "Not requested",
+  "rentalAmountDash": "—",
+  "rentalChargedToday": "Total charged today",
+  "rentalChargedIncludes": "Includes rental, logistics & insurance",
+  "rentalChargedIncludesOperator": "Includes operator deployment fee",
+  "rentalRefundableDeposit": "Refundable caution deposit",
+  "rentalDepositBody": "Held by GCC. Refunded to your GCC wallet once the yard records the return condition and you approve it. Not part of the {amount} above.",
+  "@rentalDepositBody": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalBack": "Back",
+  "rentalContinuePayment": "Continue to payment"
 }

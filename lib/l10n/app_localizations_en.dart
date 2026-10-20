@@ -4178,4 +4178,160 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get marketplaceMissing => 'This listing is no longer available.';
+
+  @override
+  String get rentalWhenTitle => 'When do you need it?';
+
+  @override
+  String get rentalFrom => 'From';
+
+  @override
+  String get rentalTo => 'To';
+
+  @override
+  String rentalDuration(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days · billing by calendar day, rounded up',
+      one: '$count day · billing by calendar day, rounded up',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get rentalDurationInvalid => '1 day (invalid chronological order)';
+
+  @override
+  String get rentalDatesInvalid =>
+      'Return date must be after the collection date';
+
+  @override
+  String rentalChooseAfter(String when) {
+    return 'Choose a date after $when';
+  }
+
+  @override
+  String get rentalQuickCorrections => 'Quick date corrections';
+
+  @override
+  String get rentalPlus1Day => '+1 day';
+
+  @override
+  String get rentalPlus2Days => '+2 days';
+
+  @override
+  String get rentalPlus3Days => '+3 days';
+
+  @override
+  String get rentalPlus1Week => '+1 week';
+
+  @override
+  String get rentalReview => 'Review booking';
+
+  @override
+  String get rentalChooseValidFirst => 'Choose valid dates first';
+
+  @override
+  String get rentalCloseDates => 'Close';
+
+  @override
+  String get rentalConfirmTitle => 'Confirm booking';
+
+  @override
+  String get rentalDates => 'Dates';
+
+  @override
+  String get rentalDelivery => 'Delivery';
+
+  @override
+  String rentalDeliverTo(String place) {
+    return 'To $place';
+  }
+
+  @override
+  String get rentalCollectYard => 'Collect from yard';
+
+  @override
+  String get rentalChange => 'Change';
+
+  @override
+  String get rentalDeliverToMe => 'Deliver to me';
+
+  @override
+  String get rentalCollectFromYard => 'Collect from yard';
+
+  @override
+  String get rentalAssignOperator => 'Assign a certified operator';
+
+  @override
+  String rentalOperatorDaily(String amount) {
+    return '+$amount';
+  }
+
+  @override
+  String get rentalMicroInsurance => 'Micro-insurance';
+
+  @override
+  String rentalInsurancePerDay(String amount) {
+    return '$amount / day';
+  }
+
+  @override
+  String get rentalOperatorNote =>
+      'Our operator will deliver, start and return the machine. You don\'t need to be there — but someone over 18 must be.';
+
+  @override
+  String get rentalPriceBreakdown => 'Price Breakdown';
+
+  @override
+  String get rentalFee => 'Rental fee';
+
+  @override
+  String rentalFeeDetail(int days, String rate) {
+    return '$days days × $rate';
+  }
+
+  @override
+  String rentalInsuranceDetail(String rate, int days) {
+    return '$rate / day × $days days';
+  }
+
+  @override
+  String get rentalOperator => 'Operator';
+
+  @override
+  String rentalOperatorDetail(int days, String rate) {
+    return '$days days × $rate';
+  }
+
+  @override
+  String get rentalOperatorNotRequested => 'Not requested';
+
+  @override
+  String get rentalAmountDash => '—';
+
+  @override
+  String get rentalChargedToday => 'Total charged today';
+
+  @override
+  String get rentalChargedIncludes => 'Includes rental, logistics & insurance';
+
+  @override
+  String get rentalChargedIncludesOperator =>
+      'Includes operator deployment fee';
+
+  @override
+  String get rentalRefundableDeposit => 'Refundable caution deposit';
+
+  @override
+  String rentalDepositBody(String amount) {
+    return 'Held by GCC. Refunded to your GCC wallet once the yard records the return condition and you approve it. Not part of the $amount above.';
+  }
+
+  @override
+  String get rentalBack => 'Back';
+
+  @override
+  String get rentalContinuePayment => 'Continue to payment';
 }
