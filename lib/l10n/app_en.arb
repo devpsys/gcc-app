@@ -2596,14 +2596,16 @@
   "marketplaceSpecCondition": "Condition",
   "marketplaceSpecHours": "Hours",
   "marketplaceIncluded": "What's included",
-  "marketplaceRates": "Rates",
+  "marketplaceRates": "Rental Rates",
   "marketplaceDaily": "Daily",
   "marketplaceWeekly": "Weekly",
+  "marketplaceWeeklySave": "Save 7%",
   "marketplaceMonthly": "Monthly",
   "marketplaceRateNote": "Longer bookings get better rates. Rates apply per calendar day, rounded up.",
-  "marketplaceDepositTitle": "Refundable deposit",
-  "marketplaceDepositBody": "Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard's return condition video is approved. Not part of what you pay for the equipment. You get it back.",
-  "marketplaceInsurance": "Micro-insurance",
+  "marketplaceDepositTitle": "REFUNDABLE CAUTION DEPOSIT",
+  "marketplaceDepositBody": "Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard's return condition video is approved.",
+  "marketplaceDepositFootnote": "Not part of what you pay for the equipment. You get it back.",
+  "marketplaceInsurance": "MICRO-INSURANCE",
   "marketplaceInsurancePerDay": "{amount} per day",
   "@marketplaceInsurancePerDay": {
     "placeholders": { "amount": { "type": "String" } }
@@ -2612,22 +2614,26 @@
   "@marketplaceInsuranceStay": {
     "placeholders": { "amount": { "type": "String" } }
   },
-  "marketplaceInsuranceNote": "1.5% of the daily rate, minimum ₦500 per day.",
-  "marketplaceAudit": "Condition audit",
-  "marketplaceLocation": "Location",
+  "marketplaceInsuranceNote": "1.5% of the daily rate, minimum ₦500/day. Covers accidental damage during the rental. Charged automatically at checkout.",
+  "marketplaceAudit": "Condition verification audit",
+  "marketplaceAuditWithin": "✓ {detail}",
+  "@marketplaceAuditWithin": {
+    "placeholders": { "detail": { "type": "String" } }
+  },
+  "marketplaceLocation": "Location & yard access",
   "marketplaceSimilar": "Similar equipment",
+  "marketplacePerDaySlash": "/day",
   "marketplaceReport": "Report this listing",
-  "marketplaceStay": "{rate} per day · Est. 3-day total {total}",
-  "@marketplaceStay": {
-    "placeholders": {
-      "rate": { "type": "String" },
-      "total": { "type": "String" }
-    }
+  "marketplaceStayEstimate": "per day · Est. 3-day total {total}",
+  "@marketplaceStayEstimate": {
+    "placeholders": { "total": { "type": "String" } }
   },
   "marketplaceRefundable": "+ {amount} refundable deposit",
   "@marketplaceRefundable": {
     "placeholders": { "amount": { "type": "String" } }
   },
   "marketplaceBookNow": "Book now",
+  "marketplaceShare": "Share",
+  "marketplaceMore": "More",
   "marketplaceMissing": "This listing is no longer available."
 }

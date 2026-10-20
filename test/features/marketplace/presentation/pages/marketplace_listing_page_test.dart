@@ -5,19 +5,24 @@ import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listi
 import 'package:gcc_app/features/marketplace/presentation/gateway/mock_marketplace_gateway.dart';
 import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_listing_screen.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_deposit_card.dart';
+import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_listing_footer.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_rate_card.dart';
 
 import '../../../../helpers/pump_app.dart';
 
 void main() {
-  testWidgets('shows the rate, the locked deposit, and the three-day total', (
+  testWidgets('shows the rate, the locked deposit, and the sticky book bar', (
     tester,
   ) async {
     await _pump(tester);
 
     expect(find.text('Mika 100kVA Diesel Generator Set'), findsOneWidget);
+    expect(find.text('MIKA 100'), findsOneWidget);
+    expect(find.text('DIESEL SILENT'), findsOneWidget);
+
     await _reveal(tester, find.text('₦196,000'));
     expect(find.text('₦196,000'), findsOneWidget);
+    expect(find.text('Save 7%'), findsOneWidget);
     expect(find.text('₦700,000'), findsOneWidget);
 
     await _reveal(tester, find.byType(MarketplaceDepositCard));
@@ -33,12 +38,30 @@ void main() {
       ),
       findsNothing,
     );
+    expect(
+      find.textContaining('Not part of what you pay for the equipment'),
+      findsOneWidget,
+    );
 
-    await _reveal(tester, find.textContaining('₦114,075'));
-    expect(find.textContaining('₦114,075'), findsOneWidget);
-    await _reveal(tester, find.text('Book now'));
+    await _reveal(tester, find.text('Mika 60kVA Diesel Generator Set'));
+    expect(find.text('Mika 60kVA Diesel Generator Set'), findsOneWidget);
+    await _reveal(tester, find.text('20kVA Silent Generator'));
+    expect(find.text('20kVA Silent Generator'), findsOneWidget);
+
+    final footer = find.byType(MarketplaceListingFooter);
+    expect(
+      find.descendant(of: footer, matching: find.text('₦35,000')),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(of: footer, matching: find.textContaining('₦114,075')),
+      findsOneWidget,
+    );
     final book = tester.widget<FilledButton>(
-      find.widgetWithText(FilledButton, 'Book now'),
+      find.descendant(
+        of: footer,
+        matching: find.widgetWithText(FilledButton, 'Book now'),
+      ),
     );
     expect(book.onPressed, isNull);
   });
@@ -46,7 +69,8 @@ void main() {
   testWidgets('lays out at 320×640 with text scale 2', (tester) async {
     await _pump(tester, size: const Size(320, 640), scale: 2);
 
-    await tester.drag(find.byType(ListView), const Offset(0, -900));
+    final list = find.byKey(const Key('marketplace-listing-body'));
+    await tester.drag(list, const Offset(0, -900), warnIfMissed: false);
     await tester.pumpAndSettle();
 
     expect(tester.takeException(), isNull);
@@ -54,12 +78,12 @@ void main() {
 }
 
 Future<void> _reveal(WidgetTester tester, Finder target) async {
-  final list = find.byType(ListView);
-  for (var step = 0; step < 8; step++) {
+  final list = find.byKey(const Key('marketplace-listing-body'));
+  for (var step = 0; step < 12; step++) {
     if (target.hitTestable().evaluate().isNotEmpty) {
       return;
     }
-    await tester.drag(list, const Offset(0, -350));
+    await tester.drag(list, const Offset(0, -350), warnIfMissed: false);
     await tester.pumpAndSettle();
   }
 }

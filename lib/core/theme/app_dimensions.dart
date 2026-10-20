@@ -30,6 +30,13 @@ abstract final class AppDimensions {
   static const double marketplaceListingCard = 140;
   static const double marketplaceListingThumb = 96;
 
+  /// Listing detail from MOB-VND-04.
+  static const double marketplaceThumbStrip = 48;
+  static const double marketplaceAuditVideo = 120;
+  static const double marketplaceMapHeight = 160;
+  static const double marketplaceSimilarRow = 72;
+  static const double marketplaceListingFooter = 72;
+
   /// 200 px — the location map preview in the capture and field-ops designs.
   static const double locationMapHeight = 200;
   static const double accentBorderWidth = 3;

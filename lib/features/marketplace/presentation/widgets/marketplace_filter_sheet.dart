@@ -47,7 +47,7 @@ class MarketplaceFilterSheet extends StatelessWidget {
             ),
             const SizedBox(height: AppSpacing.xs),
             Text(
-              l10n.marketplaceAllMarketsResults(state.listings.length),
+              l10n.marketplaceAllMarketsResults(state.browseListings.length),
               style: Theme.of(context).textTheme.bodySmall
                   ?.copyWith(color: context.semanticColors.muted),
             ),

@@ -4091,13 +4091,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get marketplaceIncluded => 'What\'s included';
 
   @override
-  String get marketplaceRates => 'Rates';
+  String get marketplaceRates => 'Rental Rates';
 
   @override
   String get marketplaceDaily => 'Daily';
 
   @override
   String get marketplaceWeekly => 'Weekly';
+
+  @override
+  String get marketplaceWeeklySave => 'Save 7%';
 
   @override
   String get marketplaceMonthly => 'Monthly';
@@ -4107,14 +4110,18 @@ class AppLocalizationsEn extends AppLocalizations {
       'Longer bookings get better rates. Rates apply per calendar day, rounded up.';
 
   @override
-  String get marketplaceDepositTitle => 'Refundable deposit';
+  String get marketplaceDepositTitle => 'REFUNDABLE CAUTION DEPOSIT';
 
   @override
   String get marketplaceDepositBody =>
-      'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved. Not part of what you pay for the equipment. You get it back.';
+      'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved.';
 
   @override
-  String get marketplaceInsurance => 'Micro-insurance';
+  String get marketplaceDepositFootnote =>
+      'Not part of what you pay for the equipment. You get it back.';
+
+  @override
+  String get marketplaceInsurance => 'MICRO-INSURANCE';
 
   @override
   String marketplaceInsurancePerDay(String amount) {
@@ -4128,23 +4135,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get marketplaceInsuranceNote =>
-      '1.5% of the daily rate, minimum ₦500 per day.';
+      '1.5% of the daily rate, minimum ₦500/day. Covers accidental damage during the rental. Charged automatically at checkout.';
 
   @override
-  String get marketplaceAudit => 'Condition audit';
+  String get marketplaceAudit => 'Condition verification audit';
 
   @override
-  String get marketplaceLocation => 'Location';
+  String marketplaceAuditWithin(String detail) {
+    return '✓ $detail';
+  }
+
+  @override
+  String get marketplaceLocation => 'Location & yard access';
 
   @override
   String get marketplaceSimilar => 'Similar equipment';
 
   @override
+  String get marketplacePerDaySlash => '/day';
+
+  @override
   String get marketplaceReport => 'Report this listing';
 
   @override
-  String marketplaceStay(String rate, String total) {
-    return '$rate per day · Est. 3-day total $total';
+  String marketplaceStayEstimate(String total) {
+    return 'per day · Est. 3-day total $total';
   }
 
   @override
@@ -4154,6 +4169,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get marketplaceBookNow => 'Book now';
+
+  @override
+  String get marketplaceShare => 'Share';
+
+  @override
+  String get marketplaceMore => 'More';
 
   @override
   String get marketplaceMissing => 'This listing is no longer available.';

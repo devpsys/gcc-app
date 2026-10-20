@@ -46,12 +46,18 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
   final bool rateDepositConflict;
   final bool nearMeNotice;
 
-  List<MarketplaceListing> get visible => matchingListings(listings, filters);
+  List<MarketplaceListing> get browseListings => [
+    for (final listing in listings)
+      if (listing.inBrowse) listing,
+  ];
+
+  List<MarketplaceListing> get visible =>
+      matchingListings(browseListings, filters);
 
   List<String> get markets {
     final found = <String>{};
     final ordered = <String>[];
-    for (final listing in listings) {
+    for (final listing in browseListings) {
       if (found.add(listing.market)) {
         ordered.add(listing.market);
       }
@@ -61,7 +67,7 @@ final class MarketplaceBrowseReady extends MarketplaceBrowseState {
 
   List<MarketplaceCategoryFacet> get categoryFacets {
     final counts = <String, int>{};
-    for (final listing in listings) {
+    for (final listing in browseListings) {
       counts[listing.category] = (counts[listing.category] ?? 0) + 1;
     }
     return [

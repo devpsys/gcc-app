@@ -14,7 +14,10 @@ void main() {
   });
 
   test('available now and a search narrow the seeded listings', () {
-    final listings = MockMarketplaceGateway.catalog.listings;
+    final listings = [
+      for (final listing in MockMarketplaceGateway.catalog.listings)
+        if (listing.inBrowse) listing,
+    ];
 
     final available = matchingListings(
       listings,

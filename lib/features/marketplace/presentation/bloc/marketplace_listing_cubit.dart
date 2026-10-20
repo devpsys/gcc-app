@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/error/failures.dart';
+import 'package:gcc_app/features/marketplace/domain/marketplace_listing.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_state.dart';
 import 'package:gcc_app/features/marketplace/presentation/gateway/marketplace_gateway.dart';
 
@@ -14,22 +15,22 @@ class MarketplaceListingCubit extends Cubit<MarketplaceListingState> {
     emit(const MarketplaceListingLoading());
     try {
       final catalog = await _gateway.load();
-      MarketplaceListingReady? ready;
-      for (final listing in catalog.listings) {
-        if (listing.id != id) {
-          continue;
+      MarketplaceListing? listing;
+      for (final item in catalog.listings) {
+        if (item.id == id) {
+          listing = item;
+          break;
         }
-        ready = MarketplaceListingReady(
-          listing: listing,
-          similar: [
-            for (final other in catalog.listings)
-              if (other.id != listing.id && other.category == listing.category)
-                other,
-          ],
-        );
-        break;
       }
-      emit(ready ?? const MarketplaceListingMissing());
+      if (listing == null) {
+        emit(const MarketplaceListingMissing());
+        return;
+      }
+      final byId = {for (final item in catalog.listings) item.id: item};
+      final similar = <MarketplaceListing>[
+        for (final similarId in listing.similarIds) ?byId[similarId],
+      ];
+      emit(MarketplaceListingReady(listing: listing, similar: similar));
     } on Failure catch (failure) {
       emit(MarketplaceListingFailed(failure));
     }

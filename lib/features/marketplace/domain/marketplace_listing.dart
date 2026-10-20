@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:gcc_app/features/marketplace/domain/marketplace_audit_clip.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_availability.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_spec.dart';
 
@@ -17,17 +18,21 @@ class MarketplaceListing extends Equatable {
     required this.availability,
     required this.withOperator,
     this.thumbBadge,
+    this.heroMark,
+    this.heroTagline,
     this.unavailableUntil,
     this.verified = false,
+    this.inBrowse = true,
     this.distance,
     this.deliveryFee = 0,
     this.photoCount = 1,
     this.videoCaption,
     this.specs = const [],
     this.included = const [],
-    this.checkOut,
-    this.checkIn,
+    this.auditClips = const [],
+    this.accessZone,
     this.access,
+    this.similarIds = const [],
   });
 
   final String id;
@@ -42,19 +47,27 @@ class MarketplaceListing extends Equatable {
   final MarketplaceAvailability availability;
   final bool withOperator;
 
-  /// Mono label on the thumbnail, e.g. `100 kVA · 23`.
+  /// Mono label on the browse thumbnail, e.g. `100 kVA · 23`.
   final String? thumbBadge;
+
+  /// Large mark on the listing hero, e.g. `MIKA 100`.
+  final String? heroMark;
+  final String? heroTagline;
   final String? unavailableUntil;
   final bool verified;
+
+  /// When false, the listing is only opened from similar or a deep link.
+  final bool inBrowse;
   final String? distance;
   final int deliveryFee;
   final int photoCount;
   final String? videoCaption;
   final List<MarketplaceSpec> specs;
   final List<String> included;
-  final String? checkOut;
-  final String? checkIn;
+  final List<MarketplaceAuditClip> auditClips;
+  final String? accessZone;
   final String? access;
+  final List<String> similarIds;
 
   @override
   List<Object?> get props => [
@@ -70,16 +83,20 @@ class MarketplaceListing extends Equatable {
     availability,
     withOperator,
     thumbBadge,
+    heroMark,
+    heroTagline,
     unavailableUntil,
     verified,
+    inBrowse,
     distance,
     deliveryFee,
     photoCount,
     videoCaption,
     specs,
     included,
-    checkOut,
-    checkIn,
+    auditClips,
+    accessZone,
     access,
+    similarIds,
   ];
 }

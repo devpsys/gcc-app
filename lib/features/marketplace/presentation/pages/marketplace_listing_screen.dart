@@ -4,9 +4,6 @@ import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
-import 'package:gcc_app/core/widgets/app_shell.dart';
-import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
-import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_language_chip.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_cubit.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_state.dart';
 import 'package:gcc_app/features/marketplace/presentation/pages/marketplace_listing_page.dart';
@@ -20,13 +17,23 @@ class MarketplaceListingScreen extends StatelessWidget {
     final l10n = context.l10n;
     return BlocBuilder<MarketplaceListingCubit, MarketplaceListingState>(
       builder: (context, state) {
-        return AppShell(
-          title: l10n.dashboardBrowseEquipment,
-          menuLabel: l10n.openNavigationMenu,
-          selectedLocation: RoutePaths.browse,
-          destinations: DashboardDestinations.lessee(l10n),
-          actions: const [DashboardLanguageChip()],
-          child: switch (state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(l10n.dashboardBrowseEquipment),
+            actions: [
+              IconButton(
+                tooltip: l10n.marketplaceShare,
+                onPressed: null,
+                icon: const Icon(Icons.ios_share_outlined),
+              ),
+              IconButton(
+                tooltip: l10n.marketplaceMore,
+                onPressed: null,
+                icon: const Icon(Icons.more_vert),
+              ),
+            ],
+          ),
+          body: switch (state) {
             MarketplaceListingLoading() => const Center(
               child: AppLoadingIndicator(),
             ),

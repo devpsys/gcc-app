@@ -1,3 +1,4 @@
+import 'package:gcc_app/features/marketplace/domain/marketplace_audit_clip.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_availability.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_catalog.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_listing.dart';
@@ -26,6 +27,8 @@ class MockMarketplaceGateway implements MarketplaceGateway {
         category: 'Generators',
         specification: '100 kVA · Diesel · 2023',
         thumbBadge: '100 kVA · 23',
+        heroMark: 'MIKA 100',
+        heroTagline: 'DIESEL SILENT',
         dailyRate: 35000,
         deposit: 50000,
         deliveryFee: 7500,
@@ -52,9 +55,39 @@ class MockMarketplaceGateway implements MarketplaceGateway {
           'Fuel for the first 4 hours',
           'Delivery, collection and a certified operator',
         ],
-        checkOut: '14 Oct 08:15 · Check-out within 120 m',
-        checkIn: '17 Oct 16:40 · Check-in within 120 m',
+        auditClips: [
+          MarketplaceAuditClip(
+            time: '14 Oct 08:15',
+            title: 'Check-out',
+            detail: 'within 120 m of yard',
+          ),
+          MarketplaceAuditClip(
+            time: '17 Oct 16:40',
+            title: 'Check-in',
+            detail: 'within 120 m of yard',
+          ),
+        ],
+        accessZone: 'ZONE C',
         access: 'Kugbo Market · Zone C · Line 4 · beside Bola Hardware',
+        similarIds: ['mika-60', 'silent-20'],
+      ),
+      MarketplaceListing(
+        id: 'mika-60',
+        title: 'Mika 60kVA Diesel Generator Set',
+        yard: 'Kugbo Generator Yard',
+        market: 'Kugbo',
+        place: 'Kugbo Market',
+        category: 'Generators',
+        specification: '60 kVA · Diesel · 2022',
+        thumbBadge: '60 kVA',
+        heroMark: 'MIKA 60',
+        heroTagline: 'DIESEL SILENT',
+        dailyRate: 24000,
+        deposit: 40000,
+        availability: MarketplaceAvailability.available,
+        withOperator: true,
+        inBrowse: false,
+        similarIds: ['mika-100', 'silent-20'],
       ),
       MarketplaceListing(
         id: 'pa-5kw',

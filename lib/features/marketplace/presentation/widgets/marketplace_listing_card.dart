@@ -125,9 +125,7 @@ class MarketplaceListingCard extends StatelessWidget {
                                     Text(
                                       fullNaira(listing.dailyRate),
                                       style: AppTextStyles.tabular(
-                                        Theme.of(context)
-                                            .textTheme
-                                            .titleSmall!
+                                        Theme.of(context).textTheme.titleSmall!
                                             .copyWith(
                                               fontWeight: FontWeight.w600,
                                             ),

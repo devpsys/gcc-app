@@ -7103,7 +7103,7 @@ abstract class AppLocalizations {
   /// No description provided for @marketplaceRates.
   ///
   /// In en, this message translates to:
-  /// **'Rates'**
+  /// **'Rental Rates'**
   String get marketplaceRates;
 
   /// No description provided for @marketplaceDaily.
@@ -7117,6 +7117,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Weekly'**
   String get marketplaceWeekly;
+
+  /// No description provided for @marketplaceWeeklySave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save 7%'**
+  String get marketplaceWeeklySave;
 
   /// No description provided for @marketplaceMonthly.
   ///
@@ -7133,19 +7139,25 @@ abstract class AppLocalizations {
   /// No description provided for @marketplaceDepositTitle.
   ///
   /// In en, this message translates to:
-  /// **'Refundable deposit'**
+  /// **'REFUNDABLE CAUTION DEPOSIT'**
   String get marketplaceDepositTitle;
 
   /// No description provided for @marketplaceDepositBody.
   ///
   /// In en, this message translates to:
-  /// **'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved. Not part of what you pay for the equipment. You get it back.'**
+  /// **'Held by GCC, not by the vendor. Refunded to your GCC wallet once the yard\'s return condition video is approved.'**
   String get marketplaceDepositBody;
+
+  /// No description provided for @marketplaceDepositFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'Not part of what you pay for the equipment. You get it back.'**
+  String get marketplaceDepositFootnote;
 
   /// No description provided for @marketplaceInsurance.
   ///
   /// In en, this message translates to:
-  /// **'Micro-insurance'**
+  /// **'MICRO-INSURANCE'**
   String get marketplaceInsurance;
 
   /// No description provided for @marketplaceInsurancePerDay.
@@ -7163,19 +7175,25 @@ abstract class AppLocalizations {
   /// No description provided for @marketplaceInsuranceNote.
   ///
   /// In en, this message translates to:
-  /// **'1.5% of the daily rate, minimum ₦500 per day.'**
+  /// **'1.5% of the daily rate, minimum ₦500/day. Covers accidental damage during the rental. Charged automatically at checkout.'**
   String get marketplaceInsuranceNote;
 
   /// No description provided for @marketplaceAudit.
   ///
   /// In en, this message translates to:
-  /// **'Condition audit'**
+  /// **'Condition verification audit'**
   String get marketplaceAudit;
+
+  /// No description provided for @marketplaceAuditWithin.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ {detail}'**
+  String marketplaceAuditWithin(String detail);
 
   /// No description provided for @marketplaceLocation.
   ///
   /// In en, this message translates to:
-  /// **'Location'**
+  /// **'Location & yard access'**
   String get marketplaceLocation;
 
   /// No description provided for @marketplaceSimilar.
@@ -7184,17 +7202,23 @@ abstract class AppLocalizations {
   /// **'Similar equipment'**
   String get marketplaceSimilar;
 
+  /// No description provided for @marketplacePerDaySlash.
+  ///
+  /// In en, this message translates to:
+  /// **'/day'**
+  String get marketplacePerDaySlash;
+
   /// No description provided for @marketplaceReport.
   ///
   /// In en, this message translates to:
   /// **'Report this listing'**
   String get marketplaceReport;
 
-  /// No description provided for @marketplaceStay.
+  /// No description provided for @marketplaceStayEstimate.
   ///
   /// In en, this message translates to:
-  /// **'{rate} per day · Est. 3-day total {total}'**
-  String marketplaceStay(String rate, String total);
+  /// **'per day · Est. 3-day total {total}'**
+  String marketplaceStayEstimate(String total);
 
   /// No description provided for @marketplaceRefundable.
   ///
@@ -7207,6 +7231,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Book now'**
   String get marketplaceBookNow;
+
+  /// No description provided for @marketplaceShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get marketplaceShare;
+
+  /// No description provided for @marketplaceMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get marketplaceMore;
 
   /// No description provided for @marketplaceMissing.
   ///
