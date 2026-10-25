@@ -24,11 +24,10 @@ void main() {
     expect(find.textContaining('Held in escrow'), findsOneWidget);
     expect(find.textContaining('₦164,075'), findsWidgets);
     expect(find.text('Review return condition'), findsOneWidget);
-
     final review = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, 'Review return condition'),
     );
-    expect(review.onPressed, isNull);
+    expect(review.onPressed, isNotNull);
   });
 
   testWidgets('shows completed detail with deposit release banner', (

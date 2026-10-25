@@ -21,10 +21,10 @@ void main() {
       expect(find.textContaining('₦50,000'), findsWidgets);
       expect(find.byIcon(Icons.lock), findsWidgets);
 
-      final review = tester.widget<OutlinedButton>(
+      expect(
         find.widgetWithText(OutlinedButton, 'Review return condition'),
+        findsOneWidget,
       );
-      expect(review.onPressed, isNull);
     },
   );
 

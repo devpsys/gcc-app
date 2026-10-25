@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_detail.dart';
+import 'package:gcc_app/features/booking/domain/lessee_booking_detail_phase.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_footer.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_header.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_money.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_proofs.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_timeline.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_vendor.dart';
+import 'package:go_router/go_router.dart';
 
 class LesseeBookingDetailPage extends StatelessWidget {
   const LesseeBookingDetailPage({required this.detail, super.key});
@@ -39,7 +42,15 @@ class LesseeBookingDetailPage extends StatelessWidget {
             ],
           ),
         ),
-        LesseeBookingDetailFooter(detail: detail),
+        LesseeBookingDetailFooter(
+          detail: detail,
+          onReviewReturn:
+              detail.phase == LesseeBookingDetailPhase.reviewPending
+              ? () => GoRouter.maybeOf(
+                  context,
+                )?.push(RoutePaths.handbackOf(detail.id))
+              : null,
+        ),
       ],
     );
   }

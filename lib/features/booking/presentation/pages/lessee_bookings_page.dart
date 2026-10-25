@@ -121,12 +121,15 @@ class LesseeBookingsPage extends StatelessWidget {
                       );
                     }
                     final booking = visible[index];
+                    final router = GoRouter.maybeOf(context);
                     return LesseeBookingCard(
                       booking: booking,
-                      onOpen: () {
-                        final router = GoRouter.maybeOf(context);
-                        router?.push(RoutePaths.bookingDetailOf(booking.id));
-                      },
+                      onOpen: () =>
+                          router?.push(RoutePaths.bookingDetailOf(booking.id)),
+                      onReviewReturn: booking.needsAction
+                          ? () =>
+                              router?.push(RoutePaths.handbackOf(booking.id))
+                          : null,
                     );
                   },
                 ),

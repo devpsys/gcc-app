@@ -38,4 +38,5 @@ abstract final class RouteNames {
   static const String rentalPaymentStatus = 'rentalPaymentStatus';
   static const String bookings = 'bookings';
   static const String bookingDetail = 'bookingDetail';
+  static const String handback = 'handback';
 }

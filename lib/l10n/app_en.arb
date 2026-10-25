@@ -2915,5 +2915,80 @@
   "bookingsDetailDepositReleasedBanner": "Deposit released · {amount} is now available in your wallet.",
   "@bookingsDetailDepositReleasedBanner": {
     "placeholders": { "amount": { "type": "String" } }
-  }
+  },
+  "handbackConfirmTitle": "Confirm return",
+  "handbackMissing": "This return review isn't available.",
+  "handbackCheckInBadge": "Check-in inspection",
+  "handbackWatchedBadge": "✓ Watched {duration}",
+  "@handbackWatchedBadge": {
+    "placeholders": { "duration": { "type": "String" } }
+  },
+  "handbackRecordedBy": "Recorded by the yard · {when}",
+  "@handbackRecordedBy": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "handbackVideoComplete": "Video ends at {duration} — the full clip was uploaded.",
+  "@handbackVideoComplete": {
+    "placeholders": { "duration": { "type": "String" } }
+  },
+  "handbackWatchConfirm": "I've watched the full {seconds}-second return video",
+  "@handbackWatchConfirm": {
+    "placeholders": { "seconds": { "type": "int" } }
+  },
+  "handbackWatchHint": "This video is the only record of the machine's condition. GCC can't verify it for you",
+  "handbackWatchBeforeConfirm": "Play the return video first.",
+  "handbackFindingsTitle": "What the yard recorded",
+  "handbackApprovingReleases": "Approving releases",
+  "handbackBackToWallet": "back to your wallet",
+  "handbackToYard": "to {yard}",
+  "@handbackToYard": {
+    "placeholders": { "yard": { "type": "String" } }
+  },
+  "handbackApproveConsequence": "You'll no longer be able to raise an issue about this return.",
+  "handbackCompareCheckout": "Compare with check-out video",
+  "handbackSomethingWrong": "Something is wrong",
+  "handbackApproveRelease": "Approve & release deposit",
+  "handbackApproveHint": "Watch the video and confirm you've seen it",
+  "handbackIssueTitle": "Report an issue",
+  "handbackIssueFreeze": "This freezes {amount} until GCC reviews both videos",
+  "@handbackIssueFreeze": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "handbackIssueFreezeHint": "You'll get an SMS when there's a decision.",
+  "handbackIssueReason": "Reason *",
+  "handbackReasonDamageNotShown": "Damage not shown",
+  "handbackReasonDamageOmitted": "Damage I saw omitted",
+  "handbackReasonWrongMachine": "Wrong machine",
+  "handbackIssueNote": "Tell us what you saw",
+  "handbackIssueNoteHint": "Describe what you noticed in the return video",
+  "handbackIssuePhotos": "Add photos *",
+  "handbackIssueAddPhotos": "Take or upload photos",
+  "handbackIssuePhotoCount": "{count} photos added",
+  "@handbackIssuePhotoCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "handbackIssuePhotosMax": "Up to 6 photos",
+  "handbackIssueClaim": "Damage claimed",
+  "handbackIssueClaimHint": "Amount you're claiming back. Up to {amount}.",
+  "@handbackIssueClaimHint": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "handbackIssueHonesty": "False claims delay every rental in the market. GCC reviews each one.",
+  "handbackIssueCancel": "Cancel",
+  "handbackIssueSubmit": "Submit issue",
+  "handbackIssueSubmitHint": "Choose a reason and add at least one photo",
+  "handbackIssueSubmitted": "Issue submitted. Your deposit stays frozen until GCC decides.",
+  "handbackDepositReleasedTitle": "Deposit released",
+  "handbackReconciliationEyebrow": "Escrow reconciliation summary",
+  "handbackRefundedToYou": "✓ Refunded to you",
+  "handbackPaidToYard": "Paid to {yard}",
+  "@handbackPaidToYard": {
+    "placeholders": { "yard": { "type": "String" } }
+  },
+  "handbackSettled": "Settled · {reference}",
+  "@handbackSettled": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "handbackWalletAvailable": "Available to withdraw in your wallet",
+  "handbackBookAgain": "Book again"
 }

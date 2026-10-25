@@ -8317,6 +8317,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Deposit released · {amount} is now available in your wallet.'**
   String bookingsDetailDepositReleasedBanner(String amount);
+
+  /// No description provided for @handbackConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm return'**
+  String get handbackConfirmTitle;
+
+  /// No description provided for @handbackMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'This return review isn\'t available.'**
+  String get handbackMissing;
+
+  /// No description provided for @handbackCheckInBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in inspection'**
+  String get handbackCheckInBadge;
+
+  /// No description provided for @handbackWatchedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Watched {duration}'**
+  String handbackWatchedBadge(String duration);
+
+  /// No description provided for @handbackRecordedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded by the yard · {when}'**
+  String handbackRecordedBy(String when);
+
+  /// No description provided for @handbackVideoComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Video ends at {duration} — the full clip was uploaded.'**
+  String handbackVideoComplete(String duration);
+
+  /// No description provided for @handbackWatchConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ve watched the full {seconds}-second return video'**
+  String handbackWatchConfirm(int seconds);
+
+  /// No description provided for @handbackWatchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This video is the only record of the machine\'s condition. GCC can\'t verify it for you'**
+  String get handbackWatchHint;
+
+  /// No description provided for @handbackWatchBeforeConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the return video first.'**
+  String get handbackWatchBeforeConfirm;
+
+  /// No description provided for @handbackFindingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What the yard recorded'**
+  String get handbackFindingsTitle;
+
+  /// No description provided for @handbackApprovingReleases.
+  ///
+  /// In en, this message translates to:
+  /// **'Approving releases'**
+  String get handbackApprovingReleases;
+
+  /// No description provided for @handbackBackToWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'back to your wallet'**
+  String get handbackBackToWallet;
+
+  /// No description provided for @handbackToYard.
+  ///
+  /// In en, this message translates to:
+  /// **'to {yard}'**
+  String handbackToYard(String yard);
+
+  /// No description provided for @handbackApproveConsequence.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll no longer be able to raise an issue about this return.'**
+  String get handbackApproveConsequence;
+
+  /// No description provided for @handbackCompareCheckout.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare with check-out video'**
+  String get handbackCompareCheckout;
+
+  /// No description provided for @handbackSomethingWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something is wrong'**
+  String get handbackSomethingWrong;
+
+  /// No description provided for @handbackApproveRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Approve & release deposit'**
+  String get handbackApproveRelease;
+
+  /// No description provided for @handbackApproveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch the video and confirm you\'ve seen it'**
+  String get handbackApproveHint;
+
+  /// No description provided for @handbackIssueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report an issue'**
+  String get handbackIssueTitle;
+
+  /// No description provided for @handbackIssueFreeze.
+  ///
+  /// In en, this message translates to:
+  /// **'This freezes {amount} until GCC reviews both videos'**
+  String handbackIssueFreeze(String amount);
+
+  /// No description provided for @handbackIssueFreezeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll get an SMS when there\'s a decision.'**
+  String get handbackIssueFreezeHint;
+
+  /// No description provided for @handbackIssueReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason *'**
+  String get handbackIssueReason;
+
+  /// No description provided for @handbackReasonDamageNotShown.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage not shown'**
+  String get handbackReasonDamageNotShown;
+
+  /// No description provided for @handbackReasonDamageOmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage I saw omitted'**
+  String get handbackReasonDamageOmitted;
+
+  /// No description provided for @handbackReasonWrongMachine.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong machine'**
+  String get handbackReasonWrongMachine;
+
+  /// No description provided for @handbackIssueNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us what you saw'**
+  String get handbackIssueNote;
+
+  /// No description provided for @handbackIssueNoteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what you noticed in the return video'**
+  String get handbackIssueNoteHint;
+
+  /// No description provided for @handbackIssuePhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photos *'**
+  String get handbackIssuePhotos;
+
+  /// No description provided for @handbackIssueAddPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Take or upload photos'**
+  String get handbackIssueAddPhotos;
+
+  /// No description provided for @handbackIssuePhotoCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} photos added'**
+  String handbackIssuePhotoCount(int count);
+
+  /// No description provided for @handbackIssuePhotosMax.
+  ///
+  /// In en, this message translates to:
+  /// **'Up to 6 photos'**
+  String get handbackIssuePhotosMax;
+
+  /// No description provided for @handbackIssueClaim.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage claimed'**
+  String get handbackIssueClaim;
+
+  /// No description provided for @handbackIssueClaimHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount you\'re claiming back. Up to {amount}.'**
+  String handbackIssueClaimHint(String amount);
+
+  /// No description provided for @handbackIssueHonesty.
+  ///
+  /// In en, this message translates to:
+  /// **'False claims delay every rental in the market. GCC reviews each one.'**
+  String get handbackIssueHonesty;
+
+  /// No description provided for @handbackIssueCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get handbackIssueCancel;
+
+  /// No description provided for @handbackIssueSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit issue'**
+  String get handbackIssueSubmit;
+
+  /// No description provided for @handbackIssueSubmitHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a reason and add at least one photo'**
+  String get handbackIssueSubmitHint;
+
+  /// No description provided for @handbackIssueSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Issue submitted. Your deposit stays frozen until GCC decides.'**
+  String get handbackIssueSubmitted;
+
+  /// No description provided for @handbackDepositReleasedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit released'**
+  String get handbackDepositReleasedTitle;
+
+  /// No description provided for @handbackReconciliationEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Escrow reconciliation summary'**
+  String get handbackReconciliationEyebrow;
+
+  /// No description provided for @handbackRefundedToYou.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Refunded to you'**
+  String get handbackRefundedToYou;
+
+  /// No description provided for @handbackPaidToYard.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid to {yard}'**
+  String handbackPaidToYard(String yard);
+
+  /// No description provided for @handbackSettled.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled · {reference}'**
+  String handbackSettled(String reference);
+
+  /// No description provided for @handbackWalletAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available to withdraw in your wallet'**
+  String get handbackWalletAvailable;
+
+  /// No description provided for @handbackBookAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Book again'**
+  String get handbackBookAgain;
 }
 
 class _AppLocalizationsDelegate

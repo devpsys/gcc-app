@@ -9,9 +9,14 @@ import 'package:gcc_app/features/booking/domain/lessee_booking_detail_phase.dart
 import 'package:gcc_app/features/marketplace/domain/marketplace_money.dart';
 
 class LesseeBookingDetailFooter extends StatelessWidget {
-  const LesseeBookingDetailFooter({required this.detail, super.key});
+  const LesseeBookingDetailFooter({
+    required this.detail,
+    this.onReviewReturn,
+    super.key,
+  });
 
   final LesseeBookingDetail detail;
+  final VoidCallback? onReviewReturn;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +41,8 @@ class LesseeBookingDetailFooter extends StatelessWidget {
           child: switch (detail.phase) {
             LesseeBookingDetailPhase.reviewPending => AppPrimaryButton(
               label: l10n.bookingsReviewReturn,
-              onPressed: null,
-              disabledReason: unavailable,
+              onPressed: onReviewReturn,
+              disabledReason: onReviewReturn == null ? unavailable : null,
             ),
             LesseeBookingDetailPhase.completed => Column(
               mainAxisSize: MainAxisSize.min,

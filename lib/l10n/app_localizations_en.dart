@@ -4796,4 +4796,167 @@ class AppLocalizationsEn extends AppLocalizations {
   String bookingsDetailDepositReleasedBanner(String amount) {
     return 'Deposit released · $amount is now available in your wallet.';
   }
+
+  @override
+  String get handbackConfirmTitle => 'Confirm return';
+
+  @override
+  String get handbackMissing => 'This return review isn\'t available.';
+
+  @override
+  String get handbackCheckInBadge => 'Check-in inspection';
+
+  @override
+  String handbackWatchedBadge(String duration) {
+    return '✓ Watched $duration';
+  }
+
+  @override
+  String handbackRecordedBy(String when) {
+    return 'Recorded by the yard · $when';
+  }
+
+  @override
+  String handbackVideoComplete(String duration) {
+    return 'Video ends at $duration — the full clip was uploaded.';
+  }
+
+  @override
+  String handbackWatchConfirm(int seconds) {
+    return 'I\'ve watched the full $seconds-second return video';
+  }
+
+  @override
+  String get handbackWatchHint =>
+      'This video is the only record of the machine\'s condition. GCC can\'t verify it for you';
+
+  @override
+  String get handbackWatchBeforeConfirm => 'Play the return video first.';
+
+  @override
+  String get handbackFindingsTitle => 'What the yard recorded';
+
+  @override
+  String get handbackApprovingReleases => 'Approving releases';
+
+  @override
+  String get handbackBackToWallet => 'back to your wallet';
+
+  @override
+  String handbackToYard(String yard) {
+    return 'to $yard';
+  }
+
+  @override
+  String get handbackApproveConsequence =>
+      'You\'ll no longer be able to raise an issue about this return.';
+
+  @override
+  String get handbackCompareCheckout => 'Compare with check-out video';
+
+  @override
+  String get handbackSomethingWrong => 'Something is wrong';
+
+  @override
+  String get handbackApproveRelease => 'Approve & release deposit';
+
+  @override
+  String get handbackApproveHint =>
+      'Watch the video and confirm you\'ve seen it';
+
+  @override
+  String get handbackIssueTitle => 'Report an issue';
+
+  @override
+  String handbackIssueFreeze(String amount) {
+    return 'This freezes $amount until GCC reviews both videos';
+  }
+
+  @override
+  String get handbackIssueFreezeHint =>
+      'You\'ll get an SMS when there\'s a decision.';
+
+  @override
+  String get handbackIssueReason => 'Reason *';
+
+  @override
+  String get handbackReasonDamageNotShown => 'Damage not shown';
+
+  @override
+  String get handbackReasonDamageOmitted => 'Damage I saw omitted';
+
+  @override
+  String get handbackReasonWrongMachine => 'Wrong machine';
+
+  @override
+  String get handbackIssueNote => 'Tell us what you saw';
+
+  @override
+  String get handbackIssueNoteHint =>
+      'Describe what you noticed in the return video';
+
+  @override
+  String get handbackIssuePhotos => 'Add photos *';
+
+  @override
+  String get handbackIssueAddPhotos => 'Take or upload photos';
+
+  @override
+  String handbackIssuePhotoCount(int count) {
+    return '$count photos added';
+  }
+
+  @override
+  String get handbackIssuePhotosMax => 'Up to 6 photos';
+
+  @override
+  String get handbackIssueClaim => 'Damage claimed';
+
+  @override
+  String handbackIssueClaimHint(String amount) {
+    return 'Amount you\'re claiming back. Up to $amount.';
+  }
+
+  @override
+  String get handbackIssueHonesty =>
+      'False claims delay every rental in the market. GCC reviews each one.';
+
+  @override
+  String get handbackIssueCancel => 'Cancel';
+
+  @override
+  String get handbackIssueSubmit => 'Submit issue';
+
+  @override
+  String get handbackIssueSubmitHint =>
+      'Choose a reason and add at least one photo';
+
+  @override
+  String get handbackIssueSubmitted =>
+      'Issue submitted. Your deposit stays frozen until GCC decides.';
+
+  @override
+  String get handbackDepositReleasedTitle => 'Deposit released';
+
+  @override
+  String get handbackReconciliationEyebrow => 'Escrow reconciliation summary';
+
+  @override
+  String get handbackRefundedToYou => '✓ Refunded to you';
+
+  @override
+  String handbackPaidToYard(String yard) {
+    return 'Paid to $yard';
+  }
+
+  @override
+  String handbackSettled(String reference) {
+    return 'Settled · $reference';
+  }
+
+  @override
+  String get handbackWalletAvailable => 'Available to withdraw in your wallet';
+
+  @override
+  String get handbackBookAgain => 'Book again';
 }

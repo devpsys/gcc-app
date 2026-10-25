@@ -20,11 +20,13 @@ class LesseeBookingCard extends StatelessWidget {
   const LesseeBookingCard({
     required this.booking,
     this.onOpen,
+    this.onReviewReturn,
     super.key,
   });
 
   final LesseeBooking booking;
   final VoidCallback? onOpen;
+  final VoidCallback? onReviewReturn;
 
   @override
   Widget build(BuildContext context) {
@@ -264,9 +266,9 @@ class LesseeBookingCard extends StatelessWidget {
     return switch (booking.status) {
       LesseeBookingStatus.actionNeeded => AppButtonFrame(
         expand: true,
-        disabledReason: unavailable,
+        disabledReason: onReviewReturn == null ? unavailable : null,
         button: OutlinedButton(
-          onPressed: null,
+          onPressed: onReviewReturn,
           style: OutlinedButton.styleFrom(
             foregroundColor: colors.warning,
             disabledForegroundColor: colors.warning,
