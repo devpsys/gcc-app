@@ -17,62 +17,84 @@ import 'package:gcc_app/features/marketplace/domain/marketplace_money.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
 
 class LesseeBookingCard extends StatelessWidget {
-  const LesseeBookingCard({required this.booking, super.key});
+  const LesseeBookingCard({
+    required this.booking,
+    this.onOpen,
+    super.key,
+  });
 
   final LesseeBooking booking;
+  final VoidCallback? onOpen;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.semanticColors;
     final scheme = Theme.of(context).colorScheme;
     final warningEdge = booking.needsAction;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: scheme.surface,
+    return Material(
+      type: MaterialType.transparency,
+      child: InkWell(
+        onTap: onOpen,
         borderRadius: BorderRadius.circular(AppRadii.dialog),
-        border: Border.all(color: colors.border),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(AppRadii.dialog),
-        child: IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ColoredBox(
-                color: warningEdge ? colors.warning : colors.border,
-                child: const SizedBox(width: AppDimensions.accentBorderWidth),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.sm,
-                    AppSpacing.sm,
-                    AppSpacing.sm,
-                    AppSpacing.sm,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: scheme.surface,
+            borderRadius: BorderRadius.circular(AppRadii.dialog),
+            border: Border.all(color: colors.border),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(AppRadii.dialog),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ColoredBox(
+                    color: warningEdge ? colors.warning : colors.border,
+                    child: const SizedBox(
+                      width: AppDimensions.accentBorderWidth,
+                    ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      _topRow(context),
-                      const SizedBox(height: AppSpacing.xs + AppSpacing.xxs / 2),
-                      _timingPriceRow(context),
-                      if (_subStatus(context) case final sub?) ...[
-                        const SizedBox(height: AppSpacing.xs + AppSpacing.xxs / 2),
-                        sub,
-                      ],
-                      if (booking.depositHeld) ...[
-                        const SizedBox(height: AppSpacing.xs + AppSpacing.xxs / 2),
-                        LesseeBookingDepositRow(amount: booking.deposit),
-                      ],
-                      if (_footer(context) case final footer?) ...[
-                        const SizedBox(height: AppSpacing.xs + AppSpacing.xxs / 2),
-                        footer,
-                      ],
-                    ],
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        AppSpacing.sm,
+                        AppSpacing.sm,
+                        AppSpacing.sm,
+                        AppSpacing.sm,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          _topRow(context),
+                          const SizedBox(
+                            height: AppSpacing.xs + AppSpacing.xxs / 2,
+                          ),
+                          _timingPriceRow(context),
+                          if (_subStatus(context) case final sub?) ...[
+                            const SizedBox(
+                              height: AppSpacing.xs + AppSpacing.xxs / 2,
+                            ),
+                            sub,
+                          ],
+                          if (booking.depositHeld) ...[
+                            const SizedBox(
+                              height: AppSpacing.xs + AppSpacing.xxs / 2,
+                            ),
+                            LesseeBookingDepositRow(amount: booking.deposit),
+                          ],
+                          if (_footer(context) case final footer?) ...[
+                            const SizedBox(
+                              height: AppSpacing.xs + AppSpacing.xxs / 2,
+                            ),
+                            footer,
+                          ],
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

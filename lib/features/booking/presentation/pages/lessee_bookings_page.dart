@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_segment_option.dart';
 import 'package:gcc_app/core/widgets/app_segment_style.dart';
@@ -10,6 +11,7 @@ import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_state
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_card.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_bookings_filter_chip.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 
 class LesseeBookingsPage extends StatelessWidget {
   const LesseeBookingsPage({
@@ -118,7 +120,14 @@ class LesseeBookingsPage extends StatelessWidget {
                             ?.copyWith(color: context.semanticColors.muted),
                       );
                     }
-                    return LesseeBookingCard(booking: visible[index]);
+                    final booking = visible[index];
+                    return LesseeBookingCard(
+                      booking: booking,
+                      onOpen: () {
+                        final router = GoRouter.maybeOf(context);
+                        router?.push(RoutePaths.bookingDetailOf(booking.id));
+                      },
+                    );
                   },
                 ),
         ),

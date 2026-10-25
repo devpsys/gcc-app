@@ -37,10 +37,12 @@ import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_s
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
 import 'package:gcc_app/features/booking/domain/rental_payment_status_args.dart';
 import 'package:gcc_app/features/booking/domain/rental_request.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_booking_detail_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_status_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_request_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/pages/lessee_booking_detail_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/lessee_bookings_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_payment_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_payment_status_screen.dart';
@@ -157,6 +159,16 @@ GoRouter createAppRouter() {
             param1: state.pathParameters['id'] ?? '',
           )..load(),
           child: const MarketplaceListingScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RoutePaths.bookingDetail,
+        name: RouteNames.bookingDetail,
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<LesseeBookingDetailCubit>(
+            param1: state.pathParameters['id'] ?? '',
+          )..load(),
+          child: const LesseeBookingDetailScreen(),
         ),
       ),
       GoRoute(

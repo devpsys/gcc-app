@@ -8227,6 +8227,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No bookings in this list.'**
   String get bookingsEmpty;
+
+  /// No description provided for @bookingsDetailMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'This booking isn\'t available.'**
+  String get bookingsDetailMissing;
+
+  /// No description provided for @bookingsDetailAuditEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental audit trail'**
+  String get bookingsDetailAuditEyebrow;
+
+  /// No description provided for @bookingsDetailMoneyEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial status & escrow'**
+  String get bookingsDetailMoneyEyebrow;
+
+  /// No description provided for @bookingsDetailProofsEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition proof videos'**
+  String get bookingsDetailProofsEyebrow;
+
+  /// No description provided for @bookingsDetailStageBooked.
+  ///
+  /// In en, this message translates to:
+  /// **'Booked'**
+  String get bookingsDetailStageBooked;
+
+  /// No description provided for @bookingsDetailStageInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'In use'**
+  String get bookingsDetailStageInUse;
+
+  /// No description provided for @bookingsDetailStageReturnedPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned (Action pending)'**
+  String get bookingsDetailStageReturnedPending;
+
+  /// No description provided for @bookingsDetailStageReturnedClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned & Closed'**
+  String get bookingsDetailStageReturnedClosed;
+
+  /// No description provided for @bookingsDetailWalletAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Available in your wallet'**
+  String get bookingsDetailWalletAvailable;
+
+  /// No description provided for @bookingsDetailHeldInEscrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Held in escrow'**
+  String get bookingsDetailHeldInEscrow;
+
+  /// No description provided for @bookingsDetailRefundedToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Refunded to date'**
+  String get bookingsDetailRefundedToDate;
+
+  /// No description provided for @bookingsDetailWalletDelta.
+  ///
+  /// In en, this message translates to:
+  /// **'▲ +{amount}'**
+  String bookingsDetailWalletDelta(String amount);
+
+  /// No description provided for @bookingsDetailCallVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Call vendor'**
+  String get bookingsDetailCallVendor;
+
+  /// No description provided for @bookingsDetailRateRental.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate this rental'**
+  String get bookingsDetailRateRental;
+
+  /// No description provided for @bookingsDetailDepositReleasedBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit released · {amount} is now available in your wallet.'**
+  String bookingsDetailDepositReleasedBanner(String amount);
 }
 
 class _AppLocalizationsDelegate

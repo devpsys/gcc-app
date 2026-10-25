@@ -2894,5 +2894,26 @@
   "bookingsRateAgain": "Rate again",
   "bookingsRemoveFromList": "Remove from list",
   "bookingsCancelledRetention": "Cancelled bookings are kept for 12 months so you have a record if a vendor claims you didn't pay.",
-  "bookingsEmpty": "No bookings in this list."
+  "bookingsEmpty": "No bookings in this list.",
+  "bookingsDetailMissing": "This booking isn't available.",
+  "bookingsDetailAuditEyebrow": "Rental audit trail",
+  "bookingsDetailMoneyEyebrow": "Financial status & escrow",
+  "bookingsDetailProofsEyebrow": "Condition proof videos",
+  "bookingsDetailStageBooked": "Booked",
+  "bookingsDetailStageInUse": "In use",
+  "bookingsDetailStageReturnedPending": "Returned (Action pending)",
+  "bookingsDetailStageReturnedClosed": "Returned & Closed",
+  "bookingsDetailWalletAvailable": "Available in your wallet",
+  "bookingsDetailHeldInEscrow": "Held in escrow",
+  "bookingsDetailRefundedToDate": "Refunded to date",
+  "bookingsDetailWalletDelta": "▲ +{amount}",
+  "@bookingsDetailWalletDelta": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "bookingsDetailCallVendor": "Call vendor",
+  "bookingsDetailRateRental": "Rate this rental",
+  "bookingsDetailDepositReleasedBanner": "Deposit released · {amount} is now available in your wallet.",
+  "@bookingsDetailDepositReleasedBanner": {
+    "placeholders": { "amount": { "type": "String" } }
+  }
 }

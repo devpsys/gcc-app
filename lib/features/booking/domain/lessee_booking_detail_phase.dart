@@ -1,0 +1,1 @@
+enum LesseeBookingDetailPhase { reviewPending, completed }

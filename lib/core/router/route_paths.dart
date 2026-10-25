@@ -37,6 +37,9 @@ abstract final class RoutePaths {
   static const String rentalPayment = '/browse/:id/payment';
   static const String rentalPaymentStatus = '/browse/:id/payment/status';
   static const String bookings = '/bookings';
+  static const String bookingDetail = '/bookings/:id';
+
+  static String bookingDetailOf(String id) => '/bookings/$id';
 
   static String vendorAssetEditOf(String reference) =>
       '/vendor/catalog/edit/$reference';

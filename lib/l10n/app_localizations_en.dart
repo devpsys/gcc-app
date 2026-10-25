@@ -4747,4 +4747,53 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bookingsEmpty => 'No bookings in this list.';
+
+  @override
+  String get bookingsDetailMissing => 'This booking isn\'t available.';
+
+  @override
+  String get bookingsDetailAuditEyebrow => 'Rental audit trail';
+
+  @override
+  String get bookingsDetailMoneyEyebrow => 'Financial status & escrow';
+
+  @override
+  String get bookingsDetailProofsEyebrow => 'Condition proof videos';
+
+  @override
+  String get bookingsDetailStageBooked => 'Booked';
+
+  @override
+  String get bookingsDetailStageInUse => 'In use';
+
+  @override
+  String get bookingsDetailStageReturnedPending => 'Returned (Action pending)';
+
+  @override
+  String get bookingsDetailStageReturnedClosed => 'Returned & Closed';
+
+  @override
+  String get bookingsDetailWalletAvailable => 'Available in your wallet';
+
+  @override
+  String get bookingsDetailHeldInEscrow => 'Held in escrow';
+
+  @override
+  String get bookingsDetailRefundedToDate => 'Refunded to date';
+
+  @override
+  String bookingsDetailWalletDelta(String amount) {
+    return '▲ +$amount';
+  }
+
+  @override
+  String get bookingsDetailCallVendor => 'Call vendor';
+
+  @override
+  String get bookingsDetailRateRental => 'Rate this rental';
+
+  @override
+  String bookingsDetailDepositReleasedBanner(String amount) {
+    return 'Deposit released · $amount is now available in your wallet.';
+  }
 }
