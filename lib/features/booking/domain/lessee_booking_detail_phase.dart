@@ -1,1 +1,6 @@
-enum LesseeBookingDetailPhase { reviewPending, completed }
+enum LesseeBookingDetailPhase {
+  reviewPending,
+  inProgress,
+  completed,
+  cancelled,
+}

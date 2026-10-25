@@ -53,9 +53,16 @@ class LesseeBookingDetailHeader extends StatelessWidget {
                       const SizedBox(height: AppSpacing.xs),
                       StatusChip(
                         label: detail.statusChipLabel,
-                        tone: detail.phase == LesseeBookingDetailPhase.completed
-                            ? StatusTone.success
-                            : StatusTone.warning,
+                        tone: switch (detail.phase) {
+                          LesseeBookingDetailPhase.completed =>
+                            StatusTone.success,
+                          LesseeBookingDetailPhase.reviewPending =>
+                            StatusTone.warning,
+                          LesseeBookingDetailPhase.inProgress =>
+                            StatusTone.info,
+                          LesseeBookingDetailPhase.cancelled =>
+                            StatusTone.muted,
+                        },
                       ),
                     ],
                   ),

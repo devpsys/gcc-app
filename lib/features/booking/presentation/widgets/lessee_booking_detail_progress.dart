@@ -24,9 +24,14 @@ class LesseeBookingDetailProgress extends StatelessWidget {
     final labels = [
       l10n.bookingsDetailStageBooked,
       l10n.bookingsDetailStageInUse,
-      phase == LesseeBookingDetailPhase.completed
-          ? l10n.bookingsDetailStageReturnedClosed
-          : l10n.bookingsDetailStageReturnedPending,
+      switch (phase) {
+        LesseeBookingDetailPhase.completed =>
+          l10n.bookingsDetailStageReturnedClosed,
+        LesseeBookingDetailPhase.cancelled => l10n.bookingsCancelled,
+        LesseeBookingDetailPhase.reviewPending =>
+          l10n.bookingsDetailStageReturnedPending,
+        LesseeBookingDetailPhase.inProgress => l10n.bookingsDetailStageInUse,
+      },
     ];
     return DecoratedBox(
       decoration: BoxDecoration(

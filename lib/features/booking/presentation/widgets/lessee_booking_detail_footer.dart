@@ -74,6 +74,8 @@ class LesseeBookingDetailFooter extends StatelessWidget {
                 ),
               ],
             ),
+            LesseeBookingDetailPhase.inProgress ||
+            LesseeBookingDetailPhase.cancelled => const SizedBox.shrink(),
           },
         ),
       ),

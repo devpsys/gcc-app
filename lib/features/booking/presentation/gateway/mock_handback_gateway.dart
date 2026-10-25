@@ -39,7 +39,7 @@ class MockHandbackGateway implements HandbackGateway {
   @override
   Future<HandbackReview?> load(String bookingId) async {
     for (final review in catalog) {
-      if (review.id == bookingId) {
+      if (review.id == bookingId || review.reference == bookingId) {
         return review;
       }
     }

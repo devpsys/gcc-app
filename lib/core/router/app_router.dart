@@ -164,32 +164,36 @@ GoRouter createAppRouter() {
         ),
       ),
       GoRoute(
-        path: RoutePaths.handback,
-        name: RouteNames.handback,
-        builder: (context, state) => BlocProvider(
-          create: (_) => getIt<HandbackCubit>(
-            param1: state.pathParameters['id'] ?? '',
-          )..load(),
-          child: const HandbackScreen(),
-        ),
-      ),
-      GoRoute(
-        path: RoutePaths.bookingDetail,
-        name: RouteNames.bookingDetail,
-        builder: (context, state) => BlocProvider(
-          create: (_) => getIt<LesseeBookingDetailCubit>(
-            param1: state.pathParameters['id'] ?? '',
-          )..load(),
-          child: const LesseeBookingDetailScreen(),
-        ),
-      ),
-      GoRoute(
         path: RoutePaths.bookings,
         name: RouteNames.bookings,
         builder: (context, state) => BlocProvider(
           create: (_) => getIt<LesseeBookingsCubit>()..load(),
           child: const LesseeBookingsScreen(),
         ),
+        routes: [
+          GoRoute(
+            path: ':id',
+            name: RouteNames.bookingDetail,
+            builder: (context, state) => BlocProvider(
+              create: (_) => getIt<LesseeBookingDetailCubit>(
+                param1: state.pathParameters['id'] ?? '',
+              )..load(),
+              child: const LesseeBookingDetailScreen(),
+            ),
+            routes: [
+              GoRoute(
+                path: 'handback',
+                name: RouteNames.handback,
+                builder: (context, state) => BlocProvider(
+                  create: (_) => getIt<HandbackCubit>(
+                    param1: state.pathParameters['id'] ?? '',
+                  )..load(),
+                  child: const HandbackScreen(),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       GoRoute(
         path: RoutePaths.browse,

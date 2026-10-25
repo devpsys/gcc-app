@@ -148,7 +148,7 @@ class MockLesseeBookingDetailGateway implements LesseeBookingDetailGateway {
       reference: 'BK-24804',
       title: '60kVA Diesel Generator Set',
       yardLine: 'Wuse Event & Power · Wuse Zone 2',
-      phase: LesseeBookingDetailPhase.reviewPending,
+      phase: LesseeBookingDetailPhase.inProgress,
       statusChipLabel: 'In use',
       mark: '60kVA',
       stageTones: const [
@@ -202,12 +202,114 @@ class MockLesseeBookingDetailGateway implements LesseeBookingDetailGateway {
       vendorYard: 'Wuse Event & Power',
       vendorId: 'VND-0288',
     ),
+    LesseeBookingDetail(
+      id: 'bk-24690',
+      reference: 'BK-24690',
+      title: '250A Welding Machine',
+      yardLine: 'Kugbo Generator Yard · Kugbo Market',
+      phase: LesseeBookingDetailPhase.completed,
+      statusChipLabel: 'Completed',
+      mark: '250A',
+      stageTones: const [
+        LesseeBookingStageTone.complete,
+        LesseeBookingStageTone.complete,
+        LesseeBookingStageTone.complete,
+      ],
+      timeline: const [
+        LesseeBookingTimelineEvent(
+          timeLabel: '28 Sep 08:00',
+          title: 'Booking requested',
+          tone: LesseeBookingStageTone.complete,
+        ),
+        LesseeBookingTimelineEvent(
+          timeLabel: '28 Sep 08:10',
+          title: 'Payment received',
+          tone: LesseeBookingStageTone.complete,
+          detail: '₦28,500 split across 5 accounts',
+        ),
+        LesseeBookingTimelineEvent(
+          timeLabel: '28 Sep 09:00',
+          title: 'Equipment dispatched',
+          tone: LesseeBookingStageTone.complete,
+        ),
+        LesseeBookingTimelineEvent(
+          timeLabel: '29 Sep 11:00',
+          title: 'Return condition recorded',
+          tone: LesseeBookingStageTone.complete,
+        ),
+        LesseeBookingTimelineEvent(
+          timeLabel: '29 Sep 11:05',
+          title: 'Condition approved · deposit released',
+          tone: LesseeBookingStageTone.complete,
+          detail: '₦20,000 caution deposit credited to wallet',
+        ),
+      ],
+      walletAvailable: 32000,
+      heldInEscrow: 0,
+      refundedToDate: 20000,
+      walletDelta: 20000,
+      depositReleasedAmount: 20000,
+      moneySubtitle: 'All rental escrow releases are finalized.',
+      moneyLinkLabel: 'View settlement receipt',
+      proofs: const [
+        LesseeBookingProofClip(
+          title: 'Check-out · 28 Sep 2026, 09:00',
+          subtitle: 'Recorded at the yard · within 100 m of Kugbo Market',
+          durationLabel: '00:30',
+        ),
+        LesseeBookingProofClip(
+          title: 'Check-in · 29 Sep 2026, 11:00',
+          subtitle: 'Recorded at the yard · within 90 m of Kugbo Market',
+          durationLabel: '00:30',
+        ),
+      ],
+      vendorName: 'Alhaji Musa Ibrahim',
+      vendorInitials: 'AI',
+      vendorYard: 'Kugbo Generator Yard',
+      vendorId: 'VND-0341',
+    ),
+    LesseeBookingDetail(
+      id: 'bk-24511',
+      reference: 'BK-24511',
+      title: '5HP Water Pump',
+      yardLine: 'Utako Water & Pump Depot · Utako',
+      phase: LesseeBookingDetailPhase.cancelled,
+      statusChipLabel: 'Cancelled',
+      stageTones: const [
+        LesseeBookingStageTone.complete,
+        LesseeBookingStageTone.pending,
+        LesseeBookingStageTone.pending,
+      ],
+      timeline: const [
+        LesseeBookingTimelineEvent(
+          timeLabel: '20 Sep 10:00',
+          title: 'Booking requested',
+          tone: LesseeBookingStageTone.complete,
+        ),
+        LesseeBookingTimelineEvent(
+          timeLabel: '20 Sep 10:05',
+          title: 'Cancelled',
+          tone: LesseeBookingStageTone.complete,
+          detail: 'Deposit never charged',
+        ),
+      ],
+      walletAvailable: 12000,
+      heldInEscrow: 0,
+      refundedToDate: 0,
+      moneySubtitle: 'No escrow was held for this booking.',
+      moneyLinkLabel: 'View payment breakdown',
+      proofs: const [],
+      vendorName: 'Utako Water & Pump Depot',
+      vendorInitials: 'UW',
+      vendorYard: 'Utako Water & Pump Depot',
+      vendorId: 'VND-0412',
+    ),
   ];
 
   @override
   Future<LesseeBookingDetail?> load(String id) async {
     for (final detail in catalog) {
-      if (detail.id == id) {
+      if (detail.id == id || detail.reference == id) {
         return detail;
       }
     }
