@@ -5058,16 +5058,168 @@ class AppLocalizationsEn extends AppLocalizations {
       'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.';
 
   @override
-  String get lesseeWalletTitle => 'Your GCC wallet';
+  String get lesseeWalletAvailable => 'Available balance';
 
   @override
-  String get lesseeWalletBody =>
-      'Caution deposits and refunds land here after you approve a return. Open Bookings to track held escrow on active rentals.';
+  String get lesseeWalletAvailableFigure => 'Available balance';
 
   @override
-  String get lesseeProfileTitle => 'Your profile';
+  String get lesseeWalletWithdraw => 'Withdraw to bank';
 
   @override
-  String get lesseeProfileBody =>
-      'Language and notification preferences for lessee mode. Vendor yards keep a separate business profile.';
+  String get lesseeWalletNothingToWithdraw => 'Nothing to withdraw';
+
+  @override
+  String get lesseeWalletZeroCaption =>
+      'Available to withdraw: ₦0. All currently active balances are held in escrow or await return inspection.';
+
+  @override
+  String get lesseeWalletBreakdown => 'Balance breakdown';
+
+  @override
+  String get lesseeWalletDepositsHeld => 'Deposits held by vendors';
+
+  @override
+  String get lesseeWalletDepositsHeldCaption =>
+      'Your deposits held by vendors. Released after check-in approval.';
+
+  @override
+  String get lesseeWalletPendingRefunds => 'Pending refunds';
+
+  @override
+  String get lesseeWalletPendingRefundsCaption =>
+      'Refunds pending vendor approval after return';
+
+  @override
+  String get lesseeWalletEscrowTitle => 'Held in escrow & audit';
+
+  @override
+  String get lesseeWalletHistory => 'Transaction history';
+
+  @override
+  String lesseeWalletBookingReleased(String reference) {
+    return 'Booking $reference released';
+  }
+
+  @override
+  String lesseeWalletRefundReceived(String reference) {
+    return 'Refund received · $reference';
+  }
+
+  @override
+  String get lesseeWalletDepositHeld => 'Caution deposit held';
+
+  @override
+  String lesseeWalletPayoutSent(String reference) {
+    return 'Payout $reference sent';
+  }
+
+  @override
+  String lesseeWalletPayoutFailed(String reference) {
+    return 'Payout $reference failed';
+  }
+
+  @override
+  String get lesseeWalletEmptyTitle => 'No transactions ready for payout';
+
+  @override
+  String get lesseeWalletEmptyBody =>
+      'When equipment returns are validated by field assessors and yardmasters, refunds and caution deposits are immediately re-credited to your available balance.';
+
+  @override
+  String get lesseeWalletViewBookings => 'View my bookings';
+
+  @override
+  String lesseeProfileGreeting(String name) {
+    return 'Good morning, $name';
+  }
+
+  @override
+  String lesseeProfileSince(String since, int bookings, int completed) {
+    return 'Lessee since $since · $bookings bookings · $completed completed';
+  }
+
+  @override
+  String get lesseeProfileDualAuthority => 'Dual authority account';
+
+  @override
+  String get lesseeProfileDualBody => 'Signed in as Lessee & Yard Vendor';
+
+  @override
+  String get lesseeProfileSwitchMode => 'Switch mode';
+
+  @override
+  String get lesseeProfileActivity => 'Rental activity';
+
+  @override
+  String get lesseeProfileActiveBookings => 'Active bookings';
+
+  @override
+  String lesseeProfileActiveCount(int count) {
+    return '$count active';
+  }
+
+  @override
+  String get lesseeProfileRentalHistory => 'Rental history';
+
+  @override
+  String lesseeProfileCompletedCount(int count) {
+    return '$count completed';
+  }
+
+  @override
+  String get lesseeProfileSavedCards => 'Saved payment methods';
+
+  @override
+  String lesseeProfileCardsCount(int count) {
+    return '$count cards';
+  }
+
+  @override
+  String get lesseeProfileDevice => 'This device & offline cache';
+
+  @override
+  String get lesseeProfileOsPlatform => 'OS / Platform';
+
+  @override
+  String get lesseeProfileSupport => 'GCC support line';
+
+  @override
+  String get lesseeProfileCallSupport => 'Call';
+
+  @override
+  String get lesseeProfileSignOut => 'Sign out of GCC';
+
+  @override
+  String get lesseeProfileSwitchTitle => 'Switch to Vendor mode?';
+
+  @override
+  String lesseeProfileSwitchBody(String name) {
+    return 'Dual-role account verified for $name';
+  }
+
+  @override
+  String get lesseeProfileSwitchGains => 'In Vendor mode you will see:';
+
+  @override
+  String get lesseeProfileGainRequests =>
+      'Incoming booking requests to accept or decline';
+
+  @override
+  String get lesseeProfileGainCatalog =>
+      'Equipment inventory catalog and daily yard availability';
+
+  @override
+  String get lesseeProfileGainVideos =>
+      'Return inspection and condition video audit tools';
+
+  @override
+  String get lesseeProfileSwitchStill =>
+      'You will still see your wallet, bank payouts, and history.';
+
+  @override
+  String get lesseeProfileSwitchConfirm => 'Switch to Vendor';
+
+  @override
+  String get lesseeProfileSwitchStay => 'Stay in Lessee mode';
 }

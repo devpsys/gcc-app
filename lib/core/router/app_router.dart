@@ -33,8 +33,6 @@ import 'package:gcc_app/features/auth/presentation/pages/biometric_unlock_page.d
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_cubit.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart';
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
-import 'package:gcc_app/features/dashboard/presentation/pages/lessee_profile_page.dart';
-import 'package:gcc_app/features/dashboard/presentation/pages/lessee_wallet_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_switcher.dart';
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
 import 'package:gcc_app/features/booking/domain/rental_payment_status_args.dart';
@@ -42,12 +40,18 @@ import 'package:gcc_app/features/booking/domain/rental_request.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/handback_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_booking_detail_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_profile_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_wallet_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_status_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_request_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/gateway/lessee_as_vendor_wallet_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/pages/handback_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/lessee_booking_detail_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/lessee_bookings_screen.dart';
+import 'package:gcc_app/features/booking/presentation/pages/lessee_profile_screen.dart';
+import 'package:gcc_app/features/booking/presentation/pages/lessee_wallet_screen.dart';
+import 'package:gcc_app/features/booking/presentation/pages/lessee_withdraw_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_payment_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_payment_status_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_request_screen.dart';
@@ -198,14 +202,30 @@ GoRouter createAppRouter() {
         ],
       ),
       GoRoute(
+        path: RoutePaths.walletWithdraw,
+        name: RouteNames.walletWithdraw,
+        builder: (context, state) => BlocProvider(
+          create: (_) => VendorWithdrawCubit(
+            LesseeAsVendorWalletGateway(getIt()),
+          )..load(),
+          child: const LesseeWithdrawScreen(),
+        ),
+      ),
+      GoRoute(
         path: RoutePaths.wallet,
         name: RouteNames.wallet,
-        builder: (context, state) => const LesseeWalletPage(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<LesseeWalletCubit>()..load(),
+          child: const LesseeWalletScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.profile,
         name: RouteNames.profile,
-        builder: (context, state) => const LesseeProfilePage(),
+        builder: (context, state) => BlocProvider(
+          create: (_) => getIt<LesseeProfileCubit>()..load(),
+          child: const LesseeProfileScreen(),
+        ),
       ),
       GoRoute(
         path: RoutePaths.browse,

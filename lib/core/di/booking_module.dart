@@ -4,16 +4,22 @@ import 'package:gcc_app/features/booking/domain/rental_request.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/handback_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_booking_detail_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_profile_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_wallet_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_status_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_request_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/handback_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/lessee_booking_detail_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/lessee_bookings_gateway.dart';
+import 'package:gcc_app/features/booking/presentation/gateway/lessee_profile_gateway.dart';
+import 'package:gcc_app/features/booking/presentation/gateway/lessee_wallet_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/marketplace_rental_request_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_handback_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_lessee_booking_detail_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_lessee_bookings_gateway.dart';
+import 'package:gcc_app/features/booking/presentation/gateway/mock_lessee_profile_gateway.dart';
+import 'package:gcc_app/features/booking/presentation/gateway/mock_lessee_wallet_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_rental_payment_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_rental_payment_status_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/rental_payment_gateway.dart';
@@ -36,7 +42,15 @@ void registerBookingModule() {
       MockLesseeBookingDetailGateway.new,
     )
     ..registerLazySingleton<HandbackGateway>(MockHandbackGateway.new)
+    ..registerLazySingleton<LesseeWalletGateway>(MockLesseeWalletGateway.new)
+    ..registerLazySingleton<LesseeProfileGateway>(
+      MockLesseeProfileGateway.new,
+    )
     ..registerFactory<LesseeBookingsCubit>(() => LesseeBookingsCubit(getIt()))
+    ..registerFactory<LesseeWalletCubit>(() => LesseeWalletCubit(getIt()))
+    ..registerFactory<LesseeProfileCubit>(
+      () => LesseeProfileCubit(getIt(), getIt()),
+    )
     ..registerFactoryParam<LesseeBookingDetailCubit, String, void>(
       (id, _) => LesseeBookingDetailCubit(getIt(), id),
     )

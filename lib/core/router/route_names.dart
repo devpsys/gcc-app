@@ -32,6 +32,7 @@ abstract final class RouteNames {
   static const String vendorProfile = 'vendorProfile';
   static const String vendorNotifications = 'vendorNotifications';
   static const String wallet = 'wallet';
+  static const String walletWithdraw = 'walletWithdraw';
   static const String profile = 'profile';
   static const String browse = 'browse';
   static const String marketplaceListing = 'marketplaceListing';

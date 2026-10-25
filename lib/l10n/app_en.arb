@@ -3028,8 +3028,102 @@
   "marketplaceVideoUnavailable": "Listing video playback isn't connected yet. The caption describes what the yard recorded.",
   "bookingsProofPlaybackUnavailable": "Condition proof playback opens from handback review when a return clip is ready.",
   "rentalChangeDeliveryUnavailable": "Changing delivery after confirm isn't connected yet. Start a new request if the drop-off place must change.",
-  "lesseeWalletTitle": "Your GCC wallet",
-  "lesseeWalletBody": "Caution deposits and refunds land here after you approve a return. Open Bookings to track held escrow on active rentals.",
-  "lesseeProfileTitle": "Your profile",
-  "lesseeProfileBody": "Language and notification preferences for lessee mode. Vendor yards keep a separate business profile."
+  "lesseeWalletAvailable": "Available balance",
+  "lesseeWalletAvailableFigure": "Available balance",
+  "lesseeWalletWithdraw": "Withdraw to bank",
+  "lesseeWalletNothingToWithdraw": "Nothing to withdraw",
+  "lesseeWalletZeroCaption": "Available to withdraw: ₦0. All currently active balances are held in escrow or await return inspection.",
+  "lesseeWalletBreakdown": "Balance breakdown",
+  "lesseeWalletDepositsHeld": "Deposits held by vendors",
+  "lesseeWalletDepositsHeldCaption": "Your deposits held by vendors. Released after check-in approval.",
+  "lesseeWalletPendingRefunds": "Pending refunds",
+  "lesseeWalletPendingRefundsCaption": "Refunds pending vendor approval after return",
+  "lesseeWalletEscrowTitle": "Held in escrow & audit",
+  "lesseeWalletHistory": "Transaction history",
+  "lesseeWalletBookingReleased": "Booking {reference} released",
+  "@lesseeWalletBookingReleased": {
+    "placeholders": {
+      "reference": { "type": "String" }
+    }
+  },
+  "lesseeWalletRefundReceived": "Refund received · {reference}",
+  "@lesseeWalletRefundReceived": {
+    "placeholders": {
+      "reference": { "type": "String" }
+    }
+  },
+  "lesseeWalletDepositHeld": "Caution deposit held",
+  "lesseeWalletPayoutSent": "Payout {reference} sent",
+  "@lesseeWalletPayoutSent": {
+    "placeholders": {
+      "reference": { "type": "String" }
+    }
+  },
+  "lesseeWalletPayoutFailed": "Payout {reference} failed",
+  "@lesseeWalletPayoutFailed": {
+    "placeholders": {
+      "reference": { "type": "String" }
+    }
+  },
+  "lesseeWalletEmptyTitle": "No transactions ready for payout",
+  "lesseeWalletEmptyBody": "When equipment returns are validated by field assessors and yardmasters, refunds and caution deposits are immediately re-credited to your available balance.",
+  "lesseeWalletViewBookings": "View my bookings",
+  "lesseeProfileGreeting": "Good morning, {name}",
+  "@lesseeProfileGreeting": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "lesseeProfileSince": "Lessee since {since} · {bookings} bookings · {completed} completed",
+  "@lesseeProfileSince": {
+    "placeholders": {
+      "since": { "type": "String" },
+      "bookings": { "type": "int" },
+      "completed": { "type": "int" }
+    }
+  },
+  "lesseeProfileDualAuthority": "Dual authority account",
+  "lesseeProfileDualBody": "Signed in as Lessee & Yard Vendor",
+  "lesseeProfileSwitchMode": "Switch mode",
+  "lesseeProfileActivity": "Rental activity",
+  "lesseeProfileActiveBookings": "Active bookings",
+  "lesseeProfileActiveCount": "{count} active",
+  "@lesseeProfileActiveCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lesseeProfileRentalHistory": "Rental history",
+  "lesseeProfileCompletedCount": "{count} completed",
+  "@lesseeProfileCompletedCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lesseeProfileSavedCards": "Saved payment methods",
+  "lesseeProfileCardsCount": "{count} cards",
+  "@lesseeProfileCardsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lesseeProfileDevice": "This device & offline cache",
+  "lesseeProfileOsPlatform": "OS / Platform",
+  "lesseeProfileSupport": "GCC support line",
+  "lesseeProfileCallSupport": "Call",
+  "lesseeProfileSignOut": "Sign out of GCC",
+  "lesseeProfileSwitchTitle": "Switch to Vendor mode?",
+  "lesseeProfileSwitchBody": "Dual-role account verified for {name}",
+  "@lesseeProfileSwitchBody": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "lesseeProfileSwitchGains": "In Vendor mode you will see:",
+  "lesseeProfileGainRequests": "Incoming booking requests to accept or decline",
+  "lesseeProfileGainCatalog": "Equipment inventory catalog and daily yard availability",
+  "lesseeProfileGainVideos": "Return inspection and condition video audit tools",
+  "lesseeProfileSwitchStill": "You will still see your wallet, bank payouts, and history.",
+  "lesseeProfileSwitchConfirm": "Switch to Vendor",
+  "lesseeProfileSwitchStay": "Stay in Lessee mode"
 }

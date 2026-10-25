@@ -8738,29 +8738,281 @@ abstract class AppLocalizations {
   /// **'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.'**
   String get rentalChangeDeliveryUnavailable;
 
-  /// No description provided for @lesseeWalletTitle.
+  /// No description provided for @lesseeWalletAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Your GCC wallet'**
-  String get lesseeWalletTitle;
+  /// **'Available balance'**
+  String get lesseeWalletAvailable;
 
-  /// No description provided for @lesseeWalletBody.
+  /// No description provided for @lesseeWalletAvailableFigure.
   ///
   /// In en, this message translates to:
-  /// **'Caution deposits and refunds land here after you approve a return. Open Bookings to track held escrow on active rentals.'**
-  String get lesseeWalletBody;
+  /// **'Available balance'**
+  String get lesseeWalletAvailableFigure;
 
-  /// No description provided for @lesseeProfileTitle.
+  /// No description provided for @lesseeWalletWithdraw.
   ///
   /// In en, this message translates to:
-  /// **'Your profile'**
-  String get lesseeProfileTitle;
+  /// **'Withdraw to bank'**
+  String get lesseeWalletWithdraw;
 
-  /// No description provided for @lesseeProfileBody.
+  /// No description provided for @lesseeWalletNothingToWithdraw.
   ///
   /// In en, this message translates to:
-  /// **'Language and notification preferences for lessee mode. Vendor yards keep a separate business profile.'**
-  String get lesseeProfileBody;
+  /// **'Nothing to withdraw'**
+  String get lesseeWalletNothingToWithdraw;
+
+  /// No description provided for @lesseeWalletZeroCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Available to withdraw: ₦0. All currently active balances are held in escrow or await return inspection.'**
+  String get lesseeWalletZeroCaption;
+
+  /// No description provided for @lesseeWalletBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance breakdown'**
+  String get lesseeWalletBreakdown;
+
+  /// No description provided for @lesseeWalletDepositsHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposits held by vendors'**
+  String get lesseeWalletDepositsHeld;
+
+  /// No description provided for @lesseeWalletDepositsHeldCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Your deposits held by vendors. Released after check-in approval.'**
+  String get lesseeWalletDepositsHeldCaption;
+
+  /// No description provided for @lesseeWalletPendingRefunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending refunds'**
+  String get lesseeWalletPendingRefunds;
+
+  /// No description provided for @lesseeWalletPendingRefundsCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Refunds pending vendor approval after return'**
+  String get lesseeWalletPendingRefundsCaption;
+
+  /// No description provided for @lesseeWalletEscrowTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Held in escrow & audit'**
+  String get lesseeWalletEscrowTitle;
+
+  /// No description provided for @lesseeWalletHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction history'**
+  String get lesseeWalletHistory;
+
+  /// No description provided for @lesseeWalletBookingReleased.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking {reference} released'**
+  String lesseeWalletBookingReleased(String reference);
+
+  /// No description provided for @lesseeWalletRefundReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Refund received · {reference}'**
+  String lesseeWalletRefundReceived(String reference);
+
+  /// No description provided for @lesseeWalletDepositHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Caution deposit held'**
+  String get lesseeWalletDepositHeld;
+
+  /// No description provided for @lesseeWalletPayoutSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout {reference} sent'**
+  String lesseeWalletPayoutSent(String reference);
+
+  /// No description provided for @lesseeWalletPayoutFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout {reference} failed'**
+  String lesseeWalletPayoutFailed(String reference);
+
+  /// No description provided for @lesseeWalletEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions ready for payout'**
+  String get lesseeWalletEmptyTitle;
+
+  /// No description provided for @lesseeWalletEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When equipment returns are validated by field assessors and yardmasters, refunds and caution deposits are immediately re-credited to your available balance.'**
+  String get lesseeWalletEmptyBody;
+
+  /// No description provided for @lesseeWalletViewBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'View my bookings'**
+  String get lesseeWalletViewBookings;
+
+  /// No description provided for @lesseeProfileGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning, {name}'**
+  String lesseeProfileGreeting(String name);
+
+  /// No description provided for @lesseeProfileSince.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee since {since} · {bookings} bookings · {completed} completed'**
+  String lesseeProfileSince(String since, int bookings, int completed);
+
+  /// No description provided for @lesseeProfileDualAuthority.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual authority account'**
+  String get lesseeProfileDualAuthority;
+
+  /// No description provided for @lesseeProfileDualBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as Lessee & Yard Vendor'**
+  String get lesseeProfileDualBody;
+
+  /// No description provided for @lesseeProfileSwitchMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch mode'**
+  String get lesseeProfileSwitchMode;
+
+  /// No description provided for @lesseeProfileActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental activity'**
+  String get lesseeProfileActivity;
+
+  /// No description provided for @lesseeProfileActiveBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'Active bookings'**
+  String get lesseeProfileActiveBookings;
+
+  /// No description provided for @lesseeProfileActiveCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} active'**
+  String lesseeProfileActiveCount(int count);
+
+  /// No description provided for @lesseeProfileRentalHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Rental history'**
+  String get lesseeProfileRentalHistory;
+
+  /// No description provided for @lesseeProfileCompletedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} completed'**
+  String lesseeProfileCompletedCount(int count);
+
+  /// No description provided for @lesseeProfileSavedCards.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved payment methods'**
+  String get lesseeProfileSavedCards;
+
+  /// No description provided for @lesseeProfileCardsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} cards'**
+  String lesseeProfileCardsCount(int count);
+
+  /// No description provided for @lesseeProfileDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'This device & offline cache'**
+  String get lesseeProfileDevice;
+
+  /// No description provided for @lesseeProfileOsPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'OS / Platform'**
+  String get lesseeProfileOsPlatform;
+
+  /// No description provided for @lesseeProfileSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'GCC support line'**
+  String get lesseeProfileSupport;
+
+  /// No description provided for @lesseeProfileCallSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get lesseeProfileCallSupport;
+
+  /// No description provided for @lesseeProfileSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out of GCC'**
+  String get lesseeProfileSignOut;
+
+  /// No description provided for @lesseeProfileSwitchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Vendor mode?'**
+  String get lesseeProfileSwitchTitle;
+
+  /// No description provided for @lesseeProfileSwitchBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Dual-role account verified for {name}'**
+  String lesseeProfileSwitchBody(String name);
+
+  /// No description provided for @lesseeProfileSwitchGains.
+  ///
+  /// In en, this message translates to:
+  /// **'In Vendor mode you will see:'**
+  String get lesseeProfileSwitchGains;
+
+  /// No description provided for @lesseeProfileGainRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Incoming booking requests to accept or decline'**
+  String get lesseeProfileGainRequests;
+
+  /// No description provided for @lesseeProfileGainCatalog.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment inventory catalog and daily yard availability'**
+  String get lesseeProfileGainCatalog;
+
+  /// No description provided for @lesseeProfileGainVideos.
+  ///
+  /// In en, this message translates to:
+  /// **'Return inspection and condition video audit tools'**
+  String get lesseeProfileGainVideos;
+
+  /// No description provided for @lesseeProfileSwitchStill.
+  ///
+  /// In en, this message translates to:
+  /// **'You will still see your wallet, bank payouts, and history.'**
+  String get lesseeProfileSwitchStill;
+
+  /// No description provided for @lesseeProfileSwitchConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to Vendor'**
+  String get lesseeProfileSwitchConfirm;
+
+  /// No description provided for @lesseeProfileSwitchStay.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay in Lessee mode'**
+  String get lesseeProfileSwitchStay;
 }
 
 class _AppLocalizationsDelegate
