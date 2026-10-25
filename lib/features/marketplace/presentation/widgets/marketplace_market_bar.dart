@@ -68,7 +68,7 @@ class MarketplaceMarketBar extends StatelessWidget {
         if (nearMeNotice) ...[
           const SizedBox(height: AppSpacing.xxs),
           Text(
-            l10n.dashboardActionUnavailable,
+            l10n.marketplaceNearMeBody,
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ],

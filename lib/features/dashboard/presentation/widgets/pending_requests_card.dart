@@ -21,6 +21,8 @@ class PendingRequestsCard extends StatelessWidget {
     required this.allRequestsLabel,
     required this.disabledReason,
     this.lastAnswered,
+    this.onRespond,
+    this.onSeeAll,
     super.key,
   });
 
@@ -34,6 +36,8 @@ class PendingRequestsCard extends StatelessWidget {
   final String allRequestsLabel;
   final String disabledReason;
   final String? lastAnswered;
+  final VoidCallback? onRespond;
+  final VoidCallback? onSeeAll;
 
   @override
   Widget build(BuildContext context) {
@@ -195,11 +199,12 @@ class PendingRequestsCard extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         AppPrimaryButton(
           label: respondLabel,
-          onPressed: null,
-          disabledReason: disabledReason,
+          onPressed: onRespond,
+          disabledReason: onRespond == null ? disabledReason : null,
         ),
         DashboardTextLink(
           label: allRequestsLabel,
+          onPressed: onSeeAll,
           disabledReason: disabledReason,
           chevron: true,
         ),

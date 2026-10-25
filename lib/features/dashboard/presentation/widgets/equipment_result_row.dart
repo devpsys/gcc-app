@@ -11,6 +11,7 @@ class EquipmentResultRow extends StatelessWidget {
     required this.availableLabel,
     required this.perDay,
     required this.disabledReason,
+    this.onOpen,
     super.key,
   });
 
@@ -18,6 +19,7 @@ class EquipmentResultRow extends StatelessWidget {
   final String availableLabel;
   final String perDay;
   final String disabledReason;
+  final VoidCallback? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,12 @@ class EquipmentResultRow extends StatelessWidget {
     final price = Theme.of(context).textTheme.bodyMedium
         ?.copyWith(fontWeight: FontWeight.w600);
     return Tooltip(
-      message: disabledReason,
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        child: Row(
+      message: onOpen == null ? disabledReason : '',
+      child: InkWell(
+        onTap: onOpen,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.sm),
+          child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const DashboardThumb(),
@@ -87,6 +91,7 @@ class EquipmentResultRow extends StatelessWidget {
               ),
             ),
           ],
+        ),
         ),
       ),
     );

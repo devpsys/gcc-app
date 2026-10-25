@@ -20,6 +20,7 @@ import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_sectio
 import 'package:gcc_app/features/dashboard/presentation/widgets/fleet_status_panel.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/pending_requests_card.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/vendor_earnings_panel.dart';
+import 'package:go_router/go_router.dart';
 
 class VendorDashboardPage extends StatelessWidget {
   const VendorDashboardPage({super.key});
@@ -93,6 +94,11 @@ class VendorDashboardPage extends StatelessWidget {
     }
     final snapshot = state.content ?? const DashboardSnapshot();
     final unavailable = l10n.dashboardActionUnavailable;
+    final router = GoRouter.maybeOf(context);
+    void openRequests() => router?.go(RoutePaths.vendorRequests);
+    void openCatalog() => router?.go(RoutePaths.vendorCatalog);
+    void openWallet() => router?.go(RoutePaths.vendorWallet);
+    void openWithdraw() => router?.go(RoutePaths.vendorWithdraw);
     final requests = snapshot.requests;
     final answered = snapshot.lastAnswered;
     return Column(
@@ -125,6 +131,8 @@ class VendorDashboardPage extends StatelessWidget {
             lastAnswered: answered == null
                 ? null
                 : l10n.dashboardLastRequest(answered),
+            onRespond: openRequests,
+            onSeeAll: openRequests,
           ),
         ),
         const SizedBox(height: AppSpacing.lg),
@@ -141,6 +149,7 @@ class VendorDashboardPage extends StatelessWidget {
           child: FleetStatusPanel(
             fleet: snapshot.fleet,
             disabledReason: unavailable,
+            onManage: openCatalog,
           ),
         ),
         const SizedBox(height: AppSpacing.lg),
@@ -164,6 +173,8 @@ class VendorDashboardPage extends StatelessWidget {
             emptyLabel: l10n.dashboardNoEarnings,
             disabledReason: unavailable,
             note: snapshot.earningsNote,
+            onWithdraw: openWithdraw,
+            onOpenWallet: openWallet,
           ),
         ),
         const SizedBox(height: AppSpacing.lg),
@@ -186,6 +197,7 @@ class VendorDashboardPage extends StatelessWidget {
                       BookingSummaryRow(
                         booking: booking,
                         disabledReason: unavailable,
+                        onOpen: openRequests,
                       ),
                   ],
                 ),

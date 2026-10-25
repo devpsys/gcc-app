@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/widgets/app_info_sheet.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_listing_pane.dart';
 
 class MarketplaceListingScreen extends StatelessWidget {
@@ -14,12 +15,20 @@ class MarketplaceListingScreen extends StatelessWidget {
         actions: [
           IconButton(
             tooltip: l10n.marketplaceShare,
-            onPressed: null,
+            onPressed: () => showAppInfoSheet(
+              context: context,
+              title: l10n.marketplaceShare,
+              body: l10n.marketplaceShareBody,
+            ),
             icon: const Icon(Icons.ios_share_outlined),
           ),
           IconButton(
             tooltip: l10n.marketplaceMore,
-            onPressed: null,
+            onPressed: () => showAppInfoSheet(
+              context: context,
+              title: l10n.marketplaceMore,
+              body: l10n.marketplaceMoreBody,
+            ),
             icon: const Icon(Icons.more_vert),
           ),
         ],

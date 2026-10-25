@@ -10,11 +10,13 @@ class BookingSummaryRow extends StatelessWidget {
   const BookingSummaryRow({
     required this.booking,
     required this.disabledReason,
+    this.onOpen,
     super.key,
   });
 
   final DashboardBooking booking;
   final String disabledReason;
+  final VoidCallback? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +34,12 @@ class BookingSummaryRow extends StatelessWidget {
       _ => l10n.dashboardStatusInUse,
     };
     return Tooltip(
-      message: disabledReason,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
-        child: Row(
+      message: onOpen == null ? disabledReason : '',
+      child: InkWell(
+        onTap: onOpen,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+          child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
@@ -63,6 +67,7 @@ class BookingSummaryRow extends StatelessWidget {
               color: Theme.of(context).colorScheme.outline,
             ),
           ],
+        ),
         ),
       ),
     );

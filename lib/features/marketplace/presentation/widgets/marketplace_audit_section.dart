@@ -45,7 +45,7 @@ class MarketplaceAuditSection extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.xxs),
           Text(
-            l10n.dashboardActionUnavailable,
+            l10n.marketplacePlaybackUnavailable,
             style: Theme.of(context).textTheme.bodySmall
                 ?.copyWith(color: colors.muted),
           ),

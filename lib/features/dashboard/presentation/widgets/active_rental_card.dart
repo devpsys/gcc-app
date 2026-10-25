@@ -18,6 +18,11 @@ class ActiveRentalCard extends StatelessWidget {
     required this.onDisabled,
     this.place,
     this.lastRental,
+    this.onBrowse,
+    this.onReviewReturn,
+    this.onMessageVendor,
+    this.onViewWallet,
+    this.onRate,
     super.key,
   });
 
@@ -25,6 +30,11 @@ class ActiveRentalCard extends StatelessWidget {
   final String onDisabled;
   final String? place;
   final String? lastRental;
+  final VoidCallback? onBrowse;
+  final VoidCallback? onReviewReturn;
+  final VoidCallback? onMessageVendor;
+  final VoidCallback? onViewWallet;
+  final VoidCallback? onRate;
 
   @override
   Widget build(BuildContext context) {
@@ -84,8 +94,8 @@ class ActiveRentalCard extends StatelessWidget {
           const SizedBox(height: AppSpacing.md),
           AppPrimaryButton(
             label: l10n.dashboardBrowseEquipment,
-            onPressed: null,
-            disabledReason: onDisabled,
+            onPressed: onBrowse,
+            disabledReason: onBrowse == null ? onDisabled : null,
           ),
           if (previous != null) ...[
             const SizedBox(height: AppSpacing.sm),
@@ -158,9 +168,9 @@ class ActiveRentalCard extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.sm),
         AppButtonFrame(
-          disabledReason: onDisabled,
+          disabledReason: onReviewReturn == null ? onDisabled : null,
           button: OutlinedButton(
-            onPressed: null,
+            onPressed: onReviewReturn,
             style: AppButtonStyles.secondary(scheme).copyWith(
               foregroundColor: WidgetStatePropertyAll(colors.heldFunds),
               side: WidgetStatePropertyAll(
@@ -175,6 +185,7 @@ class ActiveRentalCard extends StatelessWidget {
         ),
         DashboardTextLink(
           label: l10n.dashboardMessageVendor,
+          onPressed: onMessageVendor,
           disabledReason: onDisabled,
           chevron: true,
         ),
@@ -223,6 +234,7 @@ class ActiveRentalCard extends StatelessWidget {
                     ),
                     DashboardTextLink(
                       label: l10n.dashboardViewWallet,
+                      onPressed: onViewWallet,
                       disabledReason: onDisabled,
                       chevron: true,
                       color: colors.success,
@@ -268,9 +280,9 @@ class ActiveRentalCard extends StatelessWidget {
         ],
         const SizedBox(height: AppSpacing.sm),
         AppButtonFrame(
-          disabledReason: onDisabled,
+          disabledReason: onRate == null ? onDisabled : null,
           button: OutlinedButton(
-            onPressed: null,
+            onPressed: onRate,
             style: AppButtonStyles.neutral(scheme).copyWith(
               minimumSize: const WidgetStatePropertyAll(
                 Size(

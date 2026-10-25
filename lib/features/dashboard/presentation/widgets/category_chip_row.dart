@@ -8,11 +8,13 @@ class CategoryChipRow extends StatelessWidget {
   const CategoryChipRow({
     required this.categories,
     required this.disabledReason,
+    this.onSelected,
     super.key,
   });
 
   final List<({String label, IconData icon})> categories;
   final String disabledReason;
+  final ValueChanged<String>? onSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -32,38 +34,47 @@ class CategoryChipRow extends StatelessWidget {
           final scheme = Theme.of(context).colorScheme;
           final foreground = selected ? scheme.primary : scheme.onSurface;
           return Tooltip(
-            message: disabledReason,
+            message: onSelected == null ? disabledReason : '',
             child: SizedBox(
               width: tile,
               height: tile,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: selected ? scheme.primaryContainer : scheme.surface,
-                  borderRadius: BorderRadius.circular(AppRadii.input),
-                  border: selected
+              child: Material(
+                color: selected ? scheme.primaryContainer : scheme.surface,
+                borderRadius: BorderRadius.circular(AppRadii.input),
+                child: InkWell(
+                  onTap: onSelected == null
                       ? null
-                      : Border.all(color: context.semanticColors.border),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.xxs),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        category.icon,
-                        size: AppDimensions.iconMd,
-                        color: foreground,
+                      : () => onSelected!(category.label),
+                  borderRadius: BorderRadius.circular(AppRadii.input),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(AppRadii.input),
+                      border: selected
+                          ? null
+                          : Border.all(color: context.semanticColors.border),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(AppSpacing.xxs),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            category.icon,
+                            size: AppDimensions.iconMd,
+                            color: foreground,
+                          ),
+                          const SizedBox(height: AppSpacing.xxs),
+                          Text(
+                            category.label,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(color: foreground, letterSpacing: 0),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: AppSpacing.xxs),
-                      Text(
-                        category.label,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.labelSmall
-                            ?.copyWith(color: foreground, letterSpacing: 0),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

@@ -126,41 +126,21 @@ abstract final class DashboardDestinations {
   }
 
   static ShellDestination _wallet(AppLocalizations l10n) {
-    return _item(
+    return _built(
       l10n.dashboardWallet,
       Icons.account_balance_wallet_outlined,
       Icons.account_balance_wallet,
-      '/wallet',
-      l10n,
+      RoutePaths.wallet,
     );
   }
 
   static ShellDestination _profile(AppLocalizations l10n) {
-    return _item(
+    return _built(
       l10n.dashboardProfile,
       Icons.person_outline,
       Icons.person,
-      '/profile',
-      l10n,
+      RoutePaths.profile,
     );
   }
 
-  static ShellDestination _item(
-    String label,
-    IconData icon,
-    IconData selectedIcon,
-    String location,
-    AppLocalizations l10n, {
-    int badgeCount = 0,
-  }) {
-    return ShellDestination(
-      label: label,
-      icon: icon,
-      selectedIcon: selectedIcon,
-      location: location,
-      available: false,
-      unavailableReason: l10n.dashboardActionUnavailable,
-      badgeCount: badgeCount,
-    );
-  }
 }

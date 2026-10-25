@@ -20,6 +20,8 @@ class VendorEarningsPanel extends StatelessWidget {
     required this.emptyLabel,
     required this.disabledReason,
     this.note,
+    this.onWithdraw,
+    this.onOpenWallet,
     super.key,
   });
 
@@ -32,6 +34,8 @@ class VendorEarningsPanel extends StatelessWidget {
   final String emptyLabel;
   final String disabledReason;
   final String? note;
+  final VoidCallback? onWithdraw;
+  final VoidCallback? onOpenWallet;
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +78,12 @@ class VendorEarningsPanel extends StatelessWidget {
               const SizedBox(height: AppSpacing.sm),
               AppPrimaryButton(
                 label: withdrawLabel,
-                onPressed: null,
-                disabledReason: disabledReason,
+                onPressed: onWithdraw,
+                disabledReason: onWithdraw == null ? disabledReason : null,
               ),
               DashboardTextLink(
                 label: walletLabel,
+                onPressed: onOpenWallet,
                 disabledReason: disabledReason,
               ),
             ],

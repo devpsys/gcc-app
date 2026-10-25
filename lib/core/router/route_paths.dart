@@ -31,6 +31,8 @@ abstract final class RoutePaths {
   static const String vendorWithdraw = '/vendor/wallet/withdraw';
   static const String vendorProfile = '/vendor/profile';
   static const String vendorNotifications = '/vendor/profile/notifications';
+  static const String wallet = '/wallet';
+  static const String profile = '/profile';
   static const String browse = '/browse';
   static const String marketplaceListing = '/browse/:id';
   static const String rentalRequest = '/browse/:id/request';

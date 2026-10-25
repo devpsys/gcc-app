@@ -8689,6 +8689,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select a booking to review escrow and timeline. On a phone, this opens as a full page instead.'**
   String get bookingsTabletSelectBooking;
+
+  /// No description provided for @marketplaceShareBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing a listing link isn\'t connected yet. Copy the equipment title from the listing header if you need to send it outside GCC.'**
+  String get marketplaceShareBody;
+
+  /// No description provided for @marketplaceMoreBody.
+  ///
+  /// In en, this message translates to:
+  /// **'More listing actions (save, compare, report shortcuts) stay on this sheet until the marketplace extras ship.'**
+  String get marketplaceMoreBody;
+
+  /// No description provided for @marketplaceReportBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Reporting a listing isn\'t connected yet. Note the yard name and listing title if you need to escalate outside the app.'**
+  String get marketplaceReportBody;
+
+  /// No description provided for @marketplacePlaybackUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Audit clip playback stays on the booking proofs flow for now.'**
+  String get marketplacePlaybackUnavailable;
+
+  /// No description provided for @marketplaceNearMeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Location-based near-me sorting isn\'t connected yet. Browse by market or search until GPS filters ship.'**
+  String get marketplaceNearMeBody;
+
+  /// No description provided for @marketplaceVideoUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing video playback isn\'t connected yet. The caption describes what the yard recorded.'**
+  String get marketplaceVideoUnavailable;
+
+  /// No description provided for @bookingsProofPlaybackUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition proof playback opens from handback review when a return clip is ready.'**
+  String get bookingsProofPlaybackUnavailable;
+
+  /// No description provided for @rentalChangeDeliveryUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.'**
+  String get rentalChangeDeliveryUnavailable;
+
+  /// No description provided for @lesseeWalletTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your GCC wallet'**
+  String get lesseeWalletTitle;
+
+  /// No description provided for @lesseeWalletBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Caution deposits and refunds land here after you approve a return. Open Bookings to track held escrow on active rentals.'**
+  String get lesseeWalletBody;
+
+  /// No description provided for @lesseeProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your profile'**
+  String get lesseeProfileTitle;
+
+  /// No description provided for @lesseeProfileBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Language and notification preferences for lessee mode. Vendor yards keep a separate business profile.'**
+  String get lesseeProfileBody;
 }
 
 class _AppLocalizationsDelegate

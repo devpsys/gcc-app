@@ -129,7 +129,7 @@ class LesseeBookingDetailProofs extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.xxs),
               Text(
-                l10n.dashboardActionUnavailable,
+                l10n.bookingsProofPlaybackUnavailable,
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: colors.muted,
                 ),

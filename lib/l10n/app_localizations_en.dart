@@ -5024,4 +5024,50 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get bookingsTabletSelectBooking =>
       'Select a booking to review escrow and timeline. On a phone, this opens as a full page instead.';
+
+  @override
+  String get marketplaceShareBody =>
+      'Sharing a listing link isn\'t connected yet. Copy the equipment title from the listing header if you need to send it outside GCC.';
+
+  @override
+  String get marketplaceMoreBody =>
+      'More listing actions (save, compare, report shortcuts) stay on this sheet until the marketplace extras ship.';
+
+  @override
+  String get marketplaceReportBody =>
+      'Reporting a listing isn\'t connected yet. Note the yard name and listing title if you need to escalate outside the app.';
+
+  @override
+  String get marketplacePlaybackUnavailable =>
+      'Audit clip playback stays on the booking proofs flow for now.';
+
+  @override
+  String get marketplaceNearMeBody =>
+      'Location-based near-me sorting isn\'t connected yet. Browse by market or search until GPS filters ship.';
+
+  @override
+  String get marketplaceVideoUnavailable =>
+      'Listing video playback isn\'t connected yet. The caption describes what the yard recorded.';
+
+  @override
+  String get bookingsProofPlaybackUnavailable =>
+      'Condition proof playback opens from handback review when a return clip is ready.';
+
+  @override
+  String get rentalChangeDeliveryUnavailable =>
+      'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.';
+
+  @override
+  String get lesseeWalletTitle => 'Your GCC wallet';
+
+  @override
+  String get lesseeWalletBody =>
+      'Caution deposits and refunds land here after you approve a return. Open Bookings to track held escrow on active rentals.';
+
+  @override
+  String get lesseeProfileTitle => 'Your profile';
+
+  @override
+  String get lesseeProfileBody =>
+      'Language and notification preferences for lessee mode. Vendor yards keep a separate business profile.';
 }

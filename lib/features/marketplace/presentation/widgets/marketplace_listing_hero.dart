@@ -150,7 +150,7 @@ class MarketplaceListingHero extends StatelessWidget {
               0,
             ),
             child: Text(
-              l10n.dashboardActionUnavailable,
+              l10n.marketplaceVideoUnavailable,
               style: Theme.of(context).textTheme.bodySmall
                   ?.copyWith(color: colors.muted),
             ),

@@ -22,6 +22,9 @@ import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_sectio
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_text_link.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/equipment_result_row.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/order_summary_row.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_contact_sheet.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_rate_sheet.dart';
+import 'package:go_router/go_router.dart';
 
 class LesseeDashboardPage extends StatelessWidget {
   const LesseeDashboardPage({super.key});
@@ -86,6 +89,10 @@ class LesseeDashboardPage extends StatelessWidget {
     }
     final snapshot = state.content ?? const DashboardSnapshot();
     final unavailable = l10n.dashboardActionUnavailable;
+    final router = GoRouter.maybeOf(context);
+    void openBrowse() => router?.go(RoutePaths.browse);
+    void openBookings() => router?.go(RoutePaths.bookings);
+    void openWallet() => router?.go(RoutePaths.wallet);
     final failedResults =
         state is DashboardPartial &&
         state.failedSection == DashboardSectionId.results;
@@ -93,14 +100,40 @@ class LesseeDashboardPage extends StatelessWidget {
         state is DashboardPartial &&
         state.failedSection == DashboardSectionId.orders;
     final border = context.semanticColors.border;
+    final rental = snapshot.rental;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ActiveRentalCard(
-          rental: snapshot.rental,
+          rental: rental,
           place: snapshot.place,
           lastRental: snapshot.lastRental,
           onDisabled: unavailable,
+          onBrowse: openBrowse,
+          onReviewReturn: openBookings,
+          onViewWallet: openWallet,
+          onRate: rental == null
+              ? null
+              : () async {
+                  final rating = await showLesseeBookingRateSheet(
+                    context: context,
+                    title: rental.title,
+                  );
+                  if (rating == null || !context.mounted) {
+                    return;
+                  }
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(context.l10n.bookingsRateSaved)),
+                  );
+                },
+          onMessageVendor: rental == null
+              ? null
+              : () => showLesseeBookingContactSheet(
+                  context: context,
+                  vendorName: rental.location,
+                  vendorId: rental.reference,
+                  yard: rental.title,
+                ),
         ),
         const SizedBox(height: AppSpacing.lg),
         DashboardSearchBar(
@@ -108,6 +141,8 @@ class LesseeDashboardPage extends StatelessWidget {
           filtersLabel: l10n.dashboardFilters,
           disabledReason: unavailable,
           filterCount: snapshot.filterCount,
+          onOpen: openBrowse,
+          onFilters: openBrowse,
         ),
         const SizedBox(height: AppSpacing.lg),
         DashboardSection(
@@ -139,6 +174,7 @@ class LesseeDashboardPage extends StatelessWidget {
               ),
             ],
             disabledReason: unavailable,
+            onSelected: (_) => openBrowse(),
           ),
         ),
         const SizedBox(height: AppSpacing.lg),
@@ -148,6 +184,7 @@ class LesseeDashboardPage extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
           trailing: DashboardTextLink(
             label: l10n.dashboardSeeAll,
+            onPressed: openBrowse,
             disabledReason: unavailable,
             chevron: true,
             alignment: Alignment.centerRight,
@@ -179,6 +216,7 @@ class LesseeDashboardPage extends StatelessWidget {
                         availableLabel: l10n.dashboardAvailable,
                         perDay: l10n.dashboardPerDay,
                         disabledReason: unavailable,
+                        onOpen: openBrowse,
                       ),
                     ],
                   ],
@@ -191,6 +229,7 @@ class LesseeDashboardPage extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
           trailing: DashboardTextLink(
             label: l10n.dashboardSeeAll,
+            onPressed: openBookings,
             disabledReason: unavailable,
             chevron: true,
             alignment: Alignment.centerRight,
@@ -220,6 +259,7 @@ class LesseeDashboardPage extends StatelessWidget {
                       OrderSummaryRow(
                         order: snapshot.orders[index],
                         disabledReason: unavailable,
+                        onOpen: openBookings,
                       ),
                     ],
                   ],

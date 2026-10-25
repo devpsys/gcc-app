@@ -74,7 +74,7 @@ class RentalSummaryCard extends StatelessWidget {
             if (request.deliveryMode == RentalDeliveryMode.deliver) ...[
               const SizedBox(height: AppSpacing.xxs),
               Text(
-                l10n.dashboardActionUnavailable,
+                l10n.rentalChangeDeliveryUnavailable,
                 style: Theme.of(context).textTheme.bodySmall
                     ?.copyWith(color: colors.muted),
               ),

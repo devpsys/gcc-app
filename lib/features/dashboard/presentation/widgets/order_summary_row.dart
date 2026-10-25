@@ -8,11 +8,13 @@ class OrderSummaryRow extends StatelessWidget {
   const OrderSummaryRow({
     required this.order,
     required this.disabledReason,
+    this.onOpen,
     super.key,
   });
 
   final DashboardOrder order;
   final String disabledReason;
+  final VoidCallback? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,12 @@ class OrderSummaryRow extends StatelessWidget {
           .copyWith(color: scheme.onSurfaceVariant, letterSpacing: 0),
     );
     return Tooltip(
-      message: disabledReason,
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.sm),
-        child: Row(
+      message: onOpen == null ? disabledReason : '',
+      child: InkWell(
+        onTap: onOpen,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.sm),
+          child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
@@ -66,6 +70,7 @@ class OrderSummaryRow extends StatelessWidget {
               ),
             ),
           ],
+        ),
         ),
       ),
     );

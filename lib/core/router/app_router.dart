@@ -33,6 +33,8 @@ import 'package:gcc_app/features/auth/presentation/pages/biometric_unlock_page.d
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_cubit.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart';
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
+import 'package:gcc_app/features/dashboard/presentation/pages/lessee_profile_page.dart';
+import 'package:gcc_app/features/dashboard/presentation/pages/lessee_wallet_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_switcher.dart';
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
 import 'package:gcc_app/features/booking/domain/rental_payment_status_args.dart';
@@ -194,6 +196,16 @@ GoRouter createAppRouter() {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.wallet,
+        name: RouteNames.wallet,
+        builder: (context, state) => const LesseeWalletPage(),
+      ),
+      GoRoute(
+        path: RoutePaths.profile,
+        name: RouteNames.profile,
+        builder: (context, state) => const LesseeProfilePage(),
       ),
       GoRoute(
         path: RoutePaths.browse,

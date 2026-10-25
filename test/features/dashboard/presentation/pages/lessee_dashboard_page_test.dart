@@ -52,7 +52,8 @@ void main() {
     expect(find.text('Mika 100kVA Generator'), findsOneWidget);
     expect(find.text('5kW PA Sound System'), findsOneWidget);
     expect(find.text('250A Welding Machine'), findsOneWidget);
-    expect(find.text("This isn't available in the app yet."), findsWidgets);
+    expect(find.text('Review return condition'), findsOneWidget);
+    expect(find.text('Message vendor'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

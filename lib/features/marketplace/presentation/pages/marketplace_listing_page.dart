@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
-import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_state.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_audit_section.dart';
@@ -14,6 +13,7 @@ import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_lo
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_rate_card.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_similar_row.dart';
 import 'package:gcc_app/features/marketplace/presentation/widgets/marketplace_specs_grid.dart';
+import 'package:gcc_app/core/widgets/app_info_sheet.dart';
 
 class MarketplaceListingPage extends StatelessWidget {
   const MarketplaceListingPage({
@@ -74,31 +74,19 @@ class MarketplaceListingPage extends StatelessWidget {
                     onOpen: () => onOpen(other.id),
                   ),
               ],
-              ConstrainedBox(
-                constraints: const BoxConstraints(
-                  minHeight: AppDimensions.minTouchTarget,
-                ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.md,
-                      vertical: AppSpacing.sm,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.marketplaceReport,
-                          style: Theme.of(context).textTheme.bodyMedium
-                              ?.copyWith(color: colors.muted),
-                        ),
-                        Text(
-                          l10n.dashboardActionUnavailable,
-                          style: Theme.of(context).textTheme.bodySmall
-                              ?.copyWith(color: colors.muted),
-                        ),
-                      ],
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () => showAppInfoSheet(
+                    context: context,
+                    title: l10n.marketplaceReport,
+                    body: l10n.marketplaceReportBody,
+                  ),
+                  child: Text(
+                    l10n.marketplaceReport,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: colors.muted,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
                 ),

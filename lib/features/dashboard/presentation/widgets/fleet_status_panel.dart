@@ -12,11 +12,13 @@ class FleetStatusPanel extends StatelessWidget {
   const FleetStatusPanel({
     required this.fleet,
     required this.disabledReason,
+    this.onManage,
     super.key,
   });
 
   final DashboardFleet? fleet;
   final String disabledReason;
+  final VoidCallback? onManage;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,7 @@ class FleetStatusPanel extends StatelessWidget {
               Flexible(
                 child: DashboardTextLink(
                   label: l10n.dashboardManage,
+                  onPressed: onManage,
                   disabledReason: disabledReason,
                   chevron: true,
                   alignment: Alignment.centerRight,
