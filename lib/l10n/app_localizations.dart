@@ -7507,6 +7507,294 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Continue to payment'**
   String get rentalContinuePayment;
+
+  /// No description provided for @rentalPaymentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment'**
+  String get rentalPaymentTitle;
+
+  /// No description provided for @rentalPaymentStayMeta.
+  ///
+  /// In en, this message translates to:
+  /// **'{yard} · {dates}'**
+  String rentalPaymentStayMeta(String yard, String dates);
+
+  /// No description provided for @rentalPaymentAmountDueNow.
+  ///
+  /// In en, this message translates to:
+  /// **'AMOUNT DUE NOW'**
+  String get rentalPaymentAmountDueNow;
+
+  /// No description provided for @rentalPaymentEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment'**
+  String get rentalPaymentEquipment;
+
+  /// No description provided for @rentalPaymentInsurance.
+  ///
+  /// In en, this message translates to:
+  /// **'Insurance'**
+  String get rentalPaymentInsurance;
+
+  /// No description provided for @rentalPaymentRefundableDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Refundable deposit'**
+  String get rentalPaymentRefundableDeposit;
+
+  /// No description provided for @rentalPaymentMethodTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'PAYMENT METHOD'**
+  String get rentalPaymentMethodTitle;
+
+  /// No description provided for @rentalPaymentGccAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank transfer to your GCC account'**
+  String get rentalPaymentGccAccount;
+
+  /// No description provided for @rentalPaymentGccAccountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No card details needed. Usually 1–2 minutes.'**
+  String get rentalPaymentGccAccountBody;
+
+  /// No description provided for @rentalPaymentRecommended3g.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended on 3G'**
+  String get rentalPaymentRecommended3g;
+
+  /// No description provided for @rentalPayment3gFriendly.
+  ///
+  /// In en, this message translates to:
+  /// **'3G friendly'**
+  String get rentalPayment3gFriendly;
+
+  /// No description provided for @rentalPaymentNoCardErrors.
+  ///
+  /// In en, this message translates to:
+  /// **'No card errors · Tap to switch to zero-card instant transfer.'**
+  String get rentalPaymentNoCardErrors;
+
+  /// No description provided for @rentalPaymentCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Card'**
+  String get rentalPaymentCard;
+
+  /// No description provided for @rentalPaymentCardBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Verve, Mastercard, VBank. A 1.5% fee applies.'**
+  String get rentalPaymentCardBody;
+
+  /// No description provided for @rentalPaymentOtherBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank transfer from another bank'**
+  String get rentalPaymentOtherBank;
+
+  /// No description provided for @rentalPaymentOtherBankBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Providus, GTBank, FBN, UBA, Zenith.'**
+  String get rentalPaymentOtherBankBody;
+
+  /// No description provided for @rentalPaymentOtherBankHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer using order reference {reference}. Prefer your GCC account on weak networks.'**
+  String rentalPaymentOtherBankHelp(String reference);
+
+  /// No description provided for @rentalPaymentSendExactly.
+  ///
+  /// In en, this message translates to:
+  /// **'SEND EXACTLY'**
+  String get rentalPaymentSendExactly;
+
+  /// No description provided for @rentalPaymentAutoReconcile.
+  ///
+  /// In en, this message translates to:
+  /// **'AUTO-RECONCILE'**
+  String get rentalPaymentAutoReconcile;
+
+  /// No description provided for @rentalPaymentAccountNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Account number'**
+  String get rentalPaymentAccountNumber;
+
+  /// No description provided for @rentalPaymentBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank'**
+  String get rentalPaymentBank;
+
+  /// No description provided for @rentalPaymentCopyDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy account details'**
+  String get rentalPaymentCopyDetails;
+
+  /// No description provided for @rentalPaymentCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Account number copied.'**
+  String get rentalPaymentCopied;
+
+  /// No description provided for @rentalPaymentTransferBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer {amount} to this account. GCC detects it and confirms your booking automatically — usually within 2 minutes.'**
+  String rentalPaymentTransferBody(String amount);
+
+  /// No description provided for @rentalPaymentTransferRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'Unconfirmed transfers are released back after 30 minutes.'**
+  String get rentalPaymentTransferRelease;
+
+  /// No description provided for @rentalPaymentTotalWithFee.
+  ///
+  /// In en, this message translates to:
+  /// **'TOTAL WITH CARD FEE'**
+  String get rentalPaymentTotalWithFee;
+
+  /// No description provided for @rentalPaymentCardFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Card fee'**
+  String get rentalPaymentCardFee;
+
+  /// No description provided for @rentalPaymentCardFeeDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'· 1.5% of {amount}'**
+  String rentalPaymentCardFeeDetail(String amount);
+
+  /// No description provided for @rentalPaymentCardNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Card number'**
+  String get rentalPaymentCardNumber;
+
+  /// No description provided for @rentalPaymentCardBrand.
+  ///
+  /// In en, this message translates to:
+  /// **'Verve'**
+  String get rentalPaymentCardBrand;
+
+  /// No description provided for @rentalPaymentCardFifteen.
+  ///
+  /// In en, this message translates to:
+  /// **'That card number is 15 digits — Nigerian cards have 16 or 19.'**
+  String get rentalPaymentCardFifteen;
+
+  /// No description provided for @rentalPaymentCardLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a 16 or 19-digit Nigerian card number.'**
+  String get rentalPaymentCardLength;
+
+  /// No description provided for @rentalPaymentCardDigitsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'15 digits'**
+  String get rentalPaymentCardDigitsHint;
+
+  /// No description provided for @rentalPaymentExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Expiry'**
+  String get rentalPaymentExpiry;
+
+  /// No description provided for @rentalPaymentExpiryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'MM/YY'**
+  String get rentalPaymentExpiryHint;
+
+  /// No description provided for @rentalPaymentExpiryRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the card expiry.'**
+  String get rentalPaymentExpiryRequired;
+
+  /// No description provided for @rentalPaymentCvv.
+  ///
+  /// In en, this message translates to:
+  /// **'CVV'**
+  String get rentalPaymentCvv;
+
+  /// No description provided for @rentalPaymentCvvHint.
+  ///
+  /// In en, this message translates to:
+  /// **'3 digits on the back of your card'**
+  String get rentalPaymentCvvHint;
+
+  /// No description provided for @rentalPaymentCvvError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the 3-digit code'**
+  String get rentalPaymentCvvError;
+
+  /// No description provided for @rentalPaymentCheckCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your card details'**
+  String get rentalPaymentCheckCard;
+
+  /// No description provided for @rentalPaymentFixFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix the highlighted fields to continue'**
+  String get rentalPaymentFixFields;
+
+  /// No description provided for @rentalPaymentSmsLead.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll get an SMS when the booking is confirmed. If you book by phone, you can approve vendor responses by replying'**
+  String get rentalPaymentSmsLead;
+
+  /// No description provided for @rentalPaymentSmsOr.
+  ///
+  /// In en, this message translates to:
+  /// **'or'**
+  String get rentalPaymentSmsOr;
+
+  /// No description provided for @rentalPaymentSmsMid.
+  ///
+  /// In en, this message translates to:
+  /// **', and check your balance on'**
+  String get rentalPaymentSmsMid;
+
+  /// No description provided for @rentalPaymentSmsTail.
+  ///
+  /// In en, this message translates to:
+  /// **'. Need to complete offline? You can pay directly via USSD using order reference {reference}.'**
+  String rentalPaymentSmsTail(String reference);
+
+  /// No description provided for @rentalPaymentPayByCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay by card'**
+  String get rentalPaymentPayByCard;
+
+  /// No description provided for @rentalPaymentSent.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ve sent {amount}'**
+  String rentalPaymentSent(String amount);
+
+  /// No description provided for @rentalPaymentPayCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay {amount}'**
+  String rentalPaymentPayCard(String amount);
 }
 
 class _AppLocalizationsDelegate

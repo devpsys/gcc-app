@@ -23,8 +23,7 @@ void main() {
     final pay = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, 'Continue to payment'),
     );
-    expect(pay.onPressed, isNull);
-    expect(find.textContaining("isn't available in the app yet"), findsWidgets);
+    expect(pay.onPressed, isNotNull);
   });
 
   testWidgets('adds the operator line when assigned', (tester) async {

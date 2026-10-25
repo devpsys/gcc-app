@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_primary_button.dart';
 import 'package:gcc_app/core/widgets/app_secondary_button.dart';
@@ -71,8 +72,16 @@ class RentalRequestPage extends StatelessWidget {
                   flex: 2,
                   child: AppPrimaryButton(
                     label: l10n.rentalContinuePayment,
-                    onPressed: null,
-                    disabledReason: l10n.dashboardActionUnavailable,
+                    onPressed: () {
+                      final router = GoRouter.maybeOf(context);
+                      if (router == null) {
+                        return;
+                      }
+                      router.push(
+                        RoutePaths.rentalPaymentOf(request.listing.id),
+                        extra: request,
+                      );
+                    },
                   ),
                 ),
               ],

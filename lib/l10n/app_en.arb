@@ -2714,5 +2714,77 @@
     "placeholders": { "amount": { "type": "String" } }
   },
   "rentalBack": "Back",
-  "rentalContinuePayment": "Continue to payment"
+  "rentalContinuePayment": "Continue to payment",
+  "rentalPaymentTitle": "Payment",
+  "rentalPaymentStayMeta": "{yard} · {dates}",
+  "@rentalPaymentStayMeta": {
+    "placeholders": {
+      "yard": { "type": "String" },
+      "dates": { "type": "String" }
+    }
+  },
+  "rentalPaymentAmountDueNow": "AMOUNT DUE NOW",
+  "rentalPaymentEquipment": "Equipment",
+  "rentalPaymentInsurance": "Insurance",
+  "rentalPaymentRefundableDeposit": "Refundable deposit",
+  "rentalPaymentMethodTitle": "PAYMENT METHOD",
+  "rentalPaymentGccAccount": "Bank transfer to your GCC account",
+  "rentalPaymentGccAccountBody": "No card details needed. Usually 1–2 minutes.",
+  "rentalPaymentRecommended3g": "Recommended on 3G",
+  "rentalPayment3gFriendly": "3G friendly",
+  "rentalPaymentNoCardErrors": "No card errors · Tap to switch to zero-card instant transfer.",
+  "rentalPaymentCard": "Card",
+  "rentalPaymentCardBody": "Verve, Mastercard, VBank. A 1.5% fee applies.",
+  "rentalPaymentOtherBank": "Bank transfer from another bank",
+  "rentalPaymentOtherBankBody": "Providus, GTBank, FBN, UBA, Zenith.",
+  "rentalPaymentOtherBankHelp": "Transfer using order reference {reference}. Prefer your GCC account on weak networks.",
+  "@rentalPaymentOtherBankHelp": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "rentalPaymentSendExactly": "SEND EXACTLY",
+  "rentalPaymentAutoReconcile": "AUTO-RECONCILE",
+  "rentalPaymentAccountNumber": "Account number",
+  "rentalPaymentBank": "Bank",
+  "rentalPaymentCopyDetails": "Copy account details",
+  "rentalPaymentCopied": "Account number copied.",
+  "rentalPaymentTransferBody": "Transfer {amount} to this account. GCC detects it and confirms your booking automatically — usually within 2 minutes.",
+  "@rentalPaymentTransferBody": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalPaymentTransferRelease": "Unconfirmed transfers are released back after 30 minutes.",
+  "rentalPaymentTotalWithFee": "TOTAL WITH CARD FEE",
+  "rentalPaymentCardFee": "Card fee",
+  "rentalPaymentCardFeeDetail": "· 1.5% of {amount}",
+  "@rentalPaymentCardFeeDetail": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalPaymentCardNumber": "Card number",
+  "rentalPaymentCardBrand": "Verve",
+  "rentalPaymentCardFifteen": "That card number is 15 digits — Nigerian cards have 16 or 19.",
+  "rentalPaymentCardLength": "Enter a 16 or 19-digit Nigerian card number.",
+  "rentalPaymentCardDigitsHint": "15 digits",
+  "rentalPaymentExpiry": "Expiry",
+  "rentalPaymentExpiryHint": "MM/YY",
+  "rentalPaymentExpiryRequired": "Enter the card expiry.",
+  "rentalPaymentCvv": "CVV",
+  "rentalPaymentCvvHint": "3 digits on the back of your card",
+  "rentalPaymentCvvError": "Enter the 3-digit code",
+  "rentalPaymentCheckCard": "Check your card details",
+  "rentalPaymentFixFields": "Fix the highlighted fields to continue",
+  "rentalPaymentSmsLead": "You'll get an SMS when the booking is confirmed. If you book by phone, you can approve vendor responses by replying",
+  "rentalPaymentSmsOr": "or",
+  "rentalPaymentSmsMid": ", and check your balance on",
+  "rentalPaymentSmsTail": ". Need to complete offline? You can pay directly via USSD using order reference {reference}.",
+  "@rentalPaymentSmsTail": {
+    "placeholders": { "reference": { "type": "String" } }
+  },
+  "rentalPaymentPayByCard": "Pay by card",
+  "rentalPaymentSent": "I've sent {amount}",
+  "@rentalPaymentSent": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalPaymentPayCard": "Pay {amount}",
+  "@rentalPaymentPayCard": {
+    "placeholders": { "amount": { "type": "String" } }
+  }
 }

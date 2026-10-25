@@ -34,4 +34,5 @@ abstract final class RouteNames {
   static const String browse = 'browse';
   static const String marketplaceListing = 'marketplaceListing';
   static const String rentalRequest = 'rentalRequest';
+  static const String rentalPayment = 'rentalPayment';
 }

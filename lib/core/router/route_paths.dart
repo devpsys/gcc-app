@@ -34,6 +34,7 @@ abstract final class RoutePaths {
   static const String browse = '/browse';
   static const String marketplaceListing = '/browse/:id';
   static const String rentalRequest = '/browse/:id/request';
+  static const String rentalPayment = '/browse/:id/payment';
 
   static String vendorAssetEditOf(String reference) =>
       '/vendor/catalog/edit/$reference';
@@ -41,4 +42,6 @@ abstract final class RoutePaths {
   static String marketplaceListingOf(String id) => '/browse/$id';
 
   static String rentalRequestOf(String id) => '/browse/$id/request';
+
+  static String rentalPaymentOf(String id) => '/browse/$id/payment';
 }

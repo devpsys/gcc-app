@@ -4334,4 +4334,170 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rentalContinuePayment => 'Continue to payment';
+
+  @override
+  String get rentalPaymentTitle => 'Payment';
+
+  @override
+  String rentalPaymentStayMeta(String yard, String dates) {
+    return '$yard · $dates';
+  }
+
+  @override
+  String get rentalPaymentAmountDueNow => 'AMOUNT DUE NOW';
+
+  @override
+  String get rentalPaymentEquipment => 'Equipment';
+
+  @override
+  String get rentalPaymentInsurance => 'Insurance';
+
+  @override
+  String get rentalPaymentRefundableDeposit => 'Refundable deposit';
+
+  @override
+  String get rentalPaymentMethodTitle => 'PAYMENT METHOD';
+
+  @override
+  String get rentalPaymentGccAccount => 'Bank transfer to your GCC account';
+
+  @override
+  String get rentalPaymentGccAccountBody =>
+      'No card details needed. Usually 1–2 minutes.';
+
+  @override
+  String get rentalPaymentRecommended3g => 'Recommended on 3G';
+
+  @override
+  String get rentalPayment3gFriendly => '3G friendly';
+
+  @override
+  String get rentalPaymentNoCardErrors =>
+      'No card errors · Tap to switch to zero-card instant transfer.';
+
+  @override
+  String get rentalPaymentCard => 'Card';
+
+  @override
+  String get rentalPaymentCardBody =>
+      'Verve, Mastercard, VBank. A 1.5% fee applies.';
+
+  @override
+  String get rentalPaymentOtherBank => 'Bank transfer from another bank';
+
+  @override
+  String get rentalPaymentOtherBankBody =>
+      'Providus, GTBank, FBN, UBA, Zenith.';
+
+  @override
+  String rentalPaymentOtherBankHelp(String reference) {
+    return 'Transfer using order reference $reference. Prefer your GCC account on weak networks.';
+  }
+
+  @override
+  String get rentalPaymentSendExactly => 'SEND EXACTLY';
+
+  @override
+  String get rentalPaymentAutoReconcile => 'AUTO-RECONCILE';
+
+  @override
+  String get rentalPaymentAccountNumber => 'Account number';
+
+  @override
+  String get rentalPaymentBank => 'Bank';
+
+  @override
+  String get rentalPaymentCopyDetails => 'Copy account details';
+
+  @override
+  String get rentalPaymentCopied => 'Account number copied.';
+
+  @override
+  String rentalPaymentTransferBody(String amount) {
+    return 'Transfer $amount to this account. GCC detects it and confirms your booking automatically — usually within 2 minutes.';
+  }
+
+  @override
+  String get rentalPaymentTransferRelease =>
+      'Unconfirmed transfers are released back after 30 minutes.';
+
+  @override
+  String get rentalPaymentTotalWithFee => 'TOTAL WITH CARD FEE';
+
+  @override
+  String get rentalPaymentCardFee => 'Card fee';
+
+  @override
+  String rentalPaymentCardFeeDetail(String amount) {
+    return '· 1.5% of $amount';
+  }
+
+  @override
+  String get rentalPaymentCardNumber => 'Card number';
+
+  @override
+  String get rentalPaymentCardBrand => 'Verve';
+
+  @override
+  String get rentalPaymentCardFifteen =>
+      'That card number is 15 digits — Nigerian cards have 16 or 19.';
+
+  @override
+  String get rentalPaymentCardLength =>
+      'Enter a 16 or 19-digit Nigerian card number.';
+
+  @override
+  String get rentalPaymentCardDigitsHint => '15 digits';
+
+  @override
+  String get rentalPaymentExpiry => 'Expiry';
+
+  @override
+  String get rentalPaymentExpiryHint => 'MM/YY';
+
+  @override
+  String get rentalPaymentExpiryRequired => 'Enter the card expiry.';
+
+  @override
+  String get rentalPaymentCvv => 'CVV';
+
+  @override
+  String get rentalPaymentCvvHint => '3 digits on the back of your card';
+
+  @override
+  String get rentalPaymentCvvError => 'Enter the 3-digit code';
+
+  @override
+  String get rentalPaymentCheckCard => 'Check your card details';
+
+  @override
+  String get rentalPaymentFixFields => 'Fix the highlighted fields to continue';
+
+  @override
+  String get rentalPaymentSmsLead =>
+      'You\'ll get an SMS when the booking is confirmed. If you book by phone, you can approve vendor responses by replying';
+
+  @override
+  String get rentalPaymentSmsOr => 'or';
+
+  @override
+  String get rentalPaymentSmsMid => ', and check your balance on';
+
+  @override
+  String rentalPaymentSmsTail(String reference) {
+    return '. Need to complete offline? You can pay directly via USSD using order reference $reference.';
+  }
+
+  @override
+  String get rentalPaymentPayByCard => 'Pay by card';
+
+  @override
+  String rentalPaymentSent(String amount) {
+    return 'I\'ve sent $amount';
+  }
+
+  @override
+  String rentalPaymentPayCard(String amount) {
+    return 'Pay $amount';
+  }
 }

@@ -35,7 +35,10 @@ import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_role.dart
 import 'package:gcc_app/features/dashboard/presentation/pages/agent_today_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_role_switcher.dart';
 import 'package:gcc_app/features/home/presentation/pages/home_page.dart';
+import 'package:gcc_app/features/booking/domain/rental_request.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_request_cubit.dart';
+import 'package:gcc_app/features/booking/presentation/pages/rental_payment_screen.dart';
 import 'package:gcc_app/features/booking/presentation/pages/rental_request_screen.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_browse_cubit.dart';
 import 'package:gcc_app/features/marketplace/presentation/bloc/marketplace_listing_cubit.dart';
@@ -93,6 +96,20 @@ GoRouter createAppRouter() {
             builder: (context, state) => const HomePage(),
           ),
         ],
+      ),
+      GoRoute(
+        path: RoutePaths.rentalPayment,
+        name: RouteNames.rentalPayment,
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is! RentalRequest) {
+            return const RouteErrorPage();
+          }
+          return BlocProvider(
+            create: (_) => getIt<RentalPaymentCubit>(param1: extra)..load(),
+            child: const RentalPaymentScreen(),
+          );
+        },
       ),
       GoRoute(
         path: RoutePaths.rentalRequest,
