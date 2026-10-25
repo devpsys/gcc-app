@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_segment_option.dart';
 import 'package:gcc_app/core/widgets/app_segment_style.dart';
 import 'package:gcc_app/core/widgets/app_segmented_control.dart';
+import 'package:gcc_app/features/booking/domain/lessee_booking.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_enums.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_filters.dart';
+import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_bookings_state.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_card.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_contact_sheet.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_rate_sheet.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_bookings_filter_chip.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -122,6 +127,7 @@ class LesseeBookingsPage extends StatelessWidget {
                     }
                     final booking = visible[index];
                     final router = GoRouter.maybeOf(context);
+                    final cubit = context.read<LesseeBookingsCubit>();
                     return LesseeBookingCard(
                       booking: booking,
                       onOpen: () =>
@@ -130,11 +136,43 @@ class LesseeBookingsPage extends StatelessWidget {
                           ? () =>
                               router?.push(RoutePaths.handbackOf(booking.id))
                           : null,
+                      onMessageVendor: () => showLesseeBookingContactSheet(
+                        context: context,
+                        vendorName: booking.yard,
+                        vendorId: booking.reference,
+                        yard: booking.title,
+                      ),
+                      onRate: () => _rate(context, cubit, booking),
+                      onRemove: () {
+                        cubit.removeBooking(booking.id);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(l10n.bookingsRemoved)),
+                        );
+                      },
                     );
                   },
                 ),
         ),
       ],
+    );
+  }
+
+  Future<void> _rate(
+    BuildContext context,
+    LesseeBookingsCubit cubit,
+    LesseeBooking booking,
+  ) async {
+    final rating = await showLesseeBookingRateSheet(
+      context: context,
+      title: booking.title,
+      initialRating: booking.rating,
+    );
+    if (rating == null || !context.mounted) {
+      return;
+    }
+    cubit.rateBooking(booking.id, rating);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(context.l10n.bookingsRateSaved)),
     );
   }
 

@@ -5,6 +5,7 @@ import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_neutral_button.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_detail.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_contact_sheet.dart';
 
 class LesseeBookingDetailVendor extends StatelessWidget {
   const LesseeBookingDetailVendor({required this.detail, super.key});
@@ -16,7 +17,6 @@ class LesseeBookingDetailVendor extends StatelessWidget {
     final colors = context.semanticColors;
     final scheme = Theme.of(context).colorScheme;
     final l10n = context.l10n;
-    final unavailable = l10n.dashboardActionUnavailable;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.surface,
@@ -86,8 +86,7 @@ class LesseeBookingDetailVendor extends StatelessWidget {
                   child: AppNeutralButton(
                     label: l10n.bookingsMessageVendor,
                     icon: Icons.chat_bubble_outline,
-                    onPressed: null,
-                    disabledReason: unavailable,
+                    onPressed: () => _openContact(context),
                   ),
                 ),
                 const SizedBox(width: AppSpacing.xs),
@@ -95,8 +94,7 @@ class LesseeBookingDetailVendor extends StatelessWidget {
                   child: AppNeutralButton(
                     label: l10n.bookingsDetailCallVendor,
                     icon: Icons.phone_outlined,
-                    onPressed: null,
-                    disabledReason: unavailable,
+                    onPressed: () => _openContact(context),
                   ),
                 ),
               ],
@@ -104,6 +102,15 @@ class LesseeBookingDetailVendor extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> _openContact(BuildContext context) {
+    return showLesseeBookingContactSheet(
+      context: context,
+      vendorName: detail.vendorName,
+      vendorId: detail.vendorId,
+      yard: detail.vendorYard,
     );
   }
 }

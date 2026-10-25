@@ -9,6 +9,7 @@ import 'package:gcc_app/features/booking/presentation/bloc/handback_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/handback_state.dart';
 import 'package:gcc_app/features/booking/presentation/pages/handback_page.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/handback_approved_body.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_rate_sheet.dart';
 import 'package:go_router/go_router.dart';
 
 class HandbackScreen extends StatelessWidget {
@@ -66,6 +67,18 @@ class HandbackScreen extends StatelessWidget {
                       : () => GoRouter.maybeOf(context)?.go(
                           RoutePaths.marketplaceListingOf(review.listingId!),
                         ),
+                  onRate: () async {
+                    final rating = await showLesseeBookingRateSheet(
+                      context: context,
+                      title: review.title,
+                    );
+                    if (rating == null || !context.mounted) {
+                      return;
+                    }
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(l10n.bookingsRateSaved)),
+                    );
+                  },
                 ),
               },
           },

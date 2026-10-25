@@ -8587,6 +8587,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Book again'**
   String get handbackBookAgain;
+
+  /// No description provided for @bookingsRateStar.
+  ///
+  /// In en, this message translates to:
+  /// **'{rating} stars'**
+  String bookingsRateStar(int rating);
+
+  /// No description provided for @bookingsRateSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit rating'**
+  String get bookingsRateSubmit;
+
+  /// No description provided for @bookingsRateSubmitHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a star rating first'**
+  String get bookingsRateSubmitHint;
+
+  /// No description provided for @bookingsRateSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks — your rating was saved.'**
+  String get bookingsRateSaved;
+
+  /// No description provided for @bookingsRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from your list.'**
+  String get bookingsRemoved;
+
+  /// No description provided for @handbackCompareBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Line up the check-out clip the yard recorded at dispatch with this check-in return. Look for the same panels, fluids, and damage marks.'**
+  String get handbackCompareBody;
+
+  /// No description provided for @handbackCompareCheckoutBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-out inspection'**
+  String get handbackCompareCheckoutBadge;
+
+  /// No description provided for @handbackCompareCheckoutWhen.
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded at dispatch'**
+  String get handbackCompareCheckoutWhen;
+
+  /// No description provided for @handbackComparePlaybackUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Playback stays on the booking detail proofs for now.'**
+  String get handbackComparePlaybackUnavailable;
+
+  /// No description provided for @bookingsContactVendorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact the yard'**
+  String get bookingsContactVendorTitle;
+
+  /// No description provided for @bookingsContactVendorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'In-app chat and calling aren\'t connected yet. Use the yard name and reference if you need to reach them outside GCC.'**
+  String get bookingsContactVendorBody;
+
+  /// No description provided for @bookingsContactVendorId.
+  ///
+  /// In en, this message translates to:
+  /// **'Reference · {id}'**
+  String bookingsContactVendorId(String id);
+
+  /// No description provided for @rentalCalendarBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar export isn\'t connected yet. Keep these times handy until device calendars are linked.'**
+  String get rentalCalendarBody;
+
+  /// No description provided for @rentalCalendarFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'From · {when}'**
+  String rentalCalendarFrom(String when);
+
+  /// No description provided for @rentalCalendarTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Return · {when}'**
+  String rentalCalendarTo(String when);
 }
 
 class _AppLocalizationsDelegate

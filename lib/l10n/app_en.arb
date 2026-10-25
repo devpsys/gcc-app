@@ -2990,5 +2990,32 @@
     "placeholders": { "reference": { "type": "String" } }
   },
   "handbackWalletAvailable": "Available to withdraw in your wallet",
-  "handbackBookAgain": "Book again"
+  "handbackBookAgain": "Book again",
+  "bookingsRateStar": "{rating} stars",
+  "@bookingsRateStar": {
+    "placeholders": { "rating": { "type": "int" } }
+  },
+  "bookingsRateSubmit": "Submit rating",
+  "bookingsRateSubmitHint": "Choose a star rating first",
+  "bookingsRateSaved": "Thanks — your rating was saved.",
+  "bookingsRemoved": "Removed from your list.",
+  "handbackCompareBody": "Line up the check-out clip the yard recorded at dispatch with this check-in return. Look for the same panels, fluids, and damage marks.",
+  "handbackCompareCheckoutBadge": "Check-out inspection",
+  "handbackCompareCheckoutWhen": "Recorded at dispatch",
+  "handbackComparePlaybackUnavailable": "Playback stays on the booking detail proofs for now.",
+  "bookingsContactVendorTitle": "Contact the yard",
+  "bookingsContactVendorBody": "In-app chat and calling aren't connected yet. Use the yard name and reference if you need to reach them outside GCC.",
+  "bookingsContactVendorId": "Reference · {id}",
+  "@bookingsContactVendorId": {
+    "placeholders": { "id": { "type": "String" } }
+  },
+  "rentalCalendarBody": "Calendar export isn't connected yet. Keep these times handy until device calendars are linked.",
+  "rentalCalendarFrom": "From · {when}",
+  "@rentalCalendarFrom": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "rentalCalendarTo": "Return · {when}",
+  "@rentalCalendarTo": {
+    "placeholders": { "when": { "type": "String" } }
+  }
 }

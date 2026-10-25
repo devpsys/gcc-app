@@ -10,6 +10,7 @@ class HandbackReviewFooter extends StatelessWidget {
     required this.approving,
     required this.onSomethingWrong,
     required this.onApprove,
+    required this.onCompare,
     super.key,
   });
 
@@ -17,13 +18,13 @@ class HandbackReviewFooter extends StatelessWidget {
   final bool approving;
   final VoidCallback onSomethingWrong;
   final VoidCallback onApprove;
+  final VoidCallback onCompare;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colors = context.semanticColors;
     final scheme = Theme.of(context).colorScheme;
-    final unavailable = l10n.dashboardActionUnavailable;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: scheme.surface,
@@ -48,12 +49,17 @@ class HandbackReviewFooter extends StatelessWidget {
               children: [
                 Align(
                   alignment: AlignmentDirectional.centerStart,
-                  child: Tooltip(
-                    message: unavailable,
+                  child: TextButton(
+                    onPressed: onCompare,
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
                     child: Text(
                       l10n.handbackCompareCheckout,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: colors.muted,
+                        color: scheme.primary,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

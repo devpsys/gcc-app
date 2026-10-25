@@ -19,6 +19,8 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
     required this.split,
     required this.onBrowse,
     required this.onViewBooking,
+    required this.onAddCalendar,
+    required this.onMessageVendor,
     super.key,
   });
 
@@ -28,6 +30,8 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
   final RentalPaymentSplit split;
   final VoidCallback onBrowse;
   final VoidCallback onViewBooking;
+  final VoidCallback onAddCalendar;
+  final VoidCallback onMessageVendor;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +70,7 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
           icon: Icons.calendar_today,
           title: l10n.rentalStatusAddCalendar,
           detail: rentalDateTimeShort(request.from),
-          onPressed: null,
+          onPressed: onAddCalendar,
           disabledReason: unavailable,
         ),
         _actionRow(
@@ -74,7 +78,7 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
           icon: Icons.chat_outlined,
           title: l10n.rentalStatusMessageVendor,
           detail: vendorName,
-          onPressed: null,
+          onPressed: onMessageVendor,
           disabledReason: unavailable,
         ),
         _actionRow(

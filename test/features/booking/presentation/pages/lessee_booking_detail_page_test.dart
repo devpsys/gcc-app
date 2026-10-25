@@ -42,7 +42,10 @@ void main() {
     final rate = tester.widget<OutlinedButton>(
       find.widgetWithText(OutlinedButton, 'Rate this rental'),
     );
-    expect(rate.onPressed, isNull);
+    expect(rate.onPressed, isNotNull);
+    await tester.tap(find.widgetWithText(OutlinedButton, 'Rate this rental'));
+    await tester.pumpAndSettle();
+    expect(find.text('Submit rating'), findsOneWidget);
   });
 
   testWidgets('lays out at 320×640 with text scale 2', (tester) async {

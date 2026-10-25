@@ -6,6 +6,8 @@ import 'package:gcc_app/features/booking/domain/rental_payment_split.dart';
 import 'package:gcc_app/features/booking/domain/rental_payment_status_phase.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_status_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_status_state.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_contact_sheet.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/rental_calendar_sheet.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_confirmed_body.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_failed_body.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_waiting_body.dart';
@@ -47,6 +49,19 @@ class RentalPaymentStatusPage extends StatelessWidget {
         split: splitForQuote(state.request.quote),
         onBrowse: () => router?.go(RoutePaths.browse),
         onViewBooking: () => router?.go(RoutePaths.bookings),
+        onAddCalendar: () => showRentalCalendarSheet(
+          context: context,
+          title: state.request.listing.title,
+          orderReference: state.account.orderReference,
+          from: state.request.from,
+          to: state.request.to,
+        ),
+        onMessageVendor: () => showLesseeBookingContactSheet(
+          context: context,
+          vendorName: state.vendorName,
+          vendorId: state.account.orderReference,
+          yard: state.request.listing.yard,
+        ),
       ),
     };
   }

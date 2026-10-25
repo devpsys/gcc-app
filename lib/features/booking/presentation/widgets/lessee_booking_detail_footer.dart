@@ -12,11 +12,13 @@ class LesseeBookingDetailFooter extends StatelessWidget {
   const LesseeBookingDetailFooter({
     required this.detail,
     this.onReviewReturn,
+    this.onRate,
     super.key,
   });
 
   final LesseeBookingDetail detail;
   final VoidCallback? onReviewReturn;
+  final VoidCallback? onRate;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +71,8 @@ class LesseeBookingDetailFooter extends StatelessWidget {
                 const SizedBox(height: AppSpacing.xs),
                 AppSecondaryButton(
                   label: l10n.bookingsDetailRateRental,
-                  onPressed: null,
-                  disabledReason: unavailable,
+                  onPressed: onRate,
+                  disabledReason: onRate == null ? unavailable : null,
                 ),
               ],
             ),

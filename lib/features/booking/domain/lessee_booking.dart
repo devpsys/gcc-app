@@ -45,6 +45,32 @@ class LesseeBooking extends Equatable {
 
   bool get needsAction => status == LesseeBookingStatus.actionNeeded;
 
+  LesseeBooking copyWith({
+    int? rating,
+    bool clearRating = false,
+  }) {
+    return LesseeBooking(
+      id: id,
+      reference: reference,
+      title: title,
+      yard: yard,
+      status: status,
+      tab: tab,
+      amount: amount,
+      deposit: deposit,
+      from: from,
+      to: to,
+      mark: mark,
+      category: category,
+      depositHeld: depositHeld,
+      depositReleased: depositReleased,
+      depositNeverCharged: depositNeverCharged,
+      statusDetail: statusDetail,
+      rating: clearRating ? null : (rating ?? this.rating),
+      listingId: listingId,
+    );
+  }
+
   @override
   List<Object?> get props => [
     id,

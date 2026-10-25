@@ -4959,4 +4959,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get handbackBookAgain => 'Book again';
+
+  @override
+  String bookingsRateStar(int rating) {
+    return '$rating stars';
+  }
+
+  @override
+  String get bookingsRateSubmit => 'Submit rating';
+
+  @override
+  String get bookingsRateSubmitHint => 'Choose a star rating first';
+
+  @override
+  String get bookingsRateSaved => 'Thanks — your rating was saved.';
+
+  @override
+  String get bookingsRemoved => 'Removed from your list.';
+
+  @override
+  String get handbackCompareBody =>
+      'Line up the check-out clip the yard recorded at dispatch with this check-in return. Look for the same panels, fluids, and damage marks.';
+
+  @override
+  String get handbackCompareCheckoutBadge => 'Check-out inspection';
+
+  @override
+  String get handbackCompareCheckoutWhen => 'Recorded at dispatch';
+
+  @override
+  String get handbackComparePlaybackUnavailable =>
+      'Playback stays on the booking detail proofs for now.';
+
+  @override
+  String get bookingsContactVendorTitle => 'Contact the yard';
+
+  @override
+  String get bookingsContactVendorBody =>
+      'In-app chat and calling aren\'t connected yet. Use the yard name and reference if you need to reach them outside GCC.';
+
+  @override
+  String bookingsContactVendorId(String id) {
+    return 'Reference · $id';
+  }
+
+  @override
+  String get rentalCalendarBody =>
+      'Calendar export isn\'t connected yet. Keep these times handy until device calendars are linked.';
+
+  @override
+  String rentalCalendarFrom(String when) {
+    return 'From · $when';
+  }
+
+  @override
+  String rentalCalendarTo(String when) {
+    return 'Return · $when';
+  }
 }

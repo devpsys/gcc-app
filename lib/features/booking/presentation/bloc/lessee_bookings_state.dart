@@ -50,11 +50,12 @@ final class LesseeBookingsReady extends LesseeBookingsState {
       bookings.where((booking) => booking.needsAction).length;
 
   LesseeBookingsReady copyWith({
+    List<LesseeBooking>? bookings,
     LesseeBookingTab? tab,
     LesseeBookingFilter? filter,
   }) {
     return LesseeBookingsReady(
-      bookings: bookings,
+      bookings: bookings ?? this.bookings,
       tab: tab ?? this.tab,
       filter: filter ?? this.filter,
     );

@@ -6,6 +6,7 @@ import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_detail.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_money_sheet.dart';
 import 'package:gcc_app/features/marketplace/domain/marketplace_money.dart';
 
 class LesseeBookingDetailMoney extends StatelessWidget {
@@ -18,7 +19,6 @@ class LesseeBookingDetailMoney extends StatelessWidget {
     final colors = context.semanticColors;
     final scheme = Theme.of(context).colorScheme;
     final l10n = context.l10n;
-    final unavailable = l10n.dashboardActionUnavailable;
     final hatchEscrow = detail.heldInEscrow > 0;
     final hatchRefunded = detail.refundedToDate > 0 && !hatchEscrow;
     return Column(
@@ -74,13 +74,24 @@ class LesseeBookingDetailMoney extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.xxs),
-                Tooltip(
-                  message: unavailable,
-                  child: Text(
-                    detail.moneyLinkLabel,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.primary,
-                      fontWeight: FontWeight.w600,
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: TextButton(
+                    onPressed: () => showLesseeBookingMoneySheet(
+                      context: context,
+                      detail: detail,
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    child: Text(
+                      detail.moneyLinkLabel,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

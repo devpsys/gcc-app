@@ -7,6 +7,7 @@ import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/core/widgets/app_button_frame.dart';
 import 'package:gcc_app/core/widgets/app_destructive_button.dart';
 import 'package:gcc_app/core/widgets/app_neutral_button.dart';
+import 'package:gcc_app/core/widgets/app_secondary_button.dart';
 import 'package:gcc_app/core/widgets/status_chip.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_enums.dart';
@@ -21,12 +22,18 @@ class LesseeBookingCard extends StatelessWidget {
     required this.booking,
     this.onOpen,
     this.onReviewReturn,
+    this.onMessageVendor,
+    this.onRate,
+    this.onRemove,
     super.key,
   });
 
   final LesseeBooking booking;
   final VoidCallback? onOpen;
   final VoidCallback? onReviewReturn;
+  final VoidCallback? onMessageVendor;
+  final VoidCallback? onRate;
+  final VoidCallback? onRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -289,8 +296,8 @@ class LesseeBookingCard extends StatelessWidget {
       ),
       LesseeBookingStatus.inUse => AppNeutralButton(
         label: l10n.bookingsMessageVendor,
-        onPressed: null,
-        disabledReason: unavailable,
+        onPressed: onMessageVendor,
+        disabledReason: onMessageVendor == null ? unavailable : null,
       ),
       LesseeBookingStatus.completed when booking.rating != null => DecoratedBox(
         decoration: BoxDecoration(
@@ -315,15 +322,22 @@ class LesseeBookingCard extends StatelessWidget {
               Flexible(
                 child: Align(
                   alignment: AlignmentDirectional.centerEnd,
-                  child: Tooltip(
-                    message: unavailable,
+                  child: TextButton(
+                    onPressed: onRate,
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
                     child: Text(
                       l10n.bookingsRateAgain,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.end,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: onRate == null
+                            ? colors.muted
+                            : Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w600,
                         decoration: TextDecoration.underline,
                       ),
@@ -338,11 +352,17 @@ class LesseeBookingCard extends StatelessWidget {
       LesseeBookingStatus.cancelled => AppDestructiveButton(
         label: l10n.bookingsRemoveFromList,
         icon: Icons.delete_outline,
-        onPressed: null,
-        disabledReason: unavailable,
+        onPressed: onRemove,
+        disabledReason: onRemove == null ? unavailable : null,
       ),
       LesseeBookingStatus.outForDelivery ||
-      LesseeBookingStatus.completed => null,
+      LesseeBookingStatus.completed => booking.rating == null
+          ? AppSecondaryButton(
+              label: l10n.bookingsDetailRateRental,
+              onPressed: onRate,
+              disabledReason: onRate == null ? unavailable : null,
+            )
+          : null,
     };
   }
 

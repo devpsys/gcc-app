@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/features/booking/domain/lessee_booking_detail.dart';
@@ -9,6 +10,7 @@ import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_det
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_proofs.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_timeline.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_detail_vendor.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_booking_rate_sheet.dart';
 import 'package:go_router/go_router.dart';
 
 class LesseeBookingDetailPage extends StatelessWidget {
@@ -50,8 +52,24 @@ class LesseeBookingDetailPage extends StatelessWidget {
                   context,
                 )?.push(RoutePaths.handbackOf(detail.id))
               : null,
+          onRate: detail.phase == LesseeBookingDetailPhase.completed
+              ? () => _rate(context)
+              : null,
         ),
       ],
+    );
+  }
+
+  Future<void> _rate(BuildContext context) async {
+    final rating = await showLesseeBookingRateSheet(
+      context: context,
+      title: detail.title,
+    );
+    if (rating == null || !context.mounted) {
+      return;
+    }
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(context.l10n.bookingsRateSaved)),
     );
   }
 }

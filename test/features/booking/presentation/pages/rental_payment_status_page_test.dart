@@ -61,14 +61,21 @@ void main() {
     await cubit.close();
   });
 
-  testWidgets('confirmed locks calendar and vendor actions', (tester) async {
+  testWidgets('confirmed opens calendar and vendor sheets', (tester) async {
     await _pump(tester, phase: RentalPaymentStatusPhase.confirmed);
 
     expect(find.text('Booking confirmed'), findsOneWidget);
-    await _reveal(tester, find.text('Browse more equipment'));
-    expect(find.text('Browse more equipment'), findsOneWidget);
-    expect(find.textContaining('View booking'), findsOneWidget);
-    expect(find.textContaining("isn't available in the app yet"), findsWidgets);
+    await _reveal(tester, find.textContaining('Add to calendar'));
+    await tester.tap(find.textContaining('Add to calendar'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining("Calendar export isn't connected"), findsOneWidget);
+    await tester.tap(find.text('Close').last);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.textContaining('Message the vendor'));
+    await tester.pumpAndSettle();
+    expect(find.text('Contact the yard'), findsOneWidget);
+    expect(find.textContaining('Alhaji Musa Ibrahim'), findsWidgets);
   });
 
   testWidgets('lays out waiting at 320×640 with text scale 2', (tester) async {

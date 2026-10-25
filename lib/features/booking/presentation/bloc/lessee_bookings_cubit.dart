@@ -50,6 +50,39 @@ class LesseeBookingsCubit extends Cubit<LesseeBookingsState> {
     emit(ready.copyWith(filter: filter));
   }
 
+  void removeBooking(String id) {
+    final ready = _ready;
+    if (ready == null) {
+      return;
+    }
+    emit(
+      ready.copyWith(
+        bookings: [
+          for (final booking in ready.bookings)
+            if (booking.id != id) booking,
+        ],
+      ),
+    );
+  }
+
+  void rateBooking(String id, int rating) {
+    final ready = _ready;
+    if (ready == null || rating < 1 || rating > 5) {
+      return;
+    }
+    emit(
+      ready.copyWith(
+        bookings: [
+          for (final booking in ready.bookings)
+            if (booking.id == id)
+              booking.copyWith(rating: rating)
+            else
+              booking,
+        ],
+      ),
+    );
+  }
+
   LesseeBookingsReady? get _ready => switch (state) {
     LesseeBookingsReady ready => ready,
     _ => null,

@@ -15,19 +15,20 @@ class HandbackApprovedBody extends StatelessWidget {
     required this.settlement,
     required this.onBrowse,
     required this.onBookAgain,
+    required this.onRate,
     super.key,
   });
 
   final HandbackSettlement settlement;
   final VoidCallback onBrowse;
   final VoidCallback? onBookAgain;
+  final VoidCallback onRate;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colors = context.semanticColors;
     final scheme = Theme.of(context).colorScheme;
-    final unavailable = l10n.dashboardActionUnavailable;
     return ListView(
       key: const Key('handback-approved-body'),
       padding: const EdgeInsets.all(AppSpacing.md),
@@ -120,8 +121,7 @@ class HandbackApprovedBody extends StatelessWidget {
         const SizedBox(height: AppSpacing.lg),
         AppPrimaryButton(
           label: l10n.bookingsDetailRateRental,
-          onPressed: null,
-          disabledReason: unavailable,
+          onPressed: onRate,
         ),
         const SizedBox(height: AppSpacing.xs),
         AppSecondaryButton(

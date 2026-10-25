@@ -5,6 +5,7 @@ import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/handback_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/handback_state.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/handback_compare_sheet.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/handback_escrow_strip.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/handback_findings_list.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/handback_issue_sheet.dart';
@@ -73,6 +74,10 @@ class HandbackPage extends StatelessWidget {
           approving: state.approving,
           onSomethingWrong: () => _openIssue(context),
           onApprove: cubit.approve,
+          onCompare: () => showHandbackCompareSheet(
+            context: context,
+            review: review,
+          ),
         ),
       ],
     );
