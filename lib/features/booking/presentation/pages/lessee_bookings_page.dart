@@ -23,12 +23,16 @@ class LesseeBookingsPage extends StatelessWidget {
     required this.state,
     required this.onTab,
     required this.onFilter,
+    this.selectedId,
+    this.onOpen,
     super.key,
   });
 
   final LesseeBookingsReady state;
   final ValueChanged<LesseeBookingTab> onTab;
   final ValueChanged<LesseeBookingFilter> onFilter;
+  final String? selectedId;
+  final ValueChanged<String>? onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -130,8 +134,14 @@ class LesseeBookingsPage extends StatelessWidget {
                     final cubit = context.read<LesseeBookingsCubit>();
                     return LesseeBookingCard(
                       booking: booking,
-                      onOpen: () =>
-                          router?.push(RoutePaths.bookingDetailOf(booking.id)),
+                      selected: booking.id == selectedId,
+                      onOpen: () {
+                        if (onOpen != null) {
+                          onOpen!(booking.id);
+                          return;
+                        }
+                        router?.push(RoutePaths.bookingDetailOf(booking.id));
+                      },
                       onReviewReturn: booking.needsAction
                           ? () =>
                               router?.push(RoutePaths.handbackOf(booking.id))

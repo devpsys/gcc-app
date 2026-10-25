@@ -8677,6 +8677,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Return · {when}'**
   String rentalCalendarTo(String when);
+
+  /// No description provided for @marketplaceTabletSelectListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a listing to inspect rates, deposit, and proofs. On a phone, this opens as a full page instead.'**
+  String get marketplaceTabletSelectListing;
+
+  /// No description provided for @bookingsTabletSelectBooking.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a booking to review escrow and timeline. On a phone, this opens as a full page instead.'**
+  String get bookingsTabletSelectBooking;
 }
 
 class _AppLocalizationsDelegate

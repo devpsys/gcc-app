@@ -15,11 +15,13 @@ class MarketplaceListingCard extends StatelessWidget {
   const MarketplaceListingCard({
     required this.listing,
     required this.onOpen,
+    this.selected = false,
     super.key,
   });
 
   final MarketplaceListing listing;
   final VoidCallback onOpen;
+  final bool selected;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +30,17 @@ class MarketplaceListingCard extends StatelessWidget {
     final colors = context.semanticColors;
     final badge = listing.thumbBadge;
     return Material(
-      color: scheme.surface,
+      color: selected
+          ? scheme.primaryContainer.withValues(alpha: 0.35)
+          : scheme.surface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppRadii.card),
-        side: BorderSide(color: colors.border),
+        side: BorderSide(
+          color: selected ? scheme.primary : colors.border,
+          width: selected
+              ? AppDimensions.accentBorderWidth
+              : AppDimensions.borderWidth,
+        ),
       ),
       child: InkWell(
         onTap: onOpen,

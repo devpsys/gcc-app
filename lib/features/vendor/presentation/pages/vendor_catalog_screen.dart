@@ -7,6 +7,7 @@ import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
 import 'package:gcc_app/core/widgets/app_sheet.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_catalog_state.dart';
@@ -64,6 +65,7 @@ class VendorCatalogScreen extends StatelessWidget {
           title: l10n.catalogTitle,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.vendorCatalog,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.vendor(
             l10n,
             requestsBadge: waiting,

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gcc_app/core/theme/app_theme.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
 import 'package:gcc_app/core/widgets/shell_destination.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
@@ -62,6 +63,26 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Bookings'), findsOneWidget);
+  });
+
+  testWidgets('uses top tabs on medium when App B style is set', (tester) async {
+    await pumpLocalized(
+      tester,
+      size: const Size(800, 600),
+      child: const AppShell(
+        title: 'GCC',
+        menuLabel: 'Open navigation menu',
+        selectedLocation: '/',
+        navigationStyle: ShellNavigationStyle.topTabs,
+        destinations: destinations,
+        child: SizedBox.shrink(),
+      ),
+    );
+
+    expect(find.byTooltip('Open navigation menu'), findsNothing);
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Bookings'), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing);
   });
 
   testWidgets('uses a navigation rail from the expanded breakpoint', (

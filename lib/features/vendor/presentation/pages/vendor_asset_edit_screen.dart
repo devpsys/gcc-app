@@ -5,6 +5,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_asset_edit_state.dart';
@@ -25,6 +26,7 @@ class VendorAssetEditScreen extends StatelessWidget {
           title: title,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.vendorCatalog,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.vendor(l10n),
           child: switch (state) {
             VendorAssetEditLoading() => const Center(

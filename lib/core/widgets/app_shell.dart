@@ -5,6 +5,7 @@ import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_bottom_navigation_bar.dart';
 import 'package:gcc_app/core/widgets/shell_center_action.dart';
 import 'package:gcc_app/core/widgets/shell_destination.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:go_router/go_router.dart';
 
 class AppShell extends StatelessWidget {
@@ -18,6 +19,7 @@ class AppShell extends StatelessWidget {
     this.leading,
     this.showAppBar = true,
     this.centerAction,
+    this.navigationStyle = ShellNavigationStyle.drawer,
     super.key,
   });
 
@@ -31,6 +33,9 @@ class AppShell extends StatelessWidget {
   final bool showAppBar;
   final ShellCenterAction? centerAction;
 
+  /// Medium-breakpoint chrome. App B uses [ShellNavigationStyle.topTabs].
+  final ShellNavigationStyle navigationStyle;
+
   @override
   Widget build(BuildContext context) {
     assert(destinations.isNotEmpty, 'AppShell requires a destination.');
@@ -39,7 +44,11 @@ class AppShell extends StatelessWidget {
         final selectedIndex = _selectedIndex();
         return switch (AppBreakpoints.sizeFor(constraints.maxWidth)) {
           AppWindowSize.compact => _compact(context, selectedIndex),
-          AppWindowSize.medium => _medium(context, selectedIndex),
+          AppWindowSize.medium => switch (navigationStyle) {
+            ShellNavigationStyle.topTabs =>
+              _mediumTopTabs(context, selectedIndex),
+            ShellNavigationStyle.drawer => _medium(context, selectedIndex),
+          },
           AppWindowSize.expanded ||
           AppWindowSize.large => _expanded(context, selectedIndex),
         };
@@ -133,6 +142,77 @@ class AppShell extends StatelessWidget {
         ),
       ),
       body: child,
+    );
+  }
+
+  Widget _mediumTopTabs(BuildContext context, int selectedIndex) {
+    final scheme = Theme.of(context).colorScheme;
+    return Scaffold(
+      appBar: _appBar(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Material(
+            color: scheme.surface,
+            child: SizedBox(
+              height: AppDimensions.topTabBarHeight,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+                itemCount: destinations.length,
+                separatorBuilder: (_, _) => const SizedBox(width: AppSpacing.lg),
+                itemBuilder: (context, index) {
+                  final destination = destinations[index];
+                  final selected = index == selectedIndex;
+                  final label = destination.badgeCount > 0
+                      ? '${destination.label} (${destination.badgeCount})'
+                      : destination.label;
+                  return InkWell(
+                    onTap: destination.available
+                        ? () => _go(context, index)
+                        : null,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: selected
+                                ? scheme.primary
+                                : scheme.surface,
+                            width: selected
+                                ? AppDimensions.accentBorderWidth
+                                : 0,
+                          ),
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          label,
+                          style: Theme.of(context).textTheme.titleSmall
+                              ?.copyWith(
+                                color: selected
+                                    ? scheme.primary
+                                    : (destination.available
+                                          ? scheme.onSurfaceVariant
+                                          : scheme.onSurface.withValues(
+                                              alpha: 0.38,
+                                            )),
+                                fontWeight: selected
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                              ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+          const Divider(height: AppDimensions.borderWidth),
+          Expanded(child: child),
+        ],
+      ),
     );
   }
 

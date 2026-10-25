@@ -3017,5 +3017,7 @@
   "rentalCalendarTo": "Return · {when}",
   "@rentalCalendarTo": {
     "placeholders": { "when": { "type": "String" } }
-  }
+  },
+  "marketplaceTabletSelectListing": "Select a listing to inspect rates, deposit, and proofs. On a phone, this opens as a full page instead.",
+  "bookingsTabletSelectBooking": "Select a booking to review escrow and timeline. On a phone, this opens as a full page instead."
 }

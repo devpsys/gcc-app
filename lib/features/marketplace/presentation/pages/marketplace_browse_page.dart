@@ -17,12 +17,14 @@ class MarketplaceBrowsePage extends StatefulWidget {
     required this.state,
     required this.onOpen,
     required this.onOpenFilters,
+    this.selectedId,
     super.key,
   });
 
   final MarketplaceBrowseReady state;
   final ValueChanged<String> onOpen;
   final VoidCallback onOpenFilters;
+  final String? selectedId;
 
   @override
   State<MarketplaceBrowsePage> createState() => _MarketplaceBrowsePageState();
@@ -177,6 +179,7 @@ class _MarketplaceBrowsePageState extends State<MarketplaceBrowsePage> {
                             for (final listing in state.visible) ...[
                               MarketplaceListingCard(
                                 listing: listing,
+                                selected: listing.id == widget.selectedId,
                                 onOpen: () => widget.onOpen(listing.id),
                               ),
                               const SizedBox(height: AppSpacing.sm),

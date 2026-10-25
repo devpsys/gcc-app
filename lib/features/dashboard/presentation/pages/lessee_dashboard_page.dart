@@ -7,6 +7,7 @@ import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
 import 'package:gcc_app/core/widgets/responsive_content.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/core/widgets/skeleton_list_card.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_cubit.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_section_id.dart';
@@ -36,6 +37,7 @@ class LesseeDashboardPage extends StatelessWidget {
           title: place,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.home,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.lessee(
             l10n,
             bookingsBadge: state.content?.navBadge ?? 0,

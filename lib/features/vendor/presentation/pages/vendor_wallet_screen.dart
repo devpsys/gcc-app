@@ -5,6 +5,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_language_chip.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_wallet_cubit.dart';
@@ -28,6 +29,7 @@ class VendorWalletScreen extends StatelessWidget {
           title: l10n.dashboardWallet,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.vendorWallet,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.vendor(
             l10n,
             requestsBadge: waiting,

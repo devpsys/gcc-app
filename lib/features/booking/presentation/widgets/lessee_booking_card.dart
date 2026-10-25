@@ -25,6 +25,7 @@ class LesseeBookingCard extends StatelessWidget {
     this.onMessageVendor,
     this.onRate,
     this.onRemove,
+    this.selected = false,
     super.key,
   });
 
@@ -34,6 +35,7 @@ class LesseeBookingCard extends StatelessWidget {
   final VoidCallback? onMessageVendor;
   final VoidCallback? onRate;
   final VoidCallback? onRemove;
+  final bool selected;
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,16 @@ class LesseeBookingCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppRadii.dialog),
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: scheme.surface,
+            color: selected
+                ? scheme.primaryContainer.withValues(alpha: 0.35)
+                : scheme.surface,
             borderRadius: BorderRadius.circular(AppRadii.dialog),
-            border: Border.all(color: colors.border),
+            border: Border.all(
+              color: selected ? scheme.primary : colors.border,
+              width: selected
+                  ? AppDimensions.accentBorderWidth
+                  : AppDimensions.borderWidth,
+            ),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppRadii.dialog),
@@ -58,7 +67,9 @@ class LesseeBookingCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ColoredBox(
-                    color: warningEdge ? colors.warning : colors.border,
+                    color: warningEdge
+                        ? colors.warning
+                        : (selected ? scheme.primary : colors.border),
                     child: const SizedBox(
                       width: AppDimensions.accentBorderWidth,
                     ),

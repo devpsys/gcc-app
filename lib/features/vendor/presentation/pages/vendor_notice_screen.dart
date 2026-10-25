@@ -5,6 +5,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_notice_cubit.dart';
 import 'package:gcc_app/features/vendor/presentation/bloc/vendor_notice_state.dart';
@@ -24,6 +25,7 @@ class VendorNoticeScreen extends StatelessWidget {
           title: l10n.vendorNoticeTitle,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.vendorProfile,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.vendor(
             l10n,
             requestsBadge: waiting,

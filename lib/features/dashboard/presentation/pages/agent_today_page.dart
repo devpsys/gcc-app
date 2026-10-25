@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
-import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
@@ -52,9 +51,7 @@ class AgentTodayPage extends StatelessWidget {
           ),
           child: LayoutBuilder(
             builder: (context, constraints) {
-              final gutter = constraints.maxWidth >= AppBreakpoints.medium
-                  ? AppSpacing.pageGutterExpanded
-                  : AppSpacing.pageGutterCompact;
+              final gutter = AppSpacing.pageGutterFor(constraints.maxWidth);
               final width = math.min(
                 constraints.maxWidth,
                 AppDimensions.maxContentWidth,

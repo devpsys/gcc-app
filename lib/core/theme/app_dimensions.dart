@@ -5,7 +5,13 @@ abstract final class AppDimensions {
   static const double inputHeight = 52;
   static const double topBarHeight = 56;
   static const double navigationRailWidth = 240;
+  /// Fixed master list width for App B tablet two-pane (MOB-VND tablet).
+  static const double masterPaneWidth = 340;
   static const double navigationBarHeight = 64;
+  /// Top destination tabs on tablet (App B) — matches the 56 px design strip.
+  static const double topTabBarHeight = 56;
+  /// Camera framing reticle as a fraction of stage width (390 px absorption).
+  static const double cameraReticleWidthFactor = 0.72;
   static const double navigationCenterAction = 56;
   static const double wizardBarHeight = 72;
 

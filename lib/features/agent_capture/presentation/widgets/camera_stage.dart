@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcc_app/core/theme/app_dimensions.dart';
 
 /// The camera's viewfinder surface.
 ///
@@ -61,8 +62,11 @@ class _StagePainter extends CustomPainter {
   }
 
   /// The dashed rectangle standing in for the machine being filmed.
+  ///
+  /// Width is locked to [AppDimensions.cameraReticleWidthFactor] of the stage
+  /// so 360 → 390 absorption grows the stage without resizing touch targets.
   void _paintSubjectOutline(Canvas canvas, Size size) {
-    final box = size.shortestSide * 0.48;
+    final box = size.width * AppDimensions.cameraReticleWidthFactor;
     final rect = Rect.fromCenter(
       center: Offset(size.width / 2, size.height / 2),
       width: box,

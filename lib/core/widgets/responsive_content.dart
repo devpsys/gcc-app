@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
-import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 
@@ -14,9 +13,7 @@ class ResponsiveContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final gutter = constraints.maxWidth >= AppBreakpoints.medium
-            ? AppSpacing.pageGutterExpanded
-            : AppSpacing.pageGutterCompact;
+        final gutter = AppSpacing.pageGutterFor(constraints.maxWidth);
         final available = constraints.maxWidth.isFinite
             ? constraints.maxWidth - (gutter * 2)
             : AppDimensions.maxContentWidth;

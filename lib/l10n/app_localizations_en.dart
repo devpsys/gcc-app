@@ -5016,4 +5016,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String rentalCalendarTo(String when) {
     return 'Return · $when';
   }
+
+  @override
+  String get marketplaceTabletSelectListing =>
+      'Select a listing to inspect rates, deposit, and proofs. On a phone, this opens as a full page instead.';
+
+  @override
+  String get bookingsTabletSelectBooking =>
+      'Select a booking to review escrow and timeline. On a phone, this opens as a full page instead.';
 }

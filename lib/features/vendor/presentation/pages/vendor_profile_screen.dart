@@ -6,6 +6,7 @@ import 'package:gcc_app/core/router/route_paths.dart';
 import 'package:gcc_app/core/widgets/app_empty_state.dart';
 import 'package:gcc_app/core/widgets/app_loading_indicator.dart';
 import 'package:gcc_app/core/widgets/app_shell.dart';
+import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
 import 'package:gcc_app/features/auth/data/auth_role_paths.dart';
 import 'package:gcc_app/features/auth/domain/auth_role.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/device_lock_cubit.dart';
@@ -32,6 +33,7 @@ class VendorProfileScreen extends StatelessWidget {
           title: l10n.dashboardProfile,
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.vendorProfile,
+          navigationStyle: ShellNavigationStyle.topTabs,
           destinations: DashboardDestinations.vendor(
             l10n,
             requestsBadge: waiting,
