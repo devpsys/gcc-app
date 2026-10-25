@@ -2851,5 +2851,48 @@
   "@rentalStatusReturnHint": {
     "placeholders": { "amount": { "type": "String" } }
   },
-  "rentalStatusBrowseMore": "Browse more equipment"
+  "rentalStatusBrowseMore": "Browse more equipment",
+  "bookingsTabActive": "Active ({count})",
+  "@bookingsTabActive": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "bookingsTabCompleted": "Completed ({count})",
+  "@bookingsTabCompleted": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "bookingsTabCancelled": "Cancelled ({count})",
+  "@bookingsTabCancelled": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "bookingsFilterNeedsAction": "Needs my action",
+  "bookingsFilterAll": "All",
+  "bookingsFilterAllCompleted": "All completed ({count})",
+  "@bookingsFilterAllCompleted": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "bookingsFilterGenerators": "Generators",
+  "bookingsFilterAudio": "Audio",
+  "bookingsFilterRecent": "Recent (30 days)",
+  "bookingsFilterArchived": "All archived",
+  "bookingsActionNeeded": "Action needed",
+  "bookingsInUse": "In use",
+  "bookingsOutForDelivery": "Out for delivery",
+  "bookingsCompleted": "Completed",
+  "bookingsCancelled": "Cancelled",
+  "bookingsDepositHeld": "Refundable deposit held",
+  "bookingsDepositNeverCharged": "Deposit never charged",
+  "bookingsRated": "Rated {rating} ★",
+  "@bookingsRated": {
+    "placeholders": { "rating": { "type": "int" } }
+  },
+  "bookingsCancelledOn": "{day} · Cancelled {day}",
+  "@bookingsCancelledOn": {
+    "placeholders": { "day": { "type": "String" } }
+  },
+  "bookingsReviewReturn": "Review return condition",
+  "bookingsMessageVendor": "Message vendor",
+  "bookingsRateAgain": "Rate again",
+  "bookingsRemoveFromList": "Remove from list",
+  "bookingsCancelledRetention": "Cancelled bookings are kept for 12 months so you have a record if a vendor claims you didn't pay.",
+  "bookingsEmpty": "No bookings in this list."
 }

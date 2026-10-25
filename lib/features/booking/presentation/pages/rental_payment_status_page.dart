@@ -46,6 +46,7 @@ class RentalPaymentStatusPage extends StatelessWidget {
         vendorName: state.vendorName,
         split: splitForQuote(state.request.quote),
         onBrowse: () => router?.go(RoutePaths.browse),
+        onViewBooking: () => router?.go(RoutePaths.bookings),
       ),
     };
   }

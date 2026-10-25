@@ -16,12 +16,11 @@ abstract final class DashboardDestinations {
         Icons.manage_search,
         RoutePaths.browse,
       ),
-      _item(
+      _built(
         l10n.dashboardBookings,
         Icons.calendar_today_outlined,
         Icons.calendar_today,
-        '/bookings',
-        l10n,
+        RoutePaths.bookings,
         badgeCount: bookingsBadge,
       ),
       _wallet(l10n),

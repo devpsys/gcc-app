@@ -67,6 +67,7 @@ void main() {
     expect(find.text('Booking confirmed'), findsOneWidget);
     await _reveal(tester, find.text('Browse more equipment'));
     expect(find.text('Browse more equipment'), findsOneWidget);
+    expect(find.textContaining('View booking'), findsOneWidget);
     expect(find.textContaining("isn't available in the app yet"), findsWidgets);
   });
 

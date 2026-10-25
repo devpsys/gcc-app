@@ -8077,6 +8077,156 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Browse more equipment'**
   String get rentalStatusBrowseMore;
+
+  /// No description provided for @bookingsTabActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active ({count})'**
+  String bookingsTabActive(int count);
+
+  /// No description provided for @bookingsTabCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed ({count})'**
+  String bookingsTabCompleted(int count);
+
+  /// No description provided for @bookingsTabCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled ({count})'**
+  String bookingsTabCancelled(int count);
+
+  /// No description provided for @bookingsFilterNeedsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs my action'**
+  String get bookingsFilterNeedsAction;
+
+  /// No description provided for @bookingsFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get bookingsFilterAll;
+
+  /// No description provided for @bookingsFilterAllCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'All completed ({count})'**
+  String bookingsFilterAllCompleted(int count);
+
+  /// No description provided for @bookingsFilterGenerators.
+  ///
+  /// In en, this message translates to:
+  /// **'Generators'**
+  String get bookingsFilterGenerators;
+
+  /// No description provided for @bookingsFilterAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio'**
+  String get bookingsFilterAudio;
+
+  /// No description provided for @bookingsFilterRecent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent (30 days)'**
+  String get bookingsFilterRecent;
+
+  /// No description provided for @bookingsFilterArchived.
+  ///
+  /// In en, this message translates to:
+  /// **'All archived'**
+  String get bookingsFilterArchived;
+
+  /// No description provided for @bookingsActionNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Action needed'**
+  String get bookingsActionNeeded;
+
+  /// No description provided for @bookingsInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'In use'**
+  String get bookingsInUse;
+
+  /// No description provided for @bookingsOutForDelivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Out for delivery'**
+  String get bookingsOutForDelivery;
+
+  /// No description provided for @bookingsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get bookingsCompleted;
+
+  /// No description provided for @bookingsCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get bookingsCancelled;
+
+  /// No description provided for @bookingsDepositHeld.
+  ///
+  /// In en, this message translates to:
+  /// **'Refundable deposit held'**
+  String get bookingsDepositHeld;
+
+  /// No description provided for @bookingsDepositNeverCharged.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit never charged'**
+  String get bookingsDepositNeverCharged;
+
+  /// No description provided for @bookingsRated.
+  ///
+  /// In en, this message translates to:
+  /// **'Rated {rating} ★'**
+  String bookingsRated(int rating);
+
+  /// No description provided for @bookingsCancelledOn.
+  ///
+  /// In en, this message translates to:
+  /// **'{day} · Cancelled {day}'**
+  String bookingsCancelledOn(String day);
+
+  /// No description provided for @bookingsReviewReturn.
+  ///
+  /// In en, this message translates to:
+  /// **'Review return condition'**
+  String get bookingsReviewReturn;
+
+  /// No description provided for @bookingsMessageVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Message vendor'**
+  String get bookingsMessageVendor;
+
+  /// No description provided for @bookingsRateAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate again'**
+  String get bookingsRateAgain;
+
+  /// No description provided for @bookingsRemoveFromList.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from list'**
+  String get bookingsRemoveFromList;
+
+  /// No description provided for @bookingsCancelledRetention.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled bookings are kept for 12 months so you have a record if a vendor claims you didn\'t pay.'**
+  String get bookingsCancelledRetention;
+
+  /// No description provided for @bookingsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookings in this list.'**
+  String get bookingsEmpty;
 }
 
 class _AppLocalizationsDelegate

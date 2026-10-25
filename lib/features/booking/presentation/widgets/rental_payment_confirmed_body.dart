@@ -18,6 +18,7 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
     required this.vendorName,
     required this.split,
     required this.onBrowse,
+    required this.onViewBooking,
     super.key,
   });
 
@@ -26,6 +27,7 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
   final String vendorName;
   final RentalPaymentSplit split;
   final VoidCallback onBrowse;
+  final VoidCallback onViewBooking;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class RentalPaymentConfirmedBody extends StatelessWidget {
           icon: Icons.precision_manufacturing_outlined,
           title: l10n.rentalStatusViewBooking,
           detail: l10n.rentalStatusTrackMachine,
-          onPressed: null,
+          onPressed: onViewBooking,
           disabledReason: unavailable,
         ),
         const SizedBox(height: AppSpacing.md),

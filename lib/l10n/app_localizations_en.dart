@@ -4659,4 +4659,92 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rentalStatusBrowseMore => 'Browse more equipment';
+
+  @override
+  String bookingsTabActive(int count) {
+    return 'Active ($count)';
+  }
+
+  @override
+  String bookingsTabCompleted(int count) {
+    return 'Completed ($count)';
+  }
+
+  @override
+  String bookingsTabCancelled(int count) {
+    return 'Cancelled ($count)';
+  }
+
+  @override
+  String get bookingsFilterNeedsAction => 'Needs my action';
+
+  @override
+  String get bookingsFilterAll => 'All';
+
+  @override
+  String bookingsFilterAllCompleted(int count) {
+    return 'All completed ($count)';
+  }
+
+  @override
+  String get bookingsFilterGenerators => 'Generators';
+
+  @override
+  String get bookingsFilterAudio => 'Audio';
+
+  @override
+  String get bookingsFilterRecent => 'Recent (30 days)';
+
+  @override
+  String get bookingsFilterArchived => 'All archived';
+
+  @override
+  String get bookingsActionNeeded => 'Action needed';
+
+  @override
+  String get bookingsInUse => 'In use';
+
+  @override
+  String get bookingsOutForDelivery => 'Out for delivery';
+
+  @override
+  String get bookingsCompleted => 'Completed';
+
+  @override
+  String get bookingsCancelled => 'Cancelled';
+
+  @override
+  String get bookingsDepositHeld => 'Refundable deposit held';
+
+  @override
+  String get bookingsDepositNeverCharged => 'Deposit never charged';
+
+  @override
+  String bookingsRated(int rating) {
+    return 'Rated $rating ★';
+  }
+
+  @override
+  String bookingsCancelledOn(String day) {
+    return '$day · Cancelled $day';
+  }
+
+  @override
+  String get bookingsReviewReturn => 'Review return condition';
+
+  @override
+  String get bookingsMessageVendor => 'Message vendor';
+
+  @override
+  String get bookingsRateAgain => 'Rate again';
+
+  @override
+  String get bookingsRemoveFromList => 'Remove from list';
+
+  @override
+  String get bookingsCancelledRetention =>
+      'Cancelled bookings are kept for 12 months so you have a record if a vendor claims you didn\'t pay.';
+
+  @override
+  String get bookingsEmpty => 'No bookings in this list.';
 }
