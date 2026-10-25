@@ -7795,6 +7795,288 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pay {amount}'**
   String rentalPaymentPayCard(String amount);
+
+  /// No description provided for @rentalStatusWaitingAppBar.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for payment'**
+  String get rentalStatusWaitingAppBar;
+
+  /// No description provided for @rentalStatusFailedAppBar.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment failed'**
+  String get rentalStatusFailedAppBar;
+
+  /// No description provided for @rentalStatusConfirmedAppBar.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmed'**
+  String get rentalStatusConfirmedAppBar;
+
+  /// No description provided for @rentalStatusClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get rentalStatusClose;
+
+  /// No description provided for @rentalStatusWaitingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re waiting for your transfer'**
+  String get rentalStatusWaitingTitle;
+
+  /// No description provided for @rentalStatusWaitingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This usually takes 1–2 minutes on 3G.'**
+  String get rentalStatusWaitingBody;
+
+  /// No description provided for @rentalStatusExpiresIn.
+  ///
+  /// In en, this message translates to:
+  /// **'TRANSFER EXPIRES IN'**
+  String get rentalStatusExpiresIn;
+
+  /// No description provided for @rentalStatusExpiresHint.
+  ///
+  /// In en, this message translates to:
+  /// **'After this, the account details below are cancelled and you\'ll need to start again.'**
+  String get rentalStatusExpiresHint;
+
+  /// No description provided for @rentalStatusAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get rentalStatusAmount;
+
+  /// No description provided for @rentalStatusReference.
+  ///
+  /// In en, this message translates to:
+  /// **'Reference'**
+  String get rentalStatusReference;
+
+  /// No description provided for @rentalStatusStepWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for your transfer'**
+  String get rentalStatusStepWaiting;
+
+  /// No description provided for @rentalStatusStepWaitingDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking Providus every 10 seconds'**
+  String get rentalStatusStepWaitingDetail;
+
+  /// No description provided for @rentalStatusStepConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm the booking'**
+  String get rentalStatusStepConfirm;
+
+  /// No description provided for @rentalStatusStepConfirmDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic — nothing to do'**
+  String get rentalStatusStepConfirmDetail;
+
+  /// No description provided for @rentalStatusCheckStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'ve sent it — check status'**
+  String get rentalStatusCheckStatus;
+
+  /// No description provided for @rentalStatusChangeMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Change payment method'**
+  String get rentalStatusChangeMethod;
+
+  /// No description provided for @rentalStatusHavingTrouble.
+  ///
+  /// In en, this message translates to:
+  /// **'Having trouble? You can close this screen. We\'ll SMS you the moment the booking is confirmed.'**
+  String get rentalStatusHavingTrouble;
+
+  /// No description provided for @rentalStatusFailedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t confirm this booking'**
+  String get rentalStatusFailedTitle;
+
+  /// No description provided for @rentalStatusFailedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The transfer didn\'t arrive, or the bank declined it. You have not been charged for the equipment.'**
+  String get rentalStatusFailedBody;
+
+  /// No description provided for @rentalStatusTechnicalDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Technical details'**
+  String get rentalStatusTechnicalDetails;
+
+  /// No description provided for @rentalStatusGateway.
+  ///
+  /// In en, this message translates to:
+  /// **'Gateway'**
+  String get rentalStatusGateway;
+
+  /// No description provided for @rentalStatusCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Code'**
+  String get rentalStatusCode;
+
+  /// No description provided for @rentalStatusChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Checked'**
+  String get rentalStatusChecked;
+
+  /// No description provided for @rentalStatusTryCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a card instead'**
+  String get rentalStatusTryCard;
+
+  /// No description provided for @rentalStatusInstant.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant'**
+  String get rentalStatusInstant;
+
+  /// No description provided for @rentalStatusTryCardBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Verve · Mastercard · VBank. 1.5% fee of {fee}.'**
+  String rentalStatusTryCardBody(String fee);
+
+  /// No description provided for @rentalStatusTryTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Try the transfer again'**
+  String get rentalStatusTryTransfer;
+
+  /// No description provided for @rentalStatusTryTransferBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Same Providus account. Usually resolves it.'**
+  String get rentalStatusTryTransferBody;
+
+  /// No description provided for @rentalStatusTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get rentalStatusTryAgain;
+
+  /// No description provided for @rentalStatusDifferentMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a different method'**
+  String get rentalStatusDifferentMethod;
+
+  /// No description provided for @rentalStatusDepositUntaken.
+  ///
+  /// In en, this message translates to:
+  /// **'Your {amount} deposit was never taken.'**
+  String rentalStatusDepositUntaken(String amount);
+
+  /// No description provided for @rentalStatusConfirmedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking confirmed'**
+  String get rentalStatusConfirmedTitle;
+
+  /// No description provided for @rentalStatusVendorNotified.
+  ///
+  /// In en, this message translates to:
+  /// **'The vendor has been notified by SMS.'**
+  String get rentalStatusVendorNotified;
+
+  /// No description provided for @rentalStatusAddCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to calendar'**
+  String get rentalStatusAddCalendar;
+
+  /// No description provided for @rentalStatusMessageVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Message the vendor'**
+  String get rentalStatusMessageVendor;
+
+  /// No description provided for @rentalStatusViewBooking.
+  ///
+  /// In en, this message translates to:
+  /// **'View booking'**
+  String get rentalStatusViewBooking;
+
+  /// No description provided for @rentalStatusTrackMachine.
+  ///
+  /// In en, this message translates to:
+  /// **'Track the machine'**
+  String get rentalStatusTrackMachine;
+
+  /// No description provided for @rentalStatusSplitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'YOUR PAYMENT IS SPLIT'**
+  String get rentalStatusSplitTitle;
+
+  /// No description provided for @rentalStatusCommission.
+  ///
+  /// In en, this message translates to:
+  /// **'GCC commission'**
+  String get rentalStatusCommission;
+
+  /// No description provided for @rentalStatusVendorEscrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor earnings · in escrow'**
+  String get rentalStatusVendorEscrow;
+
+  /// No description provided for @rentalStatusVendorEscrowDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Released to {yard} once you approve the return condition.'**
+  String rentalStatusVendorEscrowDetail(String yard);
+
+  /// No description provided for @rentalStatusDepositLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Refundable deposit · locked'**
+  String get rentalStatusDepositLocked;
+
+  /// No description provided for @rentalStatusTotalCharged.
+  ///
+  /// In en, this message translates to:
+  /// **'Total charged'**
+  String get rentalStatusTotalCharged;
+
+  /// No description provided for @rentalStatusAgentBountyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} of commission funds the agent bounty. The agent is paid by GCC, not by you.'**
+  String rentalStatusAgentBountyNote(String amount);
+
+  /// No description provided for @rentalStatusReturnBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Return by {when}'**
+  String rentalStatusReturnBy(String when);
+
+  /// No description provided for @rentalStatusReturnHint.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll be asked to approve the return condition. Once you approve it, {amount} goes back to your wallet.'**
+  String rentalStatusReturnHint(String amount);
+
+  /// No description provided for @rentalStatusBrowseMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse more equipment'**
+  String get rentalStatusBrowseMore;
 }
 
 class _AppLocalizationsDelegate

@@ -4500,4 +4500,163 @@ class AppLocalizationsEn extends AppLocalizations {
   String rentalPaymentPayCard(String amount) {
     return 'Pay $amount';
   }
+
+  @override
+  String get rentalStatusWaitingAppBar => 'Waiting for payment';
+
+  @override
+  String get rentalStatusFailedAppBar => 'Payment failed';
+
+  @override
+  String get rentalStatusConfirmedAppBar => 'Confirmed';
+
+  @override
+  String get rentalStatusClose => 'Close';
+
+  @override
+  String get rentalStatusWaitingTitle => 'We\'re waiting for your transfer';
+
+  @override
+  String get rentalStatusWaitingBody => 'This usually takes 1–2 minutes on 3G.';
+
+  @override
+  String get rentalStatusExpiresIn => 'TRANSFER EXPIRES IN';
+
+  @override
+  String get rentalStatusExpiresHint =>
+      'After this, the account details below are cancelled and you\'ll need to start again.';
+
+  @override
+  String get rentalStatusAmount => 'Amount';
+
+  @override
+  String get rentalStatusReference => 'Reference';
+
+  @override
+  String get rentalStatusStepWaiting => 'Waiting for your transfer';
+
+  @override
+  String get rentalStatusStepWaitingDetail =>
+      'Checking Providus every 10 seconds';
+
+  @override
+  String get rentalStatusStepConfirm => 'Confirm the booking';
+
+  @override
+  String get rentalStatusStepConfirmDetail => 'Automatic — nothing to do';
+
+  @override
+  String get rentalStatusCheckStatus => 'I\'ve sent it — check status';
+
+  @override
+  String get rentalStatusChangeMethod => 'Change payment method';
+
+  @override
+  String get rentalStatusHavingTrouble =>
+      'Having trouble? You can close this screen. We\'ll SMS you the moment the booking is confirmed.';
+
+  @override
+  String get rentalStatusFailedTitle => 'We couldn\'t confirm this booking';
+
+  @override
+  String get rentalStatusFailedBody =>
+      'The transfer didn\'t arrive, or the bank declined it. You have not been charged for the equipment.';
+
+  @override
+  String get rentalStatusTechnicalDetails => 'Technical details';
+
+  @override
+  String get rentalStatusGateway => 'Gateway';
+
+  @override
+  String get rentalStatusCode => 'Code';
+
+  @override
+  String get rentalStatusChecked => 'Checked';
+
+  @override
+  String get rentalStatusTryCard => 'Try a card instead';
+
+  @override
+  String get rentalStatusInstant => 'Instant';
+
+  @override
+  String rentalStatusTryCardBody(String fee) {
+    return 'Verve · Mastercard · VBank. 1.5% fee of $fee.';
+  }
+
+  @override
+  String get rentalStatusTryTransfer => 'Try the transfer again';
+
+  @override
+  String get rentalStatusTryTransferBody =>
+      'Same Providus account. Usually resolves it.';
+
+  @override
+  String get rentalStatusTryAgain => 'Try again';
+
+  @override
+  String get rentalStatusDifferentMethod => 'Use a different method';
+
+  @override
+  String rentalStatusDepositUntaken(String amount) {
+    return 'Your $amount deposit was never taken.';
+  }
+
+  @override
+  String get rentalStatusConfirmedTitle => 'Booking confirmed';
+
+  @override
+  String get rentalStatusVendorNotified =>
+      'The vendor has been notified by SMS.';
+
+  @override
+  String get rentalStatusAddCalendar => 'Add to calendar';
+
+  @override
+  String get rentalStatusMessageVendor => 'Message the vendor';
+
+  @override
+  String get rentalStatusViewBooking => 'View booking';
+
+  @override
+  String get rentalStatusTrackMachine => 'Track the machine';
+
+  @override
+  String get rentalStatusSplitTitle => 'YOUR PAYMENT IS SPLIT';
+
+  @override
+  String get rentalStatusCommission => 'GCC commission';
+
+  @override
+  String get rentalStatusVendorEscrow => 'Vendor earnings · in escrow';
+
+  @override
+  String rentalStatusVendorEscrowDetail(String yard) {
+    return 'Released to $yard once you approve the return condition.';
+  }
+
+  @override
+  String get rentalStatusDepositLocked => 'Refundable deposit · locked';
+
+  @override
+  String get rentalStatusTotalCharged => 'Total charged';
+
+  @override
+  String rentalStatusAgentBountyNote(String amount) {
+    return '$amount of commission funds the agent bounty. The agent is paid by GCC, not by you.';
+  }
+
+  @override
+  String rentalStatusReturnBy(String when) {
+    return 'Return by $when';
+  }
+
+  @override
+  String rentalStatusReturnHint(String amount) {
+    return 'You\'ll be asked to approve the return condition. Once you approve it, $amount goes back to your wallet.';
+  }
+
+  @override
+  String get rentalStatusBrowseMore => 'Browse more equipment';
 }

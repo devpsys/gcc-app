@@ -106,9 +106,8 @@ class RentalPaymentDueCard extends StatelessWidget {
               '· $label',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(
-                context,
-              ).textTheme.bodySmall?.copyWith(color: colors.muted),
+              style: Theme.of(context).textTheme.bodySmall
+                  ?.copyWith(color: colors.muted),
             ),
           ),
           if (locked) ...[

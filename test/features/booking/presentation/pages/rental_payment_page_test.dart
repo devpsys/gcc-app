@@ -12,7 +12,7 @@ import 'package:gcc_app/features/marketplace/presentation/gateway/mock_marketpla
 import '../../../../helpers/pump_app.dart';
 
 void main() {
-  testWidgets('shows the GCC transfer amount and locks I have sent', (
+  testWidgets('shows the GCC transfer amount and enables I have sent', (
     tester,
   ) async {
     await _pump(tester);
@@ -26,8 +26,7 @@ void main() {
     final sent = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, "I've sent ₦164,075"),
     );
-    expect(sent.onPressed, isNull);
-    expect(find.textContaining("isn't available in the app yet"), findsWidgets);
+    expect(sent.onPressed, isNotNull);
   });
 
   testWidgets('switches to card and shows the fee total', (tester) async {

@@ -2786,5 +2786,70 @@
   "rentalPaymentPayCard": "Pay {amount}",
   "@rentalPaymentPayCard": {
     "placeholders": { "amount": { "type": "String" } }
-  }
+  },
+  "rentalStatusWaitingAppBar": "Waiting for payment",
+  "rentalStatusFailedAppBar": "Payment failed",
+  "rentalStatusConfirmedAppBar": "Confirmed",
+  "rentalStatusClose": "Close",
+  "rentalStatusWaitingTitle": "We're waiting for your transfer",
+  "rentalStatusWaitingBody": "This usually takes 1–2 minutes on 3G.",
+  "rentalStatusExpiresIn": "TRANSFER EXPIRES IN",
+  "rentalStatusExpiresHint": "After this, the account details below are cancelled and you'll need to start again.",
+  "rentalStatusAmount": "Amount",
+  "rentalStatusReference": "Reference",
+  "rentalStatusStepWaiting": "Waiting for your transfer",
+  "rentalStatusStepWaitingDetail": "Checking Providus every 10 seconds",
+  "rentalStatusStepConfirm": "Confirm the booking",
+  "rentalStatusStepConfirmDetail": "Automatic — nothing to do",
+  "rentalStatusCheckStatus": "I've sent it — check status",
+  "rentalStatusChangeMethod": "Change payment method",
+  "rentalStatusHavingTrouble": "Having trouble? You can close this screen. We'll SMS you the moment the booking is confirmed.",
+  "rentalStatusFailedTitle": "We couldn't confirm this booking",
+  "rentalStatusFailedBody": "The transfer didn't arrive, or the bank declined it. You have not been charged for the equipment.",
+  "rentalStatusTechnicalDetails": "Technical details",
+  "rentalStatusGateway": "Gateway",
+  "rentalStatusCode": "Code",
+  "rentalStatusChecked": "Checked",
+  "rentalStatusTryCard": "Try a card instead",
+  "rentalStatusInstant": "Instant",
+  "rentalStatusTryCardBody": "Verve · Mastercard · VBank. 1.5% fee of {fee}.",
+  "@rentalStatusTryCardBody": {
+    "placeholders": { "fee": { "type": "String" } }
+  },
+  "rentalStatusTryTransfer": "Try the transfer again",
+  "rentalStatusTryTransferBody": "Same Providus account. Usually resolves it.",
+  "rentalStatusTryAgain": "Try again",
+  "rentalStatusDifferentMethod": "Use a different method",
+  "rentalStatusDepositUntaken": "Your {amount} deposit was never taken.",
+  "@rentalStatusDepositUntaken": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalStatusConfirmedTitle": "Booking confirmed",
+  "rentalStatusVendorNotified": "The vendor has been notified by SMS.",
+  "rentalStatusAddCalendar": "Add to calendar",
+  "rentalStatusMessageVendor": "Message the vendor",
+  "rentalStatusViewBooking": "View booking",
+  "rentalStatusTrackMachine": "Track the machine",
+  "rentalStatusSplitTitle": "YOUR PAYMENT IS SPLIT",
+  "rentalStatusCommission": "GCC commission",
+  "rentalStatusVendorEscrow": "Vendor earnings · in escrow",
+  "rentalStatusVendorEscrowDetail": "Released to {yard} once you approve the return condition.",
+  "@rentalStatusVendorEscrowDetail": {
+    "placeholders": { "yard": { "type": "String" } }
+  },
+  "rentalStatusDepositLocked": "Refundable deposit · locked",
+  "rentalStatusTotalCharged": "Total charged",
+  "rentalStatusAgentBountyNote": "{amount} of commission funds the agent bounty. The agent is paid by GCC, not by you.",
+  "@rentalStatusAgentBountyNote": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalStatusReturnBy": "Return by {when}",
+  "@rentalStatusReturnBy": {
+    "placeholders": { "when": { "type": "String" } }
+  },
+  "rentalStatusReturnHint": "You'll be asked to approve the return condition. Once you approve it, {amount} goes back to your wallet.",
+  "@rentalStatusReturnHint": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "rentalStatusBrowseMore": "Browse more equipment"
 }

@@ -6,8 +6,10 @@ import 'package:gcc_app/core/widgets/app_primary_button.dart';
 import 'package:gcc_app/core/widgets/app_secondary_button.dart';
 import 'package:gcc_app/features/booking/domain/rental_card_fee.dart';
 import 'package:gcc_app/features/booking/domain/rental_payment_method.dart';
+import 'package:gcc_app/features/booking/domain/rental_payment_status_phase.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/rental_payment_state.dart';
+import 'package:gcc_app/features/booking/presentation/rental_payment_status_flow.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_card_form.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_due_card.dart';
 import 'package:gcc_app/features/booking/presentation/widgets/rental_payment_error_banner.dart';
@@ -109,14 +111,25 @@ class RentalPaymentPage extends StatelessWidget {
   }) {
     final l10n = context.l10n;
     final cubit = context.read<RentalPaymentCubit>();
-    final unavailable = l10n.dashboardActionUnavailable;
 
     if (state.method == RentalPaymentMethod.card) {
-      final blocked = showErrors || state.cardReadyForStatus;
       return AppPrimaryButton(
         label: l10n.rentalPaymentPayCard(fullNaira(cardTotal)),
-        onPressed: blocked ? null : () => cubit.attemptCardPay(),
-        disabledReason: showErrors ? l10n.rentalPaymentFixFields : unavailable,
+        onPressed: showErrors
+            ? null
+            : () {
+                if (!cubit.attemptCardPay()) {
+                  return;
+                }
+                openRentalPaymentStatus(
+                  context: context,
+                  request: state.request,
+                  account: state.account,
+                  method: RentalPaymentMethod.card,
+                  phase: RentalPaymentStatusPhase.confirmed,
+                );
+              },
+        disabledReason: showErrors ? l10n.rentalPaymentFixFields : null,
       );
     }
 
@@ -134,8 +147,13 @@ class RentalPaymentPage extends StatelessWidget {
           flex: 2,
           child: AppPrimaryButton(
             label: l10n.rentalPaymentSent(fullNaira(amountDue)),
-            onPressed: null,
-            disabledReason: unavailable,
+            onPressed: () => openRentalPaymentStatus(
+              context: context,
+              request: state.request,
+              account: state.account,
+              method: state.method,
+              phase: RentalPaymentStatusPhase.waiting,
+            ),
           ),
         ),
       ],
