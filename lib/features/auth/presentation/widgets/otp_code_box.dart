@@ -26,25 +26,25 @@ class OtpCodeBox extends StatelessWidget {
     if (hasError) {
       background = scheme.errorContainer;
       border = scheme.error;
-      borderWidth = AppDimensions.focusBorderWidth;
+      borderWidth = AppDimensions.otpBoxBorderWidth;
     } else if (focused) {
       background = scheme.surface;
       border = scheme.primary;
       borderWidth = AppDimensions.accentBorderWidth;
     } else if (filled) {
-      background = scheme.secondaryContainer.withValues(alpha: 0.55);
+      background = scheme.secondaryContainer;
       border = scheme.primary;
-      borderWidth = AppDimensions.emphasisBorderWidth;
+      borderWidth = AppDimensions.otpBoxBorderWidth;
     } else {
-      background = scheme.surfaceContainerHighest.withValues(alpha: 0.55);
+      background = scheme.surfaceContainerHighest;
       border = scheme.outlineVariant;
-      borderWidth = AppDimensions.borderWidth;
+      borderWidth = AppDimensions.otpBoxBorderWidth;
     }
     return ExcludeSemantics(
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: background,
-          borderRadius: BorderRadius.circular(AppRadii.button),
+          borderRadius: BorderRadius.circular(AppRadii.dialog),
           border: Border.all(color: border, width: borderWidth),
           boxShadow: focused
               ? [
@@ -62,12 +62,15 @@ class OtpCodeBox extends StatelessWidget {
           child: Center(
             child: Text(
               digit,
+              textAlign: TextAlign.center,
               style: AppTextStyles.mono(
-                Theme.of(context).textTheme.titleLarge!.copyWith(
+                TextStyle(
+                  fontSize: AppDimensions.otpDigitSize,
+                  height: 1,
+                  fontWeight: FontWeight.w700,
                   color: filled || focused
                       ? scheme.primary
                       : scheme.onSurfaceVariant,
-                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),

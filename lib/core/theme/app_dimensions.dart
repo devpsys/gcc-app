@@ -5,9 +5,11 @@ abstract final class AppDimensions {
   static const double inputHeight = 52;
   /// Floating-label ID field on MOB-AUTH-UNIFIED (56px).
   static const double authInputHeight = 56;
-  /// OTP digit cell width/height (46 × 52).
+  /// OTP digit cell width/height (46 × 52), digit type 22, empty/filled border 2.
   static const double otpCellWidth = 46;
   static const double otpCellHeight = 52;
+  static const double otpDigitSize = 22;
+  static const double otpBoxBorderWidth = 2;
   static const double topBarHeight = 56;
   static const double navigationRailWidth = 240;
   /// Fixed master list width for App B tablet two-pane (MOB-VND tablet).

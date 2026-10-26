@@ -84,6 +84,7 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
               '0:${_secondsLeft.toString().padLeft(2, '0')}';
 
           return Scaffold(
+            backgroundColor: scheme.surface,
             body: SafeArea(
               child: Align(
                 alignment: Alignment.topCenter,
@@ -94,6 +95,7 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: AppSpacing.xs,
+                          vertical: AppSpacing.xxs,
                         ),
                         child: Row(
                           children: [
@@ -115,11 +117,11 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                                 l10n.authOtpStepLabel.toUpperCase(),
                                 textAlign: TextAlign.center,
                                 style: AppTextStyles.mono(
-                                  Theme.of(context).textTheme.labelSmall!
+                                  Theme.of(context).textTheme.labelMedium!
                                       .copyWith(
                                         color: scheme.onSurfaceVariant,
                                         fontWeight: FontWeight.w700,
-                                        letterSpacing: 0.6,
+                                        letterSpacing: 0.4,
                                       ),
                                 ),
                               ),
@@ -131,19 +133,31 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                       const Divider(height: 1),
                       Expanded(
                         child: ListView(
-                          padding: const EdgeInsets.all(AppSpacing.md),
+                          padding: const EdgeInsets.fromLTRB(
+                            AppSpacing.lg,
+                            AppSpacing.sm,
+                            AppSpacing.lg,
+                            AppSpacing.md,
+                          ),
                           children: [
                             Text(
                               l10n.authEnterCodeTitle,
-                              style: Theme.of(context).textTheme.headlineSmall
-                                  ?.copyWith(fontWeight: FontWeight.w700),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium
+                                  ?.copyWith(
+                                    fontSize: 24,
+                                    height: 1.2,
+                                    fontWeight: FontWeight.w700,
+                                    color: scheme.onSurface,
+                                  ),
                             ),
                             const SizedBox(height: AppSpacing.xxs),
                             MaskedPhoneLine(
                               message: l10n.authCodeSentTo(state.maskedPhone),
                               phone: state.maskedPhone,
                             ),
-                            const SizedBox(height: AppSpacing.lg),
+                            const SizedBox(height: AppSpacing.xl),
                             OtpCodeField(
                               label: l10n.authOtpFieldLabel,
                               autofocus: true,
@@ -159,35 +173,42 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                               l10n.authOtpAutoSubmitHint,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.labelSmall
-                                  ?.copyWith(color: scheme.onSurfaceVariant),
+                                  ?.copyWith(
+                                    color: scheme.onSurfaceVariant,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                             ),
-                            const SizedBox(height: AppSpacing.lg),
+                            const SizedBox(height: AppSpacing.xl),
                             AppPrimaryButton(
                               label: l10n.authVerify,
                               busy: busy,
                               onPressed: complete && !busy
                                   ? cubit.verify
                                   : null,
-                              disabledReason: l10n.authOtpIncompleteReason,
+                              disabledReason: complete
+                                  ? null
+                                  : l10n.authOtpIncompleteReason,
                             ),
                             const SizedBox(height: AppSpacing.md),
                             Text.rich(
                               TextSpan(
                                 style: Theme.of(context).textTheme.bodySmall
-                                    ?.copyWith(color: scheme.onSurfaceVariant),
+                                    ?.copyWith(
+                                      color: scheme.onSurfaceVariant,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                 children: [
                                   TextSpan(text: '${l10n.authDidntGetCode} '),
                                   if (_secondsLeft > 0)
-                                    TextSpan(
-                                      text: l10n.authResendIn(timerLabel),
-                                      style: TextStyle(
-                                        color: scheme.primary,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                    ..._resendCountdownSpans(
+                                      context,
+                                      l10n.authResendIn(timerLabel),
+                                      timerLabel,
                                     )
                                   else
                                     WidgetSpan(
-                                      alignment: PlaceholderAlignment.baseline,
+                                      alignment:
+                                          PlaceholderAlignment.baseline,
                                       baseline: TextBaseline.alphabetic,
                                       child: TextButton(
                                         onPressed: busy
@@ -197,6 +218,7 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                                                 _startTimer();
                                               },
                                         style: TextButton.styleFrom(
+                                          foregroundColor: scheme.primary,
                                           visualDensity: VisualDensity.compact,
                                           padding: EdgeInsets.zero,
                                           minimumSize: Size.zero,
@@ -205,10 +227,13 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                                         ),
                                         child: Text(
                                           l10n.authResendCode,
-                                          style: TextStyle(
-                                            color: scheme.primary,
-                                            fontWeight: FontWeight.w700,
-                                          ),
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall
+                                              ?.copyWith(
+                                                color: scheme.primary,
+                                                fontWeight: FontWeight.w700,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -230,12 +255,29 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                                           context.pop();
                                         }
                                       },
+                                style: TextButton.styleFrom(
+                                  foregroundColor: scheme.primary,
+                                  visualDensity: VisualDensity.compact,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: AppSpacing.md,
+                                    vertical: AppSpacing.xs,
+                                  ),
+                                ),
                                 icon: Icon(
                                   Icons.phone_iphone,
-                                  size: AppDimensions.iconSm,
-                                  color: scheme.onSurfaceVariant,
+                                  size: AppDimensions.iconMd,
+                                  color: scheme.primary,
                                 ),
-                                label: Text(l10n.authUseDifferentNumber),
+                                label: Text(
+                                  l10n.authUseDifferentNumber,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                        color: scheme.primary,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
                               ),
                             ),
                             const SizedBox(height: AppSpacing.sm),
@@ -243,7 +285,7 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                               decoration: BoxDecoration(
                                 color: scheme.surfaceContainerLow,
                                 borderRadius: BorderRadius.circular(
-                                  AppRadii.button,
+                                  AppRadii.dialog,
                                 ),
                                 border: Border.all(color: colors.border),
                               ),
@@ -266,6 +308,7 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                                               .labelSmall
                                               ?.copyWith(
                                                 color: scheme.onSurfaceVariant,
+                                                height: 1.35,
                                               ),
                                           children: [
                                             TextSpan(
@@ -292,7 +335,12 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
                       ),
                       const Divider(height: 1),
                       Padding(
-                        padding: const EdgeInsets.all(AppSpacing.md),
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.lg,
+                          AppSpacing.xs,
+                          AppSpacing.lg,
+                          AppSpacing.md,
+                        ),
                         child: Text(
                           l10n.authNodeFooter(l10n.authSupportPhone),
                           textAlign: TextAlign.center,
@@ -313,6 +361,35 @@ class _AgentOtpPageState extends State<AgentOtpPage> {
       ),
     );
   }
+}
+
+List<InlineSpan> _resendCountdownSpans(
+  BuildContext context,
+  String resendIn,
+  String timerLabel,
+) {
+  final scheme = Theme.of(context).colorScheme;
+  final leadStyle = TextStyle(
+    color: scheme.primary,
+    fontWeight: FontWeight.w600,
+  );
+  final timerStyle = AppTextStyles.mono(
+    TextStyle(
+      color: scheme.onSurface,
+      fontWeight: FontWeight.w700,
+      fontSize: AppTextStyles.bodySmallSize,
+      height: AppTextStyles.bodySmallLineHeight / AppTextStyles.bodySmallSize,
+    ),
+  );
+  final index = resendIn.indexOf(timerLabel);
+  if (index < 0) {
+    return [TextSpan(text: resendIn, style: leadStyle)];
+  }
+  return [
+    TextSpan(text: resendIn.substring(0, index), style: leadStyle),
+    TextSpan(text: timerLabel, style: timerStyle),
+    TextSpan(text: resendIn.substring(index + timerLabel.length), style: leadStyle),
+  ];
 }
 
 Future<void> _continueAfterVerification(

@@ -66,7 +66,7 @@ class _OtpCodeFieldState extends State<OtpCodeField> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   for (var i = 0; i < OtpCodeField.length; i++)
-                    Flexible(child: Center(child: _box(value, error, i))),
+                    _box(value, error, i),
                 ],
               ),
               Positioned.fill(
