@@ -3028,18 +3028,26 @@
   "marketplaceVideoUnavailable": "Listing video playback isn't connected yet. The caption describes what the yard recorded.",
   "bookingsProofPlaybackUnavailable": "Condition proof playback opens from handback review when a return clip is ready.",
   "rentalChangeDeliveryUnavailable": "Changing delivery after confirm isn't connected yet. Start a new request if the drop-off place must change.",
+  "walletModeLessee": "Lessee mode",
+  "walletModeVendor": "Vendor mode",
   "lesseeWalletAvailable": "Available balance",
   "lesseeWalletAvailableFigure": "Available balance",
+  "lesseeWalletAvailableCaption": "Ready for instant withdrawal or rental checkout",
+  "lesseeWalletDisbursementVerified": "Instant disbursement verified",
   "lesseeWalletWithdraw": "Withdraw to bank",
   "lesseeWalletNothingToWithdraw": "Nothing to withdraw",
   "lesseeWalletZeroCaption": "Available to withdraw: ₦0. All currently active balances are held in escrow or await return inspection.",
   "lesseeWalletBreakdown": "Balance breakdown",
+  "lesseeWalletNoLock": "NO LOCK",
+  "lesseeWalletEscrowBadge": "ESCROW",
+  "lesseeWalletAuditBadge": "AUDIT PHASE",
   "lesseeWalletDepositsHeld": "Deposits held by vendors",
   "lesseeWalletDepositsHeldCaption": "Your deposits held by vendors. Released after check-in approval.",
   "lesseeWalletPendingRefunds": "Pending refunds",
   "lesseeWalletPendingRefundsCaption": "Refunds pending vendor approval after return",
   "lesseeWalletEscrowTitle": "Held in escrow & audit",
   "lesseeWalletHistory": "Transaction history",
+  "lesseeWalletViewStatement": "View statement",
   "lesseeWalletBookingReleased": "Booking {reference} released",
   "@lesseeWalletBookingReleased": {
     "placeholders": {
@@ -3065,9 +3073,54 @@
       "reference": { "type": "String" }
     }
   },
+  "lesseeWalletStatusSettled": "Settled",
+  "lesseeWalletStatusHeldByVendor": "Held by vendor",
+  "lesseeWalletStatusCompleted": "Completed",
+  "lesseeWalletStatusRecredited": "Re-credited",
+  "lesseeWalletStatusRefunded": "Refunded",
   "lesseeWalletEmptyTitle": "No transactions ready for payout",
   "lesseeWalletEmptyBody": "When equipment returns are validated by field assessors and yardmasters, refunds and caution deposits are immediately re-credited to your available balance.",
-  "lesseeWalletViewBookings": "View my bookings",
+  "lesseeWalletViewBookings": "View my bookings →",
+  "lesseeWithdrawDestination": "Destination account",
+  "lesseeWithdrawBankInitials": "PB",
+  "lesseeWithdrawBankName": "Providus Bank",
+  "lesseeWithdrawAccountLine": "{number} · Account Name: {name}",
+  "@lesseeWithdrawAccountLine": {
+    "placeholders": {
+      "number": { "type": "String" },
+      "name": { "type": "String" }
+    }
+  },
+  "lesseeWithdrawAvailableLabel": "Available to withdraw:",
+  "lesseeWithdrawCurrencyBadge": "NGN",
+  "lesseeWithdrawFeeLabel": "Transfer processing fee:",
+  "lesseeWithdrawNetLabel": "Net account credit:",
+  "lesseeWithdrawArrives": "Arrives in {bank} · Usually within 2 hours on weekdays.",
+  "@lesseeWithdrawArrives": {
+    "placeholders": {
+      "bank": { "type": "String" }
+    }
+  },
+  "lesseeWithdrawEscrowGuard": "ESCROW GUARD ACTIVE",
+  "lesseeWithdrawAuditAnd": "in condition audit &",
+  "lesseeWithdrawQuarantine": "caution deposits remain quarantined for other bookings.",
+  "lesseeWithdrawAvailableUnlocked": "Available amount ({amount}) carries zero lock glyphs and is 100% unrestricted.",
+  "@lesseeWithdrawAvailableUnlocked": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "lesseeWithdrawValidationTitle": "Validation Guard Logic",
+  "lesseeWithdrawValidationBody": "Input limits strictly enforce: {minimum} ≤ Amount ≤ {available}. Out-of-bounds disables action button.",
+  "@lesseeWithdrawValidationBody": {
+    "placeholders": {
+      "minimum": { "type": "String" },
+      "available": { "type": "String" }
+    }
+  },
+  "lesseeWithdrawCancel": "Cancel and Return",
+  "lesseeWithdrawHelp": "Help",
+  "lesseeWithdrawLedgerUpdated": "Lessee balance ledger updated",
   "lesseeProfileGreeting": "Good morning, {name}",
   "@lesseeProfileGreeting": {
     "placeholders": {

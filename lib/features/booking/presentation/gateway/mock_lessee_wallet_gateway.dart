@@ -61,6 +61,8 @@ final class MockLesseeWalletGateway implements LesseeWalletGateway {
     available: '₦486,200',
     availableAmount: 486200,
     bank: 'Providus •••• 9034',
+    // Frame 01: pending refunds ₦150,000 · deposits held ₦92,000.
+    // Frame 02 guard uses held as audit ₦92,000 and awaiting as deposits ₦150,000.
     awaiting: '₦150,000',
     held: '₦92,000',
     accountName: 'C. Okonkwo',
@@ -128,12 +130,14 @@ final class MockLesseeWalletGateway implements LesseeWalletGateway {
     LesseeEscrowHold(
       title: 'Awaiting vendor approval',
       caption: 'Released after vendor approves your equipment return',
+      amount: '₦92,000',
       reference: 'BK-24817 (Generator 100kVA)',
       detail: 'Check-in: 17 Oct, 16:40',
     ),
     LesseeEscrowHold(
       title: 'Deposits held by vendors',
       caption: 'Your deposits held by vendors during ongoing rental',
+      amount: '₦150,000',
       reference: 'BK-24804 · Excavator 20T',
       detail: 'Condition recorded: 16 Oct',
     ),

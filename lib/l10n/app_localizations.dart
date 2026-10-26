@@ -8738,6 +8738,18 @@ abstract class AppLocalizations {
   /// **'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.'**
   String get rentalChangeDeliveryUnavailable;
 
+  /// No description provided for @walletModeLessee.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee mode'**
+  String get walletModeLessee;
+
+  /// No description provided for @walletModeVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor mode'**
+  String get walletModeVendor;
+
   /// No description provided for @lesseeWalletAvailable.
   ///
   /// In en, this message translates to:
@@ -8749,6 +8761,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Available balance'**
   String get lesseeWalletAvailableFigure;
+
+  /// No description provided for @lesseeWalletAvailableCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready for instant withdrawal or rental checkout'**
+  String get lesseeWalletAvailableCaption;
+
+  /// No description provided for @lesseeWalletDisbursementVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant disbursement verified'**
+  String get lesseeWalletDisbursementVerified;
 
   /// No description provided for @lesseeWalletWithdraw.
   ///
@@ -8773,6 +8797,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Balance breakdown'**
   String get lesseeWalletBreakdown;
+
+  /// No description provided for @lesseeWalletNoLock.
+  ///
+  /// In en, this message translates to:
+  /// **'NO LOCK'**
+  String get lesseeWalletNoLock;
+
+  /// No description provided for @lesseeWalletEscrowBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'ESCROW'**
+  String get lesseeWalletEscrowBadge;
+
+  /// No description provided for @lesseeWalletAuditBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'AUDIT PHASE'**
+  String get lesseeWalletAuditBadge;
 
   /// No description provided for @lesseeWalletDepositsHeld.
   ///
@@ -8810,6 +8852,12 @@ abstract class AppLocalizations {
   /// **'Transaction history'**
   String get lesseeWalletHistory;
 
+  /// No description provided for @lesseeWalletViewStatement.
+  ///
+  /// In en, this message translates to:
+  /// **'View statement'**
+  String get lesseeWalletViewStatement;
+
   /// No description provided for @lesseeWalletBookingReleased.
   ///
   /// In en, this message translates to:
@@ -8840,6 +8888,36 @@ abstract class AppLocalizations {
   /// **'Payout {reference} failed'**
   String lesseeWalletPayoutFailed(String reference);
 
+  /// No description provided for @lesseeWalletStatusSettled.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled'**
+  String get lesseeWalletStatusSettled;
+
+  /// No description provided for @lesseeWalletStatusHeldByVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Held by vendor'**
+  String get lesseeWalletStatusHeldByVendor;
+
+  /// No description provided for @lesseeWalletStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get lesseeWalletStatusCompleted;
+
+  /// No description provided for @lesseeWalletStatusRecredited.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-credited'**
+  String get lesseeWalletStatusRecredited;
+
+  /// No description provided for @lesseeWalletStatusRefunded.
+  ///
+  /// In en, this message translates to:
+  /// **'Refunded'**
+  String get lesseeWalletStatusRefunded;
+
   /// No description provided for @lesseeWalletEmptyTitle.
   ///
   /// In en, this message translates to:
@@ -8855,8 +8933,116 @@ abstract class AppLocalizations {
   /// No description provided for @lesseeWalletViewBookings.
   ///
   /// In en, this message translates to:
-  /// **'View my bookings'**
+  /// **'View my bookings →'**
   String get lesseeWalletViewBookings;
+
+  /// No description provided for @lesseeWithdrawDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Destination account'**
+  String get lesseeWithdrawDestination;
+
+  /// No description provided for @lesseeWithdrawBankInitials.
+  ///
+  /// In en, this message translates to:
+  /// **'PB'**
+  String get lesseeWithdrawBankInitials;
+
+  /// No description provided for @lesseeWithdrawBankName.
+  ///
+  /// In en, this message translates to:
+  /// **'Providus Bank'**
+  String get lesseeWithdrawBankName;
+
+  /// No description provided for @lesseeWithdrawAccountLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{number} · Account Name: {name}'**
+  String lesseeWithdrawAccountLine(String number, String name);
+
+  /// No description provided for @lesseeWithdrawAvailableLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Available to withdraw:'**
+  String get lesseeWithdrawAvailableLabel;
+
+  /// No description provided for @lesseeWithdrawCurrencyBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'NGN'**
+  String get lesseeWithdrawCurrencyBadge;
+
+  /// No description provided for @lesseeWithdrawFeeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer processing fee:'**
+  String get lesseeWithdrawFeeLabel;
+
+  /// No description provided for @lesseeWithdrawNetLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Net account credit:'**
+  String get lesseeWithdrawNetLabel;
+
+  /// No description provided for @lesseeWithdrawArrives.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrives in {bank} · Usually within 2 hours on weekdays.'**
+  String lesseeWithdrawArrives(String bank);
+
+  /// No description provided for @lesseeWithdrawEscrowGuard.
+  ///
+  /// In en, this message translates to:
+  /// **'ESCROW GUARD ACTIVE'**
+  String get lesseeWithdrawEscrowGuard;
+
+  /// No description provided for @lesseeWithdrawAuditAnd.
+  ///
+  /// In en, this message translates to:
+  /// **'in condition audit &'**
+  String get lesseeWithdrawAuditAnd;
+
+  /// No description provided for @lesseeWithdrawQuarantine.
+  ///
+  /// In en, this message translates to:
+  /// **'caution deposits remain quarantined for other bookings.'**
+  String get lesseeWithdrawQuarantine;
+
+  /// No description provided for @lesseeWithdrawAvailableUnlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Available amount ({amount}) carries zero lock glyphs and is 100% unrestricted.'**
+  String lesseeWithdrawAvailableUnlocked(String amount);
+
+  /// No description provided for @lesseeWithdrawValidationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Validation Guard Logic'**
+  String get lesseeWithdrawValidationTitle;
+
+  /// No description provided for @lesseeWithdrawValidationBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Input limits strictly enforce: {minimum} ≤ Amount ≤ {available}. Out-of-bounds disables action button.'**
+  String lesseeWithdrawValidationBody(String minimum, String available);
+
+  /// No description provided for @lesseeWithdrawCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel and Return'**
+  String get lesseeWithdrawCancel;
+
+  /// No description provided for @lesseeWithdrawHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get lesseeWithdrawHelp;
+
+  /// No description provided for @lesseeWithdrawLedgerUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee balance ledger updated'**
+  String get lesseeWithdrawLedgerUpdated;
 
   /// No description provided for @lesseeProfileGreeting.
   ///

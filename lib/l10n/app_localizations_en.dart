@@ -5058,10 +5058,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'Changing delivery after confirm isn\'t connected yet. Start a new request if the drop-off place must change.';
 
   @override
+  String get walletModeLessee => 'Lessee mode';
+
+  @override
+  String get walletModeVendor => 'Vendor mode';
+
+  @override
   String get lesseeWalletAvailable => 'Available balance';
 
   @override
   String get lesseeWalletAvailableFigure => 'Available balance';
+
+  @override
+  String get lesseeWalletAvailableCaption =>
+      'Ready for instant withdrawal or rental checkout';
+
+  @override
+  String get lesseeWalletDisbursementVerified =>
+      'Instant disbursement verified';
 
   @override
   String get lesseeWalletWithdraw => 'Withdraw to bank';
@@ -5075,6 +5089,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lesseeWalletBreakdown => 'Balance breakdown';
+
+  @override
+  String get lesseeWalletNoLock => 'NO LOCK';
+
+  @override
+  String get lesseeWalletEscrowBadge => 'ESCROW';
+
+  @override
+  String get lesseeWalletAuditBadge => 'AUDIT PHASE';
 
   @override
   String get lesseeWalletDepositsHeld => 'Deposits held by vendors';
@@ -5095,6 +5118,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lesseeWalletHistory => 'Transaction history';
+
+  @override
+  String get lesseeWalletViewStatement => 'View statement';
 
   @override
   String lesseeWalletBookingReleased(String reference) {
@@ -5120,6 +5146,21 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lesseeWalletStatusSettled => 'Settled';
+
+  @override
+  String get lesseeWalletStatusHeldByVendor => 'Held by vendor';
+
+  @override
+  String get lesseeWalletStatusCompleted => 'Completed';
+
+  @override
+  String get lesseeWalletStatusRecredited => 'Re-credited';
+
+  @override
+  String get lesseeWalletStatusRefunded => 'Refunded';
+
+  @override
   String get lesseeWalletEmptyTitle => 'No transactions ready for payout';
 
   @override
@@ -5127,7 +5168,70 @@ class AppLocalizationsEn extends AppLocalizations {
       'When equipment returns are validated by field assessors and yardmasters, refunds and caution deposits are immediately re-credited to your available balance.';
 
   @override
-  String get lesseeWalletViewBookings => 'View my bookings';
+  String get lesseeWalletViewBookings => 'View my bookings →';
+
+  @override
+  String get lesseeWithdrawDestination => 'Destination account';
+
+  @override
+  String get lesseeWithdrawBankInitials => 'PB';
+
+  @override
+  String get lesseeWithdrawBankName => 'Providus Bank';
+
+  @override
+  String lesseeWithdrawAccountLine(String number, String name) {
+    return '$number · Account Name: $name';
+  }
+
+  @override
+  String get lesseeWithdrawAvailableLabel => 'Available to withdraw:';
+
+  @override
+  String get lesseeWithdrawCurrencyBadge => 'NGN';
+
+  @override
+  String get lesseeWithdrawFeeLabel => 'Transfer processing fee:';
+
+  @override
+  String get lesseeWithdrawNetLabel => 'Net account credit:';
+
+  @override
+  String lesseeWithdrawArrives(String bank) {
+    return 'Arrives in $bank · Usually within 2 hours on weekdays.';
+  }
+
+  @override
+  String get lesseeWithdrawEscrowGuard => 'ESCROW GUARD ACTIVE';
+
+  @override
+  String get lesseeWithdrawAuditAnd => 'in condition audit &';
+
+  @override
+  String get lesseeWithdrawQuarantine =>
+      'caution deposits remain quarantined for other bookings.';
+
+  @override
+  String lesseeWithdrawAvailableUnlocked(String amount) {
+    return 'Available amount ($amount) carries zero lock glyphs and is 100% unrestricted.';
+  }
+
+  @override
+  String get lesseeWithdrawValidationTitle => 'Validation Guard Logic';
+
+  @override
+  String lesseeWithdrawValidationBody(String minimum, String available) {
+    return 'Input limits strictly enforce: $minimum ≤ Amount ≤ $available. Out-of-bounds disables action button.';
+  }
+
+  @override
+  String get lesseeWithdrawCancel => 'Cancel and Return';
+
+  @override
+  String get lesseeWithdrawHelp => 'Help';
+
+  @override
+  String get lesseeWithdrawLedgerUpdated => 'Lessee balance ledger updated';
 
   @override
   String lesseeProfileGreeting(String name) {

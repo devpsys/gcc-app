@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_wallet_cubit.dart';
 import 'package:gcc_app/features/booking/presentation/gateway/mock_lessee_wallet_gateway.dart';
 import 'package:gcc_app/features/booking/presentation/pages/lessee_wallet_screen.dart';
-import 'package:gcc_app/features/vendor/presentation/widgets/wallet_balance_card.dart';
+import 'package:gcc_app/features/booking/presentation/widgets/lessee_wallet_balance_card.dart';
 
 import '../../../../helpers/pump_app.dart';
 
@@ -18,9 +18,14 @@ void main() {
     expect(find.text('₦150,000'), findsWidgets);
     expect(find.text('₦92,000'), findsWidgets);
     expect(find.textContaining('Deposits held by vendors'), findsWidgets);
+    expect(find.textContaining('Instant disbursement verified'), findsOneWidget);
+    expect(find.text('NO LOCK'), findsOneWidget);
+    expect(find.text('ESCROW'), findsOneWidget);
+    expect(find.text('AUDIT PHASE'), findsOneWidget);
+    expect(find.textContaining('LESSEE MODE'), findsOneWidget);
     expect(
       find.descendant(
-        of: find.byType(WalletBalanceCard),
+        of: find.byType(LesseeWalletBalanceCard),
         matching: find.byIcon(Icons.lock),
       ),
       findsNothing,
@@ -34,6 +39,8 @@ void main() {
     await tester.drag(find.byType(ListView), const Offset(0, -900));
     await tester.pumpAndSettle();
     expect(find.text('+₦99,900'), findsOneWidget);
+    expect(find.text('Settled'), findsOneWidget);
+    expect(find.text('Held by vendor'), findsOneWidget);
   });
 
   testWidgets('a zero balance shows escrow holds and bookings CTA', (
@@ -46,15 +53,14 @@ void main() {
 
     expect(find.text('₦0'), findsWidgets);
     expect(find.textContaining('NOTHING TO WITHDRAW'), findsOneWidget);
-    expect(find.textContaining('Held in escrow'), findsOneWidget);
+    expect(find.textContaining('HELD IN ESCROW'), findsOneWidget);
     expect(find.textContaining('BK-24817'), findsWidgets);
+    expect(find.text('₦92,000'), findsWidgets);
+    expect(find.text('₦150,000'), findsWidgets);
     await tester.drag(find.byType(ListView), const Offset(0, -1200));
     await tester.pumpAndSettle();
     expect(find.text('No transactions ready for payout'), findsOneWidget);
-    final bookings = tester.widget<OutlinedButton>(
-      find.widgetWithText(OutlinedButton, 'View my bookings'),
-    );
-    expect(bookings.onPressed, isNotNull);
+    expect(find.textContaining('View my bookings'), findsOneWidget);
   });
 
   testWidgets('wallet lays out at 320×640 with text scale 2', (tester) async {

@@ -3,6 +3,7 @@ import 'package:gcc_app/core/theme/app_breakpoints.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/widgets/app_bottom_navigation_bar.dart';
+import 'package:gcc_app/core/widgets/shell_app_bar_style.dart';
 import 'package:gcc_app/core/widgets/shell_center_action.dart';
 import 'package:gcc_app/core/widgets/shell_destination.dart';
 import 'package:gcc_app/core/widgets/shell_navigation_style.dart';
@@ -20,6 +21,7 @@ class AppShell extends StatelessWidget {
     this.showAppBar = true,
     this.centerAction,
     this.navigationStyle = ShellNavigationStyle.drawer,
+    this.appBarStyle = ShellAppBarStyle.surface,
     super.key,
   });
 
@@ -35,6 +37,9 @@ class AppShell extends StatelessWidget {
 
   /// Medium-breakpoint chrome. App B uses [ShellNavigationStyle.topTabs].
   final ShellNavigationStyle navigationStyle;
+
+  /// Wallet (MOB-LSE-14) uses [ShellAppBarStyle.brand] for the mode chip.
+  final ShellAppBarStyle appBarStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +63,7 @@ class AppShell extends StatelessWidget {
 
   Widget _compact(BuildContext context, int selectedIndex) {
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _appBar(context),
       body: child,
       bottomNavigationBar: destinations.length < 2
           ? null
@@ -71,35 +76,51 @@ class AppShell extends StatelessWidget {
     );
   }
 
-  PreferredSizeWidget? _appBar() {
+  PreferredSizeWidget? _appBar(
+    BuildContext context, {
+    Widget? drawerLeading,
+  }) {
     if (!showAppBar) {
       return null;
     }
+    final scheme = Theme.of(context).colorScheme;
+    final brand = appBarStyle == ShellAppBarStyle.brand;
+    final onBrand = scheme.onSecondary;
     return AppBar(
-      automaticallyImplyLeading: leading == null,
-      leading: leading,
+      automaticallyImplyLeading: leading == null && drawerLeading == null,
+      leading: leading ?? drawerLeading,
       title: Text(title),
       actions: actions,
+      backgroundColor: brand ? scheme.secondary : null,
+      foregroundColor: brand ? onBrand : null,
+      iconTheme: brand ? IconThemeData(color: onBrand) : null,
+      actionsIconTheme: brand ? IconThemeData(color: onBrand) : null,
+      titleTextStyle: brand
+          ? Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: onBrand,
+              fontWeight: FontWeight.w700,
+            )
+          : null,
+      shape: brand ? const Border() : null,
+      elevation: brand ? 0 : null,
+      scrolledUnderElevation: brand ? 0 : null,
     );
   }
 
   Widget _medium(BuildContext context, int selectedIndex) {
     return Scaffold(
-      appBar: showAppBar
-          ? AppBar(
-              title: Text(title),
-              actions: actions,
-              leading: Builder(
-                builder: (context) {
-                  return IconButton(
-                    tooltip: menuLabel,
-                    icon: const Icon(Icons.menu),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
-                  );
-                },
-              ),
-            )
-          : null,
+      appBar: _appBar(
+        context,
+        drawerLeading: Builder(
+          builder: (context) {
+            return IconButton(
+              tooltip: menuLabel,
+              icon: const Icon(Icons.menu),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
+      ),
       drawer: Drawer(
         width: AppDimensions.navigationRailWidth,
         child: SafeArea(
@@ -148,7 +169,7 @@ class AppShell extends StatelessWidget {
   Widget _mediumTopTabs(BuildContext context, int selectedIndex) {
     final scheme = Theme.of(context).colorScheme;
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _appBar(context),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -251,7 +272,7 @@ class AppShell extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                _appBar() ?? const SizedBox.shrink(),
+                _appBar(context) ?? const SizedBox.shrink(),
                 Expanded(child: child),
               ],
             ),
