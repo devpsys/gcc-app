@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gcc_app/core/config/app_config.dart';
 import 'package:gcc_app/core/di/injection.dart';
 import 'package:gcc_app/core/extensions/context_extensions.dart';
 import 'package:gcc_app/core/theme/app_theme.dart';
+import 'package:gcc_app/core/widgets/app_debug_env_banner.dart';
 import 'package:gcc_app/core/widgets/app_scroll_behavior.dart';
 import 'package:gcc_app/features/home/presentation/bloc/home_cubit.dart';
 import 'package:gcc_app/features/home/presentation/bloc/home_state.dart';
@@ -20,6 +22,7 @@ class GccApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final environment = getIt<AppConfig>().environment;
     return BlocProvider(
       create: (_) {
         final cubit = homeCubit ?? getIt<HomeCubit>();
@@ -36,9 +39,16 @@ class GccApp extends StatelessWidget {
             darkTheme: AppTheme.dark(),
             themeMode: themeModeFromPreference(state.themeMode),
             scrollBehavior: const AppScrollBehavior(),
+            debugShowCheckedModeBanner: false,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             routerConfig: router ?? getIt<GoRouter>(),
+            builder: (context, child) {
+              return AppDebugEnvBanner(
+                environment: environment,
+                child: child ?? const SizedBox.shrink(),
+              );
+            },
           );
         },
       ),
