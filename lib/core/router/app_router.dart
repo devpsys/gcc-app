@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gcc_app/core/di/injection.dart';
+import 'package:gcc_app/core/network/online_status_cubit.dart';
 import 'package:gcc_app/core/router/auth_redirect.dart';
 import 'package:gcc_app/core/router/route_names.dart';
 import 'package:gcc_app/core/router/route_paths.dart';
@@ -205,9 +206,8 @@ GoRouter createAppRouter() {
         path: RoutePaths.walletWithdraw,
         name: RouteNames.walletWithdraw,
         builder: (context, state) => BlocProvider(
-          create: (_) => VendorWithdrawCubit(
-            LesseeAsVendorWalletGateway(getIt()),
-          )..load(),
+          create: (_) =>
+              VendorWithdrawCubit(LesseeAsVendorWalletGateway(getIt()))..load(),
           child: const LesseeWithdrawScreen(),
         ),
       ),
@@ -466,6 +466,7 @@ GoRouter createAppRouter() {
             providers: [
               BlocProvider(create: (_) => getIt<AuthCubit>()),
               BlocProvider(create: (_) => getIt<DeviceLockCubit>()..load()),
+              BlocProvider(create: (_) => getIt<OnlineStatusCubit>()),
             ],
             child: child,
           );
