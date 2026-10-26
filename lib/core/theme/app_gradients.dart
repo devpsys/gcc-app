@@ -17,4 +17,11 @@ abstract final class AppGradients {
     end: Alignment.bottomCenter,
     colors: [AppColors.brand700, AppColors.brand600],
   );
+
+  /// Soft wash behind the lessee profile greeting (MOB-LSE-17).
+  static const LinearGradient lesseeProfileWash = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [AppColors.brand100, AppColors.brand50],
+  );
 }

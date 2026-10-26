@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gcc_app/core/extensions/context_extensions.dart';
+import 'package:gcc_app/core/theme/app_dimensions.dart';
+import 'package:gcc_app/core/theme/app_gradients.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/core/theme/app_text_styles.dart';
 import 'package:gcc_app/features/booking/domain/lessee_profile.dart';
 
-/// Initials, name, role, and rental tenure for the lessee profile.
+/// Gradient identity card for MOB-LSE-17.
 class LesseeProfileHeader extends StatelessWidget {
   const LesseeProfileHeader({
     required this.profile,
@@ -18,85 +19,126 @@ class LesseeProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final colors = context.semanticColors;
+    final onCard = Theme.of(context).colorScheme.onPrimary;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: scheme.surface,
+        gradient: AppGradients.availableBalance,
         borderRadius: BorderRadius.circular(AppRadii.card),
-        border: Border.all(color: colors.border),
       ),
       child: Padding(
         padding: const EdgeInsets.all(AppSpacing.md),
-        child: Row(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DecoratedBox(
-              decoration: BoxDecoration(
-                color: scheme.secondaryContainer,
-                shape: BoxShape.circle,
-                border: Border.all(color: colors.border),
-              ),
-              child: SizedBox.square(
-                dimension: AppSpacing.max,
-                child: Center(
-                  child: Text(
-                    profile.initials,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: scheme.primary,
-                      fontWeight: FontWeight.w700,
+            Row(
+              children: [
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: onCard.withValues(alpha: 0.92),
+                    shape: BoxShape.circle,
+                  ),
+                  child: SizedBox.square(
+                    dimension: AppSpacing.xxxl,
+                    child: Icon(
+                      Icons.person_outline,
+                      color: Theme.of(context).colorScheme.secondary,
+                      size: AppDimensions.iconLg,
                     ),
                   ),
                 ),
-              ),
-            ),
-            const SizedBox(width: AppSpacing.sm),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    profile.name,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text.rich(
-                    TextSpan(
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: scheme.onSurfaceVariant,
+                const SizedBox(width: AppSpacing.sm),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        profile.name,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              color: onCard,
+                              fontWeight: FontWeight.w700,
+                            ),
                       ),
-                      children: [
-                        TextSpan(text: '${profile.kind} · '),
-                        TextSpan(
-                          text: profile.reference,
-                          style: AppTextStyles.mono(
-                            Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              color: scheme.onSurface,
-                              fontWeight: FontWeight.w600,
+                      const SizedBox(height: AppSpacing.xxs),
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: AppSpacing.xs,
+                        children: [
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: onCard.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(
+                                AppRadii.input,
+                              ),
+                              border: Border.all(
+                                color: onCard.withValues(alpha: 0.25),
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: AppSpacing.xs,
+                                vertical: 1,
+                              ),
+                              child: Text(
+                                profile.kind,
+                                style: AppTextStyles.mono(
+                                  Theme.of(context).textTheme.labelSmall!
+                                      .copyWith(
+                                        color: onCard.withValues(alpha: 0.9),
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    profile.place,
-                    style: AppTextStyles.mono(
-                      Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: scheme.onSurfaceVariant,
+                          Text(
+                            '·',
+                            style: TextStyle(
+                              color: onCard.withValues(alpha: 0.7),
+                            ),
+                          ),
+                          Text(
+                            profile.reference,
+                            style: AppTextStyles.mono(
+                              Theme.of(context).textTheme.labelSmall!.copyWith(
+                                color: onCard,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                    ],
                   ),
-                  const SizedBox(height: AppSpacing.xxs),
-                  Text(
-                    sinceLabel,
+                ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Row(
+              children: [
+                Icon(
+                  Icons.place_outlined,
+                  size: AppDimensions.iconSm,
+                  color: onCard.withValues(alpha: 0.85),
+                ),
+                const SizedBox(width: AppSpacing.xxs),
+                Expanded(
+                  child: Text(
+                    profile.place,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: scheme.onSurfaceVariant,
+                      color: onCard.withValues(alpha: 0.9),
                     ),
                   ),
-                ],
+                ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Divider(height: 1, color: onCard.withValues(alpha: 0.25)),
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              sinceLabel,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: onCard.withValues(alpha: 0.85),
               ),
             ),
           ],

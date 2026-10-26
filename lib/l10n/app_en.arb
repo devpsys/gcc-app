@@ -2042,7 +2042,7 @@
   "profileRowAndroidVersion": "Android version",
   "profileRowAppVersion": "App version",
   "profileAppVersion": "2.4.1 (build 118)",
-  "profileRowOfflineCapture": "Offline capture",
+  "profileRowOfflineCapture": "Offline video capture",
   "profileRowAllowAlways": "Always allow",
   "profileInstallTitle": "Add GCC to your home screen",
   "profileInstallBody": "So it opens without data and keeps working in the market.",
@@ -3166,7 +3166,7 @@
   "lesseeProfileCallSupport": "Call",
   "lesseeProfileSignOut": "Sign out of GCC",
   "lesseeProfileSwitchTitle": "Switch to Vendor mode?",
-  "lesseeProfileSwitchBody": "Dual-role account verified for {name}",
+  "lesseeProfileSwitchBody": "Dual-role account verified for {name}.",
   "@lesseeProfileSwitchBody": {
     "placeholders": {
       "name": { "type": "String" }

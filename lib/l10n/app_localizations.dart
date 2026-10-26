@@ -5039,7 +5039,7 @@ abstract class AppLocalizations {
   /// No description provided for @profileRowOfflineCapture.
   ///
   /// In en, this message translates to:
-  /// **'Offline capture'**
+  /// **'Offline video capture'**
   String get profileRowOfflineCapture;
 
   /// No description provided for @profileRowAllowAlways.
@@ -9155,7 +9155,7 @@ abstract class AppLocalizations {
   /// No description provided for @lesseeProfileSwitchBody.
   ///
   /// In en, this message translates to:
-  /// **'Dual-role account verified for {name}'**
+  /// **'Dual-role account verified for {name}.'**
   String lesseeProfileSwitchBody(String name);
 
   /// No description provided for @lesseeProfileSwitchGains.

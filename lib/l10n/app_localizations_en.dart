@@ -2888,7 +2888,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileAppVersion => '2.4.1 (build 118)';
 
   @override
-  String get profileRowOfflineCapture => 'Offline capture';
+  String get profileRowOfflineCapture => 'Offline video capture';
 
   @override
   String get profileRowAllowAlways => 'Always allow';
@@ -5299,7 +5299,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String lesseeProfileSwitchBody(String name) {
-    return 'Dual-role account verified for $name';
+    return 'Dual-role account verified for $name.';
   }
 
   @override

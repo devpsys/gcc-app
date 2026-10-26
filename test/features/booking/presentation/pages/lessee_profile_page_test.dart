@@ -16,6 +16,9 @@ void main() {
     expect(find.text('Chinedu Okonkwo'), findsOneWidget);
     expect(find.textContaining('LSE-0847'), findsOneWidget);
     expect(find.textContaining('Good morning, Chinedu'), findsOneWidget);
+    expect(find.textContaining('Field Lessee'), findsOneWidget);
+    expect(find.textContaining('DUAL AUTHORITY'), findsOneWidget);
+    expect(find.text('2 active'), findsOneWidget);
     expect(find.byIcon(Icons.lock), findsNothing);
   });
 
@@ -25,7 +28,7 @@ void main() {
     final session = FakeSessionRepository();
     await _pump(tester, session: session);
 
-    await tester.tap(find.text('Vendor'));
+    await tester.tap(find.text('Switch mode'));
     await tester.pumpAndSettle();
 
     expect(find.text('Switch to Vendor mode?'), findsOneWidget);

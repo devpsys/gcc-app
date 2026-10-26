@@ -4,13 +4,11 @@ import 'package:gcc_app/core/theme/app_dimensions.dart';
 import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 
-/// Dual-role switcher with Lessee selected (MOB-LSE-17).
+/// Dual-authority prompt with a Switch mode action (MOB-LSE-17).
 class LesseeRoleCard extends StatelessWidget {
   const LesseeRoleCard({
     required this.eyebrow,
     required this.body,
-    required this.lesseeLabel,
-    required this.vendorLabel,
     required this.switchLabel,
     required this.onAskSwitch,
     super.key,
@@ -18,8 +16,6 @@ class LesseeRoleCard extends StatelessWidget {
 
   final String eyebrow;
   final String body;
-  final String lesseeLabel;
-  final String vendorLabel;
   final String switchLabel;
   final VoidCallback onAskSwitch;
 
@@ -34,102 +30,85 @@ class LesseeRoleCard extends StatelessWidget {
         border: Border.all(color: colors.border),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.all(AppSpacing.sm),
+        child: Wrap(
+          spacing: AppSpacing.xs,
+          runSpacing: AppSpacing.xs,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.spaceBetween,
           children: [
-            Text(
-              eyebrow.toUpperCase(),
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: scheme.onSurfaceVariant,
-                fontWeight: FontWeight.w700,
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.sizeOf(context).width * 0.55,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    eyebrow.toUpperCase(),
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.6,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.xxs),
+                  Text(
+                    body,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: AppSpacing.xs),
-            Text(
-              body,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: scheme.onSurfaceVariant,
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.sizeOf(context).width * 0.9,
               ),
-            ),
-            const SizedBox(height: AppSpacing.sm),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                color: scheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(AppRadii.button),
-                border: Border.all(color: colors.border),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(AppSpacing.xxs),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: _segment(
-                        context,
-                        label: lesseeLabel,
-                        selected: true,
-                        onTap: null,
-                      ),
-                    ),
-                    Expanded(
-                      child: _segment(
-                        context,
-                        label: vendorLabel,
-                        selected: false,
-                        onTap: onAskSwitch,
-                      ),
-                    ),
-                  ],
+              child: Material(
+                color: scheme.secondaryContainer,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppRadii.button),
+                  side: BorderSide(
+                    color: scheme.primary.withValues(alpha: 0.25),
+                  ),
                 ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: onAskSwitch,
-                child: Text(switchLabel),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _segment(
-    BuildContext context, {
-    required String label,
-    required bool selected,
-    required VoidCallback? onTap,
-  }) {
-    final scheme = Theme.of(context).colorScheme;
-    return Material(
-      color: selected ? scheme.primary : scheme.surfaceContainerHighest,
-      borderRadius: BorderRadius.circular(AppRadii.input),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(AppRadii.input),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            minHeight: AppDimensions.minTouchTarget,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
-            child: Center(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  label,
-                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: selected
-                        ? scheme.onPrimary
-                        : scheme.onSurfaceVariant,
-                    fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                child: InkWell(
+                  onTap: onAskSwitch,
+                  borderRadius: BorderRadius.circular(AppRadii.button),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.sm,
+                      vertical: AppSpacing.xs,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            switchLabel,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.labelLarge
+                                ?.copyWith(
+                                  color: scheme.primary,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                          ),
+                        ),
+                        const SizedBox(width: AppSpacing.xxs),
+                        Icon(
+                          Icons.swap_horiz,
+                          size: AppDimensions.iconSm,
+                          color: scheme.primary,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );

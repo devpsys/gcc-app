@@ -14,7 +14,6 @@ import 'package:gcc_app/features/booking/presentation/bloc/lessee_profile_cubit.
 import 'package:gcc_app/features/booking/presentation/bloc/lessee_profile_state.dart';
 import 'package:gcc_app/features/booking/presentation/pages/lessee_profile_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_destinations.dart';
-import 'package:gcc_app/features/dashboard/presentation/widgets/dashboard_language_chip.dart';
 import 'package:go_router/go_router.dart';
 
 class LesseeProfileScreen extends StatelessWidget {
@@ -30,8 +29,8 @@ class LesseeProfileScreen extends StatelessWidget {
           menuLabel: l10n.openNavigationMenu,
           selectedLocation: RoutePaths.profile,
           navigationStyle: ShellNavigationStyle.topTabs,
+          showAppBar: false,
           destinations: DashboardDestinations.lessee(l10n),
-          actions: const [DashboardLanguageChip()],
           child: switch (state) {
             LesseeProfileLoading() => const Center(
               child: AppLoadingIndicator(),
@@ -55,6 +54,23 @@ class LesseeProfileScreen extends StatelessWidget {
                     ?.go(homeLocationForRole(AuthRole.vendor));
               },
               onSignOut: () => context.read<DeviceLockCubit>().signOut(),
+              onOpenBookings: () =>
+                  GoRouter.maybeOf(context)?.go(RoutePaths.bookings),
+              onInstall: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.dashboardActionUnavailable)),
+                );
+              },
+              onCallSupport: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.dashboardActionUnavailable)),
+                );
+              },
+              onOpenNotifications: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.dashboardActionUnavailable)),
+                );
+              },
             ),
           },
         );

@@ -163,7 +163,7 @@ void main() {
     expect(find.text('Android 12'), findsOneWidget);
     expect(find.text('2.4.1 (build 118)'), findsOneWidget);
 
-    await reveal(tester, 'Offline capture');
+    await reveal(tester, 'Offline video capture');
     expect(find.byType(AppSwitchTrack), findsOneWidget);
   });
 
