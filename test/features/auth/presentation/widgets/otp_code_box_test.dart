@@ -26,7 +26,9 @@ void main() {
         .toList();
 
     expect((decorations[0].border! as Border).top.color, scheme.primary);
-    expect(decorations[1].color, scheme.primaryContainer);
+    expect(decorations[1].color, scheme.surface);
+    expect((decorations[1].border! as Border).top.color, scheme.primary);
+    expect(decorations[2].color, scheme.errorContainer);
     expect((decorations[2].border! as Border).top.color, scheme.error);
   });
 }

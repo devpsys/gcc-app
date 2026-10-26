@@ -9,27 +9,31 @@ void main() {
     enrolled: false,
     unlocked: true,
     homeLocation: RoutePaths.agentToday,
-    signInLocation: RoutePaths.agentSignIn,
+    signInLocation: RoutePaths.authSignIn,
   );
   const locked = SessionRedirectState(
     enrolled: true,
     unlocked: false,
     homeLocation: RoutePaths.agentToday,
-    signInLocation: RoutePaths.agentSignIn,
+    signInLocation: RoutePaths.authSignIn,
   );
 
-  test('a signed-out person can stay on public routes', () {
+  test('a signed-out person can stay on public auth routes', () {
     expect(
-      authRedirect(session: signedOut, location: RoutePaths.onboardingLanguage),
+      authRedirect(session: signedOut, location: RoutePaths.authSignIn),
       isNull,
     );
     expect(
+      authRedirect(session: signedOut, location: RoutePaths.onboardingLanguage),
+      RoutePaths.authSignIn,
+    );
+    expect(
       authRedirect(session: signedOut, location: RoutePaths.agentToday),
-      RoutePaths.onboardingLanguage,
+      RoutePaths.authSignIn,
     );
     expect(
       authRedirect(session: signedOut, location: RoutePaths.home),
-      RoutePaths.onboardingLanguage,
+      RoutePaths.authSignIn,
     );
   });
 
@@ -40,7 +44,7 @@ void main() {
           enrolled: false,
           unlocked: true,
           homeLocation: '/?role=vendor',
-          signInLocation: RoutePaths.onboardingSignIn,
+          signInLocation: RoutePaths.authSignIn,
         ),
         location: RoutePaths.home,
       ),
@@ -54,11 +58,11 @@ void main() {
         session: const SessionRedirectState(
           enrolled: false,
           unlocked: false,
-          signInLocation: RoutePaths.agentSignIn,
+          signInLocation: RoutePaths.authSignIn,
         ),
         location: RoutePaths.agentWallet,
       ),
-      RoutePaths.agentSignIn,
+      RoutePaths.authSignIn,
     );
   });
 
@@ -72,14 +76,14 @@ void main() {
       isNull,
     );
     expect(
-      authRedirect(session: locked, location: RoutePaths.agentSignIn),
+      authRedirect(session: locked, location: RoutePaths.authSignIn),
       isNull,
     );
   });
 
   test('an unlocked session leaves the verification page in place', () {
     expect(
-      authRedirect(session: unlocked, location: RoutePaths.agentVerify),
+      authRedirect(session: unlocked, location: RoutePaths.authVerify),
       isNull,
     );
     expect(
@@ -92,9 +96,9 @@ void main() {
     );
   });
 
-  test('cold start picks unlock, home, or onboarding', () {
+  test('cold start picks unlock, home, or unified sign-in', () {
     expect(initialAuthLocation(locked), RoutePaths.biometricUnlock);
     expect(initialAuthLocation(unlocked), RoutePaths.agentToday);
-    expect(initialAuthLocation(signedOut), RoutePaths.onboardingLanguage);
+    expect(initialAuthLocation(signedOut), RoutePaths.authSignIn);
   });
 }

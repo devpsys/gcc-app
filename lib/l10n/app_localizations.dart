@@ -226,10 +226,40 @@ abstract class AppLocalizations {
   /// **'GCC could not start.'**
   String get startupFailed;
 
+  /// No description provided for @authSuiteWordmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile ID Suite'**
+  String get authSuiteWordmark;
+
+  /// No description provided for @authSuiteVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'v3.4.1'**
+  String get authSuiteVersion;
+
+  /// No description provided for @authRoleAgentPill.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent (AG-)'**
+  String get authRoleAgentPill;
+
+  /// No description provided for @authRoleVendorPill.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor (VND-)'**
+  String get authRoleVendorPill;
+
+  /// No description provided for @authRoleLesseePill.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee (LSE-)'**
+  String get authRoleLesseePill;
+
   /// Title on the agent identifier screen.
   ///
   /// In en, this message translates to:
-  /// **'Field agent sign in'**
+  /// **'Field Agent Sign In'**
   String get authAgentSignInTitle;
 
   /// Instructions on the agent identifier screen.
@@ -238,11 +268,47 @@ abstract class AppLocalizations {
   /// **'Enter the agent ID given to you by your coordinator.'**
   String get authAgentSignInSubtitle;
 
+  /// No description provided for @authVendorSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor Sign In'**
+  String get authVendorSignInTitle;
+
+  /// No description provided for @authVendorSignInSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the vendor ID given to you by GCC dispatch.'**
+  String get authVendorSignInSubtitle;
+
+  /// No description provided for @authLesseeSignInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee Sign In'**
+  String get authLesseeSignInTitle;
+
+  /// No description provided for @authLesseeSignInSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your lessee ID to view active rentals & contracts.'**
+  String get authLesseeSignInSubtitle;
+
   /// Label for the agent identifier field.
   ///
   /// In en, this message translates to:
   /// **'Agent ID'**
   String get authAgentIdLabel;
+
+  /// No description provided for @authVendorIdLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor ID'**
+  String get authVendorIdLabel;
+
+  /// No description provided for @authLesseeIdLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Lessee ID'**
+  String get authLesseeIdLabel;
 
   /// Example agent identifier shown as placeholder text.
   ///
@@ -250,17 +316,35 @@ abstract class AppLocalizations {
   /// **'AG-0142'**
   String get authAgentIdHint;
 
+  /// No description provided for @authVendorIdHint.
+  ///
+  /// In en, this message translates to:
+  /// **'VND-0341'**
+  String get authVendorIdHint;
+
+  /// No description provided for @authLesseeIdHint.
+  ///
+  /// In en, this message translates to:
+  /// **'LSE-0847'**
+  String get authLesseeIdHint;
+
   /// Divider label between typed sign-in and the QR scanner.
   ///
   /// In en, this message translates to:
   /// **'OR USE SCANNER'**
   String get authScannerDivider;
 
-  /// Button that starts an agent ID card scan.
+  /// Button that starts an ID card scan.
   ///
   /// In en, this message translates to:
-  /// **'Scan QR'**
+  /// **'Scan QR code on your ID card'**
   String get authScanQr;
+
+  /// No description provided for @authScanQrShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan QR Code'**
+  String get authScanQrShort;
 
   /// Helper text under the QR scan button.
   ///
@@ -268,35 +352,131 @@ abstract class AppLocalizations {
   /// **'Scan the QR code on your ID card.'**
   String get authScanQrHelp;
 
-  /// Advances from the agent identifier screen.
+  /// Advances from the identifier screen.
   ///
   /// In en, this message translates to:
   /// **'Continue'**
   String get authContinue;
 
-  /// Shown when Continue is disabled because the agent ID is empty.
+  /// Shown when Continue is disabled because the ID is empty.
   ///
   /// In en, this message translates to:
-  /// **'Enter your agent ID to continue.'**
+  /// **'Enter your ID to continue.'**
   String get authContinueNeedsIdentifier;
 
-  /// Shown when Continue is disabled because the agent ID is not in the expected form.
+  /// Shown when Continue is disabled because the ID is not in the expected form.
   ///
   /// In en, this message translates to:
-  /// **'Enter an ID like AG-0142 to continue.'**
+  /// **'Enter a valid ID for this role to continue.'**
   String get authContinueNeedsValidIdentifier;
 
-  /// Inline error when an agent ID does not match AG- and four digits.
+  /// Inline error when an ID does not match the selected role prefix.
   ///
   /// In en, this message translates to:
-  /// **'Enter an ID like AG-0142.'**
+  /// **'Enter a valid ID for this role.'**
   String get authIdentifierInvalid;
 
-  /// Inline error when an agent ID is well formed but not recognized.
+  /// Body when an ID is well formed but not recognized.
   ///
   /// In en, this message translates to:
-  /// **'We couldn\'t find {identifier}. Check the ID, or contact your coordinator.'**
+  /// **'We couldn\'t find {identifier} in the registry. Check the number or contact your field coordinator.'**
   String authUnknownIdentifier(String identifier);
+
+  /// No description provided for @authUnknownIdentifierTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'ID not recognized'**
+  String get authUnknownIdentifierTitle;
+
+  /// No description provided for @authTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get authTryAgain;
+
+  /// No description provided for @authDifferentId.
+  ///
+  /// In en, this message translates to:
+  /// **'Different ID'**
+  String get authDifferentId;
+
+  /// No description provided for @authSessionRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Session Retry'**
+  String get authSessionRetry;
+
+  /// No description provided for @authCoordinatorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Need Coordinator Dispatch?'**
+  String get authCoordinatorTitle;
+
+  /// No description provided for @authCoordinatorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Call your Zone 3 lead directly or start instant WhatsApp ticket.'**
+  String get authCoordinatorBody;
+
+  /// No description provided for @authCallCoordinator.
+  ///
+  /// In en, this message translates to:
+  /// **'Call Coordinator'**
+  String get authCallCoordinator;
+
+  /// No description provided for @authWhatsAppDesk.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp Desk'**
+  String get authWhatsAppDesk;
+
+  /// No description provided for @authHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get authHelp;
+
+  /// No description provided for @authLanguageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Language: {name}'**
+  String authLanguageLabel(String name);
+
+  /// No description provided for @authOfflineBannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline — using cached session'**
+  String get authOfflineBannerTitle;
+
+  /// No description provided for @authOfflineBannerBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Last synced today at 09:24'**
+  String get authOfflineBannerBody;
+
+  /// No description provided for @authOfflineRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get authOfflineRetry;
+
+  /// Hint that a previous session can be used offline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline? Use your last signed-in session.'**
+  String get authOfflineSession;
+
+  /// No description provided for @authOfflineSessionLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline?'**
+  String get authOfflineSessionLead;
+
+  /// No description provided for @authOfflineSessionLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your last signed-in session.'**
+  String get authOfflineSessionLink;
 
   /// Title when an agent account has no markets.
   ///
@@ -316,6 +496,36 @@ abstract class AppLocalizations {
   /// **'Language'**
   String get authLanguage;
 
+  /// No description provided for @authSelectLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Language'**
+  String get authSelectLanguage;
+
+  /// No description provided for @authLanguageActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get authLanguageActive;
+
+  /// No description provided for @authLanguageBoardNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed by the GCC Language Board for Hausa, Yorùbá, and Igbo dialectal precision.'**
+  String get authLanguageBoardNote;
+
+  /// No description provided for @authReportTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a translation issue'**
+  String get authReportTranslation;
+
+  /// No description provided for @authDoneSavePreference.
+  ///
+  /// In en, this message translates to:
+  /// **'Done & Save Preference'**
+  String get authDoneSavePreference;
+
   /// Label for the notifications preference row.
   ///
   /// In en, this message translates to:
@@ -328,25 +538,37 @@ abstract class AppLocalizations {
   /// **'On · SMS only'**
   String get authNotificationsValue;
 
-  /// Hint that a previous session can be used offline.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline? Use your last signed-in session.'**
-  String get authOfflineSession;
-
   /// Label for the support contact.
   ///
   /// In en, this message translates to:
   /// **'Support'**
   String get authSupport;
 
-  /// Support phone number shown on agent sign-in.
+  /// Support phone number shown on sign-in.
   ///
   /// In en, this message translates to:
   /// **'+234 803 441 2290'**
   String get authSupportPhone;
 
-  /// Title on the agent verification screen.
+  /// No description provided for @authSupportLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Support: {phone}'**
+  String authSupportLine(String phone);
+
+  /// No description provided for @authEscalationHelpline.
+  ///
+  /// In en, this message translates to:
+  /// **'Escalation Helpline: {phone}'**
+  String authEscalationHelpline(String phone);
+
+  /// No description provided for @authOtpStepLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Step 2 of 2'**
+  String get authOtpStepLabel;
+
+  /// Title on the verification screen.
   ///
   /// In en, this message translates to:
   /// **'Enter your code'**
@@ -355,8 +577,38 @@ abstract class AppLocalizations {
   /// Shows the masked phone number that received the code.
   ///
   /// In en, this message translates to:
-  /// **'Sent to {phone}'**
+  /// **'Sent via SMS to {phone}'**
   String authCodeSentTo(String phone);
+
+  /// No description provided for @authOtpAutoSubmitHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto-submits instantly when 6th digit is entered.'**
+  String get authOtpAutoSubmitHint;
+
+  /// No description provided for @authResendIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend in {timer}'**
+  String authResendIn(String timer);
+
+  /// No description provided for @authGsmFallbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Low signal area?'**
+  String get authGsmFallbackTitle;
+
+  /// No description provided for @authGsmFallbackBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Codes are automatically dispatched via high-priority national GSM fallback.'**
+  String get authGsmFallbackBody;
+
+  /// No description provided for @authNodeFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'GCC Auth Node: ED3-LOS-01 · {phone}'**
+  String authNodeFooter(String phone);
 
   /// Trust line on the verification screen.
   ///
@@ -367,7 +619,7 @@ abstract class AppLocalizations {
   /// Submits the verification code.
   ///
   /// In en, this message translates to:
-  /// **'Verify'**
+  /// **'Verify code'**
   String get authVerify;
 
   /// Shown when Verify is disabled because the code is incomplete.
@@ -391,7 +643,7 @@ abstract class AppLocalizations {
   /// Prompt beside the resend action.
   ///
   /// In en, this message translates to:
-  /// **'Didn\'t get it?'**
+  /// **'Didn\'t receive code?'**
   String get authDidntGetCode;
 
   /// Requests another verification code.
@@ -400,10 +652,10 @@ abstract class AppLocalizations {
   /// **'Resend code'**
   String get authResendCode;
 
-  /// Leaves verification to change the phone number or agent ID.
+  /// Leaves verification to change the identifier.
   ///
   /// In en, this message translates to:
-  /// **'Use a different number'**
+  /// **'Use a different phone number'**
   String get authUseDifferentNumber;
 
   /// Shown when sign-in fails without a field-specific message.
@@ -430,6 +682,12 @@ abstract class AppLocalizations {
   /// **'Save'**
   String get authSave;
 
+  /// No description provided for @authDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get authDone;
+
   /// Label for the language sheet search field.
   ///
   /// In en, this message translates to:
@@ -439,7 +697,7 @@ abstract class AppLocalizations {
   /// Placeholder for the language sheet search field.
   ///
   /// In en, this message translates to:
-  /// **'Search'**
+  /// **'Search languages...'**
   String get authSearchLanguagesHint;
 
   /// Shown on languages that do not have a translation yet.

@@ -88,7 +88,12 @@
   "@startupFailed": {
     "description": "Shown when application startup fails."
   },
-  "authAgentSignInTitle": "Field agent sign in",
+  "authSuiteWordmark": "Mobile ID Suite",
+  "authSuiteVersion": "v3.4.1",
+  "authRoleAgentPill": "Agent (AG-)",
+  "authRoleVendorPill": "Vendor (VND-)",
+  "authRoleLesseePill": "Lessee (LSE-)",
+  "authAgentSignInTitle": "Field Agent Sign In",
   "@authAgentSignInTitle": {
     "description": "Title on the agent identifier screen."
   },
@@ -96,45 +101,54 @@
   "@authAgentSignInSubtitle": {
     "description": "Instructions on the agent identifier screen."
   },
+  "authVendorSignInTitle": "Vendor Sign In",
+  "authVendorSignInSubtitle": "Enter the vendor ID given to you by GCC dispatch.",
+  "authLesseeSignInTitle": "Lessee Sign In",
+  "authLesseeSignInSubtitle": "Enter your lessee ID to view active rentals & contracts.",
   "authAgentIdLabel": "Agent ID",
   "@authAgentIdLabel": {
     "description": "Label for the agent identifier field."
   },
+  "authVendorIdLabel": "Vendor ID",
+  "authLesseeIdLabel": "Lessee ID",
   "authAgentIdHint": "AG-0142",
   "@authAgentIdHint": {
     "description": "Example agent identifier shown as placeholder text."
   },
+  "authVendorIdHint": "VND-0341",
+  "authLesseeIdHint": "LSE-0847",
   "authScannerDivider": "OR USE SCANNER",
   "@authScannerDivider": {
     "description": "Divider label between typed sign-in and the QR scanner."
   },
-  "authScanQr": "Scan QR",
+  "authScanQr": "Scan QR code on your ID card",
   "@authScanQr": {
-    "description": "Button that starts an agent ID card scan."
+    "description": "Button that starts an ID card scan."
   },
+  "authScanQrShort": "Scan QR Code",
   "authScanQrHelp": "Scan the QR code on your ID card.",
   "@authScanQrHelp": {
     "description": "Helper text under the QR scan button."
   },
   "authContinue": "Continue",
   "@authContinue": {
-    "description": "Advances from the agent identifier screen."
+    "description": "Advances from the identifier screen."
   },
-  "authContinueNeedsIdentifier": "Enter your agent ID to continue.",
+  "authContinueNeedsIdentifier": "Enter your ID to continue.",
   "@authContinueNeedsIdentifier": {
-    "description": "Shown when Continue is disabled because the agent ID is empty."
+    "description": "Shown when Continue is disabled because the ID is empty."
   },
-  "authContinueNeedsValidIdentifier": "Enter an ID like AG-0142 to continue.",
+  "authContinueNeedsValidIdentifier": "Enter a valid ID for this role to continue.",
   "@authContinueNeedsValidIdentifier": {
-    "description": "Shown when Continue is disabled because the agent ID is not in the expected form."
+    "description": "Shown when Continue is disabled because the ID is not in the expected form."
   },
-  "authIdentifierInvalid": "Enter an ID like AG-0142.",
+  "authIdentifierInvalid": "Enter a valid ID for this role.",
   "@authIdentifierInvalid": {
-    "description": "Inline error when an agent ID does not match AG- and four digits."
+    "description": "Inline error when an ID does not match the selected role prefix."
   },
-  "authUnknownIdentifier": "We couldn't find {identifier}. Check the ID, or contact your coordinator.",
+  "authUnknownIdentifier": "We couldn't find {identifier} in the registry. Check the number or contact your field coordinator.",
   "@authUnknownIdentifier": {
-    "description": "Inline error when an agent ID is well formed but not recognized.",
+    "description": "Body when an ID is well formed but not recognized.",
     "placeholders": {
       "identifier": {
         "type": "String",
@@ -142,6 +156,30 @@
       }
     }
   },
+  "authUnknownIdentifierTitle": "ID not recognized",
+  "authTryAgain": "Try Again",
+  "authDifferentId": "Different ID",
+  "authSessionRetry": "Session Retry",
+  "authCoordinatorTitle": "Need Coordinator Dispatch?",
+  "authCoordinatorBody": "Call your Zone 3 lead directly or start instant WhatsApp ticket.",
+  "authCallCoordinator": "Call Coordinator",
+  "authWhatsAppDesk": "WhatsApp Desk",
+  "authHelp": "Help",
+  "authLanguageLabel": "Language: {name}",
+  "@authLanguageLabel": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "authOfflineBannerTitle": "Offline — using cached session",
+  "authOfflineBannerBody": "Last synced today at 09:24",
+  "authOfflineRetry": "Retry",
+  "authOfflineSession": "Offline? Use your last signed-in session.",
+  "@authOfflineSession": {
+    "description": "Hint that a previous session can be used offline."
+  },
+  "authOfflineSessionLead": "Offline?",
+  "authOfflineSessionLink": "Use your last signed-in session.",
   "authUnassignedTitle": "No markets assigned",
   "@authUnassignedTitle": {
     "description": "Title when an agent account has no markets."
@@ -154,6 +192,11 @@
   "@authLanguage": {
     "description": "Label for the language row and the language sheet."
   },
+  "authSelectLanguage": "Select Language",
+  "authLanguageActive": "Active",
+  "authLanguageBoardNote": "Reviewed by the GCC Language Board for Hausa, Yorùbá, and Igbo dialectal precision.",
+  "authReportTranslation": "Report a translation issue",
+  "authDoneSavePreference": "Done & Save Preference",
   "authNotifications": "Notifications",
   "@authNotifications": {
     "description": "Label for the notifications preference row."
@@ -162,23 +205,32 @@
   "@authNotificationsValue": {
     "description": "Current notifications value on the agent sign-in screen."
   },
-  "authOfflineSession": "Offline? Use your last signed-in session.",
-  "@authOfflineSession": {
-    "description": "Hint that a previous session can be used offline."
-  },
   "authSupport": "Support",
   "@authSupport": {
     "description": "Label for the support contact."
   },
   "authSupportPhone": "+234 803 441 2290",
   "@authSupportPhone": {
-    "description": "Support phone number shown on agent sign-in."
+    "description": "Support phone number shown on sign-in."
   },
+  "authSupportLine": "Support: {phone}",
+  "@authSupportLine": {
+    "placeholders": {
+      "phone": { "type": "String" }
+    }
+  },
+  "authEscalationHelpline": "Escalation Helpline: {phone}",
+  "@authEscalationHelpline": {
+    "placeholders": {
+      "phone": { "type": "String" }
+    }
+  },
+  "authOtpStepLabel": "Step 2 of 2",
   "authEnterCodeTitle": "Enter your code",
   "@authEnterCodeTitle": {
-    "description": "Title on the agent verification screen."
+    "description": "Title on the verification screen."
   },
-  "authCodeSentTo": "Sent to {phone}",
+  "authCodeSentTo": "Sent via SMS to {phone}",
   "@authCodeSentTo": {
     "description": "Shows the masked phone number that received the code.",
     "placeholders": {
@@ -188,11 +240,26 @@
       }
     }
   },
+  "authOtpAutoSubmitHint": "Auto-submits instantly when 6th digit is entered.",
+  "authResendIn": "Resend in {timer}",
+  "@authResendIn": {
+    "placeholders": {
+      "timer": { "type": "String" }
+    }
+  },
+  "authGsmFallbackTitle": "Low signal area?",
+  "authGsmFallbackBody": "Codes are automatically dispatched via high-priority national GSM fallback.",
+  "authNodeFooter": "GCC Auth Node: ED3-LOS-01 · {phone}",
+  "@authNodeFooter": {
+    "placeholders": {
+      "phone": { "type": "String" }
+    }
+  },
   "authSecurityNote": "Encrypted Two-Factor Verification",
   "@authSecurityNote": {
     "description": "Trust line on the verification screen."
   },
-  "authVerify": "Verify",
+  "authVerify": "Verify code",
   "@authVerify": {
     "description": "Submits the verification code."
   },
@@ -208,7 +275,7 @@
   "@authOtpIncorrect": {
     "description": "Shown when a verification code is rejected."
   },
-  "authDidntGetCode": "Didn't get it?",
+  "authDidntGetCode": "Didn't receive code?",
   "@authDidntGetCode": {
     "description": "Prompt beside the resend action."
   },
@@ -216,9 +283,9 @@
   "@authResendCode": {
     "description": "Requests another verification code."
   },
-  "authUseDifferentNumber": "Use a different number",
+  "authUseDifferentNumber": "Use a different phone number",
   "@authUseDifferentNumber": {
-    "description": "Leaves verification to change the phone number or agent ID."
+    "description": "Leaves verification to change the identifier."
   },
   "authGenericFailure": "Something went wrong. Try again.",
   "@authGenericFailure": {
@@ -236,11 +303,12 @@
   "@authSave": {
     "description": "Saves the language chosen in the sheet."
   },
+  "authDone": "Done",
   "authSearchLanguages": "Search languages",
   "@authSearchLanguages": {
     "description": "Label for the language sheet search field."
   },
-  "authSearchLanguagesHint": "Search",
+  "authSearchLanguagesHint": "Search languages...",
   "@authSearchLanguagesHint": {
     "description": "Placeholder for the language sheet search field."
   },

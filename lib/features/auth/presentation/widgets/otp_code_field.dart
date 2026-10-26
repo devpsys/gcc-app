@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gcc_app/core/theme/app_dimensions.dart';
-import 'package:gcc_app/core/theme/app_radii.dart';
 import 'package:gcc_app/core/theme/app_spacing.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/otp_code_box.dart';
 
@@ -59,26 +58,15 @@ class _OtpCodeFieldState extends State<OtpCodeField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: AppDimensions.inputHeight,
+          height: AppDimensions.otpCellHeight,
           child: Stack(
             alignment: Alignment.center,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _cluster(value, error, 0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSpacing.xs,
-                    ),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.outline,
-                        borderRadius: BorderRadius.circular(AppRadii.micro),
-                      ),
-                      child: const SizedBox(width: AppSpacing.xs, height: 2),
-                    ),
-                  ),
-                  _cluster(value, error, 3),
+                  for (var i = 0; i < OtpCodeField.length; i++)
+                    Flexible(child: Center(child: _box(value, error, i))),
                 ],
               ),
               Positioned.fill(
@@ -122,24 +110,12 @@ class _OtpCodeFieldState extends State<OtpCodeField> {
           const SizedBox(height: AppSpacing.xxs),
           Text(
             error,
-            style: Theme.of(context).textTheme.bodySmall
-                ?.copyWith(color: Theme.of(context).colorScheme.error),
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.error,
+            ),
           ),
         ],
       ],
-    );
-  }
-
-  Widget _cluster(String value, String? error, int start) {
-    return Expanded(
-      child: Row(
-        children: [
-          for (var offset = 0; offset < 3; offset++) ...[
-            if (offset > 0) const SizedBox(width: AppSpacing.xxs),
-            Expanded(child: _box(value, error, start + offset)),
-          ],
-        ],
-      ),
     );
   }
 

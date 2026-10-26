@@ -21,6 +21,10 @@ abstract final class RoutePaths {
   static const String onboardingLanguage = '/onboarding/language';
   static const String onboardingRole = '/onboarding/role';
   static const String onboardingSignIn = '/onboarding/sign-in';
+  /// Canonical unified ID sign-in (MOB-AUTH-UNIFIED).
+  static const String authSignIn = '/auth/sign-in';
+  static const String authVerify = '/auth/verify';
+  /// Legacy aliases — redirect to [authSignIn] / [authVerify].
   static const String agentSignIn = '/auth/agent/sign-in';
   static const String agentVerify = '/auth/agent/verify';
   static const String biometricUnlock = '/auth/unlock';

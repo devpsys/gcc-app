@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart';
 import 'package:gcc_app/features/dashboard/presentation/bloc/dashboard_cubit.dart';
@@ -80,7 +80,7 @@ void main() {
           scale: scale,
           child: BlocProvider(
             create: (_) =>
-                AgentAuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
+                AuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
             child: const AgentSignInPage(),
           ),
         );
@@ -93,7 +93,7 @@ void main() {
           scale: scale,
           child: BlocProvider(
             create: (_) =>
-                AgentAuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
+                AuthCubit(FakeAgentAuthGateway(), FakeSessionRepository()),
             child: const AgentOtpPage(),
           ),
         );

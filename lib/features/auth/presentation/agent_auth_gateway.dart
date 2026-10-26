@@ -1,5 +1,5 @@
-abstract interface class AgentAuthGateway {
-  Future<String> requestVerificationCode(String agentIdentifier);
+import 'package:gcc_app/features/auth/presentation/auth_gateway.dart';
 
-  Future<void> verifyCode(String agentIdentifier, String code);
-}
+export 'package:gcc_app/features/auth/presentation/auth_gateway.dart';
+
+typedef AgentAuthGateway = AuthGateway;

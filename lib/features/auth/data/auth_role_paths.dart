@@ -9,9 +9,6 @@ String homeLocationForRole(AuthRole role) {
   };
 }
 
-String signInLocationForRole(AuthRole role) {
-  return switch (role) {
-    AuthRole.agent => RoutePaths.agentSignIn,
-    AuthRole.lessee || AuthRole.vendor => RoutePaths.onboardingSignIn,
-  };
+String signInLocationForRole(AuthRole _) {
+  return RoutePaths.authSignIn;
 }

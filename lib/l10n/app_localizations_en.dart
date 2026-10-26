@@ -77,23 +77,67 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startupFailed => 'GCC could not start.';
 
   @override
-  String get authAgentSignInTitle => 'Field agent sign in';
+  String get authSuiteWordmark => 'Mobile ID Suite';
+
+  @override
+  String get authSuiteVersion => 'v3.4.1';
+
+  @override
+  String get authRoleAgentPill => 'Agent (AG-)';
+
+  @override
+  String get authRoleVendorPill => 'Vendor (VND-)';
+
+  @override
+  String get authRoleLesseePill => 'Lessee (LSE-)';
+
+  @override
+  String get authAgentSignInTitle => 'Field Agent Sign In';
 
   @override
   String get authAgentSignInSubtitle =>
       'Enter the agent ID given to you by your coordinator.';
 
   @override
+  String get authVendorSignInTitle => 'Vendor Sign In';
+
+  @override
+  String get authVendorSignInSubtitle =>
+      'Enter the vendor ID given to you by GCC dispatch.';
+
+  @override
+  String get authLesseeSignInTitle => 'Lessee Sign In';
+
+  @override
+  String get authLesseeSignInSubtitle =>
+      'Enter your lessee ID to view active rentals & contracts.';
+
+  @override
   String get authAgentIdLabel => 'Agent ID';
+
+  @override
+  String get authVendorIdLabel => 'Vendor ID';
+
+  @override
+  String get authLesseeIdLabel => 'Lessee ID';
 
   @override
   String get authAgentIdHint => 'AG-0142';
 
   @override
+  String get authVendorIdHint => 'VND-0341';
+
+  @override
+  String get authLesseeIdHint => 'LSE-0847';
+
+  @override
   String get authScannerDivider => 'OR USE SCANNER';
 
   @override
-  String get authScanQr => 'Scan QR';
+  String get authScanQr => 'Scan QR code on your ID card';
+
+  @override
+  String get authScanQrShort => 'Scan QR Code';
 
   @override
   String get authScanQrHelp => 'Scan the QR code on your ID card.';
@@ -102,19 +146,70 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authContinue => 'Continue';
 
   @override
-  String get authContinueNeedsIdentifier => 'Enter your agent ID to continue.';
+  String get authContinueNeedsIdentifier => 'Enter your ID to continue.';
 
   @override
   String get authContinueNeedsValidIdentifier =>
-      'Enter an ID like AG-0142 to continue.';
+      'Enter a valid ID for this role to continue.';
 
   @override
-  String get authIdentifierInvalid => 'Enter an ID like AG-0142.';
+  String get authIdentifierInvalid => 'Enter a valid ID for this role.';
 
   @override
   String authUnknownIdentifier(String identifier) {
-    return 'We couldn\'t find $identifier. Check the ID, or contact your coordinator.';
+    return 'We couldn\'t find $identifier in the registry. Check the number or contact your field coordinator.';
   }
+
+  @override
+  String get authUnknownIdentifierTitle => 'ID not recognized';
+
+  @override
+  String get authTryAgain => 'Try Again';
+
+  @override
+  String get authDifferentId => 'Different ID';
+
+  @override
+  String get authSessionRetry => 'Session Retry';
+
+  @override
+  String get authCoordinatorTitle => 'Need Coordinator Dispatch?';
+
+  @override
+  String get authCoordinatorBody =>
+      'Call your Zone 3 lead directly or start instant WhatsApp ticket.';
+
+  @override
+  String get authCallCoordinator => 'Call Coordinator';
+
+  @override
+  String get authWhatsAppDesk => 'WhatsApp Desk';
+
+  @override
+  String get authHelp => 'Help';
+
+  @override
+  String authLanguageLabel(String name) {
+    return 'Language: $name';
+  }
+
+  @override
+  String get authOfflineBannerTitle => 'Offline — using cached session';
+
+  @override
+  String get authOfflineBannerBody => 'Last synced today at 09:24';
+
+  @override
+  String get authOfflineRetry => 'Retry';
+
+  @override
+  String get authOfflineSession => 'Offline? Use your last signed-in session.';
+
+  @override
+  String get authOfflineSessionLead => 'Offline?';
+
+  @override
+  String get authOfflineSessionLink => 'Use your last signed-in session.';
 
   @override
   String get authUnassignedTitle => 'No markets assigned';
@@ -127,13 +222,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authLanguage => 'Language';
 
   @override
+  String get authSelectLanguage => 'Select Language';
+
+  @override
+  String get authLanguageActive => 'Active';
+
+  @override
+  String get authLanguageBoardNote =>
+      'Reviewed by the GCC Language Board for Hausa, Yorùbá, and Igbo dialectal precision.';
+
+  @override
+  String get authReportTranslation => 'Report a translation issue';
+
+  @override
+  String get authDoneSavePreference => 'Done & Save Preference';
+
+  @override
   String get authNotifications => 'Notifications';
 
   @override
   String get authNotificationsValue => 'On · SMS only';
-
-  @override
-  String get authOfflineSession => 'Offline? Use your last signed-in session.';
 
   @override
   String get authSupport => 'Support';
@@ -142,18 +250,52 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authSupportPhone => '+234 803 441 2290';
 
   @override
+  String authSupportLine(String phone) {
+    return 'Support: $phone';
+  }
+
+  @override
+  String authEscalationHelpline(String phone) {
+    return 'Escalation Helpline: $phone';
+  }
+
+  @override
+  String get authOtpStepLabel => 'Step 2 of 2';
+
+  @override
   String get authEnterCodeTitle => 'Enter your code';
 
   @override
   String authCodeSentTo(String phone) {
-    return 'Sent to $phone';
+    return 'Sent via SMS to $phone';
+  }
+
+  @override
+  String get authOtpAutoSubmitHint =>
+      'Auto-submits instantly when 6th digit is entered.';
+
+  @override
+  String authResendIn(String timer) {
+    return 'Resend in $timer';
+  }
+
+  @override
+  String get authGsmFallbackTitle => 'Low signal area?';
+
+  @override
+  String get authGsmFallbackBody =>
+      'Codes are automatically dispatched via high-priority national GSM fallback.';
+
+  @override
+  String authNodeFooter(String phone) {
+    return 'GCC Auth Node: ED3-LOS-01 · $phone';
   }
 
   @override
   String get authSecurityNote => 'Encrypted Two-Factor Verification';
 
   @override
-  String get authVerify => 'Verify';
+  String get authVerify => 'Verify code';
 
   @override
   String get authOtpIncompleteReason => 'Enter all 6 digits to continue.';
@@ -165,13 +307,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authOtpIncorrect => 'That code is not correct. Request a new one.';
 
   @override
-  String get authDidntGetCode => 'Didn\'t get it?';
+  String get authDidntGetCode => 'Didn\'t receive code?';
 
   @override
   String get authResendCode => 'Resend code';
 
   @override
-  String get authUseDifferentNumber => 'Use a different number';
+  String get authUseDifferentNumber => 'Use a different phone number';
 
   @override
   String get authGenericFailure => 'Something went wrong. Try again.';
@@ -186,10 +328,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authSave => 'Save';
 
   @override
+  String get authDone => 'Done';
+
+  @override
   String get authSearchLanguages => 'Search languages';
 
   @override
-  String get authSearchLanguagesHint => 'Search';
+  String get authSearchLanguagesHint => 'Search languages...';
 
   @override
   String get authLanguageUnavailable =>

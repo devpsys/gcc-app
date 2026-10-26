@@ -53,7 +53,7 @@ class LesseeProfileScreen extends StatelessWidget {
                 GoRouter.maybeOf(context)
                     ?.go(homeLocationForRole(AuthRole.vendor));
               },
-              onSignOut: () => context.read<DeviceLockCubit>().signOut(),
+              onSignOut: () => _lockOf(context)?.signOut(),
               onOpenBookings: () =>
                   GoRouter.maybeOf(context)?.go(RoutePaths.bookings),
               onInstall: () {

@@ -16,10 +16,10 @@ import 'package:gcc_app/features/auth/domain/enroll_device_lock.dart';
 import 'package:gcc_app/features/auth/domain/revoke_device_lock.dart';
 import 'package:gcc_app/features/auth/domain/session_repository.dart';
 import 'package:gcc_app/features/auth/domain/unlock_device.dart';
-import 'package:gcc_app/features/auth/presentation/agent_auth_gateway.dart';
-import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/auth_gateway.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/device_lock_cubit.dart';
-import 'package:gcc_app/features/auth/presentation/unwired_agent_auth_gateway.dart';
+import 'package:gcc_app/features/auth/presentation/mock_auth_gateway.dart';
 import 'package:gcc_app/core/router/session_gate.dart';
 import 'package:hive/hive.dart';
 import 'package:local_auth/local_auth.dart';
@@ -64,8 +64,8 @@ void registerAuthModule() {
     ..registerLazySingleton(() => EnrollDeviceLock(getIt(), getIt()))
     ..registerLazySingleton(() => UnlockDevice(getIt()))
     ..registerLazySingleton(() => RevokeDeviceLock(getIt(), getIt()))
-    ..registerLazySingleton<AgentAuthGateway>(UnwiredAgentAuthGateway.new)
-    ..registerFactory(() => AgentAuthCubit(getIt(), getIt()))
+    ..registerLazySingleton<AuthGateway>(MockAuthGateway.new)
+    ..registerFactory(() => AuthCubit(getIt(), getIt()))
     ..registerFactory(
       () => DeviceLockCubit(getIt(), getIt(), getIt(), getIt(), getIt()),
     );

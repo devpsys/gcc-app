@@ -47,6 +47,7 @@ class AppPrimaryButton extends StatelessWidget {
               onPressed: pressed,
               style: style,
               icon: Icon(glyph, size: AppDimensions.iconMd),
+              iconAlignment: IconAlignment.end,
               label: child,
             ),
     );

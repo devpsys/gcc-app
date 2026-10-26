@@ -32,7 +32,7 @@ void main() {
     await directory.delete(recursive: true);
   });
 
-  testWidgets('a signed-out visit to today returns to onboarding', (
+  testWidgets('a signed-out visit to today returns to sign-in', (
     tester,
   ) async {
     final router = createAppRouter();
@@ -49,7 +49,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 50));
 
-    expect(router.state.uri.path, RoutePaths.onboardingLanguage);
+    expect(router.state.uri.path, RoutePaths.authSignIn);
   });
 
   testWidgets('an enrolled locked visit to today opens unlock', (tester) async {

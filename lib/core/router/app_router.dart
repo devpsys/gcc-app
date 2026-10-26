@@ -25,7 +25,7 @@ import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_profile_s
 import 'package:gcc_app/features/agent_wallet/presentation/pages/agent_wallet_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/bounty_status_screen.dart';
 import 'package:gcc_app/features/agent_wallet/presentation/pages/notification_channels_screen.dart';
-import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/auth_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/bloc/device_lock_cubit.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_sign_in_page.dart';
@@ -222,8 +222,11 @@ GoRouter createAppRouter() {
       GoRoute(
         path: RoutePaths.profile,
         name: RouteNames.profile,
-        builder: (context, state) => BlocProvider(
-          create: (_) => getIt<LesseeProfileCubit>()..load(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => getIt<LesseeProfileCubit>()..load()),
+            BlocProvider(create: (_) => getIt<DeviceLockCubit>()..load()),
+          ],
           child: const LesseeProfileScreen(),
         ),
       ),
@@ -461,7 +464,7 @@ GoRouter createAppRouter() {
         builder: (context, state, child) {
           return MultiBlocProvider(
             providers: [
-              BlocProvider(create: (_) => getIt<AgentAuthCubit>()),
+              BlocProvider(create: (_) => getIt<AuthCubit>()),
               BlocProvider(create: (_) => getIt<DeviceLockCubit>()..load()),
             ],
             child: child,
@@ -469,14 +472,24 @@ GoRouter createAppRouter() {
         },
         routes: [
           GoRoute(
+            path: RoutePaths.authSignIn,
+            name: RouteNames.authSignIn,
+            builder: (context, state) => const AgentSignInPage(),
+          ),
+          GoRoute(
+            path: RoutePaths.authVerify,
+            name: RouteNames.authVerify,
+            builder: (context, state) => const AgentOtpPage(),
+          ),
+          GoRoute(
             path: RoutePaths.agentSignIn,
             name: RouteNames.agentSignIn,
-            builder: (context, state) => const AgentSignInPage(),
+            redirect: (context, state) => RoutePaths.authSignIn,
           ),
           GoRoute(
             path: RoutePaths.agentVerify,
             name: RouteNames.agentVerify,
-            builder: (context, state) => const AgentOtpPage(),
+            redirect: (context, state) => RoutePaths.authVerify,
           ),
         ],
       ),

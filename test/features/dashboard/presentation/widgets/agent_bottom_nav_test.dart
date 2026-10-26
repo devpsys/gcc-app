@@ -186,6 +186,8 @@ List<String> _registeredPaths() => const <String>[
   RoutePaths.onboardingLanguage,
   RoutePaths.onboardingRole,
   RoutePaths.onboardingSignIn,
+  RoutePaths.authSignIn,
+  RoutePaths.authVerify,
   RoutePaths.agentSignIn,
   RoutePaths.agentVerify,
   RoutePaths.biometricUnlock,

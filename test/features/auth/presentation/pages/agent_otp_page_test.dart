@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_cubit.dart';
-import 'package:gcc_app/features/auth/presentation/bloc/agent_auth_state.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/auth_cubit.dart';
+import 'package:gcc_app/features/auth/presentation/bloc/auth_state.dart';
 import 'package:gcc_app/features/auth/presentation/pages/agent_otp_page.dart';
 import 'package:gcc_app/features/auth/presentation/widgets/otp_code_box.dart';
 
@@ -11,11 +11,11 @@ import '../../fake_agent_auth_gateway.dart';
 import '../../fake_session_repository.dart';
 
 void main() {
-  testWidgets('uses one code field and disables verify until six digits', (
+  testWidgets('uses one code field and auto-verifies at six digits', (
     tester,
   ) async {
     final gateway = FakeAgentAuthGateway();
-    final cubit = AgentAuthCubit(gateway, FakeSessionRepository());
+    final cubit = AuthCubit(gateway, FakeSessionRepository());
     cubit.identifierChanged('AG-0142');
     await cubit.submitIdentifier();
 
@@ -29,7 +29,8 @@ void main() {
 
     expect(find.byType(TextField), findsOneWidget);
     expect(find.text('Enter all 6 digits to continue.'), findsOneWidget);
-    expect(find.text('Sent to +234 •••• 2290'), findsOneWidget);
+    expect(find.textContaining('+234 •••• 2290'), findsOneWidget);
+    expect(find.textContaining('STEP 2 OF 2'), findsOneWidget);
 
     await tester.enterText(find.byType(TextField), '123');
     await tester.pump();
@@ -41,7 +42,7 @@ void main() {
     await tester.pump();
     await tester.pump();
 
-    expect(cubit.state, isA<AgentAuthVerified>());
+    expect(cubit.state, isA<AuthVerified>());
     expect(gateway.verifyCount, 1);
     expect(tester.takeException(), isNull);
     semantics.dispose();

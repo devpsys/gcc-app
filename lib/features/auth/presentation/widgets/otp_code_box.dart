@@ -20,30 +20,55 @@ class OtpCodeBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final emphasized = focused || hasError || filled;
+    final Color background;
+    final Color border;
+    final double borderWidth;
+    if (hasError) {
+      background = scheme.errorContainer;
+      border = scheme.error;
+      borderWidth = AppDimensions.focusBorderWidth;
+    } else if (focused) {
+      background = scheme.surface;
+      border = scheme.primary;
+      borderWidth = AppDimensions.accentBorderWidth;
+    } else if (filled) {
+      background = scheme.secondaryContainer.withValues(alpha: 0.55);
+      border = scheme.primary;
+      borderWidth = AppDimensions.emphasisBorderWidth;
+    } else {
+      background = scheme.surfaceContainerHighest.withValues(alpha: 0.55);
+      border = scheme.outlineVariant;
+      borderWidth = AppDimensions.borderWidth;
+    }
     return ExcludeSemantics(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: focused ? scheme.primaryContainer : scheme.surface,
-          borderRadius: BorderRadius.circular(AppRadii.input),
-          border: Border.all(
-            color: hasError
-                ? scheme.error
-                : emphasized
-                ? scheme.primary
-                : scheme.outline,
-            width: emphasized
-                ? AppDimensions.focusBorderWidth
-                : AppDimensions.borderWidth,
-          ),
+          color: background,
+          borderRadius: BorderRadius.circular(AppRadii.button),
+          border: Border.all(color: border, width: borderWidth),
+          boxShadow: focused
+              ? [
+                  BoxShadow(
+                    color: scheme.primary.withValues(alpha: 0.18),
+                    blurRadius: 8,
+                    spreadRadius: 1,
+                  ),
+                ]
+              : null,
         ),
         child: SizedBox(
-          height: AppDimensions.inputHeight,
+          width: AppDimensions.otpCellWidth,
+          height: AppDimensions.otpCellHeight,
           child: Center(
             child: Text(
               digit,
               style: AppTextStyles.mono(
-                Theme.of(context).textTheme.titleLarge!,
+                Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: filled || focused
+                      ? scheme.primary
+                      : scheme.onSurfaceVariant,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ),
